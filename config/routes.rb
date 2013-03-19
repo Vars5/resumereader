@@ -1,8 +1,8 @@
 Resumereader::Application.routes.draw do
-  get "staticpages/home"
-
-  get "staticpages/about"
-
+  
+  
+  root :to => 'staticpages#home'
+  
   devise_for :users
 
   # The priority is based upon order of creation:

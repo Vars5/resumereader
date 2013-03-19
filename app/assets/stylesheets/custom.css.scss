@@ -1,0 +1,90 @@
+@import "bootstrap";
+
+/* Fonts */
+
+
+/* Globals */
+
+
+/* Line Bar */
+
+	.linebar {
+		height:3px;
+		background-color:#39b54a;
+	}
+
+
+/* Top of page */
+
+	.topbar {
+		color:#39b54a;
+		padding-top:5px;
+		font-size:10px;
+
+	}
+
+	/* Copywrite Area */
+
+	.copywriteArea {
+		padding:20px 0	10px 0;
+		text-align:center;
+	}
+
+	.copywriteArea p{
+		color:#39b54a;
+	}
+
+/* Visual Structure */
+
+	.visualStructureHelp{
+		padding-top:40px;
+	}
+
+	.visualStructureHelp p{
+		padding-top:5px;
+		color:#39b54a;
+		font-size:1.7em;
+		line-height:25px;	
+	}
+	
+	.vsimage {
+		background-color:#f68e56;
+		height:300px;
+		padding:20px;
+	}
+
+	.notes{
+		padding-top:155px;
+	}
+
+/* Questionnare Structure */
+
+
+	.QuestionnareHelp{
+		padding-top:70px;
+	}
+	
+	.QuestionnareHelp .test{
+		padding-top:5px;
+		color:#39b54a;
+		font-size:1.7em;
+		line-height:25px;	
+	}
+	
+	.questionArea {
+
+	}
+	
+	
+/* Feedback Area */
+	.AskForFeedback {
+		height:400px;
+	}
+
+
+	.AskForFeedback p{
+			padding-top:5px;
+			color:#39b54a;
+			font-size:1.7em;
+			line-height:25px;	
+	}
