@@ -1,0 +1,34 @@
+<div class="visualStructureHelp">
+
+	
+
+	<h1>First, get your resume in the right structure</h1>
+	<div class= "visualheading">
+		<p>Placing your information in the right order makes sure
+			that HR knows what to expect and whether you're worthwhile to look into</p>
+	</div>	
+		</br>
+		<div class="vsimage">
+			
+			<div class="FirstResumeArea">
+				<%= form_for :test do |f|%>
+					<p>
+						<%= f.text_field "First Name", :placeholder => "First Name", :style =>"width: 80px"%>
+						<%= f.text_field "Last Name", :placeholder => "Last Name", :style =>"width: 80px"%>				
+					</p>
+					
+					<p>Email: <%= f.text_field "Email", :placeholder => "Email" %></p>
+					<p>Contact Number: <%= f.text_field "Contact Details", :placeholder => "Contact Details" %></p>
+					</br>
+					
+					<legend> Education </legend>
+
+
+				<% end %>
+			</div>
+			
+			
+			
+			
+		</div>
+</div>
