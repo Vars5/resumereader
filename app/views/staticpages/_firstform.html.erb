@@ -12,17 +12,37 @@
 			
 			<div class="FirstResumeArea">
 				<%= form_for :test do |f|%>
-					<p>
-						<%= f.text_field "First Name", :placeholder => "First Name", :style =>"width: 80px"%>
-						<%= f.text_field "Last Name", :placeholder => "Last Name", :style =>"width: 80px"%>				
-					</p>
-					
+					<p><%= f.text_field "First Name", :placeholder => "First Name", :style =>"width: 80px"%>
+						<%= f.text_field "Last Name", :placeholder => "Last Name", :style =>"width: 80px"%></p>
 					<p>Email: <%= f.text_field "Email", :placeholder => "Email" %></p>
 					<p>Contact Number: <%= f.text_field "Contact Details", :placeholder => "Contact Details" %></p>
 					</br>
 					
-					<legend> Education </legend>
+					
+					<div class="SecondResumeArea">
+						<legend> Education </legend>
+						<p><%= f.text_field "University Name", :placeholder => "University" %></p>
+						<p><%= f.text_field "Degree Name", :placeholder => "Degree Name" %></p>
+						<p><%= f.text_field "Majors or Specialisation Name", :placeholder => "Majors or Specialisation Name" %></p>
+						<p><%= f.text_field "Marks or GPA", :placeholder => "Marks or GPA" %> </p>
+						
+						</br></br></br>
+						
+						<legend> Work Experience </legend>
+						
+						<p><%= f.text_field "Company Name", :placeholder => "Company Name" %> </p>
+						<p><%= f.text_field "Job Role", :placeholder => "Job Role" %> </p>
+						<p>Refer to Step 2! </p>
 
+						</br></br></br>
+						
+						<legend> Extracurricular Activities </legend>
+						
+						<p><%= f.text_field "Organisation Name", :placeholder => "Organisation Name" %> </p>
+						<p><%= f.text_field "Role", :placeholder => "Role" %> </p>
+						<p>Refer to Step 2! </p>						
+						
+					</div>
 
 				<% end %>
 			</div>
