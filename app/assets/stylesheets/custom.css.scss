@@ -73,6 +73,7 @@
 	
 	.SecondResumeArea {
 		text-align:left;
+		padding: 0px 40px;
 	}
 	
 
@@ -96,6 +97,7 @@
 	
 	
 /* Feedback Area */
+
 	.AskForFeedback {
 		height:400px;
 	}
@@ -108,6 +110,6 @@
 		line-height:25px;	
 	}
 		
-form {
-	margin-bottom:100px;
-}
+	form .SecondResumeArea {
+		margin-bottom:100px;
+	}
