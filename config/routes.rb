@@ -4,6 +4,8 @@ Resumereader::Application.routes.draw do
   root :to => 'staticpages#home'
   
   match '/structure', :to => 'staticpages#structure'
+  match '/feedback', :to => 'staticpages#feedback'
+  match '/resumeQuestions', :to => 'staticpages#resumeQuestions'
   
   devise_for :users
 
