@@ -1,78 +1,17 @@
 <!-- Header of page -->
 
-	<%=render 'staticpages/copywritearea'%> 
+ 	<%=render 'staticpages/copywritearea'%>  
 	<%=render 'staticpages/linebar'%>
 
 <!-- Main Area of Page  -->
-	
-	<!-- Steps to making a resume -->
-		<%=render 'staticpages/stepsDisplay'%>
 
-		<div class="container">
-	
-	<!-- The Visual Structure Section -->	
-		<div class="row">
-			<div class="span10">
-				<%= render 'staticpages/firstform' %>
-			</div>		
-		
-			<div class="span2">
-				<div class="notes">
-					Different industries have slight nuances. Be aware of the nuacnces for each one. <%= link_to "Click Here" %>.
-				</div>
-			</div>
-		
-		</div>
-
-	<!-- The Questionnare Structure Section -->	
-
-		<div class="row">
-			<div class="span10">
-				<div class="QuestionnareHelp">
-					<h1>Next, answer these questions about your roles</h1>
-					<div class="test">
-						<p>These questions help tease out your achievements in a way employers will notice</p>
-					</div>
-				
-					<div class="questionArea">
-						<%= form_for :proxy do |f|%>
-							</br>
-						
-							<p>In my role as <%= f.text_field :test %> at <%= f.text_field :test %> 
-								I made the place better by doing <%= f.text_field :test %> which 
-								resulted in  <%= f.text_field :test %></p>
-							
-							</br>
-						
-							<p> If in your job you got a bonus, what was it for? If in your job, 
-								you were to get a Bonus, what did you do? </p>
-							<%= f.text_area :test, :style => "width:750px; height:100px" %>
-							</p>
-						
-							</br>
-						<% end %>
-					
-					</div>	
-				
-				</div>
-			</div>
-		
-			<div class="span2">
-
-			</div>
-		
-		</div>
-	
-	<!-- The Feedback Structure Section -->	
-	
-		<div class="row">
-			<div class="span10">
-				<div class="AskForFeedback">
-					<h1>Lastly, ask us or your friends for feedback</h1>
-					<p>Email us your updated resume and we'll give you feedback</p>
-				</div>
-			</div>
-		</div>
+	<div class="container">
+		<%= render 'staticpages/fourSteps'%>
+		<%=render 'staticpages/linebar'%>
+		<%= render 'staticpages/resumeWriteSection'%>
+		<%= render 'staticpages/questionnare' %>
+		<%= render 'staticpages/feedback'%>
 	</div>
 
-
+<!-- Footer of page -->
+	<%=render 'staticpages/linebar'%>

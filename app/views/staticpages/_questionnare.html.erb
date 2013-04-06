@@ -1,0 +1,36 @@
+<div class="row">
+	<div class="span10">
+		<div class="QuestionnareHelp">
+			<h1>Next, answer these questions about your roles</h1>
+			<div class="test">
+				<p>These questions help tease out your achievements in a way employers will notice</p>
+			</div>
+		
+			<div class="questionArea">
+				<%= form_for :proxy do |f|%>
+					</br>
+				
+					<p>In my role as <%= f.text_field :test %> at <%= f.text_field :test %> 
+						I made the place better by doing <%= f.text_field :test %> which 
+						resulted in  <%= f.text_field :test %></p>
+					
+					</br>
+				
+					<p> If in your job you got a bonus, what was it for? If in your job, 
+						you were to get a Bonus, what did you do? </p>
+					<%= f.text_area :test, :style => "width:750px; height:100px" %>
+					</p>
+				
+					</br>
+				<% end %>
+			
+			</div>	
+		
+		</div>
+	</div>
+
+	<div class="span2">
+
+	</div>
+
+</div>
