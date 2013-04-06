@@ -3,6 +3,8 @@ Resumereader::Application.routes.draw do
   
   root :to => 'staticpages#home'
   
+  match '/structure', :to => 'staticpages#structure'
+  
   devise_for :users
 
   # The priority is based upon order of creation:

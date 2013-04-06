@@ -4,4 +4,8 @@ class StaticpagesController < ApplicationController
 
   def about
   end
+  
+  def structure
+  end
+  
 end
