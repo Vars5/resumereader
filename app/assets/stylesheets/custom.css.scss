@@ -89,7 +89,7 @@ $standardGrey: #636363;
 	/* Resume Area */
 	
 	.FirstResumeArea {
-		border: 1px solid black;
+		border: 1px solid $sitegreen;
 		padding:50px 20px 20px 20px ;
 		text-align: center;
 	}
@@ -152,5 +152,14 @@ $standardGrey: #636363;
 	
 	.fourStepsMessage{
 		padding-bottom:40px;
+	}
+	
+	.wrapper {
+		height:150px;
+		width:150px; 
+		border-radius:150px; 
+		border:6px solid $sitegreen; 
+		overflow:hidden;
+		margin:auto auto 10px;
 	}
 	
