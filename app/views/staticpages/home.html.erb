@@ -1,19 +1,12 @@
-<div class="container">
-	
-	<% if signed_in? %>
-		<%= link_to 'sign out!', destroy_user_session_path, :method =>'delete' %>
-	<% else %>
-		<%= link_to 'sign in!', new_user_session_path%>
-		<%=render 'staticpages/alphaSignup'%>
-		<!-- Evenutally use some sort of controller for signed in users -->
-	<% end %>
-	
-
-
-	<%=render 'staticpages/linebar'%>
-	<%=render 'staticpages/fourSteps'%> 
-
-	<%=link_to 'Test Page', test_path%>
-</div>
-
-
+<%= link_to new_user_registration_path do %>
+	<div class="infoBar">
+		<div class="container">
+			<div class="row">
+				<div class="span8">
+					<h3>We want to create the best tools to help you get employed</h3></br>
+					<h3>Sign up to our alpha and help us build something that can really help</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>

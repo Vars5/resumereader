@@ -1,7 +1,11 @@
 <div class="signedInHeader">
 	
 	<div class="container">
-		resumeQuery signed in homepage 
+		<div class="row">
+			<%= link_to 'resumeQuery signed in homepage', root_path %>
+			<%= link_to 'sign out!', destroy_user_session_path, :method =>'delete' %>
+		</div>
+		
 	</div>
 
 </div>

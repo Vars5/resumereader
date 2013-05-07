@@ -5,7 +5,10 @@
 		<div class="errors">
 			<%= devise_error_messages! %>
 		</div>
-		<p><%= f.email_field :email, :placeholder => "Email" %></p>
+		<p><%= f.text_field :first_name, :placeholder => "First Name"%> 
+		   <%= f.text_field :last_name, :placeholder => "Last Name"%></p>
+		<p><%= f.email_field :email, :placeholder => "Your email address" %> 
+		   <%= f.text_field :mobile_number, :placeholder => "Optional Contact Number" %></p>
 		<p><%= f.password_field :password, :placeholder => "Password" %>
 			<%= f.password_field :password_confirmation, :placeholder => "Password Confirmation" %></p>
 		</br>

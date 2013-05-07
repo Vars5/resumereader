@@ -1,14 +1,17 @@
 <div class="copywriteArea">
-	<%= link_to image_tag('alpha-logo.png'), root_path%>
+	<div class="container">	
+		<div class="row">
+			<%= link_to image_tag('alpha-logo.png'), root_path%>
 	
-	<div class="pull-right">
-		<div class="copywriteAreaRight">
-		</br>
-		<p>Happy <%= Time.now.strftime("%A") %> !</br>
-		Something Broken or can be improved here?</p>
+			<div class="pull-right">
+				<div class="copywriteAreaRight">
+				</br>
+				<p>Happy <%= Time.now.strftime("%A") %> ! &nbsp &nbsp &nbsp
+				<%= link_to 'Sign In!', new_user_session_path, :class=> "btn btn-small "%></p>
+				</div>
+			</div>
 		</div>
 	</div>
-	
 </div>
 
-<%=render 'staticpages/linebar'%>
+</br>

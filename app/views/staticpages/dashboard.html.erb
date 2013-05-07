@@ -1,7 +1,15 @@
 <div class="container">
 	<div class="row">
-		<p>note: create a signed in controller
-		how to use full width of page? </p>
-			<%= link_to 'sign out!', destroy_user_session_path, :method =>'delete' %>
+		
+		<%= render 'staticpages/fourSteps' %>
+		
+		<div>
+			User Details:
+			<ul>
+				<li><%= link_to 'Settings', edit_user_registration_path %></li>
+			</ul>
+			
+		</div>
+		
 	</div>
 </div>

@@ -1,8 +1,9 @@
 @import "bootstrap";
 
-$sitegreen: #39b54a;
+$siteGreen: #39b54a;
 $topgreen: #acd373;
 $standardGrey: #636363;
+$siteOrange: #fbe7d1;
 
 @font-face {
     font-family: 'OswaldBold';
@@ -27,6 +28,26 @@ $standardGrey: #636363;
 		padding-top:20px;
 	}
 	
+	
+/* Universals */
+	
+	body {
+		font-size:13px;
+		line-height:15px;
+		h3 {
+			line-height:30px;
+		}
+	}
+	
+	.infoBar{
+		padding:40px 0px;
+		background-color:$siteOrange;
+		border-top: 1px solid $siteGreen;
+		border-bottom: 1px solid $siteGreen;
+		
+	}
+	
+	
 /* Copywrite Area */
 
 	.copywriteArea {
@@ -34,7 +55,7 @@ $standardGrey: #636363;
 	}
 
 	.copywriteArea p{
-		color:$sitegreen;
+		color:$siteGreen;
 	}
 
 /* steps */
@@ -51,11 +72,10 @@ $standardGrey: #636363;
 		color:$standardGrey;
 	}
 
-	.visualheading p{
-		padding-top:5px;
-		color:#39b54a;
+	.visualheading {
+		color:$siteGreen;
 		font-size:1.7em;
-		line-height:25px;	
+		line-height:23px;	
 	}
 	
 	.vsimage {
@@ -70,15 +90,15 @@ $standardGrey: #636363;
 /* Signed In Header */
 	
 	.signedInHeader{
-		height:30px;
-		background-color: $sitegreen;
+		height:40px;
+		background-color: $siteGreen;
 	}
 	
 	
 	/* Resume Area */
 	
 	.FirstResumeArea {
-		border: 1px solid $sitegreen;
+		border: 1px solid $siteGreen;
 		padding:50px 20px 20px 20px ;
 		text-align: center;
 	}
@@ -122,7 +142,7 @@ $standardGrey: #636363;
 
 	.AskForFeedback p{
 		padding-top:5px;
-		color:$sitegreen;
+		color:$siteGreen;
 		font-size:1.7em;
 		line-height:25px;	
 	}
@@ -147,7 +167,7 @@ $standardGrey: #636363;
 		height:150px;
 		width:150px; 
 		border-radius:150px; 
-		border:6px solid $sitegreen; 
+		border:6px solid $siteGreen; 
 		overflow:hidden;
 		margin:auto auto 10px;
 	}
@@ -157,18 +177,11 @@ $standardGrey: #636363;
 		text-align:right;
 	}
 	
-	
-	.alphaSignup{
-		text-align:center;
-	}
-	
+		
 	.thumbnail {
 		padding:20px;
 	}
 	
-	.newUser{
-		padding:40px 0px;
-	}
 	
 	#error_explanation	{
 		/*  */
@@ -181,6 +194,3 @@ $standardGrey: #636363;
 
 	}
 	
-	.newUser {
-		background-color:#fbe7d1;
-	}
