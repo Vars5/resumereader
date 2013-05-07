@@ -4,6 +4,8 @@ $siteGreen: #39b54a;
 $topgreen: #acd373;
 $standardGrey: #636363;
 $siteOrange: #fbe7d1;
+$siteAqua: #4ea39c;
+$siteRed: #9e0b0f;
 
 @font-face {
     font-family: 'OswaldBold';
@@ -56,6 +58,11 @@ $siteOrange: #fbe7d1;
 
 	.copywriteArea p{
 		color:$siteGreen;
+	}
+	
+	.minorTitle {
+		color:$siteRed;
+		text-align:center;
 	}
 
 /* steps */
@@ -163,7 +170,7 @@ $siteOrange: #fbe7d1;
 		padding-bottom:40px;
 	}
 	
-	.wrapper {
+	.circleWrapper {
 		height:150px;
 		width:150px; 
 		border-radius:150px; 

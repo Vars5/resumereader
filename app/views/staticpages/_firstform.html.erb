@@ -1,5 +1,4 @@
 <div class="visualStructureHelp">
-
 	<h3>First, get your resume in the right structure</h3>
 	<div class= "visualheading">
 		Placing your information in the right order makes sure
@@ -22,14 +21,14 @@
 					</p>
 				</br>
 				
-				<%= form_for :placeholder do |f|%>	
+				<%= form_for @user, :as => :user do |f|%>	
 				
 					<div class="SecondResumeArea">
 						<legend> Education </legend>
-						<p><%= f.text_field "University Name", :placeholder => "University/School" %></p>
-						<p><%= f.text_field "Degree Name", :placeholder => "Degree Name" %></p>
-						<p><%= f.text_field "Majors or Specialisation Name", :placeholder => "Majors or Specialisation Name" %></p>
-						<p><%= f.text_field "Marks or GPA", :placeholder => "Marks or GPA" %> </p>
+						<p><%= f.text_field :name	, :placeholder => "University/School" %></p>
+						<p><%= f.text_field :degree, :placeholder => "Degree Name" %></p>
+						<p><%= f.text_field :majors, :placeholder => "Majors or Specialisation Name" %></p>
+						<p><%= f.text_field :marks, :placeholder => "Marks or GPA" %> </p>
 						
 						</br></br></br>
 						

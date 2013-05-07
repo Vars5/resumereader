@@ -15,7 +15,7 @@ class StaticpagesController < ApplicationController
   end
   
   def structure
-    @user = current_user
+    @user = current_user.schools.build
   end
   
 end
