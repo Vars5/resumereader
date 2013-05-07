@@ -7,11 +7,20 @@
   <%= csrf_meta_tags %>
   <%= favicon_link_tag 'favicon.ico' %>
 </head>
-<body>
 
-	<%=render 'staticpages/copywritearea'%>  
+<body>
+	
+	<!-- Header of the Page if signed in-->
+	<% if signed_in? %>
+		<%=render 'layouts/signed_in_header'%>
+	<% else %>
+		<%=render 'staticpages/copywritearea'%>		
+	<% end %>
+	<!-- End Header -->
+	
+	
 	<%= yield %>
 	<%=render 'staticpages/linebar'%>
-
 </body>
+
 </html>

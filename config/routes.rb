@@ -1,11 +1,12 @@
 Resumereader::Application.routes.draw do
   
-  
+  root :to => 'staticpages#dashboard', :constraints => lambda {|r| r.env["warden"].authenticate? }
   root :to => 'staticpages#home'
   
   match '/structure', :to => 'staticpages#structure'
   match '/feedback', :to => 'staticpages#feedback'
   match '/resumeQuestions', :to => 'staticpages#resumeQuestions'
+  match '/test', :to => 'staticpages#test_signed_in'
   
   devise_for :users
 

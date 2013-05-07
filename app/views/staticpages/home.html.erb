@@ -1,9 +1,19 @@
 <div class="container">
-	<%=render 'staticpages/alphaSignup'%>
+	
+	<% if signed_in? %>
+		<%= link_to 'sign out!', destroy_user_session_path, :method =>'delete' %>
+	<% else %>
+		<%= link_to 'sign in!', new_user_session_path%>
+		<%=render 'staticpages/alphaSignup'%>
+		<!-- Evenutally use some sort of controller for signed in users -->
+	<% end %>
+	
+
+
 	<%=render 'staticpages/linebar'%>
 	<%=render 'staticpages/fourSteps'%> 
-	<%=render 'staticpages/linebar'%>
-	<%=render 'staticpages/resumeWriteSection'%>
+
+	<%=link_to 'Test Page', test_path%>
 </div>
 
 

@@ -1,0 +1,19 @@
+Plan:
+
+Get a unique login controller working
+
+Each user should have a resume. Each resume should have firstname, lastname, ph, email, education section, school, major, mark etc.
+
+Each resume should have many jobs. Each job has a set of information. 
+
+Each resume should have many extrac, achievements etc. 
+
+This should allow us to collect base information.
+
+Also have a pge where everything can be viewed, ideally printed out as a word doc, rtf. Also can be printed to pdf in various formats
+
+
+Then second section.
+Each job-in-resume has informative dot-points
+We have questions that ask things that try to emphasise the important things
+
