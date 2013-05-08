@@ -4,7 +4,10 @@
 		<div class="row">
 			<%= link_to image_tag('resumeQuery_white.png'), root_path %>
 			<div class="pull-right">
-				<%= link_to 'Log Out', destroy_user_session_path, :method =>'delete' %>
+				<ul class="inline">
+					<li><%= link_to 'User Settings', edit_user_registration_path %></li>
+					<li><%= link_to 'Log Out', destroy_user_session_path, :method =>'delete' %></li>
+				</ul>
 			</div>	
 		</div>
 		

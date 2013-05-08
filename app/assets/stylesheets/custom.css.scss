@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 $siteGreen: #39b54a;
-$topgreen: #acd373;
+$topGreen: #54bb62;
 $standardGrey: #636363;
 $siteOrange: #fbe7d1;
 $siteAqua: #4ea39c;
@@ -37,7 +37,7 @@ $white: #ffffff;
 	
 	body {
 		font-size:13px;
-		line-height:15px;
+		line-height:1.28;
 		h3 {
 			line-height:30px;
 		}
@@ -50,6 +50,11 @@ $white: #ffffff;
 		border-bottom: 1px solid $siteGreen;
 		
 	}
+	
+	a:hover {
+		text-decoration:none;
+	}
+	
 	
 	
 /* Copywrite Area */
@@ -101,11 +106,20 @@ $white: #ffffff;
 /* Signed In Header */
 	
 	.signedInHeader{
-		height:45px;
+		height:40px;
 		background-color: $siteGreen;
 		a{
 			color:$white;
 		}
+		a:hover{
+			background-color:$topGreen;
+			img {
+				background-color:$topGreen;
+			}
+		}
+
+
+
 	}
 	
 	

@@ -11,5 +11,6 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
   has_many :schools, dependent: :destroy
+  has_many :employments, dependent: :destroy
   
 end

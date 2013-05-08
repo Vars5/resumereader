@@ -28,19 +28,22 @@
 						<p><%= f.text_field :name	, :placeholder => "University/School" %></p>
 						<p><%= f.text_field :degree, :placeholder => "Degree Name" %></p>
 						<p><%= f.text_field :majors, :placeholder => "Majors or Specialisation Name" %></p>
-						<p><%= f.text_field :marks, :placeholder => "Marks or GPA" %> </p>
+						<p><%= f.text_field :marks,  :placeholder => "Marks or GPA" %> </p>
 						
 						</br></br></br>
 						
-					<% if false %>	
+					
 						<legend> Work Experience </legend>
 						
-						<p><%= f.text_field "Company Name", :placeholder => "Company Name" %> </p>
-						<p><%= f.text_field "Job Role", :placeholder => "Job Role" %> </p>
-						<p>Have an option to add another job here | Refer to Step 2 for good dot points! </p>
-
-						</br></br></br>
 						
+						<%= fields_for @employment do |fa| %>
+							<p><%= fa.text_field :company, :placeholder => "Company Name" %> </p>
+							<p><%= fa.text_field :role, :placeholder => "Job Role" %> </p>
+
+						<% end %>
+						
+						</br></br></br>
+					<% if false %>		
 						<legend> Extracurricular Activities </legend>
 						
 						<p><%= f.text_field "Organisation Name", :placeholder => "Organisation Name" %> </p>

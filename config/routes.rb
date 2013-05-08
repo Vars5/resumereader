@@ -6,9 +6,11 @@ Resumereader::Application.routes.draw do
   match '/structure', :to => 'staticpages#structure'
   match '/feedback', :to => 'staticpages#feedback'
   match '/resumeQuestions', :to => 'staticpages#resumeQuestions'
+  match '/about', :to => 'staticpages#about'
 
-  
   resources :schools 
+  resources :employment
+
   devise_for :users
 
   # The priority is based upon order of creation:
