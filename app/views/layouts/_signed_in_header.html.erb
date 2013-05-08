@@ -2,8 +2,10 @@
 	
 	<div class="container">
 		<div class="row">
-			<%= link_to 'resumeQuery signed in homepage', root_path %>
-			<%= link_to 'sign out!', destroy_user_session_path, :method =>'delete' %>
+			<%= link_to image_tag('resumeQuery_white.png'), root_path %>
+			<div class="pull-right">
+				<%= link_to 'Log Out', destroy_user_session_path, :method =>'delete' %>
+			</div>	
 		</div>
 		
 	</div>

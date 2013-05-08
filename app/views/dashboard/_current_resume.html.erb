@@ -15,7 +15,7 @@
 
 <legend> Education <div class="pull-right"><%= link_to 'Edit', structure_path%></div></legend>
 	
-	<% if current_user.schools != nil? %>
+	<% if current_user.schools.count != 0 %>
 		<% current_user.schools.each do |school| %>
 			<ul class="unstyled">
 				<li><strong><%= school.name %></strong></li>
@@ -23,9 +23,15 @@
 				<li><%= school.majors %></li>
 				<li><%= school.marks%></li>
 			</ul>	
-		<% end %>	
+		<% end %>
+
+	<% else %>	
+		<%=link_to 'Start filling in your educational details', structure_path%>	
 	<% end %>
 
-	</br>
+	</br></br>
 	
-<legend> Employment <div class="pull-right"><%= link_to 'Edit', structure_path%></div></legend>	
+<legend> Employment <div class="pull-right"><%= link_to 'Edit', structure_path%></div></legend>
+
+		</br></br>
+<legend> Extracurricular Activities <div class="pull-right"><%= link_to 'Edit', structure_path%></div></legend>	

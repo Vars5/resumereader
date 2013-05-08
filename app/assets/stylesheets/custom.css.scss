@@ -7,6 +7,7 @@ $siteOrange: #fbe7d1;
 $siteAqua: #4ea39c;
 $siteRed: #9e0b0f;
 $siteText: #333333;
+$white: #ffffff;
 
 @font-face {
     font-family: 'OswaldBold';
@@ -100,8 +101,11 @@ $siteText: #333333;
 /* Signed In Header */
 	
 	.signedInHeader{
-		height:40px;
+		height:45px;
 		background-color: $siteGreen;
+		a{
+			color:$white;
+		}
 	}
 	
 	
