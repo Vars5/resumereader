@@ -6,6 +6,7 @@ $standardGrey: #636363;
 $siteOrange: #fbe7d1;
 $siteAqua: #4ea39c;
 $siteRed: #9e0b0f;
+$siteText: #333333;
 
 @font-face {
     font-family: 'OswaldBold';
@@ -60,9 +61,11 @@ $siteRed: #9e0b0f;
 		color:$siteGreen;
 	}
 	
-	.minorTitle {
-		color:$siteRed;
-		text-align:center;
+	.copyText {
+		color:$siteText;
+		:hover {
+			color:$siteGreen;
+		}
 	}
 
 /* steps */
