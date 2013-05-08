@@ -14,12 +14,18 @@
 
 
 <legend> Education <div class="pull-right"><%= link_to 'Edit', structure_path%></div></legend>
-
-	<% current_user.schools.each do |school| %>
-		<ul class="unstyled">
-			<li><strong><%= school.name %></strong></li>
-			<li><%= school.degree %></li>
-			<li><%= school.majors %></li>
-			<li><%= school.marks%></li>
-		</ul>	
+	
+	<% if current_user.schools != nil? %>
+		<% current_user.schools.each do |school| %>
+			<ul class="unstyled">
+				<li><strong><%= school.name %></strong></li>
+				<li><%= school.degree %></li>
+				<li><%= school.majors %></li>
+				<li><%= school.marks%></li>
+			</ul>	
+		<% end %>	
 	<% end %>
+
+	</br>
+	
+<legend> Employment <div class="pull-right"><%= link_to 'Edit', structure_path%></div></legend>	
