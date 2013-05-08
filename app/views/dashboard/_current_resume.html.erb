@@ -1,0 +1,25 @@
+<div class="text-center">
+	<h3><%= current_user.first_name%>
+		<%= current_user.last_name%></h3>
+	<p>Email: <%= current_user.email%></p>
+	<p>
+		<% if current_user.mobile_number == nil %>
+		
+		<% else %>
+			Contact Number: <%= current_user.mobile_number %>
+		<% end %>
+		</p>
+	</br>
+</div>
+
+
+<legend> Education <div class="pull-right"><%= link_to 'Edit', structure_path%></div></legend>
+
+	<% current_user.schools.each do |school| %>
+		<ul class="unstyled">
+			<li><strong><%= school.name %></strong></li>
+			<li><%= school.degree %></li>
+			<li><%= school.majors %></li>
+			<li><%= school.marks%></li>
+		</ul>	
+	<% end %>
