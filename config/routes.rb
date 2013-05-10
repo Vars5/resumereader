@@ -3,14 +3,14 @@ Resumereader::Application.routes.draw do
   root :to => 'staticpages#dashboard', :constraints => lambda {|r| r.env["warden"].authenticate? }
   root :to => 'staticpages#home'
   
-  match '/structure', :to => 'staticpages#structure'
   match '/feedback', :to => 'staticpages#feedback'
   match '/resumeQuestions', :to => 'staticpages#resumeQuestions'
   match '/about', :to => 'staticpages#about'
 
   resources :schools 
-  resources :employment
-
+  resources :employments
+  resources :extracurriculars
+  
   devise_for :users
 
   # The priority is based upon order of creation:

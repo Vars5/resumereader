@@ -15,7 +15,7 @@
 </div>
 
 
-<legend> Education <div class="pull-right"><%= link_to 'Edit', structure_path%></div></legend>
+<legend> Education <div class="pull-right"><%= link_to 'Add Education', new_school_path%></div></legend>
 	
 	<% if @schoolCount != 0 %>
 		<% @schoolAll.each do |school| %>
@@ -30,16 +30,16 @@
 		<% end %>
 
 	<% else %>	
-		<%=link_to 'Start filling in your educational details', structure_path %>	
+		<%=link_to 'Start filling in your educational details', new_school_path %>	
 	<% end %>
 
 	</br></br>
 	
-<legend> Employment <div class="pull-right"><%= link_to 'Edit', structure_path%></div></legend>
+<legend> Employment <div class="pull-right"><%= link_to 'Add Employment Details', new_employment_path %></div></legend>
 
 	<% if @employmentCount != 0 %>
 		<% @employmentAll.each do |employment| %>
-			<% link_to employment do %>
+			<%= link_to "employments/#{employment.id}/edit" do %>
 				<ul class="unstyled">
 					<li><strong><%= employment.company %></strong></li>
 					<li><%= employment.role %></li>
@@ -47,10 +47,26 @@
 			<% end %>
 		<% end %>
 	<% else %>
-		<%=link_to 'Start filling in your Employment details', structure_path %>
+		<%=link_to 'Start filling in your Employment details', new_employment_path %>
 	<% end %>	
 	
 				
 					
 		</br></br>
-<legend> Extracurricular Activities <div class="pull-right"><%= link_to 'Edit', structure_path%></div></legend>	
+<legend> Extracurricular Activities <div class="pull-right"><%= link_to 'Add Extracurricular Details', new_extracurricular_path %></div></legend>	
+
+	<% if @extracurricularCount != 0 %>
+		<% @extracurricularAll.each do |extracurricular| %>
+			<%= link_to "extracurriculars/#{extracurricular.id}/edit" do %>
+				<ul class="unstyled">
+					<li><strong><%= extracurricular.name %></strong></li>
+					<li><%= extracurricular.role %></li>
+				</ul>
+			<% end %>
+		<% end %>
+	<% else %>
+		<%=link_to 'Start filling in your Employment details', new_extracurricular_path %>
+	<% end %>
+
+
+

@@ -1,11 +1,17 @@
 class SchoolsController < ApplicationController
 
+  
+  def new
+    @school=current_user.schools.build
+  
+  end
+  
   def create
     @user=current_user.schools.build(params[:user])
     if @user.save
       redirect_to root_url
     else
-
+      
     end
   end
   
@@ -14,7 +20,7 @@ class SchoolsController < ApplicationController
   end
   
   def edit
-    @user=current_user.schools.find_by_id(params[:id])
+    @user = current_user.schools.find_by_id(params[:id])
   end
   
   def update

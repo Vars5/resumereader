@@ -1,0 +1,18 @@
+<div class="container">
+	<div class="row">
+		
+		<legend>Edit Employment</legend>
+		<%= form_for @extracurricular, :as => :employment do |f| %>
+		
+			<%= f.text_field :name, :placeholder => "Organisation Name" %></br>
+			<%= f.text_field :role,    :placeholder => "Role" %>
+			
+			<%= f.submit %>
+			
+		<% end %>
+		
+		<%= link_to "Delete This Employment Record", @extracurricular, method: :delete,
+															  data: { confirm: 'You Sure?'}%>
+		
+	</div>
+</div>

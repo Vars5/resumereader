@@ -4,6 +4,6 @@ class School < ActiveRecord::Base
   
   validates :user_id, presence: :true
   validates :name, presence: :true
-  validates :majors, presence: :true
+  validates :degree, presence: :true
   
 end
