@@ -26,6 +26,8 @@ class StaticpagesController < ApplicationController
     @employmentCount      = current_user.employments.count
     @extracurricularAll   = current_user.extracurriculars
     @extracurricularCount = current_user.extracurriculars.count
+    #@bulletpointsAll      = Bullet.where(bulletable_id = "1", bulletable_type = "employment").all  
+  
   end
   
 end

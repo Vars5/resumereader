@@ -1,5 +1,5 @@
 <div class="text-center">
-	<h3><%= current_user.first_name%><%= current_user.last_name%></h3>
+	<h3><%= current_user.first_name%> <%= current_user.last_name%></h3>
 	<ul class="unstyled">
 		<li>Email: <%= current_user.email %></li> 
 		<% if current_user.mobile_number != nil %>
@@ -18,6 +18,9 @@
 				<li><%= school.degree %></li>
 				<li><%= school.majors %></li>
 				<li><%= school.marks%></li>
+				
+				
+				
 			</ul>	
 		<% end %>
 	<% end %>
@@ -34,6 +37,17 @@
 				<li><strong><%= employment.company %></strong></li>
 				<li><%= employment.role %></li>
 			</ul>
+			
+			<ul>
+			<% Bullet.where("bulletable_id = #{employment.id}", bulletable_type = "employment").each do |bullets| %>
+				
+				<li><%= bullets.bulletpoint %></li>
+				
+			<% end %>
+			</ul>
+			
+			
+			
 		<% end %>
 	<% end %>
 <% else %>
@@ -49,6 +63,16 @@
 				<li><strong><%= extracurricular.name %></strong></li>
 				<li><%= extracurricular.role %></li>
 			</ul>
+			
+				<ul>
+				<% Bullet.where("bulletable_id = #{extracurricular.id}", bulletable_type = "extracurricular").each do |bullets| %>
+
+					<li><%= bullets.bulletpoint %></li>
+
+				<% end %>
+				</ul>
+			
+			
 		<% end %>
 	<% end %>
 <% else %>
