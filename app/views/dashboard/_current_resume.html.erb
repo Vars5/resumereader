@@ -1,72 +1,59 @@
 <div class="text-center">
-	<h3><%= current_user.first_name%>
-		<%= current_user.last_name%></h3>
+	<h3><%= current_user.first_name%><%= current_user.last_name%></h3>
 	<ul class="unstyled">
-		<li>Email: <%= current_user.email%></li> 
-
-	<% if current_user.mobile_number == nil %>
-		
-	<% else %>
-		<li>Contact Number: <%= current_user.mobile_number %></li>
-	<% end %>
-	</p>
-	
+		<li>Email: <%= current_user.email %></li> 
+		<% if current_user.mobile_number != nil %>
+			<li>Contact Number: <%= current_user.mobile_number %></li>
+		<% end %>
+	</ul>
 	</br>
 </div>
 
-
 <legend> Education <div class="pull-right"><%= link_to 'Add Education', new_school_path%></div></legend>
-	
-	<% if @schoolCount != 0 %>
-		<% @schoolAll.each do |school| %>
-			<%= link_to "/schools/#{school.id}/edit" do %>
-				<ul class="unstyled">
-					<li><strong><%= school.name %></strong></li>
-					<li><%= school.degree %></li>
-					<li><%= school.majors %></li>
-					<li><%= school.marks%></li>
-				</ul>	
-			<% end %>
+<% if @schoolCount != 0 %>
+	<% @schoolAll.each do |school| %>
+		<%= link_to "/schools/#{school.id}/edit" do %>
+			<ul class="unstyled">
+				<li><strong><%= school.name %></strong></li>
+				<li><%= school.degree %></li>
+				<li><%= school.majors %></li>
+				<li><%= school.marks%></li>
+			</ul>	
 		<% end %>
-
-	<% else %>	
-		<%=link_to 'Start filling in your educational details', new_school_path %>	
 	<% end %>
-
-	</br></br>
+<% else %>	
+	<%=link_to 'Start filling in your educational details', new_school_path %>	
+<% end %>
+</br></br>
 	
 <legend> Employment <div class="pull-right"><%= link_to 'Add Employment Details', new_employment_path %></div></legend>
-
-	<% if @employmentCount != 0 %>
-		<% @employmentAll.each do |employment| %>
-			<%= link_to "employments/#{employment.id}/edit" do %>
-				<ul class="unstyled">
-					<li><strong><%= employment.company %></strong></li>
-					<li><%= employment.role %></li>
-				</ul>
-			<% end %>
+<% if @employmentCount != 0 %>
+	<% @employmentAll.each do |employment| %>
+		<%= link_to "employments/#{employment.id}/edit" do %>
+			<ul class="unstyled">
+				<li><strong><%= employment.company %></strong></li>
+				<li><%= employment.role %></li>
+			</ul>
 		<% end %>
-	<% else %>
-		<%=link_to 'Start filling in your Employment details', new_employment_path %>
-	<% end %>	
-	
-				
-					
-		</br></br>
-<legend> Extracurricular Activities <div class="pull-right"><%= link_to 'Add Extracurricular Details', new_extracurricular_path %></div></legend>	
-
-	<% if @extracurricularCount != 0 %>
-		<% @extracurricularAll.each do |extracurricular| %>
-			<%= link_to "extracurriculars/#{extracurricular.id}/edit" do %>
-				<ul class="unstyled">
-					<li><strong><%= extracurricular.name %></strong></li>
-					<li><%= extracurricular.role %></li>
-				</ul>
-			<% end %>
-		<% end %>
-	<% else %>
-		<%=link_to 'Start filling in your Employment details', new_extracurricular_path %>
 	<% end %>
+<% else %>
+	<%=link_to 'Start filling in your Employment details', new_employment_path %>
+<% end %>						
+</br></br>
+
+<legend> Extracurricular Activities <div class="pull-right"><%= link_to 'Add Extracurricular Details', new_extracurricular_path %></div></legend>	
+<% if @extracurricularCount != 0 %>
+	<% @extracurricularAll.each do |extracurricular| %>
+		<%= link_to "extracurriculars/#{extracurricular.id}/edit" do %>
+			<ul class="unstyled">
+				<li><strong><%= extracurricular.name %></strong></li>
+				<li><%= extracurricular.role %></li>
+			</ul>
+		<% end %>
+	<% end %>
+<% else %>
+	<%=link_to 'Start filling in your Employment details', new_extracurricular_path %>
+<% end %>
 
 
 

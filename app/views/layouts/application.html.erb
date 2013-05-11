@@ -1,28 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>ResumeQuery</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <%= favicon_link_tag 'favicon.ico' %>
-</head>
-
-<body>
-	
-	<!-- Header of the Page if signed in-->
-	<% if signed_in? %>
-		<%=render 'layouts/signed_in_header'%>
-	<% else %>
-		<%=render 'staticpages/copywritearea'%>		
-	<% end %>
-	<!-- End Header -->
-	
-	
-	<%= yield %>
-
-	<%=render 'layouts/footer'%>
-	<%=render 'shared/google_analytics' if Rails.env.production? %>
-</body>
-
+	<head>
+	  <title>ResumeQuery</title>
+	  <%= stylesheet_link_tag    "application", :media => "all" %>
+	  <%= javascript_include_tag "application" %>
+	  <%= csrf_meta_tags %>
+	  <%= favicon_link_tag 'favicon.ico' %>
+	</head>
+	<body>
+		<% if signed_in? %>
+			<%=render 'layouts/signed_in_header'%>
+		<% else %>
+			<%=render 'staticpages/copywritearea'%>		
+		<% end %>
+		<%= yield %>
+		<%=render 'layouts/footer'%>
+		<%=render 'shared/google_analytics' if Rails.env.production? %>
+	</body>
 </html>

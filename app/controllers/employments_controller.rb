@@ -1,6 +1,5 @@
 class EmploymentsController < ApplicationController
-
-
+  
   def new
     @employment = current_user.employments.build
   end
@@ -11,8 +10,7 @@ class EmploymentsController < ApplicationController
       redirect_to root_path
     else
       redirect_to root_path
-    end
-      
+    end   
   end
   
   def edit
