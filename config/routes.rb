@@ -1,8 +1,8 @@
 Resumereader::Application.routes.draw do
 
-  get "bullets/index"
+  get "responses/index"
 
-  get "bullets/new"
+  get "responses/new"
 
   root :to => 'staticpages#dashboard', :constraints => lambda {|r| r.env["warden"].authenticate? }
   root :to => 'staticpages#home'
@@ -12,11 +12,19 @@ Resumereader::Application.routes.draw do
   match '/about', :to => 'staticpages#about'
 
   resources :schools 
-  resources :employments
-  resources :extracurriculars
   
-  resources :bullets
-  resources :responses
+  resources :employments do
+    resources :bullets
+    resources :responses
+  end
+
+  resources :extracurriculars do
+    resources :bullets
+    resources :responses
+  end
+  
+  
+  
   
   devise_for :users
 
