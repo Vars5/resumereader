@@ -1,5 +1,9 @@
 Resumereader::Application.routes.draw do
 
+  get "bullets/index"
+
+  get "bullets/new"
+
   root :to => 'staticpages#dashboard', :constraints => lambda {|r| r.env["warden"].authenticate? }
   root :to => 'staticpages#home'
   
