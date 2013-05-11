@@ -22,7 +22,7 @@
 	<%= yield %>
 
 	<%=render 'layouts/footer'%>
-	<%=render 'shared/google_analytics'%>
+	<%=render 'shared/google_analytics' if Rails.env.production? %>
 </body>
 
 </html>
