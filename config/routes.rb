@@ -11,6 +11,9 @@ Resumereader::Application.routes.draw do
   resources :employments
   resources :extracurriculars
   
+  resources :bullets
+  resources :responses
+  
   devise_for :users
 
   # The priority is based upon order of creation:
