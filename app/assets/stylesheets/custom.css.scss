@@ -28,8 +28,9 @@ $white: #ffffff;
          url('Oswald-Regular-webfont.woff') format('woff'),
          url('Oswald-Regular-webfont.ttf') format('truetype'),
          url('Oswald-Regular-webfont.svg#OswaldBook') format('svg');
-		text-align:center;
-		padding-top:20px;
+	    font-weight: normal;
+	    font-style: normal;
+
 	}
 	
 	
@@ -145,6 +146,17 @@ $white: #ffffff;
 	.dashboardBar {
 		text-align:center;
 		padding-top:30px;
+	}
+	
+	.dashboardHeader{
+		background-color:$topGreen;
+		height:180px;
+		color:white;
+		font-family: OswaldBook;
+		vertical-align:text-bottom;
+		line-height:200px;
+		text-align:center;
+		font-size:2.2em;
 	}
 	
 

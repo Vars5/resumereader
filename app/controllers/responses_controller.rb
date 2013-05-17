@@ -1,7 +1,7 @@
 class ResponsesController < ApplicationController
   
   before_filter :load_responseable
-  
+  before_filter :authenticate_user!
   
   def index
     @responses = @responseable.responses

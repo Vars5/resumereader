@@ -1,5 +1,7 @@
 class ExtracurricularsController < ApplicationController
 
+  before_filter :authenticate_user!
+
   def new
     @extracurricular = current_user.extracurriculars.build
   end
@@ -15,6 +17,12 @@ class ExtracurricularsController < ApplicationController
   
   def edit
     @extracurricular = current_user.extracurriculars.find_by_id(params[:id])
+    if @extracurricular == nil
+      #change to error page once set up
+      redirect_to root_path
+    end
+  
+  
   end
   
   def update

@@ -1,7 +1,7 @@
 class BulletsController < ApplicationController
   
   before_filter :load_bulletable
-  
+  before_filter :authenticate_user!
   
   def index
     @bullets = @bulletable.bullets

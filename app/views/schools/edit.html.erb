@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<legend>Edit Education information</legend>
-		<%= form_for @user, :as => :user do |f| %>
+		<%= form_for @school, :as => :school do |f| %>
 			<p><%= f.text_field :name	, :placeholder => "University/School" %></p>
 			<p><%= f.text_field :degree, :placeholder => "Degree Name", :style => "width:500px;" %></p>
 			<p><%= f.text_field :majors, :placeholder => "Majors or Specialisation Name", :style => "width:500px;" %></p>

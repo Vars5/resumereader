@@ -1,5 +1,7 @@
 class EmploymentsController < ApplicationController
   
+  before_filter :authenticate_user!
+  
   def new
     @employment = current_user.employments.build
   end
@@ -15,6 +17,10 @@ class EmploymentsController < ApplicationController
   
   def edit
     @employment = current_user.employments.find_by_id(params[:id])
+    if @employment == nil
+      #change this to an error page once I make one
+      redirect_to root_path
+    end
   end
   
   def update
