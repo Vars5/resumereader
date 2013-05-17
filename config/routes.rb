@@ -1,5 +1,7 @@
 Resumereader::Application.routes.draw do
 
+  get "questions/new"
+
   get "responses/index"
 
   get "responses/new"
