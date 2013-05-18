@@ -73,6 +73,7 @@ $white: #ffffff;
 		:hover {
 			color:$siteGreen;
 		}
+		text-align:center
 	}
 
 /* steps */
@@ -102,11 +103,12 @@ $white: #ffffff;
 	.signedInHeader{
 		height:40px;
 		background-color: $siteGreen;
+		line-height:40px;
 		a{
 			color:$white;
 		}
 		a:hover{
-			background-color:$topGreen;
+			color:$standardGrey;
 			img {
 				background-color:$topGreen;
 			}
@@ -140,8 +142,11 @@ $white: #ffffff;
 
 	.resumeView {
 		padding:40px 30px;
-		border-left:1px solid $siteGreen;
+		border-left: 1px solid $siteGreen;
+		border-right: 1px solid $siteGreen;
+		background-color:white;
 	}
+	
 	
 	.dashboardBar {
 		text-align:center;
@@ -223,6 +228,7 @@ $white: #ffffff;
 	
 	.copywriteAreaRight {
 		text-align:right;
+		line-height:25px;
 	}
 	
 		
