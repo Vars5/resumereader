@@ -34,9 +34,8 @@
 	<% end %>
 	</div>
 
-</br></br>
 	
-<legend> Employment <div class="pull-right"><%= link_to 'Add Employment Details', new_employment_path %></div></legend>
+<legend> Employment <div class="pull-right"><%= link_to 'Add Employment', new_employment_path %></div></legend>
 <% if @employmentCount != 0 %>
 	<% @employmentAll.each do |employment| %>
 		<%= link_to "employments/#{employment.id}/edit" do %>

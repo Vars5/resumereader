@@ -38,7 +38,7 @@ class SchoolsController < ApplicationController
       flash[:success] = "School Updated"
       redirect_to root_path
     else
-      render 'edit'
+      redirect_to root_path
     end
   end
   
