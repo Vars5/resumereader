@@ -39,18 +39,20 @@
 <% if @employmentCount != 0 %>
 	<% @employmentAll.each do |employment| %>
 	
-		<div class="row-fluid">
-			<div class="span10">
-				<%= form_for employment, :as => :employment do |f| %>
-					<%= f.text_field :company, :placeholder => "Company Name", :style =>"font-weight:bold" %></br>
-					<%= f.text_field :role,    :placeholder => "Job Role" %>
-			</div>
+		<div class="resumeForm">
+			<div class="row-fluid">
+				<div class="span10">
+					<%= form_for employment, :as => :employment do |f| %>
+						<%= f.text_field :company, :placeholder => "Company Name", :style =>"font-weight:bold" %></br>
+						<%= f.text_field :role,    :placeholder => "Job Role" %>
+				</div>
 			
-			<div class="span2">
-					<%= f.submit :class=>"btn btn-warning" %>
-				<% end %>
-		<%= link_to "Delete Work", employment, method: :delete,
-															  data: { confirm: 'You Sure?'}%>
+				<div class="span2">
+						<%= f.submit :class=>"btn btn-warning" %>
+					<% end %>
+			<%= link_to "Delete Work", employment, method: :delete,
+																  data: { confirm: 'You Sure?'}%>
+				</div>
 			</div>
 		</div>
 
@@ -64,25 +66,26 @@
 <% else %>
 	<%=link_to 'Start filling in your Employment details', new_employment_path %>
 <% end %>						
-</br></br>
 
 <legend> Extracurricular Activities <div class="pull-right"><%= link_to '+', new_extracurricular_path %></div></legend>	
 <% if @extracurricularCount != 0 %>
 	<% @extracurricularAll.each do |extracurricular| %>
 		<%= form_for extracurricular, :as => :employment do |f| %>
 		
-		<div class="row-fluid">
-			<div class="span10">
-				<%= f.text_field :name, :placeholder => "Organisation Name", :style => "font-weight:bold" %></br>
-				<%= f.text_field :role,    :placeholder => "Role" %>
-			</div>
+		<div class="resumeForm">
+			<div class="row-fluid">
+				<div class="span10">
+					<%= f.text_field :name, :placeholder => "Organisation Name", :style => "font-weight:bold" %></br>
+					<%= f.text_field :role,    :placeholder => "Role" %>
+				</div>
 			
-			<div class="span2">
-				<%= f.submit :class =>"btn btn-warning" %>
-				<%= link_to "Delete EC", extracurricular, method: :delete,
-															  data: { confirm: 'You Sure?'}%>
+				<div class="span2">
+					<%= f.submit :class =>"btn btn-warning" %>
+					<%= link_to "Delete EC", extracurricular, method: :delete,
+																  data: { confirm: 'You Sure?'}%>
+				</div>
+			<% end %>		
 			</div>
-		<% end %>		
 		</div>
 		<ul>
 			<% Bullet.where("bulletable_id = #{extracurricular.id}", bulletable_type = "extracurricular").each do |bullets| %>
