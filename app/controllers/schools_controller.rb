@@ -29,7 +29,6 @@ class SchoolsController < ApplicationController
       redirect_to root_path
       #change to an error page     
     end
-      
   end
   
   def update
@@ -43,7 +42,7 @@ class SchoolsController < ApplicationController
   end
   
   def destroy
-    @user=current_user.schools.find_by_id(params[:id]).destroy
+    @user = current_user.schools.find_by_id(params[:id]).destroy
     redirect_to root_path
   end
   

@@ -22,10 +22,10 @@
 				<%= f.text_field :majors, :placeholder => "Add in majors or Specialisation Name"%>
 				<%= f.text_field :marks,  :placeholder => "Add in marks or GPA" %></br></br>				
 			</div>	
-			
+
 			<div class="span2">
 				<%= f.submit "Update Education", :class => "btn btn-warning"  %>
-				<%= link_to "Delete This School", @user, method: :delete,
+				<%= link_to "Delete School", school, method: :delete,
 																	  data: { confirm: 'You Sure?'}%>				
 			</div>
 		</div>
@@ -35,50 +35,62 @@
 	</div>
 
 	
-<legend> Employment <div class="pull-right"><%= link_to 'Add Employment', new_employment_path %></div></legend>
+<legend> Employment <div class="pull-right"><%= link_to '+', new_employment_path %></div></legend>
 <% if @employmentCount != 0 %>
 	<% @employmentAll.each do |employment| %>
-		<%= link_to "employments/#{employment.id}/edit" do %>
-			<ul class="unstyled">
-				<li><strong><%= employment.company %></strong></li>
-				<li><%= employment.role %></li>
-			</ul>
+	
+		<div class="row-fluid">
+			<div class="span10">
+				<%= form_for employment, :as => :employment do |f| %>
+					<%= f.text_field :company, :placeholder => "Company Name", :style =>"font-weight:bold" %></br>
+					<%= f.text_field :role,    :placeholder => "Job Role" %>
+			</div>
 			
-			<ul>
-			<% Bullet.where("bulletable_id = #{employment.id}", bulletable_type = "employment").each do |bullets| %>
-				
-				<li><%= bullets.bulletpoint %></li>
-				
-			<% end %>
-			</ul>
-			</br>
+			<div class="span2">
+					<%= f.submit :class=>"btn btn-warning" %>
+				<% end %>
+		<%= link_to "Delete Work", employment, method: :delete,
+															  data: { confirm: 'You Sure?'}%>
+			</div>
+		</div>
+
+		<ul>
+		<% Bullet.where("bulletable_id = #{employment.id}", bulletable_type = "employment").each do |bullets| %>
+			<li><%= bullets.bulletpoint %></li>
 		<% end %>
+		</ul>
+		</br>
 	<% end %>
 <% else %>
 	<%=link_to 'Start filling in your Employment details', new_employment_path %>
 <% end %>						
 </br></br>
 
-<legend> Extracurricular Activities <div class="pull-right"><%= link_to 'Add Extracurricular Details', new_extracurricular_path %></div></legend>	
+<legend> Extracurricular Activities <div class="pull-right"><%= link_to '+', new_extracurricular_path %></div></legend>	
 <% if @extracurricularCount != 0 %>
 	<% @extracurricularAll.each do |extracurricular| %>
-		<%= link_to "extracurriculars/#{extracurricular.id}/edit" do %>
-			<ul class="unstyled">
-				<li><strong><%= extracurricular.name %></strong></li>
-				<li><%= extracurricular.role %></li>
-			</ul>
+		<%= form_for extracurricular, :as => :employment do |f| %>
+		
+		<div class="row-fluid">
+			<div class="span10">
+				<%= f.text_field :name, :placeholder => "Organisation Name", :style => "font-weight:bold" %></br>
+				<%= f.text_field :role,    :placeholder => "Role" %>
+			</div>
 			
-				<ul>
-				<% Bullet.where("bulletable_id = #{extracurricular.id}", bulletable_type = "extracurricular").each do |bullets| %>
+			<div class="span2">
+				<%= f.submit :class =>"btn btn-warning" %>
+				<%= link_to "Delete EC", extracurricular, method: :delete,
+															  data: { confirm: 'You Sure?'}%>
+			</div>
+		<% end %>		
+		</div>
+		<ul>
+			<% Bullet.where("bulletable_id = #{extracurricular.id}", bulletable_type = "extracurricular").each do |bullets| %>
+				<li><%= bullets.bulletpoint %></li>
+			<% end %>
+		</ul>
+		</br>
 
-					<li><%= bullets.bulletpoint %></li>
-
-				<% end %>
-				</ul>
-				</br>
-			
-			
-		<% end %>
 	<% end %>
 <% else %>
 	<%=link_to 'Start filling in your Employment details', new_extracurricular_path %>

@@ -168,10 +168,13 @@ $offWhite: #FFDFCC;
 			padding:0px;
 			font-size:13px;
 			width:100%;
+			background-color:$offWhite;
+			border-radius:0;
 		}
 		input:focus{
-			background-color:$offWhite;
 			outline:none;
+			border-radius:0;
+			
 		}
 	}
 	
