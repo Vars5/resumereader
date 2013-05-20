@@ -8,6 +8,7 @@ $siteAqua: #4ea39c;
 $siteRed: #9e0b0f;
 $siteText: #333333;
 $offWhite: #FCFBF7;
+$textAqua: #DEFAF6;
 
 @font-face {
     font-family: 'OswaldBold';
@@ -184,9 +185,14 @@ $offWhite: #FCFBF7;
 	.currentGoal {
 		margin:15px 0px;
 		background-color:$siteAqua;
-		color:white;
-		padding:5px;
-		.span9{
+		padding:10px 10px 0px;
+		font-size:1.1em;
+		color: $textAqua;
+		a{
+			color:$textAqua;
+		}
+		a:hover{
+			color:white;
 		}
 		input{
 			outline: none;
@@ -195,8 +201,7 @@ $offWhite: #FCFBF7;
 			margin:0px;
 			padding:5px;
 			font-size:13px;
-
-			background-color:$offWhite;
+			background-color:$textAqua;
 			border-radius:0;
 		}
 	}
@@ -314,6 +319,5 @@ $offWhite: #FCFBF7;
 	.span7 {
 		textarea{
 			width:97%;
-			color:orange;
 		}
 	}

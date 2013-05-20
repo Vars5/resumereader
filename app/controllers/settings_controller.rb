@@ -7,7 +7,10 @@
 class SettingsController < ApplicationController
 
   def create
-    @settings = current_user.create_setting(params[:settings])
+    @settings = current_user.build_setting(params[:settings])
+    if @settings.save 
+      redirect_to root_path
+    end  
   end
   
   def edit

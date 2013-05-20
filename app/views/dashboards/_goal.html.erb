@@ -10,10 +10,17 @@
 				<% end %>
 			</div>
 		<% else %>
-			<h3><BOO>Your Goal: "<%= @loadGoal %>"</h3>
-			<p><%= link_to 'Change your goal & other user settings', changeSettings_path %>
+			<%= link_to changeSettings_path do%>
+				<div class="span10">
+					<p><i class="icon-star icon-white"></i> 
+						<strong>Your Goal:</strong> "<%= @loadGoal %>"
+						<i class="icon-star icon-white"></i></p>
+				</div>
+				<div class="span2">
+					<p class="pull-right">Edit Goal</p>
+				</div>
+			<% end %>
 		<% end %>
-	
 	</div>
 	
 	
