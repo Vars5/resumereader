@@ -11,6 +11,7 @@ Resumereader::Application.routes.draw do
   match '/resumeQuestions', :to => 'dashboards#resumeQuestions'
   match '/about', :to => 'staticpages#about'
   match '/resume', :to => 'dashboards#resume'
+  match '/changeSettings', :to => 'dashboards#changeSettings'
   
   resources :schools 
   resources :problems, only: [:new, :create, :index]

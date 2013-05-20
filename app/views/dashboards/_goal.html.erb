@@ -1,9 +1,19 @@
-<%= @loadGoal %>
-<% if @loadGoal == nil %>
-	<%= form_for @goal, :as => :settings do |f|%>
-		<%= f.text_field :goal %>
-		<%= f.submit :class => "btn btn-info" %>
-	<% end %>
-<% else %>
-<h1>BOO!</h1>
-<% end %>
+	<div class="row-fluid">
+		<% if @loadGoal == nil %>
+			<div class="span3">
+				<h5><i class="icon-star icon-white"></i> What's your current goal?</h5>
+			</div>
+			<div class="span9">
+				<%= form_for @goal, :as => :settings do |f|%>
+					<%= f.text_field :goal %>
+					<%= f.submit :class => "btn btn-info" %>
+				<% end %>
+			</div>
+		<% else %>
+			<h3><BOO>Your Goal: "<%= @loadGoal %>"</h3>
+			<p><%= link_to 'Change your goal & other user settings', changeSettings_path %>
+		<% end %>
+	
+	</div>
+	
+	

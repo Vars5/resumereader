@@ -18,17 +18,22 @@
 	<div class="row-fluid">
 		
 		<div class="span9">
-			
 			<div class="currentGoal">
-				<div class="row-fluid">
-					<div class="span3">
-						<h5><i class="icon-star icon-white"></i> What's your current goal?</h5>
-					</div>
-					<div class="span9">
-									<%= render 'dashboards/goal'%>
-					</div>
+				<%= render 'dashboards/goal'%>
+			</div>
+			
+			<div class="row-fluid profileSpot">
+				<h4>Resume Stats:</h4>
+				<div>
+					<ul>
+						<li>You have <%= current_user.schools.count %> Schools</li>
+						<li>You have <%= current_user.employments.count %> Employments</li>
+						<li>You have reviewed your resume 4 times with friends</li>
+						<li>You have reviewed your resume 0 times with the team at resumeQuery</li>
+					</ul>
 				</div>
 			</div>
+			
 			
 			<div class="row-fluid profileSpot">
 				<div class="span5">
@@ -38,6 +43,9 @@
 				</div>
 				
 				<div class="span7">
+					<%= form_for :proxy do |f| %>
+						<%= f.text_area :proxy, :class => "proxy" %>
+					<% end %>
 				</div>
 				
 			</div>

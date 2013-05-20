@@ -3,9 +3,15 @@ class DashboardsController < ApplicationController
   before_filter :authenticate_user!
   
   def dashboard
-   @goal = current_user.build_setting
-   @problem = Problem.new
-   @loadGoal = current_user.setting.goal
+    #For some reason, without the if statement
+    #the build_setting function clears the database
+    #The if statement is a dodgy current fix
+    @loadSetting = current_user.setting
+    if @loadSetting == nil
+      @goal = current_user.build_setting
+    end
+    @problem = Problem.new
+    @loadGoal = current_user.setting.goal
   end
 
   def resume
@@ -20,6 +26,10 @@ class DashboardsController < ApplicationController
   
   
   def resumeQuestions
+  end
+  
+  def changeSettings
+    @settings = current_user.setting
   end
 
 end
