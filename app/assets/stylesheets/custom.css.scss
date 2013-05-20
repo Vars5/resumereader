@@ -144,18 +144,11 @@ $offWhite: #FFDFCC;
 	
 
 /* Dashboard */
-
-	.resumeView {
-		padding:40px 30px;
-		border-left: 1px solid $siteGreen;
-		border-right: 1px solid $siteGreen;
-		background-color:white;
-	}
-	
 	
 	.dashboardBar {
-		text-align:center;
-		padding-top:30px;
+		padding:15px 0px 5px;
+		border-top:1px solid $standardGrey;
+		border-bottom:1px solid $standardGrey;
 	}
 	
 	
