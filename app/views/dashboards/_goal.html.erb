@@ -1,0 +1,10 @@
+
+<%= @loadGoal %>
+<% if @loadGoal == nil %>
+	<%= form_for @goal, :as => :settings do |f|%>
+		<%= f.text_field :goal %>
+		<%= f.submit :class => "btn btn-info" %>
+	<% end %>
+<% else %>
+<h1>BOO!</h1>
+<% end %>

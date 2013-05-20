@@ -187,7 +187,17 @@ $offWhite: #FCFBF7;
 		color:white;
 		padding:5px;
 		.span9{
-			background-color:orange;
+		}
+		input{
+			outline: none;
+			border:none !important;
+			box-shadow:none !important;
+			margin:0px;
+			padding:5px;
+			font-size:13px;
+
+			background-color:$offWhite;
+			border-radius:0;
 		}
 	}
 	
@@ -265,6 +275,9 @@ $offWhite: #FCFBF7;
 		textarea {
 			height:90px;
 			width:95%;
+		}
+		.btn {
+			width:100%;
 		}
 	}
 	

@@ -3,8 +3,9 @@ class DashboardsController < ApplicationController
   before_filter :authenticate_user!
   
   def dashboard
-   @user = current_user
+   @goal = current_user.build_setting
    @problem = Problem.new
+   @loadGoal = current_user.setting.goal
   end
 
   def resume
