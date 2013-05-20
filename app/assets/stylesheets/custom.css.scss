@@ -152,7 +152,7 @@ $offWhite: #FCFBF7;
 		border-bottom:1px solid $siteGreen;
 		font-size:1.4em;
 		line-height:10px;
-		color:grey;
+		color:$standardGrey;
 		font-family:OswaldBook;
 		a {
 
@@ -179,16 +179,6 @@ $offWhite: #FCFBF7;
 		}
 	}
 	
-	.dashboardHeader{
-		background-color:$topGreen;
-		height:180px;
-		color:white;
-		font-family: OswaldBook;
-		vertical-align:text-bottom;
-		line-height:200px;
-		text-align:center;
-		font-size:2.2em;
-	}
 	
 	.currentGoal {
 		padding:15px 0px;
@@ -265,6 +255,10 @@ $offWhite: #FCFBF7;
 	.profileSpot {
 		border-bottom:1px solid $siteGreen;
 		padding:15px 0px;
+		textarea {
+			height:90px;
+			width:95%;
+		}
 	}
 	
 	.copywriteAreaRight {

@@ -12,8 +12,8 @@
 				<li><%= link_to '1. Write up your resume', resume_path%> </li>
 				<li><%= link_to '2. Bring out your value'%> </li>
 				<li><%= link_to '3. Review your resume'%> </li>
-				<li><%= link_to '4. View Companies'%>			</li>	
-				<li class="pull-right">Test</li>
+				<li><strike><%= link_to '4. View Companies (coming soon)' %></strike></li>	
+				<li class="pull-right">Export your resume</li>
 			</ul>
 		</div>
 	</div>
@@ -22,7 +22,12 @@
 		
 		<div class="span9">
 			<div class="currentGoal">
-				<h5>What's your current goal?</h5>
+				<h5><i class="icon-star"></i> What's your current goal?</h5>
+				<%= form_for :test do |f|%>
+					<%= f.text_field :firstname %>
+					<%= f.submit %>
+				<% end %>
+				
 			</div>
 			
 		</div>
@@ -32,19 +37,28 @@
 			<div class="profileSpot">
 				<h5>Completion Rate</h5>
 				<div class="row-fluid">
-					<div class="span4">
+					<div class="span5">
 						<div class="circleWrapperSmall"></div>
 					</div>
-					<div class="span8">
+					<div class="span7">
 						<p>90% Complete</p>
 					</div>
 				</div>
 			</div>
 			
 			<div class="profileSpot">
-				<h5>Did you get the interview?</h5>
+				<h5>Did you get the interview? <span class="pull-right"><%= link_to 'Yes' %> &nbsp <%= link_to 'No'%></span></h5>
 			</div>
 			
+			<div class="profileSpot">
+				<h5>What's broken, hackable or suggestable?</h5>
+				<%= form_for :bugs do |f| %>
+					<%= f.text_area :bugs, :placeholder => "We really appreciate what you think and find!" %>
+					<%= f.submit :bugs%>	
+				<% end %>
+				<%= link_to "Alternatively Visit our support page!", root_path, :class => "text-center" %>
+
+			</div>
 			
 		</div>
 		
