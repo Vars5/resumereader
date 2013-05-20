@@ -1,29 +1,49 @@
 <div class="container-fluid">
 	
-	</br><!-- remove line break with styling -->
+	</br></br><!-- remove line break with styling -->
 	
 	<div class="row-fluid">
 		
 		<div class="span12 dashboardBar">
-			<ul class="inline">
-				<li><strong>Add the first: </strong></li>
-				<li><%= link_to 'Write up your resume', resume_path%></li>
-				<li><%= link_to 'Bring out your value'%></li>
-				<li><%= link_to 'Review your resume'%></li>
-				<li><%= link_to 'View Companies'%></li>				
-			</ul>	
+			<p><%= current_user.first_name%>'s resumeQuery Dasboard</p>
+
+
+			<ul class="inline"<>
+				<li><%= link_to '1. Write up your resume', resume_path%> </li>
+				<li><%= link_to '2. Bring out your value'%> </li>
+				<li><%= link_to '3. Review your resume'%> </li>
+				<li><%= link_to '4. View Companies'%>			</li>	
+				<li class="pull-right">Test</li>
+			</ul>
 		</div>
 	</div>
 	
 	<div class="row-fluid">
 		
-		<div class="span8">
-			
+		<div class="span9">
+			<div class="currentGoal">
+				<h5>What's your current goal?</h5>
+			</div>
 			
 		</div>
 		
-		<div class="span4">
+		<div class="span3">
 			
+			<div class="profileSpot">
+				<h5>Completion Rate</h5>
+				<div class="row-fluid">
+					<div class="span4">
+						<div class="circleWrapperSmall"></div>
+					</div>
+					<div class="span8">
+						<p>90% Complete</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="profileSpot">
+				<h5>Did you get the interview?</h5>
+			</div>
 			
 			
 		</div>

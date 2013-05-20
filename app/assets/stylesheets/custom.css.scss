@@ -7,7 +7,7 @@ $siteOrange: #fbe7d1;
 $siteAqua: #4ea39c;
 $siteRed: #9e0b0f;
 $siteText: #333333;
-$offWhite: #FFDFCC;
+$offWhite: #FCFBF7;
 
 @font-face {
     font-family: 'OswaldBold';
@@ -42,6 +42,7 @@ $offWhite: #FFDFCC;
 		h3 {
 			line-height:30px;
 		}
+		/*background-color:$offWhite;*/
 	}
 	
 	.infoBar{
@@ -147,8 +148,15 @@ $offWhite: #FFDFCC;
 	
 	.dashboardBar {
 		padding:15px 0px 5px;
-		border-top:1px solid $standardGrey;
-		border-bottom:1px solid $standardGrey;
+		/*border-top:1px solid $standardGrey;*/
+		border-bottom:1px solid $siteGreen;
+		font-size:1.4em;
+		line-height:10px;
+		color:grey;
+		font-family:OswaldBook;
+		a {
+
+		}
 	}
 	
 	
@@ -182,7 +190,9 @@ $offWhite: #FFDFCC;
 		font-size:2.2em;
 	}
 	
-
+	.currentGoal {
+		padding:15px 0px;
+	}
 	
 	
 
@@ -243,6 +253,19 @@ $offWhite: #FFDFCC;
 		margin:auto auto 10px;
 	}
 	
+	.circleWrapperSmall {
+		height:80px;
+		width:80px; 
+		border-radius:80px; 
+		border:4px solid $siteGreen; 
+		overflow:hidden;
+
+	}
+	
+	.profileSpot {
+		border-bottom:1px solid $siteGreen;
+		padding:15px 0px;
+	}
 	
 	.copywriteAreaRight {
 		text-align:right;

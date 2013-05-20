@@ -8,7 +8,7 @@ Resumereader::Application.routes.draw do
   root :to => 'staticpages#home'
   
   match '/feedback', :to => 'staticpages#feedback'
-  match '/resumeQuestions', :to => 'staticpages#resumeQuestions'
+  match '/resumeQuestions', :to => 'dashboards#resumeQuestions'
   match '/about', :to => 'staticpages#about'
   match '/resume', :to => 'dashboards#resume'
   

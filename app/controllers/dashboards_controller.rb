@@ -1,5 +1,7 @@
 class DashboardsController < ApplicationController
   
+  before_filter :authenticate_user!
+  
   def dashboard
    
   end
@@ -12,6 +14,10 @@ class DashboardsController < ApplicationController
     @extracurricularAll   = current_user.extracurriculars
     @extracurricularCount = current_user.extracurriculars.count
     #@bulletpointsAll      = Bullet.where(bulletable_id = "1", bulletable_type = "employment").all 
+  end
+  
+  
+  def resumeQuestions
   end
 
 end

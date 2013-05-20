@@ -7,9 +7,7 @@ class StaticpagesController < ApplicationController
   
   def structure
   end
-  
-  def resumeQuestions
-  end
+
   
   def feedback
   end
