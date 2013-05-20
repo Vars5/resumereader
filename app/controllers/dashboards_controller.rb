@@ -4,6 +4,7 @@ class DashboardsController < ApplicationController
   
   def dashboard
    @user = current_user
+   @problem = Problem.new
   end
 
   def resume

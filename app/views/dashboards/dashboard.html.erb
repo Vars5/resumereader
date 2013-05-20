@@ -1,7 +1,5 @@
 <div class="container-fluid">
 	
-	</br></br><!-- remove line break with styling -->
-	
 	<div class="row-fluid">
 		
 		<div class="span12 dashboardBar">
@@ -12,7 +10,7 @@
 				<li><%= link_to '1. Write up your resume', resume_path%> </li>
 				<li><%= link_to '2. Bring out your value'%> </li>
 				<li><%= link_to '3. Review your resume'%> </li>
-				<li><strike><%= link_to '4. View Companies (coming soon)' %></strike></li>	
+				<li><strike>4. View Companies (coming soon)</strike></li>	
 				<li class="pull-right">Export your resume</li>
 			</ul>
 		</div>
@@ -21,14 +19,21 @@
 	<div class="row-fluid">
 		
 		<div class="span9">
+			
 			<div class="currentGoal">
-				<h5><i class="icon-star"></i> What's your current goal?</h5>
-				<%= form_for :test do |f|%>
-					<%= f.text_field :firstname %>
-					<%= f.submit %>
-				<% end %>
-				
+				<div class="row-fluid">
+					<div class="span3">
+						<h5><i class="icon-star icon-white"></i> What's your current goal?</h5>
+					</div>
+					<div class="span9">
+						<%= form_for :test do |f|%>
+							<%= f.text_field :firstname %>
+							<%= f.submit %>
+						<% end %>
+					</div>
+				</div>
 			</div>
+			
 			
 		</div>
 		
@@ -52,9 +57,10 @@
 			
 			<div class="profileSpot">
 				<h5>What's broken, hackable or suggestable?</h5>
-				<%= form_for :bugs do |f| %>
-					<%= f.text_area :bugs, :placeholder => "We really appreciate what you think and find!" %>
-					<%= f.submit :bugs%>	
+				<%= form_for @problem, :as => :problems do |f| %>
+					<%= f.text_area :problem, :placeholder => "We really appreciate what you think and find!" %>
+					<%= f.hidden_field :reporter_id, :value => current_user.id %>
+					<%= f.submit %>	
 				<% end %>
 				<%= link_to "Alternatively Visit our support page!", root_path, :class => "text-center" %>
 

@@ -110,6 +110,7 @@ $offWhite: #FCFBF7;
 		height:42px;
 		background-color: $siteGreen;
 		line-height:40px;
+		margin-bottom:20px;
 		a{
 			color:white;
 		}
@@ -181,7 +182,13 @@ $offWhite: #FCFBF7;
 	
 	
 	.currentGoal {
-		padding:15px 0px;
+		margin:15px 0px;
+		background-color:$siteAqua;
+		color:white;
+		padding:5px;
+		.span9{
+			background-color:orange;
+		}
 	}
 	
 	

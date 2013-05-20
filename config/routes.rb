@@ -13,6 +13,7 @@ Resumereader::Application.routes.draw do
   match '/resume', :to => 'dashboards#resume'
   
   resources :schools 
+  resources :problems, only: [:new, :create, :index]
   
   resources :employments do
     resources :bullets

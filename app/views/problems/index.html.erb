@@ -1,0 +1,14 @@
+<div class="container-fluid">
+	<div class="row-fluid">
+		<p><strong>Note: Restrict this page to admin with cancan</strong></p>
+		<ul>
+			<% @problem.each do |problem| %>
+			<li><strong><%= problem.problem %></strong> by 
+				<% @user = User.find_by_id(problem.reporter_id) %>
+				<%= @user.first_name %> <%= @user.last_name %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+</div>
+			
