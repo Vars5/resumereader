@@ -10,17 +10,6 @@ $siteText: #333333;
 $offWhite: #FCFBF7;
 $textAqua: #DEFAF6;
 
-@font-face {
-    font-family: 'OswaldBold';
-    src: url('Oswald-Bold-webfont.eot');
-    src: url('Oswald-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('Oswald-Bold-webfont.woff') format('woff'),
-         url('Oswald-Bold-webfont.ttf') format('truetype'),
-         url('Oswald-Bold-webfont.svg#OswaldBold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
 
 @font-face {
     font-family: 'OswaldBook';
@@ -152,7 +141,7 @@ $textAqua: #DEFAF6;
 		padding:15px 0px 5px;
 		/*border-top:1px solid $standardGrey;*/
 		border-bottom:1px solid $siteGreen;
-		font-size:1.4em;
+		font-size:1.3em;
 		line-height:10px;
 		color:$standardGrey;
 		font-family:OswaldBook;
