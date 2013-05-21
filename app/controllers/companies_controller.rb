@@ -17,6 +17,7 @@ class CompaniesController < ApplicationController
     @company = Company.find_by_id(params[:id])
     @info = @company.info
     @jobs = @company.jobs.build
+    @companyJobs = @company.jobs
   end
   
   def index

@@ -23,8 +23,11 @@
 					
 				<%= f.submit %>
 			<% end %>
-			<% Company.find_by_id(params[:id]).jobs.each do |test| %>
-				<p>Job Name: <%=link_to	"#{test.name}", test %></p>
+			
+			<% if @companyJobs != nil %>
+				<% @companyJobs.each do |test| %>
+					<p>Job Name: <%=link_to	"#{test.name}", test %></p>
+				<% end %>
 			<% end %>
 		</div>
 	</div>
