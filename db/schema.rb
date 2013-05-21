@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20130520101811) do
     t.string   "bulletable_type"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "employment_id"
   end
 
   add_index "bullets", ["bulletable_id", "bulletable_type"], :name => "index_bullets_on_bulletable_id_and_bulletable_type"
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20130520101811) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.integer  "user_id"
+    t.integer  "bulletable_id"
   end
 
   create_table "extracurriculars", :force => true do |t|
@@ -48,12 +50,19 @@ ActiveRecord::Schema.define(:version => 20130520101811) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "questions", :force => true do |t|
+    t.string   "question_content"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
   create_table "responses", :force => true do |t|
     t.text     "answer"
     t.integer  "responseable_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.string   "responseable_type"
+    t.integer  "question_id"
   end
 
   add_index "responses", ["responseable_id", "responseable_type"], :name => "index_responses_on_responseable_id_and_responseable_type"
