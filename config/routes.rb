@@ -20,12 +20,12 @@ Resumereader::Application.routes.draw do
   resources :questions
   resources :companies
   
-<<<<<<< HEAD
+
   resources :questions
   
 =======
   #Polymorphic Resources
->>>>>>> pasharayan/master
+#>>>>>>> pasharayan/master
   resources :employments do
     resources :bullets
     resources :responses
@@ -38,4 +38,6 @@ Resumereader::Application.routes.draw do
   
   #Devise gem for users and their accounts
   devise_for :users
+end
+
 end
