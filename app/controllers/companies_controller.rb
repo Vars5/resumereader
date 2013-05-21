@@ -18,6 +18,7 @@ class CompaniesController < ApplicationController
     @info = @company.info
     @jobs = @company.jobs.build
     @companyJobs = @company.jobs
+    @boards = @company.boards.new
   end
   
   def index

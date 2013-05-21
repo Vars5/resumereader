@@ -11,6 +11,7 @@ class JobsController < ApplicationController
   end
   
   def index
+    @job = Job.all
   end
   
   def show
@@ -18,12 +19,19 @@ class JobsController < ApplicationController
   end
   
   def edit
+    @jobs = Job.find_by_id(params[:id])
   end
   
   def update
+    @jobs = Job.find_by_id(params[:id])
+    if @jobs.update_attributes(params[:jobs])
+      redirect_to @jobs
+    end
   end
   
   def destroy
+    @jobs = Job.find_by_id(params[:id]).destroy
+    redirect_to root_path
   end
   
 

@@ -1,0 +1,5 @@
+<% @job.each do |job| %>
+	<%= link_to job do %>
+		Name: <%= job.name %> Discipline: <%= job.discipline %> |
+	<% end %>
+<% end %>

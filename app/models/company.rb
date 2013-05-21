@@ -3,6 +3,7 @@ class Company < ActiveRecord::Base
   attr_accessible :name, :industry, :website , :hr_email, :info
   
   has_many :jobs
+  has_many :boards
   
   validates :name,     presence: :true, :uniqueness => true
   validates :industry, presence: :true
