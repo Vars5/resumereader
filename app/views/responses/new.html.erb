@@ -1,17 +1,13 @@
 <h1> New Answer </h1>
 
-Question 1: <%= @question.id %>
-
-<%= form_for [@responseable, @response]  do |f| %>
-	<!-- Insert Error form and associated div class later -->
-	
-	<div class = "field">
-		<%= f.text_area :answer, rows: 3 %>
+<% @question.each do |question| %>
 		
-	</div>
-	
-	<div class = "actions">
-		<%= f.hidden_field :question_id, :value => @question.id %>
-		<%= f.submit %>
-	</div>
+	<%= question.question_content %>
+	<%= form_for [@responseable, @response]  do |f| %>
+		<%= f.text_area :answer, rows: 3 %>
+		<%= f.hidden_field :question_id, :value => question.id %>
+	<%= f.submit%>
+	<% end %>
 <% end %>
+
+

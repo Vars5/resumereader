@@ -9,7 +9,7 @@ class ResponsesController < ApplicationController
 
   def new
     @response = @responseable.responses.new
-    @question = Question.find(1)
+    @question = Question.all
   end
   
   def create
