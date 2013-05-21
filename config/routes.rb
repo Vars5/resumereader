@@ -23,7 +23,6 @@ Resumereader::Application.routes.draw do
 
   resources :questions
   
-=======
   #Polymorphic Resources
 #>>>>>>> pasharayan/master
   resources :employments do
@@ -40,4 +39,4 @@ Resumereader::Application.routes.draw do
   devise_for :users
 end
 
-end
+

@@ -11,8 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-=======
 ActiveRecord::Schema.define(:version => 20130521132429) do
 
   create_table "boards", :force => true do |t|
@@ -20,7 +18,6 @@ ActiveRecord::Schema.define(:version => 20130521132429) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
->>>>>>> pasharayan/master
 
   create_table "bullets", :force => true do |t|
     t.text     "bulletpoint"
@@ -62,7 +59,6 @@ ActiveRecord::Schema.define(:version => 20130521132429) do
     t.datetime "updated_at", :null => false
   end
 
-<<<<<<< HEAD
   create_table "problems", :force => true do |t|
     t.text     "problem"
     t.integer  "reporter_id"
@@ -70,20 +66,10 @@ ActiveRecord::Schema.define(:version => 20130521132429) do
     t.datetime "updated_at",  :null => false
   end
 
-<<<<<<< HEAD
-=======
->>>>>>> questions
   create_table "questions", :force => true do |t|
     t.string   "question_content"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
-=======
-  create_table "questions", :force => true do |t|
-    t.text     "question"
-    t.string   "type"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
->>>>>>> pasharayan/master
   end
 
   create_table "responses", :force => true do |t|
