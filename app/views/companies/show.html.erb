@@ -24,11 +24,7 @@
 				<%= f.submit %>
 			<% end %>
 			
-			<% if @companyJobs != nil %>
-				<% @companyJobs.each do |test| %>
-					<p>Job Name: <%=link_to	"#{test.name}", test %></p>
-				<% end %>
-			<% end %>
+	
 		</div>
 	</div>
 </div>
