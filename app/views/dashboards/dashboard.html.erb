@@ -1,94 +1,93 @@
-<div class="container-fluid">
-	
-	<div class="row-fluid">
-		
-		<div class="span12 dashboardBar">
-			<p><%= current_user.first_name%>'s ResumeQuery Dashboard</p>
 
-			<ul class="inline"<>
-				<li><%= link_to '1. Write up your resume', resume_path%> </li>
-				<li><%= link_to '2. Bring out your value'%> </li>
-				<li><%= link_to '3. Review your resume'%> </li>
-				<li><strike>4. View Companies & Manage apps (being built)</strike></li>	
-				<li class="pull-right"><strike>Export your resume</strike></li>
-			</ul>
-		</div>
-	</div>
-	
-	<div class="row-fluid">
+	<div class="container-fluid">
+		<%= render 'dashboards/steps'%>
 		
-		<div class="span9">
-			<div class="currentGoal">
-				<%= render 'dashboards/goal'%>
-			</div>
+		<div class="row-fluid">
+			<div class="span9">
+				<div class="currentGoal">
+					<%= render 'dashboards/goal'%>
+				</div>
+				<div class="row-fluid profileSpot">
+					<h4>Resume Stats:</h4>
+					<div>
+						<ul>
+							<li>You have <%= current_user.schools.count %> Schools</li>
+							<li>You have <%= current_user.employments.count %> Employments</li>
+							<li>You have reviewed your resume 4 times with friends</li>
+							<li>You have reviewed your resume 0 times with the team at resumeQuery</li>
+						</ul>
+					</div>
+				</div>
 			
-			<div class="row-fluid profileSpot">
-				<h4>Resume Stats:</h4>
-				<div>
+			
+				<div class="row-fluid profileSpot">
+					<div class="span5">
+						<div class="dashboardArea">
+							<h1>Have You Ever </br>Managed 5+ people? (Call the model of q's)</h1>
+						</div>
+					</div>
+				
+					<div class="span7">
+						<%= form_for :proxy do |f| %>
+							<%= f.text_area :proxy, :class => "proxy" %>
+						<% end %>
+					</div>
+				
+				</div>
+				
+				<div class="row-fluid profileSpot">
 					<ul>
-						<li>You have <%= current_user.schools.count %> Schools</li>
-						<li>You have <%= current_user.employments.count %> Employments</li>
-						<li>You have reviewed your resume 4 times with friends</li>
-						<li>You have reviewed your resume 0 times with the team at resumeQuery</li>
+						<li><strong>LINKS - Remove when admin set up</strong></li>
+						<li><%= link_to 'Problems-Page', problems_path %></li>
+						<li>Companies:</li>
+						<ul>
+							<% Company.all.each do |company| %>
+								<li><%= link_to "#{company.name}", company %></li>
+							<% end %>
+						</ul>
+						<li><%= link_to 'New company page', new_company_path %>
 					</ul>
 				</div>
+			
+			
 			</div>
+		
+			<div class="span3">
 			
-			
-			<div class="row-fluid profileSpot">
-				<div class="span5">
-					<div class="dashboardArea">
-						<h1>Have You Ever </br>Managed 5+ people? (Call the model of q's)</h1>
+				<div class="profileSpot">
+					<h5>ResumeQuery Construction Completion</h5>
+					<div class="row-fluid">
+						<div class="span5">
+							<div class="circleWrapperSmall"></div>
+						</div>
+						<div class="span7">
+							<p>We have to add a few more features still! We need
+								Proper questions, a good resume structure page, and 
+								a companies database with a forum for each
+								potential job!</p>
+						</div>
 					</div>
 				</div>
-				
-				<div class="span7">
-					<%= form_for :proxy do |f| %>
-						<%= f.text_area :proxy, :class => "proxy" %>
+			
+				<div class="profileSpot">
+					<h5>Did you get the interview? <span class="pull-right"><%= link_to 'Yes' %> &nbsp <%= link_to 'No'%></span></h5>
+				</div>
+			
+				<div class="profileSpot">
+					<h5>What's broken, hackable or suggestable?</h5>
+					<%= form_for @problem, :as => :problems do |f| %>
+						<%= f.text_area :problem, :placeholder => 
+							 "We really appreciate what you think and find! Spam us a hello if you'd like!" %>
+						<%= f.hidden_field :reporter_id, :value => current_user.id %>
+						<%= f.submit "Submit your findings & suggestions", :class=>"btn btn-success" %>	
 					<% end %>
 				</div>
-				
+			
 			</div>
-			
-			
+		
+		
+		
 		</div>
-		
-		<div class="span3">
-			
-			<div class="profileSpot">
-				<h5>ResumeQuery Construction Completion</h5>
-				<div class="row-fluid">
-					<div class="span5">
-						<div class="circleWrapperSmall"></div>
-					</div>
-					<div class="span7">
-						<p>We have to add a few more features still! We need
-							Proper questions, a good resume structure page, and 
-							a companies database with a forum for each
-							potential job!</p>
-					</div>
-				</div>
-			</div>
-			
-			<div class="profileSpot">
-				<h5>Did you get the interview? <span class="pull-right"><%= link_to 'Yes' %> &nbsp <%= link_to 'No'%></span></h5>
-			</div>
-			
-			<div class="profileSpot">
-				<h5>What's broken, hackable or suggestable?</h5>
-				<%= form_for @problem, :as => :problems do |f| %>
-					<%= f.text_area :problem, :placeholder => 
-						 "We really appreciate what you think and find! Spam us a hello if you'd like!" %>
-					<%= f.hidden_field :reporter_id, :value => current_user.id %>
-					<%= f.submit "Submit your findings & suggestions", :class=>"btn btn-success" %>	
-				<% end %>
-			</div>
-			
-		</div>
-		
-		
-		
+	
+	
 	</div>
-	
-	
-</div>

@@ -9,12 +9,15 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me,
                   :first_name, :last_name, :mobile_number
   # attr_accessible :title, :body
+  
   has_one  :setting, dependent: :destroy
   
   has_many :schools, dependent: :destroy
   has_many :employments, dependent: :destroy
   has_many :extracurriculars, dependent: :destroy
   
+  validates :first_name, length: { maximum: 30 }
+  validates :last_name, length: { maximum: 30 }
 
   
 end

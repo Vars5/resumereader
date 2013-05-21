@@ -7,7 +7,7 @@ $siteOrange: #fbe7d1;
 $siteAqua: #4ea39c;
 $siteRed: #9e0b0f;
 $siteText: #333333;
-$offWhite: #FCFBF7;
+$offWhite: #FFF8E8;
 $textAqua: #DEFAF6;
 
 
@@ -309,4 +309,33 @@ $textAqua: #DEFAF6;
 		textarea{
 			width:97%;
 		}
+	}
+	
+	
+	.searchBox {
+		input {
+				outline: none;
+				border:1px solid $textAqua !important;
+				box-shadow:none !important;
+				margin:0px;
+				padding:0 5px;
+				font-size:12px;
+				width:50%;
+				border-radius:0;
+		}
+	}
+	
+	.resumeArea {
+		background-color:white;
+		padding:40px 10px;
+		border-radius:5px;
+		margin-top:40px;
+		-webkit-box-shadow: 0 0 6px rgba(0,0,0,0.3);
+		-moz-box-shadow: 0 0 6px rgba(0,0,0,0.3);
+		box-shadow: 0 0 6px rgba(0,0,0,0.3);
+	}
+
+
+	textarea {
+		width:95%;
 	}

@@ -12,7 +12,15 @@
 # It's strongly recommended to check this file into your version control system.
 
 <<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20130520101811) do
+=======
+ActiveRecord::Schema.define(:version => 20130521132429) do
+
+  create_table "boards", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+>>>>>>> pasharayan/master
 
   create_table "bullets", :force => true do |t|
     t.text     "bulletpoint"
@@ -24,6 +32,16 @@ ActiveRecord::Schema.define(:version => 20130520101811) do
   end
 
   add_index "bullets", ["bulletable_id", "bulletable_type"], :name => "index_bullets_on_bulletable_id_and_bulletable_type"
+
+  create_table "companies", :force => true do |t|
+    t.string   "name"
+    t.string   "industry"
+    t.string   "website"
+    t.string   "hr_email"
+    t.text     "info"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "employments", :force => true do |t|
     t.string   "company"
@@ -52,12 +70,20 @@ ActiveRecord::Schema.define(:version => 20130520101811) do
     t.datetime "updated_at",  :null => false
   end
 
+<<<<<<< HEAD
 =======
 >>>>>>> questions
   create_table "questions", :force => true do |t|
     t.string   "question_content"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+=======
+  create_table "questions", :force => true do |t|
+    t.text     "question"
+    t.string   "type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+>>>>>>> pasharayan/master
   end
 
   create_table "responses", :force => true do |t|

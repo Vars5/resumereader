@@ -1,7 +1,21 @@
 <div class="signedInHeader">
 	<div class="container-fluid">
 		<div class="row-fluid">
-			<%= link_to image_tag('resumeQuery_white.png'), root_path %>
+			
+			<div class="span2">
+				<%= link_to image_tag('resumeQuery_white.png'), root_path %> 
+			</div>
+			<div class="span6 searchBox">
+				
+				<!-- Search loads if we have search working-->
+				
+				<%= form_for :search do |f| %>
+					<%= f.text_field :search, :placeholder => 
+						"Search for Companies, Posts & Guides" %> <i class="icon-search icon-white"></i> 
+				<% end %>
+				
+				
+			</div>
 			<div class="pull-right">
 				<ul class="inline">
 					<li><%= link_to 'User Settings', edit_user_registration_path %></li>
