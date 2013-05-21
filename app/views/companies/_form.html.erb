@@ -1,0 +1,19 @@
+<div class="container-fluid">
+	<div class="row-fluid">
+		
+		<%= form_for @company do |f| %>
+			<div class="span3">
+				<p><%= f.text_field :name, :placeholder => "Company Name" %></p>
+				<p><%= f.text_field :industry, :placeholder => "Industry" %></p>
+				<p><%= f.text_field :website, :placeholder => "Website Link" %></p>
+				<p><%= f.text_field :hr_email, :placeholder => "HR Email" %></p>
+			</div>
+			<div class="span6">
+				<p><%= f.text_area  :info, :placeholder => "information"  %></p>
+				<%= f.submit %>
+			</div>
+
+		<% end %>
+		
+	</div>
+</div>

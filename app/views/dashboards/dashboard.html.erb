@@ -34,6 +34,20 @@
 					</div>
 				
 				</div>
+				
+				<div class="row-fluid profileSpot">
+					<ul>
+						<li><strong>LINKS - Remove when admin set up</strong></li>
+						<li><%= link_to 'Problems-Page', problems_path %></li>
+						<li>Companies:</li>
+						<ul>
+							<% Company.all.each do |company| %>
+								<li><%= link_to "#{company.name}", company %></li>
+							<% end %>
+						</ul>
+						<li><%= link_to 'New company page', new_company_path %>
+					</ul>
+				</div>
 			
 			
 			</div>

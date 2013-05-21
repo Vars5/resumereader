@@ -14,7 +14,7 @@ Resumereader::Application.routes.draw do
   match '/changeSettings', :to => 'dashboards#changeSettings'
   
   #Resources
-  resources :schools 
+  resources :schools, except: [:show] 
   resources :problems, only: [:create, :index]
   resources :settings, except: [:index, :new, :edit]
   resources :questions
