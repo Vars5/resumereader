@@ -7,7 +7,7 @@ $siteOrange: #fbe7d1;
 $siteAqua: #4ea39c;
 $siteRed: #9e0b0f;
 $siteText: #333333;
-$offWhite: #FCFBF7;
+$offWhite: #FFF8E8;
 $textAqua: #DEFAF6;
 
 
@@ -326,10 +326,15 @@ $textAqua: #DEFAF6;
 	}
 	
 	.resumeArea {
-			
+		background-color:white;
 		padding:40px 10px;
 		border-radius:5px;
+		margin-top:40px;
 		-webkit-box-shadow: 0 0 6px rgba(0,0,0,0.3);
 		-moz-box-shadow: 0 0 6px rgba(0,0,0,0.3);
 		box-shadow: 0 0 6px rgba(0,0,0,0.3);
+	}
+	
+	.testme{
+		background-color:$offWhite;
 	}
