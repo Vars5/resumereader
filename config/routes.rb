@@ -17,6 +17,8 @@ Resumereader::Application.routes.draw do
   resources :problems, only: [:new, :create, :index]
   resources :settings, except: [:index]
   
+  resources :questions
+  
   resources :employments do
     resources :bullets
     resources :responses
