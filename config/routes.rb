@@ -19,6 +19,7 @@ Resumereader::Application.routes.draw do
   resources :settings, except: [:index, :new, :edit]
   resources :questions
   resources :companies
+  resources :jobs, except: [:new]
   
   #Polymorphic Resources
   resources :employments do

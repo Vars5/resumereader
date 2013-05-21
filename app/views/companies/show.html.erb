@@ -12,5 +12,20 @@
 			<legend>Information:</legend>
 			<p><%= simple_format(@info) %></p>
 		</div>
+		
+		<div class="span3">
+			<legend>Create a job</legend>
+			<%= form_for @jobs, :as => :jobs do |f| %>
+				<%= f.text_field :name %>
+				<%= f.text_field :discipline %>
+				<%= f.text_field :info %>
+				<%= f.hidden_field :id, :value => params[:id] %>
+					
+				<%= f.submit %>
+			<% end %>
+			<% Company.find_by_id(params[:id]).jobs.each do |test| %>
+				<p>Job Name: <%=link_to	"#{test.name}", test %></p>
+			<% end %>
+		</div>
 	</div>
 </div>
