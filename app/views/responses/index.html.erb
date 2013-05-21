@@ -2,10 +2,12 @@
 
 <div id = "Answers">
 	<% @responses.each do |response| %>
+	
 		<div class = "response">
-			<%= simple_format response.answer %>
+
+			<%= link_to response.answer, "#{response.id}/edit" %>
 		</div>
 	<% end %>
 </div>
 
-<p> <%= link_to "Add Answer", [:new, @responseable, :response ]   %>
+<p> <%= link_to "Add Answer", [:new, @responseable, :response ] %>

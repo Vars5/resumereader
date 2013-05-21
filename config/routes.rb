@@ -1,7 +1,5 @@
 Resumereader::Application.routes.draw do
 
-  get "questions/new"
-
   get "responses/index"
 
   get "responses/new"
@@ -14,6 +12,8 @@ Resumereader::Application.routes.draw do
   match '/about', :to => 'staticpages#about'
 
   resources :schools 
+  
+  resources :questions
   
   resources :employments do
     resources :bullets
