@@ -15,6 +15,8 @@ class DashboardsController < ApplicationController
   end
 
   def resume
+
+    @user                 = current_user
     @schoolAll            = current_user.schools
     @schoolCount          = current_user.schools.count
     @employmentAll        = current_user.employments

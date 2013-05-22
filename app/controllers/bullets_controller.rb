@@ -19,7 +19,18 @@ class BulletsController < ApplicationController
       render "new"
     end
   end
-
+  
+  def update
+    @bullet = Bullet.find_by_id(params[:id])
+    if @bullet.update_attributes(params[:bullet])
+      redirect_to [@bulletable, :bullets]
+    end
+  end
+  
+  def edit
+    @bullet = Bullet.find(params[:id])
+  end 
+  
   private
   
     def load_bulletable

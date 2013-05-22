@@ -1,5 +1,5 @@
 class Employment < ActiveRecord::Base
-  attr_accessible :beggining_date, :company, :end_date, :role
+  attr_accessible :beggining_date, :company, :end_date, :role, :bullets_attributes, :bulletable_attributes
   
   #associations
   belongs_to :user
@@ -11,5 +11,7 @@ class Employment < ActiveRecord::Base
   validates :user_id, presence: :true
   validates :company, presence: :true
   validates :role, presence: :true
-  
+
+  accepts_nested_attributes_for :bullets   
 end
+

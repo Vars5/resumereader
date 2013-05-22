@@ -1,5 +1,7 @@
 Resumereader::Application.routes.draw do
 
+  get "resumes/new"
+
   #Root to public home page unless signed in
   root :to => 'dashboards#dashboard', :constraints => lambda {|r| r.env["warden"].authenticate? }
   root :to => 'staticpages#home'
@@ -20,11 +22,8 @@ Resumereader::Application.routes.draw do
   resources :questions
   resources :companies
   
-
   resources :questions
   
-  #Polymorphic Resources
-#>>>>>>> pasharayan/master
   resources :employments do
     resources :bullets
     resources :responses

@@ -4,6 +4,7 @@
 	<% @bullets.each do |bullet| %>
 		<div class = "bullet">
 			<%= simple_format bullet.bulletpoint %>
+			<%= link_to bullet.bulletpoint, "bullets/#{bullet.id}/edit" %>
 		</div>
 	<% end %>
 </div>
