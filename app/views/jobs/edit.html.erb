@@ -1,0 +1,11 @@
+<%= form_for @jobs, :as => :jobs do |f| %>
+	<%= f.text_field :name %>
+	<%= f.text_field :discipline %>
+	<%= f.text_field :info %>
+	<%= f.hidden_field :id, :value => params[:id] %>
+		
+	<%= f.submit %>
+<% end %>
+
+<%= link_to "Delete This Job", @jobs, method: :delete,
+													  data: { confirm: 'You Sure?'}%>

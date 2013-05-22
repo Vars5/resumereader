@@ -21,6 +21,9 @@ Resumereader::Application.routes.draw do
   resources :settings, except: [:index, :new, :edit]
   resources :questions
   resources :companies
+  resources :jobs, except: [:new]
+  resources :boards, except: [:new]
+  resources :posts, except: [:new]
   
   resources :questions
   
