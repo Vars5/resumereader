@@ -16,6 +16,7 @@ class JobsController < ApplicationController
   
   def show
     @job = Job.find_by_id(params[:id])
+    @appList = current_user.app_lists.build
   end
   
   def edit

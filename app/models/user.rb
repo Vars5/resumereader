@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
   has_many :schools, dependent: :destroy
   has_many :employments, dependent: :destroy
   has_many :extracurriculars, dependent: :destroy
+  has_many :app_lists, dependent: :destroy 
+
   
   validates :first_name, length: { maximum: 30 }
   validates :last_name, length: { maximum: 30 }

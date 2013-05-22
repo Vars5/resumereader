@@ -12,6 +12,9 @@ class DashboardsController < ApplicationController
     end
     @problem = Problem.new
     @loadGoal = current_user.setting.goal
+    
+    @appList = AppList.where("user_id = ?", current_user.id)
+    
   end
 
   def resume

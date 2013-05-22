@@ -10,3 +10,13 @@
 		</div>
 	</div>
 </div>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<%= form_for @appList, :as => :applist do |f|%>
+			<%= f.hidden_field :job_id, :value => params[:id] %>
+			<%= f.submit "Save this job!", :class => "btn btn-large btn-success"%>
+		<% end %>
+		
+	</div>
+</div>
