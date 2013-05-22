@@ -20,8 +20,8 @@ Resumereader::Application.routes.draw do
   resources :questions
   resources :companies
   resources :jobs, except: [:new]
-  resources :boards
-  resources :posts
+  resources :boards, except: [:new]
+  resources :posts, except: [:new]
   
   #Polymorphic Resources
   resources :employments do

@@ -16,9 +16,9 @@
 		<div class="span3">
 			<legend>Create a job</legend>
 			<%= form_for @jobs, :as => :jobs do |f| %>
-				<%= f.text_field :name %>
-				<%= f.text_field :discipline %>
-				<%= f.text_field :info %>
+				<%= f.text_field :name, :placeholder => "Name" %>
+				<%= f.text_field :discipline, :placeholder => "Discipline" %>
+				<%= f.text_field :info, :placeholder => "Information" %>
 				<%= f.hidden_field :id, :value => params[:id] %>
 					
 				<%= f.submit %>
@@ -33,11 +33,21 @@
 	</div>
 	
 	<div class="row-fluid">
-		<%= form_for @boards, :as => :boards do |f| %>
-			<%= f.text_field :name %>
-			<%= f.submit%>
-		<% end %>
-		
+		<div class="span12">
+			<%= form_for @boards, :as => :boards do |f| %>
+				<%= f.text_field :name, :placeholder => "Board Name" %>
+				<%= f.hidden_field :company_id, :value => params[:id] %>
+				<%= f.submit%>
+			<% end %>
+		</div>
 	</div>	
+	
+	<div class="row-fluid">
+		<div class="span12">
+			<% @allBoards.each do |board| %>
+				<%= link_to board.name, board %> | 
+			<% end %>
+		</div>
+	</div>
 	
 </div>

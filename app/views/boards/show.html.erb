@@ -1,0 +1,20 @@
+<%= @board.name %>
+<p> Show the posts here, style it like whirlpool </p>
+
+<%= form_for @post do |f| %>
+	<%= f.text_field :text %>
+	<%= f.hidden_field :board_id, :value => (params[:id]) %>
+	<%= f.submit %>
+<% end %>
+
+<div>
+	<ul>
+		<% if @showPosts != nil %>
+			<% @showPosts.each do |post| %>
+				<li><strong><%= post.user_id %>:</strong> <%= post.text %></li>
+				<%= link_to "Delete Post", post, method: :delete,
+																	  data: { confirm: 'You Sure?'}%>
+			<% end %>
+		<% end %>
+	</ul>
+</div>
