@@ -9,6 +9,7 @@ class ResponsesController < ApplicationController
 
   def new
     @response = @responseable.responses.new
+    @question = Question.all
   end
   
   def create
@@ -20,6 +21,12 @@ class ResponsesController < ApplicationController
     end
   end
 
+  def edit
+    @response = Response.find(params[:id])
+  end
+  
+
+  
   private
   
     def load_responseable

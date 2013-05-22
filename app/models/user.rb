@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :first_name, :last_name, :mobile_number
+                  :first_name, :last_name, :mobile_number,
+                  :schools_attributes, :employments_attributes, :extracurriculars_attributes
   # attr_accessible :title, :body
   
   has_one  :setting, dependent: :destroy
@@ -18,6 +19,10 @@ class User < ActiveRecord::Base
   
   validates :first_name, length: { maximum: 30 }
   validates :last_name, length: { maximum: 30 }
+
+  #Nested Forms
+
+  
 
   
 end
