@@ -1,5 +1,8 @@
 class BoardsController < ApplicationController
 
+  #remove if we want to make boards public & then use cancan to enforce
+  before_filter :authenticate_user!
+  authorize_resource :except => [:index, :show]
   
   def create
     @company = Company.find_by_id(params[:boards][:company_id])

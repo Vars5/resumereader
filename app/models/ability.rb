@@ -1,10 +1,17 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  def initialize(current_user)
     
+    
+    if current_user.role == "admin"
+      can :manage, :all
+    else
+      can :create, School
+      cannot :index, Problem
 
-
+      
+    end
     
     # Define abilities for the passed in user here. For example:
     #

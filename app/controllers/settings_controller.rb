@@ -6,6 +6,8 @@
 
 class SettingsController < ApplicationController
 
+  before_filter :authenticate_user!
+
   def create
     @settings = current_user.build_setting(params[:settings])
     if @settings.save 

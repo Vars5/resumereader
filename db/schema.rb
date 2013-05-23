@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130522215611) do
+ActiveRecord::Schema.define(:version => 20130523071455) do
 
   create_table "app_lists", :force => true do |t|
     t.integer  "job_id"
@@ -146,6 +146,7 @@ ActiveRecord::Schema.define(:version => 20130522215611) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "mobile_number"
+    t.string   "role"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

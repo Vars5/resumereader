@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+
+User.create(email: "team@resumequery.com", :password => 'munchable2', :password_confirmation => 'munchable2', :first_name =>
+              'Admini', :last_name => 'strator', :role => 'admin')
