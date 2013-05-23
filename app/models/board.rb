@@ -4,4 +4,7 @@ class Board < ActiveRecord::Base
 
   has_many :posts
 
+  validates :name, presence: :true
+  validates :company_id, presence: :true
+
 end

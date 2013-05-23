@@ -11,6 +11,7 @@ class ProblemsController < ApplicationController
   
   def index
     @problem = Problem.all
+    authorize! :create, @job
   end
 
 end

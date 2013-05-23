@@ -24,6 +24,7 @@ Resumereader::Application.routes.draw do
   resources :jobs, except: [:new]
   resources :boards, except: [:new]
   resources :posts, except: [:new]
+  resources :app_lists, except: [:new]
   
   resources :questions
   

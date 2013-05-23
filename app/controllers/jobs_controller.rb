@@ -1,5 +1,7 @@
 class JobsController < ApplicationController
 
+  before_filter :authenticate_user!
+  authorize_resource :except => [:index, :show]
   
   def create
     @company = Company.find_by_id(params[:jobs][:id])
@@ -16,6 +18,7 @@ class JobsController < ApplicationController
   
   def show
     @job = Job.find_by_id(params[:id])
+    @appList = current_user.app_lists.build
   end
   
   def edit

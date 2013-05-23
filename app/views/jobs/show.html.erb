@@ -6,7 +6,19 @@
 			<%= @job.info %>
 		</div>
 		<div class="span3">
-			<%= link_to 'Edit this Job', edit_job_path%>
+			<% if can? :update, @job %>
+				<%= link_to 'Edit this Job', edit_job_path%>
+			<% end %>
 		</div>
+	</div>
+</div>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<%= form_for @appList, :as => :applist do |f|%>
+			<%= f.hidden_field :job_id, :value => params[:id] %>
+			<%= f.submit "Save this job!", :class => "btn btn-large btn-success"%>
+		<% end %>
+		
 	</div>
 </div>
