@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130521231556) do
+ActiveRecord::Schema.define(:version => 20130523151434) do
 
   create_table "boards", :force => true do |t|
     t.string   "name"
@@ -107,6 +107,17 @@ ActiveRecord::Schema.define(:version => 20130521231556) do
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "reviews", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "review_comment"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
   end
 
   create_table "schools", :force => true do |t|

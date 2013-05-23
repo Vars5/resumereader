@@ -32,3 +32,6 @@ gem "cancan"
 gem "bootstrap-sass"
 gem "bootstrap-will_paginate"
 gem "heroku"
+
+gem 'aws-sdk'
+gem 'paperclip'
