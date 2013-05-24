@@ -1,0 +1,21 @@
+<% if @appList.count == 0 %>
+	<h6>ADD SOME JOBS!</h6>
+<% else %>
+		<ul>
+			<% @appList.each do |apps| %>
+				<% job = Job.find(apps.job_id) %>
+				<% company = Company.find_by_id(job.company_id)%>
+				<li>
+					<%= link_to job do %>
+						<strong><%= company.name %>'s</strong> <%= job.name %> 
+						&nbsp &nbsp &nbsp Due Date: <%= job.due_date%></li>
+					<% end %>
+					<%= form_for apps, :as => :applist do |f| %>
+						<%= f.select :status, [['Untouched', 'untouched'], ['Researched', 'researched']]%>	
+						<%= f.hidden_field :id, :value => apps.id %>
+						<%= f.submit %>
+					<% end %>
+
+		<% end %>
+		</ul>
+<% end %>

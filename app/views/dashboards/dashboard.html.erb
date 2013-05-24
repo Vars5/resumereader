@@ -8,17 +8,7 @@
 					<%= render 'dashboards/goal'%>
 				</div>
 				<div class="row-fluid profileSpot">
-					<h5>Job app management system goes here</h5>
-
-					<% if @appList.count == 0 %>
-						<h6>ADD SOME JOBS!</h6>
-					<% else %>
-							<% @appList.each do |apps| %>
-								<li>THE JOB YOUR FOLLOWING ID: <%= apps.job_id %></li>
-						<% end %>
-					<% end %>
-					
-					
+					<%= render 'dashboards/appmanage'%>
 				</div>
 			
 				

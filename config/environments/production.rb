@@ -22,7 +22,7 @@ Resumereader::Application.configure do
       :user_name => ENV["MANDRILL_USERNAME"],
       :password  => ENV["MANDRILL_PASSWORD"], # SMTP password is any valid API key
       :authentication => 'login', # Mandrill supports 'plain' or 'login'
-      :domain => 'resumequery.com', # your domain to identify your server when connecting
+      :domain => 'resumereader.herokuapp.com', # your domain to identify your server when connecting
     }
   
   # Code is not reloaded between requests

@@ -10,4 +10,11 @@ class AppListsController < ApplicationController
     end
   end
 
+  def update
+    @appList = current_user.app_lists.find_by_id(params[:applist][:id])
+    if @appList.update_attributes(params[:applist])
+      redirect_to root_path
+    end
+  end
+
 end
