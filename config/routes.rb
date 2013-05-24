@@ -1,5 +1,11 @@
 Resumereader::Application.routes.draw do
 
+  get "errors/404"
+
+  get "errors/500"
+
+  get "errors/422"
+
   get "resumes/new"
 
   #Root to public home page unless signed in
@@ -40,6 +46,11 @@ Resumereader::Application.routes.draw do
   
   #Devise gem for users and their accounts
   devise_for :users
+
+  #error pages
+  match '(errors)/:status', to: 'errors#show', constraints: {status: /\d{3}/} # via: :all
+
+
 end
 
 
