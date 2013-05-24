@@ -11,7 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130523151434) do
 
   create_table "app_lists", :force => true do |t|
@@ -24,7 +23,6 @@ ActiveRecord::Schema.define(:version => 20130523151434) do
   end
 
   add_index "app_lists", ["user_id", "job_id"], :name => "index_app_lists_on_user_id_and_job_id", :unique => true
->>>>>>> pasharayan/master
 
   create_table "boards", :force => true do |t|
     t.string   "name"
@@ -39,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130523151434) do
     t.string   "bulletable_type"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "employment_id"
   end
 
   add_index "bullets", ["bulletable_id", "bulletable_type"], :name => "index_bullets_on_bulletable_id_and_bulletable_type"
@@ -61,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20130523151434) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.integer  "user_id"
+    t.integer  "bulletable_id"
   end
 
   create_table "extracurriculars", :force => true do |t|
@@ -114,7 +114,6 @@ ActiveRecord::Schema.define(:version => 20130523151434) do
 
   add_index "responses", ["responseable_id", "responseable_type"], :name => "index_responses_on_responseable_id_and_responseable_type"
 
-<<<<<<< HEAD
   create_table "resumes", :force => true do |t|
     t.integer  "user_id"
     t.datetime "created_at", :null => false
@@ -132,8 +131,6 @@ ActiveRecord::Schema.define(:version => 20130523151434) do
     t.datetime "document_updated_at"
   end
 
-=======
->>>>>>> pasharayan/master
   create_table "schools", :force => true do |t|
     t.string   "name"
     t.string   "degree"
