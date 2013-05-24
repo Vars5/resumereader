@@ -2,7 +2,7 @@ Resumereader::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # paperclip 
-  
+
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
@@ -11,7 +11,7 @@ Resumereader::Application.configure do
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
-  
+
   # mandrill - Mailchimp App
   
   config.action_mailer.smtp_settings = {
