@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
   has_many :app_lists, dependent: :destroy 
 
   
+  has_many :reviews, dependent: :destroy
+  
   validates :first_name, length: { maximum: 30 }
   validates :last_name, length: { maximum: 30 }
 
