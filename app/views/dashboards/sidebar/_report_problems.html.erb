@@ -1,9 +1,8 @@
 <div class="profileSpot">
-	<h5>Help us build a better tool!</br>
-		What's broken, hackable or suggestable?</h5>
+	<h5>Submit a company, job or feature request</h5>
 	<%= form_for @problem, :as => :problems do |f| %>
 		<%= f.text_area :problem, :placeholder => 
-			 "We really appreciate what you think and find! Spam us a hello if you'd like!" %>
+			 "We really appreciate your input!" %>
 		<%= f.hidden_field :reporter_id, :value => current_user.id %>
 		<%= f.submit "Submit your findings & suggestions", :class=>"btn btn-success" %>	
 	<% end %>

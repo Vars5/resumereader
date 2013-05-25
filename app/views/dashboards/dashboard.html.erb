@@ -4,9 +4,11 @@
 		
 		<div class="row-fluid">
 			<div class="span9">
-				<div class="currentGoal">
-					<%= render 'dashboards/goal'%>
-				</div>
+				<% if can? :create, @job%>
+					<div class="currentGoal">
+						<%= render 'dashboards/goal'%>
+					</div>
+				<% end %>
 				<div class="row-fluid profileSpot">
 					<%= render 'dashboards/appmanage'%>
 				</div>
@@ -37,9 +39,10 @@
 				<% end %>
 				<% if false %>
 					<%= render 'dashboards/sidebar/did_interview'%>
+					<%= render 'dashboards/sidebar/resume_stats'%>
 				<% end %>
 				<%= render 'dashboards/sidebar/report_problems' %>				
-				<%= render 'dashboards/sidebar/resume_stats'%>
+
 			</div>
 
 		</div>

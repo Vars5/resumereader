@@ -9,11 +9,12 @@
 				
 				<!-- Search loads if we have search working-->
 				
-				<%= form_for :search do |f| %>
-					<%= f.text_field :search, :placeholder => 
-						"Search for Companies, Posts & Guides" %> <i class="icon-search icon-white"></i> 
+				<% if can? :create, @job%>
+					<%= form_for :search do |f| %>
+						<%= f.text_field :search, :placeholder => 
+							"Search for Companies, Posts & Guides" %> <i class="icon-search icon-white"></i> 
+					<% end %>
 				<% end %>
-				
 				
 			</div>
 			<div class="pull-right">
