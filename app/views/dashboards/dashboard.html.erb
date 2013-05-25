@@ -1,10 +1,8 @@
-
-	<div class="container-fluid">
-		<%= render 'dashboards/steps'%>
-		
-		<div class="row-fluid">
+	<div class="container">		
+		<div class="row">
 			<div class="span9">
-				<% if can? :create, @job%>
+				<%= render 'dashboards/userbar'%>
+				<% if can? :create, @job %>
 					<div class="currentGoal">
 						<%= render 'dashboards/goal'%>
 					</div>
@@ -34,6 +32,7 @@
 			<div class="span3 sidebar">
 				<!-- The if-false statements here are 
 				hiding sidebar features yet to be completed -->
+				
 				<% if false %>
 					<%= render 'dashboards/sidebar/profile_completion'%>
 				<% end %>
@@ -41,7 +40,13 @@
 					<%= render 'dashboards/sidebar/did_interview'%>
 					<%= render 'dashboards/sidebar/resume_stats'%>
 				<% end %>
-				<%= render 'dashboards/sidebar/report_problems' %>				
+				<%= render 'dashboards/sidebar/report_problems' %>		
+				
+				
+				
+				<div class="profileSpot">
+					Newly added jobs:
+				</div>		
 
 			</div>
 

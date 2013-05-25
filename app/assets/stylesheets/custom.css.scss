@@ -147,10 +147,8 @@ $textAqua: #DEFAF6;
 		padding:15px 0px 5px;
 		/*border-top:1px solid $standardGrey;*/
 		border-bottom:1px solid $siteGreen;
-		font-size:1.3em;
 		line-height:10px;
 		color:$standardGrey;
-		font-family:OswaldBook;
 		a {
 
 		}
@@ -270,7 +268,7 @@ $textAqua: #DEFAF6;
 	}
 	
 	.profileSpot {
-		border-bottom:1px solid $siteGreen;
+		border-bottom:1px solid $standardGrey;
 		padding:15px 0px;
 		textarea {
 			height:90px;
@@ -278,6 +276,13 @@ $textAqua: #DEFAF6;
 		}
 		.btn {
 			width:100%;
+		}
+		p{
+			color:$siteGreen;
+			font-size:14px;
+		}
+		h3{
+			font-size:24px;
 		}
 	}
 	

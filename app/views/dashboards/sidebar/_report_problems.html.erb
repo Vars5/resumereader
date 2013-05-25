@@ -4,6 +4,6 @@
 		<%= f.text_area :problem, :placeholder => 
 			 "We really appreciate your input!" %>
 		<%= f.hidden_field :reporter_id, :value => current_user.id %>
-		<%= f.submit "Submit your findings & suggestions", :class=>"btn btn-success" %>	
+		<%= f.submit "Submit", :class=>"btn btn-success" %>	
 	<% end %>
 </div>
