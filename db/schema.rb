@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523151434) do
+ActiveRecord::Schema.define(:version => 20130525145233) do
 
   create_table "app_lists", :force => true do |t|
     t.integer  "job_id"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20130523151434) do
     t.string   "bulletable_type"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "employment_id"
   end
 
   add_index "bullets", ["bulletable_id", "bulletable_type"], :name => "index_bullets_on_bulletable_id_and_bulletable_type"
@@ -47,8 +48,12 @@ ActiveRecord::Schema.define(:version => 20130523151434) do
     t.string   "website"
     t.string   "hr_email"
     t.text     "info"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "employments", :force => true do |t|
@@ -59,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20130523151434) do
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
     t.integer  "user_id"
+    t.integer  "bulletable_id"
   end
 
   create_table "extracurriculars", :force => true do |t|
@@ -111,6 +117,12 @@ ActiveRecord::Schema.define(:version => 20130523151434) do
   end
 
   add_index "responses", ["responseable_id", "responseable_type"], :name => "index_responses_on_responseable_id_and_responseable_type"
+
+  create_table "resumes", :force => true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "reviews", :force => true do |t|
     t.integer  "user_id"
