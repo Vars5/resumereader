@@ -13,6 +13,9 @@
 		<% else %>
 			<%=render 'staticpages/copywritearea'%>		
 		<% end %>
+		<% flash.each do |key, message| %>
+			<%= content_tag(:div, message, class: "alert alert-#{key}") %>
+		<% end %>
 		<%= yield %>
 		<%=render 'layouts/footer'%>
 		<%=render 'shared/google_analytics' if Rails.env.production? %>

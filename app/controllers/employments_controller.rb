@@ -9,9 +9,11 @@ class EmploymentsController < ApplicationController
   def create
     @employment = current_user.employments.build(params[:employment])
     if @employment.save
-      redirect_to root_path
+      flash[:success] = "Successfully created an employment field for you"
+      redirect_to resume_path
     else
-      redirect_to root_path
+      flash[:alert] = "Something went wrong on our end in trying to create this, apologies!"
+      render 'new'
     end   
   end
   
@@ -26,16 +28,18 @@ class EmploymentsController < ApplicationController
   def update
     @employment = current_user.employments.find_by_id(params[:id])
     if @employment.update_attributes(params[:employment])
-      redirect_to root_path
+      flash[:success] = "Your employment details were sucessfully updated"
+      redirect_to resume_path
     else
-      render 'edit'
+      render resume_path
     end
 
   end
 
   def destroy
     @employment = current_user.employments.find_by_id(params[:id]).destroy
-    redirect_to root_path
+    flash[:success] = "Your employment details were sucessfully deleted"
+    redirect_to resume_path
   end
 
 

@@ -7,12 +7,17 @@ class AppListsController < ApplicationController
     @job = Job.find_by_id(params[:applist][:job_id])
     if @appList.save
       redirect_to @job
+      flash[:success] = "You're now following the #{@job.name} opportunity"
+    else
+      flash[:alert] = "You're already following this job!"
+      redirect_to @job
     end
   end
 
   def update
     @appList = current_user.app_lists.find_by_id(params[:applist][:id])
     if @appList.update_attributes(params[:applist])
+      flash[:success] = "Updated your applications list"
       redirect_to root_path
     end
   end

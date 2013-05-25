@@ -9,9 +9,11 @@ class ExtracurricularsController < ApplicationController
   def create
     @extracurricular = current_user.extracurriculars.build(params[:extracurricular])
     if @extracurricular.save
-      redirect_to root_path
-    else 
-      redirect_to root_path
+       flash[:success] = "Successfully created an extracurricular for you"
+        redirect_to resume_path
+    else
+      flash[:alert] = "Something went wrong on our end in trying to create this, apologies!"
+      render 'new'
     end
   end
   
@@ -21,8 +23,6 @@ class ExtracurricularsController < ApplicationController
       #change to error page once set up
       redirect_to root_path
     end
-  
-  
   end
   
   def update

@@ -14,8 +14,10 @@ class BulletsController < ApplicationController
   def create
     @bullet = @bulletable.bullets.new(params[:bullet])
     if @bullet.save
+      flash[:success] = "You have successfully created a new bullet point"
       redirect_to [@bulletable, :bullets], notice: "Bulletpoint created"
     else
+      flash[:alert] = "Something went wrong and we couldn't save your bullet"
       render "new"
     end
   end
@@ -23,6 +25,7 @@ class BulletsController < ApplicationController
   def update
     @bullet = Bullet.find_by_id(params[:id])
     if @bullet.update_attributes(params[:bullet])
+      flash[:success] = "You have successfully updated your bullet point"
       redirect_to [@bulletable, :bullets]
     end
   end

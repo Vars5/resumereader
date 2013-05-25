@@ -9,6 +9,7 @@ class BoardsController < ApplicationController
     @board = @company.boards.new(params[:boards]) 
     if @board.save
       redirect_to @company
+      flash[:success] = "Created the #{@board.name} board"
     end
   end
 
@@ -26,12 +27,14 @@ class BoardsController < ApplicationController
   def update
     @board = Board.find_by_id(params[:id])
     if @board.update_attributes(params[:boards])
+      flash[:success] = "You have successfully updated the #{@board.name} board"
       redirect_to @board
     end
   end
   
   def destroy
     @board = Board.find_by_id(params[:id])
+    flash[:success] = "You have successfully deleted this board"
   end
   
   
