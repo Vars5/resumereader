@@ -3,19 +3,19 @@ Resumereader::Application.configure do
 
   # paperclip 
   
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['AWS_BUCKET'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
   
-  #config.paperclip_defaults = {
-  #  :storage => :s3,
-  #  :s3_credentials => {
-  #    :bucket => ENV['AWS_BUCKET']
-  #    :access_key_id => ENV['AWS_ACCESS_KEY_ID']
-  #    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-  #  }
-  #}
   
-  # mandrill - Mailchimp App
+  # Mandrill settings
   
-  config.action_mailer.smtp_settings = {
+    config.action_mailer.smtp_settings = {
       :address   => "smtp.mandrillapp.com",
       :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
       :enable_starttls_auto => true, # detects and uses STARTTLS
