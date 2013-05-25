@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130523151434) do
+ActiveRecord::Schema.define(:version => 20130525145233) do
 
   create_table "app_lists", :force => true do |t|
     t.integer  "job_id"
@@ -48,8 +48,12 @@ ActiveRecord::Schema.define(:version => 20130523151434) do
     t.string   "website"
     t.string   "hr_email"
     t.text     "info"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "employments", :force => true do |t|
