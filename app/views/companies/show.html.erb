@@ -8,6 +8,8 @@
 			<p>Industry: <%= @company.industry %></p>
 			<p>Website: <%= link_to "#{@company.website}", "http://#{@company.website}" %></p>
 			<p>HR Email: <%= @company.hr_email %></p>
+			<p>PHOTOR:</p>
+			<p><% image_tag companies.logo.url %></p>
 		</div>
 		
 		<div class="span6">
