@@ -24,7 +24,14 @@ class User < ActiveRecord::Base
   validates :first_name, length: { maximum: 30 }
   validates :last_name, length: { maximum: 30 }
 
-  #Nested Forms
+  
+  def app_list_feed
+    AppList.where("user_id = ?", self.id)
+  end
+
+  def app_list_count
+    AppList.where("user_id = ?", self.id).count
+  end
 
   
 

@@ -6,7 +6,7 @@ class AppListsController < ApplicationController
     @appList = current_user.app_lists.build(params[:applist])
     @job = Job.find_by_id(params[:applist][:job_id])
     if @appList.save
-      redirect_to @job
+      redirect_to root_path
       flash[:success] = "You're now following the #{@job.name} opportunity"
     else
       flash[:alert] = "You're already following this job!"
@@ -20,6 +20,7 @@ class AppListsController < ApplicationController
       #flash[:success] = "Updated your applications list"
       redirect_to root_path
     end
+    @appList.check_destroy_status
   end
   
   def destroy

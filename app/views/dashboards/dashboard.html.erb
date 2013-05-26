@@ -28,7 +28,7 @@
 					</div>			
 				<% end %>
 			</div>
-		
+			
 			<div class="offset1 span3 sidebar">
 				<!-- The if-false statements here are 
 				hiding sidebar features yet to be completed -->
@@ -41,14 +41,30 @@
 					<%= render 'dashboards/sidebar/resume_stats'%>
 				<% end %>
 				<%= render 'dashboards/sidebar/report_problems' %>		
-				
-				
-				
-				<div class="profileSpot">
-					Newly added jobs:
-				</div>		
 
 			</div>
-
+		</div>		
+	</div>
+	
+	<div class="container">
+		<div class="row">
+			<div class="span12 profileSpot jobList">
+				<h3>More Job Opportunities</h3>
+				<ul>
+					<% @jobs.each do |j| %>
+						<%= link_to j do %>
+							<li><strong><%= j.find_company.name %></strong> - <%= j.name %>
+								<% if false %>
+								<%= form_for @followApp, :as => :applist do |f|%>
+									<%= f.hidden_field :job_id, :value => j.id %>
+									<%= f.submit "Follow", :class => "submitLink"%>
+								<% end %>
+								<% end %>
+							</li>
+						<% end %>
+					<% end %>
+					
+				</ul>
+			</div>
 		</div>
 	</div>

@@ -4,8 +4,15 @@ class Job < ActiveRecord::Base
   
   belongs_to :company
   
+  has_many :app_lists, dependent: :destroy
+  
   validates :name, presence: :true
   validates :discipline, presence: :true
   validates :info, presence: :true 
+  
+  
+  def find_company
+    Company.find_by_id(self.company_id)
+  end
   
 end

@@ -10,15 +10,20 @@ class DashboardsController < ApplicationController
     if @loadSetting == nil
       @goal = current_user.build_setting
     end
-    @problem = Problem.new
     @loadGoal = current_user.setting.goal
+    @problem = Problem.new
+   
+    #AppList Feed
+    @appListCount = current_user.app_list_count
+    @appList = current_user.app_list_feed
     
-    @appList = AppList.where("user_id = ?", current_user.id)
+    #All Jobs List
+    @jobs = Job.all
+    @followApp = current_user.app_lists.build
     
   end
 
   def resume
-
     @user                 = current_user
     @schoolAll            = current_user.schools
     @schoolCount          = current_user.schools.count

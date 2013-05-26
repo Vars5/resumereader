@@ -1,17 +1,18 @@
-<% if @appList.count == 0 %>
+<% if @appListCount == 0 %>
 	<h6>Have job following placeholder</h6>
 <% else %>
 		<% @appList.each do |apps| %>
-			<% job = Job.find(apps.job_id) %>
-			<% company = Company.find_by_id(job.company_id)%>
+			<% job = apps.find_job %>
+			<% company = job.find_company %>
 			<div class="appManage">
 				<div class="row">
 					<div class="span3">
-								<%= form_for apps, :as => :applist do |f| %>
-									<%= f.select :status, [['Untouched', 'untouched'], ['Researched', 'researched']],{},
-												    :onchange => "this.form.submit();"%>	
-									<%= f.hidden_field :id, :value => apps.id %>
-								<% end %>
+						<%= form_for apps, :as => :applist do |f| %>
+							<%= f.select :status, [['Untouched', 'untouched'], ['Researched', 'researched'],
+							                       ['Unfollow', 'unfollow']],{},
+										    :onchange => "this.form.submit();"%>	
+							<%= f.hidden_field :id, :value => apps.id %>
+						<% end %>
 					</div>
 					
 					<div class="span9">
