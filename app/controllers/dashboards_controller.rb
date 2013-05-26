@@ -11,6 +11,7 @@ class DashboardsController < ApplicationController
       @goal = current_user.build_setting
     end
     @loadGoal = current_user.setting.goal
+
     @problem = Problem.new
    
     #AppList Feed
@@ -19,11 +20,14 @@ class DashboardsController < ApplicationController
     
     #All Jobs List
     @jobs = Job.all
-    @followApp = current_user.app_lists.build
+    
+    #All Companies List
+    @companies = Company.all
     
   end
 
   def resume
+    authorize! :create, @job
     @user                 = current_user
     @schoolAll            = current_user.schools
     @schoolCount          = current_user.schools.count

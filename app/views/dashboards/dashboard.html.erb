@@ -40,7 +40,7 @@
 					<%= render 'dashboards/sidebar/did_interview'%>
 					<%= render 'dashboards/sidebar/resume_stats'%>
 				<% end %>
-				<%= render 'dashboards/sidebar/report_problems' %>		
+				<%= render 'shared/report_problems' %>		
 
 			</div>
 		</div>		
@@ -49,22 +49,33 @@
 	<div class="container">
 		<div class="row">
 			<div class="span12 profileSpot jobList">
-				<h3>More Job Opportunities</h3>
-				<ul>
-					<% @jobs.each do |j| %>
-						<%= link_to j do %>
-							<li><strong><%= j.find_company.name %></strong> - <%= j.name %>
-								<% if false %>
-								<%= form_for @followApp, :as => :applist do |f|%>
-									<%= f.hidden_field :job_id, :value => j.id %>
-									<%= f.submit "Follow", :class => "submitLink"%>
+				
+				<div class="row">
+					<div class="span8">
+						<h3>More Job Opportunities</h3>
+						<ul>
+							<% @jobs.each do |j| %>
+								<%= link_to j do %>
+									<li><strong><%= j.find_company.name %></strong> - <%= j.name %>
+
+									</li>
 								<% end %>
-								<% end %>
-							</li>
-						<% end %>
-					<% end %>
+							<% end %>
 					
-				</ul>
+						</ul>
+					</div
+				</div>
+				
+				<% @companies.each do |c|%>
+					<%= link_to c do%>
+						<%= c.name %> 
+					<% end %> -
+				<% end %>
+				
 			</div>
+			
+
+
+			
 		</div>
 	</div>

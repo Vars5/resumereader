@@ -6,7 +6,7 @@ class ProblemsController < ApplicationController
     @problem = Problem.new(params[:problems])
     if @problem.save
       flash[:success] = "Thanks! We'll try to act on it ASAP!"
-      redirect_to root_path
+      redirect_to :back
     end  
   end
   

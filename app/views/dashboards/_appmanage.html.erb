@@ -1,39 +1,37 @@
-<% if @appListCount == 0 %>
+<% if current_user.has_no_applists? %>
 	<h6>Have job following placeholder</h6>
 <% else %>
-		<% @appList.each do |apps| %>
-			<% job = apps.find_job %>
-			<% company = job.find_company %>
-			<div class="appManage">
-				<div class="row">
-					<div class="span3">
-						<%= form_for apps, :as => :applist do |f| %>
-							<%= f.select :status, [['Untouched', 'untouched'], ['Researched', 'researched'],
-							                       ['Unfollow', 'unfollow']],{},
-										    :onchange => "this.form.submit();"%>	
-							<%= f.hidden_field :id, :value => apps.id %>
+	<% @appList.each do |apps| %>
+		<% job = apps.find_job %>
+		<% company = job.find_company %>
+		<div class="appManage">
+			<div class="row">
+				<div class="span3">
+					<%= form_for apps, :as => :applist do |f| %>
+						<%= f.select :status, [['Untouched', 'untouched'], ['Researched', 'researched'],
+						                       ['Unfollow', 'unfollow']],{},
+									    :onchange => "this.form.submit();"%>	
+						<%= f.hidden_field :id, :value => apps.id %>
+					<% end %>
+				</div>
+			
+				<div class="span9">
+					<%= link_to job do %>
+						<strong><%= company.name %></strong></br>
+						<%= job.name %>
+						<% if job.due_date != nil%>	
+	  						<span class="pull-right"> Closes <%= job.due_date.strftime("%B %e")%></span>
 						<% end %>
-					</div>
-					
-					<div class="span9">
-						<%= link_to job do %>
-							<strong><%= company.name %></strong></br>
-							<%= job.name %>
-							<% if job.due_date != nil%>	
-		  						<span class="pull-right"> Closes <%= job.due_date.strftime("%B %e")%></span>
-							<% end %>
-						<% end %>
-	
-						<% if false %>
+					<% end %>
+					<% if false %>
 						<%= link_to "x", apps, method: :delete,
-																			  data: { confirm: 'You Sure?'}%>													
+													  data: { confirm: 'You Sure?'}%>													
 						<div class="info">
 							<%= truncate(job.info, :length => 140)%>
 						</div>																	
-						<% end %>
-					</div>
+					<% end %>
 				</div>
-					
-			</div>
-		<% end %>
+			</div>					
+		</div>
+	<% end %>
 <% end %>

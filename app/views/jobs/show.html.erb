@@ -1,24 +1,50 @@
-<div class="container-fluid">
-	<div class="row-fluid">
-		<div class="span3">
-			<%= @job.name %>
-			<%= @job.discipline %>
-			<%= @job.info %>
+<div class="container">
+	<div class="row profileSpot">
+		<div class="span7 companyInfo">
+			<h3>
+				<%= @job.name %></br>
+				<% if @job.due_date != nil%>	
+					Closes <%= @job.due_date.strftime("%B %e")%>
+				<% end %>
+			</h3>
+			<strong><%= @job.find_company.name %></strong></br>
+			Relevant Discipline: <%= @job.discipline %></br>
+			<%= @job.link %></br>
+			
+			<% if current_user.is_following_applist?(@job) %>
+				<div class="alert">
+					You're following this job.</br></br> If there's anything
+					more information that could help you, e.g. minimum marks
+					or extra-curriculars, please submit it to the
+					suggestions box. We're committed to helping you through
+					the whole job process.
+				</div>
+			<% else %>
+				<%= form_for @appList, :as => :applist do |f|%>
+					<%= f.hidden_field :job_id, :value => params[:id] %>
+					<%= f.submit "Follow the #{@job.find_company.name} #{@job.name}", :class => "btn btn-large btn-info"%>
+				<% end %>
+			<% end %>
+
+			<%= @job.info %></br>
+
+			
 		</div>
-		<div class="span3">
+		<div class="span3 pull-right">
+			<!-- Place company logo here later -->
+			
+			<%= render 'shared/report_problems'%>
+
 			<% if can? :update, @job %>
-				<%= link_to 'Edit this Job', edit_job_path%>
+				<%= link_to 'Edit this Job', edit_job_path %>
 			<% end %>
 		</div>
 	</div>
 </div>
 
-<div class="container-fluid">
-	<div class="row-fluid">
-		<%= form_for @appList, :as => :applist do |f|%>
-			<%= f.hidden_field :job_id, :value => params[:id] %>
-			<%= f.submit "Save this job!", :class => "btn btn-large btn-success"%>
-		<% end %>
+<div class="container">
+	<div class="row">
+
 		
 	</div>
 </div>

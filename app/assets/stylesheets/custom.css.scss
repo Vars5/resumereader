@@ -268,7 +268,7 @@ $linkBlue: #19558d;
 	}
 	
 	.profileSpot {
-		border-bottom:1px solid $lightGrey;
+
 		padding:15px 0px;
 		textarea {
 			height:90px;
@@ -408,4 +408,13 @@ $linkBlue: #19558d;
 			background-color: transparent;
 			border: none;
 		}
+	}
+	
+	.companyInfo {
+		font-size:14px;
+	}
+	
+	
+	.bottomBorder {
+		border-bottom:1px solid $siteGreen;
 	}

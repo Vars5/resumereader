@@ -15,4 +15,5 @@ class Job < ActiveRecord::Base
     Company.find_by_id(self.company_id)
   end
   
+  
 end

@@ -6,7 +6,6 @@ class Employment < ActiveRecord::Base
   has_many :bullets, as: :bulletable  #polymorphic association with Bullets
   has_many :responses, as: :responseable #polymorphic association with respones
   
-  
   #validations
   validates :user_id, presence: :true
   validates :company, presence: :true

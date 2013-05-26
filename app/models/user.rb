@@ -33,7 +33,12 @@ class User < ActiveRecord::Base
     AppList.where("user_id = ?", self.id).count
   end
 
-  
+  def is_following_applist?(job)
+    self.app_lists.find_by_job_id(job.id) != nil
+  end
 
+  def has_no_applists?
+    self.app_lists.count == 0
+  end
   
 end
