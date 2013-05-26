@@ -1,29 +1,52 @@
 <div class="infoBar">
 	<div class="container">
 		<div class="row">
-			<div class="span4">
+			<div class="span7">
 				<%= render 'devise/registrations/signup_copywrite'%>
 			</div>	
-			<div class="offset1 span7">
-				<div class="leftBar">
-					<h2>Sign Up</h2>
-					</br>
+			<div class="span5">
+				<div class="leftBar pull-right">
+					<h2>Sign Up</h2>	
 					<%=form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 						<div class="errors">
 							<%= devise_error_messages! %>
 						</div>
-						<p><%= f.text_field :first_name, :placeholder => "First Name"%> 
-						   <%= f.text_field :last_name, :placeholder => "Last Name"%></p>
-						<p><%= f.email_field :email, :placeholder => "Your email address" %> 
-						   <%= f.text_field :mobile_number, :placeholder => "Optional Contact Number" %></p>
-						<p><%= f.password_field :password, :placeholder => "Password" %>
-							<%= f.password_field :password_confirmation, :placeholder => "Password Confirmation" %></p>
+						<%= f.text_field :first_name, :placeholder => "Your First Name"%> </br>
+						<%= f.email_field :email, :placeholder => "Your Email" %></br> 
+						<%= f.password_field :password, :placeholder => "New Password" %>
+							<% if false %>
+								<%= f.password_field :password_confirmation, :placeholder => "Password Confirmation" %></p>
+							<% end %>
 						</br>
-						<div><%= f.submit "Create my account", :class => "btn btn-success" %></div>
+						<div><%= f.submit "Sign Up", :class => "btn btn-success" %></div>
 					<% end %>
-					<%= render "devise/shared/links" %>	
+					<% if false %>
+						<%= render "devise/shared/links" %>	
+					<% end %>
 				</div>
 			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="listCopy">
+		<div class="sellingpoints">
+			<h4>ResumeQuery uses what works to separate you from the rest</h4>
+			<p>The information we put onto our website is based
+				off what has worked for other applicants in the past, 
+				continuously updated with relevant information - not
+				just HR speak</p>
+			</br>
+			<div class="divider" style="width:100%;background-color:white;height:1px;">
+			</div>
+			</br>
+			<h4>We won't take money from employers</h4>
+			<p>We want to help <strong>you</strong> get employed and
+				we won't compromise on our independence to achieve that.</p>
+			</br> 
+		</div>
 		</div>
 	</div>
 </div>

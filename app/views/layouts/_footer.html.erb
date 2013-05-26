@@ -6,11 +6,13 @@
 			<div class="footer">
 				<ul class="inline">
 					<li><strong>resumeQuery</strong></li>
-					<li><%= link_to 'About Us', about_path %></li>
+					<li><%= link_to 'About', about_path %></li>
+					<% if false %>
 					<li><%= link_to 'Contact Us' %></li>
 					<li><%= link_to 'Privacy Policy' %></li>
 					<li><%= link_to 'Blog' %></li>				
 					<li><%= link_to 'Twitter' %></li>
+					<% end %>
 					<% if signed_in? %>
 				      <li><%= link_to 'Help' %></li>
 					<% end %>

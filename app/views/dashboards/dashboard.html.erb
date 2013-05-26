@@ -1,13 +1,13 @@
 	<div class="container">		
 		<div class="row">
-			<div class="span9">
+			<div class="span8">
 				<%= render 'dashboards/userbar'%>
 				<% if can? :create, @job %>
 					<div class="currentGoal">
 						<%= render 'dashboards/goal'%>
 					</div>
 				<% end %>
-				<div class="row-fluid profileSpot">
+				<div class="row-fluid appArea">
 					<%= render 'dashboards/appmanage'%>
 				</div>
 			
@@ -29,7 +29,7 @@
 				<% end %>
 			</div>
 		
-			<div class="span3 sidebar">
+			<div class="offset1 span3 sidebar">
 				<!-- The if-false statements here are 
 				hiding sidebar features yet to be completed -->
 				

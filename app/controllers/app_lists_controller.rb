@@ -17,9 +17,14 @@ class AppListsController < ApplicationController
   def update
     @appList = current_user.app_lists.find_by_id(params[:applist][:id])
     if @appList.update_attributes(params[:applist])
-      flash[:success] = "Updated your applications list"
+      #flash[:success] = "Updated your applications list"
       redirect_to root_path
     end
+  end
+  
+  def destroy
+    @appList = current_user.app_lists.find_by_id(params[:id]).destroy
+    redirect_to root_path
   end
 
 end

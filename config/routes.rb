@@ -1,16 +1,17 @@
 Resumereader::Application.routes.draw do
 
-  get "errors/404"
-
-  get "errors/500"
-
-  get "errors/422"
-
-  get "resumes/new"
 
   #Root to public home page unless signed in
+  
+  #Save time annd just root to new registration page for now
   root :to => 'dashboards#dashboard', :constraints => lambda {|r| r.env["warden"].authenticate? }
-  root :to => 'staticpages#home'
+
+  devise_scope :user do
+    root to: "devise/registrations#new"
+  end
+
+
+  #root :to => 'staticpages#home'
   
   #Public Pages
   match '/feedback', :to => 'staticpages#feedback'
