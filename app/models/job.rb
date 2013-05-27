@@ -19,5 +19,11 @@ class Job < ActiveRecord::Base
     self.find_company.hr_email
   end
   
+  def show_due_date
+    if job.due_date != nil
+      self.due_date.strftime("%B %e")
+    end
+  end
+  
   
 end

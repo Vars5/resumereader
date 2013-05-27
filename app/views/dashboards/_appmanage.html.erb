@@ -26,9 +26,9 @@
 					<%= link_to job do %>
 						<strong><%= company.name %></strong></br>
 						<%= job.name %>
-						<% if job.due_date != nil%>	
-	  						<span class="pull-right"> Closes <%= job.due_date.strftime("%B %e")%></span>
-						<% end %>
+						
+	  					<span class="pull-right"> Closes <%= job.show_due_date %></span>
+						
 					<% end %>
 					<% if false %>
 						<%= link_to "x", apps, method: :delete,
