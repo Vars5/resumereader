@@ -10,8 +10,9 @@
 			<strong><%= link_to @job.find_company.name, @job.find_company %></strong></br>
 			Discipline: <%= @job.discipline %></br>
 			HR Contact: <%= @job.relevant_hr_email %></br>
-			<%= @job.link %></br></br>
-
+			<% if @job.has_website? %>
+				<%= link_to "Job Website", "http://#{@job.link}" %></br></br>
+			<% end %>
 
 			<% if current_user.is_following_applist?(@job) %>
 				<div class="alert">

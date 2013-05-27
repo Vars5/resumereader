@@ -25,5 +25,9 @@ class Job < ActiveRecord::Base
     end
   end
   
+  def has_website?
+    self.link != nil
+  end
+  
   
 end
