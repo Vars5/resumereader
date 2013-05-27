@@ -49,7 +49,6 @@
 	<div class="container">
 		<div class="row">
 			<div class="span12 profileSpot jobList">
-				
 				<div class="row">
 					<div class="span8">
 						<h3>More Job Opportunities</h3>
@@ -57,24 +56,19 @@
 							<% @jobs.each do |j| %>
 								<%= link_to j do %>
 									<li><strong><%= j.find_company.name %></strong> - <%= j.name %>
-
 									</li>
 								<% end %>
 							<% end %>
 						</ul>
-					</div
+					</div>
+					<div class="span4">
+						<% @companies.each do |c|%>
+							<%= link_to c do%>
+								<%= c.name %> 
+							<% end %> -
+						<% end %>
+					</div>
 				</div>
-				
-				<% @companies.each do |c|%>
-					<%= link_to c do%>
-						<%= c.name %> 
-					<% end %> -
-				<% end %>
-				
 			</div>
-			
-
-
-			
 		</div>
 	</div>
