@@ -1,5 +1,19 @@
-<% @job.each do |job| %>
-	<%= link_to job do %>
-		Name: <%= job.name %> Discipline: <%= job.discipline %> |
-	<% end %>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="span7 jobIndex">
+				<h3>All Job Opportunities</h3>
+				<ul class="unstyled">
+					<% @job.each do |j| %>
+						<%= link_to j do %>
+							<li><strong><%= j.find_company.name %></strong> - <%= j.name %> - 
+							<span class="pull-right">Closes: <%= j.due_date.strftime("%B %e")%></span>
+							</li>
+						<% end %>
+					<% end %>
+		</div>
+		
+		<div class="span3 pull-right">
+			<%= render 'shared/report_problems'%>
+		</div>
+	</div>
+</div>

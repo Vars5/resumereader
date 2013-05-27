@@ -28,7 +28,7 @@ $linkBlue: #19558d;
 /* Universals */
 	
 	body {
-		font-size:13px;
+		font-size:14px;
 		line-height:1.28;
 		h3 {
 			line-height:30px;
@@ -410,11 +410,26 @@ $linkBlue: #19558d;
 		}
 	}
 	
-	.companyInfo {
-		font-size:14px;
-	}
+
 	
 	
 	.bottomBorder {
 		border-bottom:1px solid $siteGreen;
+	}
+	
+	.introBar{
+		text-align:center;
+		padding:20px 25px 0px;
+	}
+	
+	.jobIndex{
+		font-size:17px;
+		li{
+			border-bottom:1px solid $lightGrey;
+			padding:8px 0px;
+		}
+		hover{
+			background-color:orange;
+		}
+			
 	}

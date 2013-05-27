@@ -1,16 +1,18 @@
 <div class="container">
-	<div class="row profileSpot">
-		<div class="span7 companyInfo">
+	<div class="row ">
+		<div class="span7">
 			<h3>
 				<%= @job.name %></br>
 				<% if @job.due_date != nil%>	
 					Closes <%= @job.due_date.strftime("%B %e")%>
 				<% end %>
 			</h3>
-			<strong><%= @job.find_company.name %></strong></br>
-			Relevant Discipline: <%= @job.discipline %></br>
-			<%= @job.link %></br>
-			
+			<strong><%= link_to @job.find_company.name, @job.find_company %></strong></br>
+			Discipline: <%= @job.discipline %></br>
+			HR Contact: <%= @job.relevant_hr_email %></br>
+			<%= @job.link %></br></br>
+
+
 			<% if current_user.is_following_applist?(@job) %>
 				<div class="alert">
 					You're following this job.</br></br> If there's anything

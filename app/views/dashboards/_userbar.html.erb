@@ -2,10 +2,17 @@
 	<div class="span12 profileSpot">
 		<div class="row-fluid">
 			<div class="span10">
-				<h3>Hi <%= current_user.first_name%>!</br>
-					 These are the jobs you're following:</h3>
-				<p>Manage the status of the jobs you're applying for and find out about more companies.
-					Click on the company name for more information.</p>
+				<h3>Hi <%= current_user.first_name%>!</br>					
+					<% if current_user.has_no_applists? %>
+					Welcome to resumeQuery!</h3>
+					
+					<%else%>
+						 These are the jobs you're following:</h3>
+					<p>Manage the status of the jobs you're applying for and find out about more companies.
+						Click on the company name for more information.</p>
+					<% end %>
+					
+					
 			</div>
 		</div>
 	</div>

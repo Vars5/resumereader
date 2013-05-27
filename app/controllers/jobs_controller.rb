@@ -14,6 +14,7 @@ class JobsController < ApplicationController
   
   def index
     @job = Job.all
+    @problem = Problem.new
   end
   
   def show

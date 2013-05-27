@@ -1,5 +1,12 @@
 <% if current_user.has_no_applists? %>
-	<h6>Have job following placeholder</h6>
+	<div class="introBar alert alert-info">
+		<%= link_to jobs_path do %>
+			<h4>Start tracking jobs now!</h4></br>
+			<p> ResumeQuery is great for reducing the stress and business of job applications
+				 by having them all sorted in one place for you </p>
+		<% end %>
+	</div>
+		
 <% else %>
 	<% @appList.each do |apps| %>
 		<% job = apps.find_job %>

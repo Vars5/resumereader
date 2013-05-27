@@ -1,23 +1,25 @@
-<div class="container-fluid">
-	<div class="row-fluid">
-		<div class="span3">
-			<h2><%= @company.name %></h2>
-			<% if can? :update, @company %>
-				<p><%= link_to 'Edit company details', edit_company_path %></p>
-			<% end %>
-			<p>Industry: <%= @company.industry %></p>
-			<p>Website: <%= link_to "#{@company.website}", "http://#{@company.website}" %></p>
-			<p>HR Email: <%= @company.hr_email %></p>
-			<p>PHOTOR:</p>
-			<p><%= image_tag @company.logo.url %></p>
+<div class="container">
+	<div class="row ">
+		<div class="span7">
+			<div class="bottomBorder">
+				<h3><%= @company.name %></h3>
+					<% if can? :update, @company %>
+						<p><%= link_to 'Edit company details', edit_company_path %></p>
+					<% end %>
+					Industry: <%= @company.industry %></br>
+					Website: <%= link_to "#{@company.website}", "http://#{@company.website}" %></br>
+					HR Email: <%= @company.hr_email %></br>
+					<% if @company.has_image? %>
+						<%= image_tag @company.logo.url %></br>
+					<% end %></br>
+			</div>
+			</br>
+			<p><%= simple_format(@company.info) %></p>
 		</div>
+	
 		
-		<div class="span6">
-			<legend>Information:</legend>
-			<p><%= simple_format(@info) %></p>
-		</div>
-		
-		<div class="span3">
+		<div class="span3 pull-right">
+			<%= render 'shared/report_problems'%>
 			<% if can? :create, @job %>
 				<legend>Create a job</legend>
 				<%= form_for @jobs, :as => :jobs do |f| %>
@@ -30,11 +32,14 @@
 					<%= f.submit %>
 				<% end %>
 			<% end %>
-			
-			<% if @companyJobs != nil %>
-				<% @companyJobs.each do |test| %>
-					<p>Job Name: <%=link_to	"#{test.name}", test %></p>
-				<% end %>
+				
+			<% if @company.has_number_of_jobs > 0 %>
+				<strong> Job opportunities with <%= @company.name %>: </strong></br></br>
+				<ul>
+					<% @company.has_jobs.each do |job|%>
+						<li><%=link_to	"#{job.name}", job %></li>
+					<% end %>
+				</ul>
 			<% end %>
 		</div>
 	</div>

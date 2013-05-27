@@ -20,11 +20,10 @@ class CompaniesController < ApplicationController
   
   def show
     @company = Company.find_by_id(params[:id])
-    @info = @company.info
     @jobs = @company.jobs.build
-    @companyJobs = @company.jobs
     @boards = @company.boards.new
-    @allBoards = Board.where("company_id = ?", (params[:id]))
+    @allBoards = Board.where("company_id = ?", params[:id])
+    @problem = Problem.new
   end
   
   def index
