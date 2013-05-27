@@ -20,8 +20,8 @@ class Job < ActiveRecord::Base
   end
   
   def show_due_date
-    if job.due_date != nil
-      self.due_date.strftime("%B %e")
+    if self.due_date != nil
+      self.due_date.strftime("%B %e") 
     end
   end
   
