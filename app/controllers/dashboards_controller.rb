@@ -45,5 +45,10 @@ class DashboardsController < ApplicationController
   def changeSettings
     @settings = current_user.setting
   end
+  
+  def admin
+    @list = User.all
+    authorize! :create, @job
+  end
 
 end

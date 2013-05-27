@@ -22,6 +22,9 @@ Resumereader::Application.routes.draw do
   match '/resume', :to => 'dashboards#resume'
   match '/changeSettings', :to => 'dashboards#changeSettings'
   
+  #admin pages
+  match '/admin', to: 'dashboards#admin'
+  
   #Resources
   resources :schools, except: [:show] 
   resources :problems, only: [:create, :index]
@@ -50,6 +53,7 @@ Resumereader::Application.routes.draw do
 
   #error pages
   match '(errors)/:status', to: 'errors#show', constraints: {status: /\d{3}/} # via: :all
+
 
 
 end
