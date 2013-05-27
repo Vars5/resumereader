@@ -5,6 +5,8 @@
 				<% @list.each do |user| %>
 					<li><%= user.first_name %> <%= user.email%></li>
 				<% end %>
+				
+				<p>There are <%= Company.all.count %> Companies</p>
 			</ul>
 		</div>
 	</div>

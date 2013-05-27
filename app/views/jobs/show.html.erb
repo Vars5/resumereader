@@ -11,7 +11,7 @@
 			Discipline: <%= @job.discipline %></br>
 			HR Contact: <%= @job.relevant_hr_email %></br>
 			<% if @job.has_website? %>
-				<%= link_to "Job Website", "http://#{@job.link}" %></br></br>
+				<%= link_to "Official Link", "http://#{@job.link}" %></br></br>
 			<% end %>
 
 			<% if current_user.is_following_applist?(@job) %>
