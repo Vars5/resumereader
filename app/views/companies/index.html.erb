@@ -1,9 +1,18 @@
-<div class="container-fluid">
-	<div class="row-fluid">
-		<h2>ALL THE COMPANIES HERE: </h2>
-		
-		<% @allCompanies.each do |company| %>
-			<%= link_to "#{company.name}", company %> | 
-		<% end %>
+<div class="container">
+	<div class="row">
+		<div class="span7 jobIndex">
+			<h3>All Job Opportunities</h3>
+			<ul class="unstyled">
+				<% @allCompanies.each do |c| %>
+					<%= link_to c do %>
+						<li><strong><%= c.name %></strong> - <%= c.industry%>  
+							<span class="pull-right"><%= c.jobs.count %> Job Opportunities</span>
+						</li>
+					<% end %>
+				<% end %>
+		</div>
+		<div class="span3 pull-right">
+			<%= render 'shared/report_problems'%>
+		</div>
 	</div>
 </div>
