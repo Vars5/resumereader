@@ -13,17 +13,37 @@ Resumereader::Application.configure do
   }
   
   
+  
   # Mandrill settings
   
+  config.action_mailer.default_url_options = { :host => 'resume-test.herokuapp.com' }
+  
+  config.action_mailer.smtp_settings = {
+      :port =>           '587',
+      :address =>        'smtp.mandrillapp.com',
+      :user_name =>      ENV['MANDRILL_USERNAME'],
+      :password =>       ENV['MANDRILL_APIKEY'],
+      :domain =>         'heroku.com',
+      :authentication => :plain
+  }
+
+  config.action_mailer.delivery_method = :smtp
+ 
+  
+=begin
+    config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
-      :address   => "smtp.mandrillapp.com",
-      :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
-      :enable_starttls_auto => true, # detects and uses STARTTLS
-      :user_name => ENV["MANDRILL_USERNAME"],
-      :password  => ENV["MANDRILL_PASSWORD"], # SMTP password is any valid API key
-      :authentication => 'login', # Mandrill supports 'plain' or 'login'
-      :domain => 'resumereader.herokuapp.com', # your domain to identify your server when connecting
+      address: "smtp.gmail.com",
+      port: 587,
+  #    domain: "resumequery.com",
+      authentication: "plain",
+      enable_starttls_auto: true,
+  #    openssl_verify_mode: none,
+      user_name: ENV['GMAIL_USERNAME'],
+      password: ENV['GMAIL_PASSWORD']
     }
+=end    
+  
   
   # Code is not reloaded between requests
   config.cache_classes = true
