@@ -11,6 +11,13 @@ class Company < ActiveRecord::Base
   validates :info,     presence: :true
 
   has_attached_file :logo
+=begin
+:styles => {  
+    :thumb => [">75x"],
+    :medium => [">600x"]
+    }
+=end  
+
    
    
   def has_image?
