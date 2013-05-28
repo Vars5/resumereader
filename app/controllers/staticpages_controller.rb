@@ -1,4 +1,7 @@
 class StaticpagesController < ApplicationController
+  
+  caches_page :about
+  
   def home
   end
 
