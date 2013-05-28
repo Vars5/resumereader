@@ -9,9 +9,11 @@
 	</head>
 	<body>
 		<% if signed_in? %>
-			<%=render 'layouts/signed_in_header'%>
+			<% cache "header" do %>
+				<%=render 'layouts/signed_in_header'%>
+			<% end %>
 		<% else %>
-			<%=render 'staticpages/copywritearea'%>		
+			<%=render 'staticpages/copywritearea'%>			
 		<% end %>
 		
 		<% if flash.count > 0 %>
@@ -27,7 +29,9 @@
 		<% end %>
 		
 		<%= yield %>
-		<%=render 'layouts/footer'%>
+		<% cache "footer" do %>
+			<%=render 'layouts/footer'%>
+		<% end %>
 		<%=render 'shared/google_analytics' if Rails.env.production? %>
 	</body>
 </html>

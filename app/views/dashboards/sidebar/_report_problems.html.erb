@@ -1,9 +1,0 @@
-<div class="profileSpot">
-	<p>Suggestions & Improvements</p>
-	<%= form_for @problem, :as => :problems do |f| %>
-		<%= f.text_area :problem, :placeholder => 
-			 "Submit a company or job you want us to list or a suggestion for a new feature. " %>
-		<%= f.hidden_field :reporter_id, :value => current_user.id %>
-		<%= f.submit "Submit", :class=>"btn btn-success" %>	
-	<% end %>
-</div>

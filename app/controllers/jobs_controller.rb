@@ -7,6 +7,7 @@ class JobsController < ApplicationController
     @company = Company.find_by_id(params[:jobs][:id])
     @job = @company.jobs.build(params[:jobs])
     if @job.save
+      expire_fragment("job_opportunities")
       redirect_to @company
     end
   
@@ -30,6 +31,7 @@ class JobsController < ApplicationController
   def update
     @jobs = Job.find_by_id(params[:id])
     if @jobs.update_attributes(params[:jobs])
+      expire_fragment("job_opportunities")
       redirect_to @jobs
     end
   end

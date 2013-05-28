@@ -15,8 +15,8 @@
 			<div class="row">
 				<div class="span3">
 					<%= form_for apps, :as => :applist do |f| %>
-						<%= f.select :status, [['Not Started'], ['Researched'], ['Sent Cover'], ['Sent Resume'],
-						                       ['Sent Cover'],['Completed All'],['Unfollow', 'unfollow']],{},
+						<%= f.select :status, [['Not Started'], ['Researched'],
+						                       ['Sent Application'],['Completed All'],['Unfollow', 'unfollow']],{},
 									    :onchange => "this.form.submit();"%>	
 						<%= f.hidden_field :id, :value => apps.id %>
 					<% end %>

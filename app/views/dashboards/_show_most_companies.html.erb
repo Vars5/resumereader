@@ -1,0 +1,7 @@
+<% cache "companies_list" do %>
+	<% @companies.each do |c|%>
+		<%= link_to c do%>
+			<%= c.name %> 
+		<% end %> -
+	<% end %>
+<% end %>

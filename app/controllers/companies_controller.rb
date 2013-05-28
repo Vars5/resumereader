@@ -11,6 +11,7 @@ class CompaniesController < ApplicationController
     @company = Company.new(params[:company])
     if @company.save
       flash[:success] = "You have successfully created a new company"
+      expire_fragment("companies_list")
       redirect_to root_path
     else
       flash[:alert] = "Something went wrong when trying to create this company"
@@ -40,6 +41,7 @@ class CompaniesController < ApplicationController
     @company = Company.find_by_id(params[:id])
     if @company.update_attributes(params[:company])
       flash[:success] = "Successfully updated the company"
+      expire_fragment("companies_list")
       redirect_to @company 
     else
       flash[:alert] = "Something went wrong when trying to update this company"

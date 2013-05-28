@@ -13,7 +13,7 @@ class AppList < ActiveRecord::Base
   end
   
   def check_destroy_status
-    if self.status == "unfollow"
+    if self.status == "unfollow" 
       self.destroy
     end
   end
