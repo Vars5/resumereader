@@ -12,8 +12,12 @@ Resumereader::Application.configure do
     }
   }
   
+  
+  
   # Mandrill settings
-=begin
+  
+  config.action_mailer.default_url_options = { :host => 'resume-test.herokuapp.com' }
+  
   config.action_mailer.smtp_settings = {
       :port =>           '587',
       :address =>        'smtp.mandrillapp.com',
@@ -24,10 +28,9 @@ Resumereader::Application.configure do
   }
 
   config.action_mailer.delivery_method = :smtp
-=end  
-
-  config.action_mailer.default_url_options = { :host => 'resume-test.herokuapp.com' }
-
+ 
+  
+=begin
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings = {
       address: "smtp.gmail.com",
@@ -39,7 +42,7 @@ Resumereader::Application.configure do
       user_name: ENV['GMAIL_USERNAME'],
       password: ENV['GMAIL_PASSWORD']
     }
-  
+=end    
   
   
   # Code is not reloaded between requests
