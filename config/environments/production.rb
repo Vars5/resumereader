@@ -14,15 +14,16 @@ Resumereader::Application.configure do
   
   # Mandrill settings
   
-    config.action_mailer.smtp_settings = {
-      :address   => "smtp.mandrillapp.com",
-      :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
-    #  :enable_starttls_auto => true, # detects and uses STARTTLS
-      :user_name => ENV["MANDRILL_USERNAME"],
-      :password  => ENV["MANDRILL_APIKEY"], # SMTP password is any valid API key
-      :authentication => 'plain', # Mandrill supports 'plain' or 'login'
-      :domain => 'heroku.com' # your domain to identify your server when connecting
-    }
+  ActionMailer::Base.smtp_settings = {
+      :port =>           '587',
+      :address =>        'smtp.mandrillapp.com',
+      :user_name =>      ENV['MANDRILL_USERNAME'],
+      :password =>       ENV['MANDRILL_APIKEY'],
+      :domain =>         'heroku.com',
+      :authentication => :plain
+  }
+  ActionMailer::Base.delivery_method = :smtp
+  
   
   # Code is not reloaded between requests
   config.cache_classes = true
