@@ -65,6 +65,8 @@ GEM
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
+    devise-async (0.7.0)
+      devise (>= 2.2)
     diff-lcs (1.2.3)
     erubis (2.7.0)
     excon (0.20.1)
@@ -216,6 +218,7 @@ DEPENDENCIES
   capybara (= 1.1.2)
   coffee-rails
   devise
+  devise-async
   growl (= 1.0.3)
   guard-rspec
   heroku
