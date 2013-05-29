@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :async, :registerable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
@@ -40,5 +40,20 @@ class User < ActiveRecord::Base
   def has_no_applists?
     self.app_lists.count == 0
   end
-  
+=begin  
+  def confirm!
+      welcome_message
+      super
+    end
+
+    # ...
+
+  private
+
+    def welcome_message
+      UserMailer.signup_confirmation(self).deliver
+    end
+=end
+
+
 end

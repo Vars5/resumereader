@@ -16,3 +16,6 @@
 config/database.yml
 config/local_env.yml
 .env
+
+# Ignore application configuration
+/config/application.yml

@@ -63,5 +63,9 @@ module Resumereader
 
     config.exceptions_app = self.routes
     
+    # user_observer --> for sending emails / notifiations upon specific events
+    
+    config.active_record.observers = :user_observer
+    
   end
 end
