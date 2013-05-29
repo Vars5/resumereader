@@ -3,3 +3,10 @@
 		<p>1. Create the right resume structure --- 2. Answer questions about your role --- 3. Seek feedback </p>
 	</div>
 </div>
+
+<% if can? :create, @job%>
+	<%= form_for :search do |f| %>
+		<%= f.text_field :search, :placeholder => 
+			"Search for Companies, Posts & Guides" %> <i class="icon-search icon-white"></i> 
+	<% end %>
+<% end %>

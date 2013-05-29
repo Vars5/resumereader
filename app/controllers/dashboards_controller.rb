@@ -12,6 +12,7 @@ class DashboardsController < ApplicationController
     end
     @loadGoal = current_user.setting.goal
 
+    #New Problem Form
     @problem = Problem.new
    
     #AppList Feed
