@@ -14,7 +14,7 @@ class JobsController < ApplicationController
   end
   
   def index
-    @job = Job.all
+    @job = Job.order('due_date')
     @problem = Problem.new
   end
   

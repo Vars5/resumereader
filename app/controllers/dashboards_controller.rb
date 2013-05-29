@@ -20,7 +20,7 @@ class DashboardsController < ApplicationController
     @appList = current_user.app_list_feed
     
     #All Jobs List
-    @jobs = Job.all
+    @jobs = Job.order('due_date')
     
     #All Companies List
     @companies = Company.all
