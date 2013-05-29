@@ -16,7 +16,7 @@ Resumereader::Application.configure do
   
   # Mandrill settings
   
-  config.action_mailer.default_url_options = { :host => 'resume-test.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'resumequery.herokuapp.com' }
   
   config.action_mailer.smtp_settings = {
       :port =>           '587',
