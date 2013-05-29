@@ -35,3 +35,7 @@ gem "heroku"
 
 gem 'aws-sdk'
 gem 'paperclip'
+gem 'devise-async'
+
+gem 'figaro'
+gem 'newrelic_rpm'

@@ -33,8 +33,8 @@ Resumereader::Application.configure do
 
   
   # stmp gmail mailer
- 
-  config.action_mailer.default_url_options = { :host => 'localhost' }
+=begin 
+  
   config.action_mailer.smtp_settings = {
       :address   => "smtp.mandrillapp.com",
       :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
@@ -46,8 +46,11 @@ Resumereader::Application.configure do
     }
 
 
-=begin
-  config.action_mailer.delivery_method = :smtp
+=end
+  
+  config.action_mailer.default_url_options = { :host => 'localhost' }
+  
+  
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
@@ -58,8 +61,8 @@ Resumereader::Application.configure do
     user_name: ENV['GMAIL_USERNAME'],
     password: ENV['GMAIL_PASSWORD']
   }
-=end
- 
+
+ config.action_mailer.delivery_method = :smtp
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log

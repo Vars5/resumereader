@@ -40,5 +40,20 @@ class User < ActiveRecord::Base
   def has_no_applists?
     self.app_lists.count == 0
   end
-  
+=begin  
+  def confirm!
+      welcome_message
+      super
+    end
+
+    # ...
+
+  private
+
+    def welcome_message
+      UserMailer.signup_confirmation(self).deliver
+    end
+=end
+
+
 end
