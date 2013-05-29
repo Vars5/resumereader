@@ -2,18 +2,30 @@
 	<div class="row ">
 		<div class="span7">
 			<h3>
+			
+			<% cache do @job %>
 				<%= @job.name %></br>
 				<% if @job.due_date != nil%>	
 					Closes <%= @job.due_date.strftime("%B %e")%>
 				<% end %>
-			</h3>
-			<strong><%= link_to @job.find_company.name, @job.find_company %></strong></br>
-			Discipline: <%= @job.discipline %></br>
-			HR Contact: <%= @job.relevant_hr_email %></br>
-			<% if @job.has_website? %>
-				<%= link_to "Official Link", "http://#{@job.link}" %></br></br>
+				</h3>
+				<strong><%= link_to @job.find_company.name, @job.find_company %></strong></br>
+				Discipline: <%= @job.discipline %></br>
+				HR Contact: <%= @job.relevant_hr_email %></br>
+				<% if @job.has_website? %>
+					<%= link_to "Official Link", "http://#{@job.link}" %></br></br>
+				<% end %>
+				<%= simple_format(@job.info) %></br>
 			<% end %>
-
+			
+		</div>
+		<div class="span3 pull-right">
+			<!-- Place company logo here later -->
+			<%= render 'shared/report_problems'%>
+			<% if can? :update, @job %>
+				<%= link_to 'Edit this Job', edit_job_path %>
+			<% end %>
+			
 			<% if current_user.is_following_applist?(@job) %>
 				<div class="alert">
 					You're following this job.</br></br> If there's anything
@@ -23,23 +35,12 @@
 					the whole job process.
 				</div>
 			<% else %>
+			<div class="profileSpot">
 				<%= form_for @appList, :as => :applist do |f|%>
 					<%= f.hidden_field :job_id, :value => params[:id] %>
-					<%= f.submit "Follow the #{@job.find_company.name} #{@job.name}", :class => "btn btn-large btn-info"%>
+					<%= f.submit "Follow Job", :class => "btn btn-info"%>
 				<% end %>
-			<% end %>
-
-			<%= simple_format(@job.info) %></br>
-
-			
-		</div>
-		<div class="span3 pull-right">
-			<!-- Place company logo here later -->
-			
-			<%= render 'shared/report_problems'%>
-
-			<% if can? :update, @job %>
-				<%= link_to 'Edit this Job', edit_job_path %>
+			</div>
 			<% end %>
 		</div>
 	</div>
