@@ -1,6 +1,6 @@
 	<div class="container">		
 		<div class="row">
-			<div class="span8">
+			<div class="span12">
 				<%= render 'dashboards/userbar'%>
 				<div class="row-fluid appArea">
 					<%= render 'dashboards/appmanage'%>
@@ -24,17 +24,6 @@
 				<% end %>
 			</div>
 			
-			<div class="offset1 span3 sidebar">
-				<!-- The if-false statements here are 
-				hiding sidebar features yet to be completed -->
-				
-				<% if false %>
-					<%= render 'dashboards/sidebar/profile_completion'%>
-				<% end %>
-				<%= render 'shared/report_problems' %>	
-				
-
-			</div>
 		</div>		
 	</div>
 	
@@ -47,6 +36,7 @@
 					</div>					
 					<div class="span4">
 						<%= render 'dashboards/show_most_companies' %>
+						<%= render 'shared/report_problems' %>	
 					</div>
 				</div>
 			</div>
