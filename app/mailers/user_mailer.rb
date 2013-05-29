@@ -5,6 +5,6 @@ class UserMailer < ActionMailer::Base
     @user = user
     @greeting = "Hi"
 
-    mail to: user.email, subject: "Signup Confirmation- ResumeQuery"
+    mail to: user.email, subject: "Signup Confirmation- ResumeQuery", from: 'team@resumequery.com'
   end
 end

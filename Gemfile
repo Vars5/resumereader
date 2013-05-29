@@ -38,3 +38,4 @@ gem 'paperclip'
 gem 'devise-async'
 
 gem 'figaro'
+gem 'newrelic_rpm'

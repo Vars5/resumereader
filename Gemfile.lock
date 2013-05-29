@@ -118,6 +118,7 @@ GEM
     multi_json (1.7.2)
     multi_xml (0.5.1)
     netrc (0.7.7)
+    newrelic_rpm (3.6.2.96)
     nokogiri (1.5.9)
     orm_adapter (0.4.0)
     paperclip (3.1.4)
@@ -227,6 +228,7 @@ DEPENDENCIES
   guard-rspec
   heroku
   jquery-rails
+  newrelic_rpm
   paperclip
   pg
   rails
