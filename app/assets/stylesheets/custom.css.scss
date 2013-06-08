@@ -3,12 +3,31 @@
 
 /* ========= SECTION: STYLE VARIABLES =========*/
 
+$standard-padding: 20px;
 
+
+$base-green:  #39b54a;
+$light-green: #B5F7C2;
+$top-green:   #54bb62;
 
 
 /* ========= END SECTION: STYLE VARIABLES =========*/
 
 body {
-	font-family: 'Noto Sans', sans-serif;
-	
+	font-family: 'Noto Sans', sans-serif;	
+}
+
+.signedInHeader{
+	background-color: $base-green;
+	margin-bottom: $standard-padding;
+	a{
+		color:$light-green;
+	}
+	a:hover{
+		color:white;
+		text-decoration:none;
+		img {
+			background-color:$top-green;
+		}
+	}
 }
