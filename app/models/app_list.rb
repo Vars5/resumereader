@@ -9,7 +9,8 @@ class AppList < ActiveRecord::Base
   validates :user_id, presence: :true
   
   def find_job
-    Job.find(self.job_id)
+#    Job.order("date(due_date) DESC").find(self.job_id)
+    Job.find(self.job_id) #, order: "date(due_date) DESC")
   end
   
   def check_destroy_status
