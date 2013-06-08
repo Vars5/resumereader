@@ -7,7 +7,11 @@
 		<% end %>
 	</div>
 		
+	
+		
 <% else %>
+	<h4>Job Apps Basket</h4>
+	<hr>
 	<% @appList.each do |apps| %>
 		<% job = apps.find_job %>
 		<% company = job.find_company %>
