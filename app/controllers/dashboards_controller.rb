@@ -24,6 +24,7 @@ class DashboardsController < ApplicationController
     
     #All Companies List
     @companies = Company.all
+  
     
   end
 
@@ -50,6 +51,7 @@ class DashboardsController < ApplicationController
   def admin
     @list = User.all
     authorize! :create, @job
+        
   end
 
 end
