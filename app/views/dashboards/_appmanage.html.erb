@@ -13,7 +13,7 @@
 		<% company = job.find_company %>
 		<div class="appManage">
 			<div class="row-fluid">
-				<div class="span2">
+				<div class="span3">
 					<%= form_for apps, :as => :applist do |f| %>
 						<%= f.select :status, [['Not Started'], ['Researched'],
 						                       ['Sent Application'],['Completed All'],['Unfollow', 'unfollow']],{},
@@ -36,7 +36,7 @@
 					<%= link_to "Website", company.website %>
 				</div>
 				
-				<div class="span5">
+				<div class="span4">
 					</br>
 					<span class="pull-right">Closes <%= job.show_due_date %></span>
 				</div>
