@@ -18,15 +18,15 @@ Resumereader::Application.routes.draw do
   match '/about', :to => 'staticpages#about'
   
   #User's Signed In Pages
-  match '/resumeQuestions', :to => 'dashboards#resumeQuestions'
-  match '/resume', :to => 'dashboards#resume'
+  #match '/resumeQuestions', :to => 'dashboards#resumeQuestions'
+  #match '/resume', :to => 'dashboards#resume'
   match '/changeSettings', :to => 'dashboards#changeSettings'
   
   #admin pages
   match '/admin', to: 'dashboards#admin'
   
   #Resources
-  resources :schools, except: [:show] 
+  #resources :schools, except: [:show] 
   resources :problems, only: [:create, :index]
   resources :settings, except: [:index, :new, :edit]
   resources :questions
@@ -38,15 +38,15 @@ Resumereader::Application.routes.draw do
   
   resources :questions
   
-  resources :employments do
-    resources :bullets
-    resources :responses
-  end
+  #resources :employments do
+  #  resources :bullets
+  #  resources :responses
+  #end
 
-  resources :extracurriculars do
-    resources :bullets
-    resources :responses
-  end
+  #resources :extracurriculars do
+  #  resources :bullets
+  #  resources :responses
+  #end
   
   #Devise gem for users and their accounts
   devise_for :users

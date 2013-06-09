@@ -1,4 +1,5 @@
 <% if current_user.has_no_applists? %>
+
 	<div class="introBar alert alert-info">
 		<%= link_to jobs_path do %>
 			<h4>Start tracking jobs now!</h4></br>
@@ -6,10 +7,9 @@
 				 by having them all sorted in one place for you </p>
 		<% end %>
 	</div>
-		
-	
-		
+			
 <% else %>
+
 	<h4>Job Apps Basket</h4>
 	<hr>
 	<% @appList.each do |apps| %>
@@ -19,11 +19,14 @@
 			<div class="row-fluid">	
 				
 				<div class="span3">
-					<%= form_for apps, :as => :applist do |f| %>
+					
+
+					<%= form_for apps, :as => :applist, remote: true do |f| %>
 						<%= f.select :status, [['Not Started'], ['Researched'],
 	  				                       ['Sent Application'],['Completed All'],['Unfollow', 'unfollow']],{},
 											    :onchange => "this.form.submit();"%>	
 						<%= f.hidden_field :id, :value => apps.id %>
+
 					<% end %>
 				</div>	
 				<div class="span4">
@@ -45,4 +48,5 @@
 			</div>
 	</div>
 	<% end %>
+	
 <% end %>

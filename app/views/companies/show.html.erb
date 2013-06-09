@@ -1,20 +1,22 @@
 <div class="container">
 	<div class="row ">
 		<div class="span7">
-			<div class="bottomBorder">
-				<h3><%= @company.name %></h3>
-					<% if can? :update, @company %>
-						<p><%= link_to 'Edit company details', edit_company_path %></p>
-					<% end %>
-					Industry: <%= @company.industry %></br>
-					Website: <%= link_to "#{@company.website}", "http://#{@company.website}" %></br>
-					HR Email: <%= @company.hr_email %></br>
-					<% if @company.has_image? %>
-						<%= image_tag @company.logo.url %></br>
-					<% end %></br>
-			</div>
-			</br>
-			<p><%= simple_format(@company.info) %></p>
+			<% cache @company do %>
+				<div class="bottomBorder">
+					<h3><%= @company.name %></h3>
+						<% if can? :update, @company %>
+							<p><%= link_to 'Edit company details', edit_company_path %></p>
+						<% end %>
+						Industry: <%= @company.industry %></br>
+						Website: <%= link_to "#{@company.website}", "http://#{@company.website}" %></br>
+						HR Email: <%= @company.hr_email %></br>
+						<% if @company.has_image? %>
+							<%= image_tag @company.logo.url %></br>
+						<% end %></br>
+				</div>
+				<hr>
+				<p><%= simple_format(@company.info) %></p>
+			<% end %>
 		</div>
 	
 		
