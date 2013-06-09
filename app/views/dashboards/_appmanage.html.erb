@@ -15,18 +15,16 @@
 	<% @appList.each do |apps| %>
 		<% job = apps.find_job %>
 		<% company = job.find_company %>
-		<div class="appManage">
+		
+		<!-- This is shown initially -->
+		<div class="appManage" id="app-line">
 			<div class="row-fluid">	
-				
 				<div class="span3">
-					
-
 					<%= form_for apps, :as => :applist, remote: true do |f| %>
 						<%= f.select :status, [['Not Started'], ['Researched'],
 	  				                       ['Sent Application'],['Completed All'],['Unfollow', 'unfollow']],{},
 											    :onchange => "this.form.submit();"%>	
 						<%= f.hidden_field :id, :value => apps.id %>
-
 					<% end %>
 				</div>	
 				<div class="span4">
@@ -35,7 +33,6 @@
 						<%= job.name %>
 					<% end %>
 				</div>
-
 				<div class="span1">
 					</br>
 					<%= link_to "Website", company.website %>
@@ -46,7 +43,13 @@
 					<span class="pull-right">Closes <%= job.show_due_date %></span>
 				</div>
 			</div>
-	</div>
+		</div>
+		
+		<!-- this is shown after -->
+		<div class="hidden editer" id="edit-line" style="background-color:orange; height:100px;">
+		HELLO WORLD
+		</div>
+		
 	<% end %>
 	
 <% end %>
