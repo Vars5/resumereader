@@ -16,18 +16,16 @@
 		<% job = apps.find_job %>
 		<% company = job.find_company %>
 		<div class="appManage">
-			<div class="row-fluid">
+			<div class="row-fluid">	
+				
 				<div class="span3">
 					<%= form_for apps, :as => :applist do |f| %>
 						<%= f.select :status, [['Not Started'], ['Researched'],
-						                       ['Sent Application'],['Completed All'],['Unfollow', 'unfollow']],{},
-									    :onchange => "this.form.submit();"%>	
+	  				                       ['Sent Application'],['Completed All'],['Unfollow', 'unfollow']],{},
+											    :onchange => "this.form.submit();"%>	
 						<%= f.hidden_field :id, :value => apps.id %>
 					<% end %>
-				</div>
-			 
-
-				
+				</div>	
 				<div class="span4">
 					<%= link_to job do %>
 						<strong><%= company.name %></strong></br>
@@ -44,9 +42,7 @@
 					</br>
 					<span class="pull-right">Closes <%= job.show_due_date %></span>
 				</div>
-
 			</div>
-		
 	</div>
 	<% end %>
 <% end %>

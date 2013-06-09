@@ -3,8 +3,8 @@
 		<div class="span7">
 			<h3>
 			
-			<% cache do @job %>
-				<%= @job.name %></br>
+			<% cache @job do %>
+				<%= @job.name %><br />
 				<% if @job.due_date != nil%>	
 					Closes <%= @job.due_date.strftime("%B %e")%>
 				<% end %>
