@@ -41,6 +41,7 @@ class Job < ActiveRecord::Base
     def enqueue_delete_document_job
       Delayed::Job.enqueue DeleteSwiftypeDocumentJob.new(self.id)
     end
-  
+
+
   
 end
