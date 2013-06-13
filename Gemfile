@@ -39,3 +39,8 @@ gem 'devise-async'
 
 gem 'figaro'
 gem 'newrelic_rpm'
+
+#search engine
+gem 'swiftype'
+gem 'delayed_job_active_record'
+gem 'foreman'

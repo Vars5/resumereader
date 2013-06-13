@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130525145233) do
+ActiveRecord::Schema.define(:version => 20130612224141) do
 
   create_table "app_lists", :force => true do |t|
     t.integer  "job_id"
@@ -54,6 +54,22 @@ ActiveRecord::Schema.define(:version => 20130525145233) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
   end
+
+  create_table "delayed_jobs", :force => true do |t|
+    t.integer  "priority",   :default => 0
+    t.integer  "attempts",   :default => 0
+    t.text     "handler"
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
   create_table "employments", :force => true do |t|
     t.string   "company"

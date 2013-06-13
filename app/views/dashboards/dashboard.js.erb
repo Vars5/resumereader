@@ -2,8 +2,15 @@ $(document).ready(function(){
 
 
 	$("#app-line").click(function () {
+		//$(this).hide();
+		$("#edit-line").show();
 		$(this).hide();
-		$(".editer").slideDown("fast");
+	});
+	
+	$("#edit-line").click(function(){
+		//$(this).slideUp(200);
+		$(this).hide();
+		$("#app-line").show();
 	});
 
 });

@@ -44,10 +44,16 @@
 				</div>
 			</div>
 		</div>
+
 		
 		<!-- this is shown after -->
-		<div class="hidden editer" id="edit-line" style="background-color:orange; height:100px;">
-		HELLO WORLD
+		<div class="hidden editer" id="edit-line" style="background-color:orange; height:100px;padding:25px;">
+
+			<strong><%= company.name %></strong></br>
+			<%= job.name %></br>Closes <%= job.show_due_date %></br>
+
+			
+
 		</div>
 		
 	<% end %>

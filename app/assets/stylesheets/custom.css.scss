@@ -36,3 +36,9 @@ body {
 .hidden{
 	display:none;
 }
+
+.appManage {
+	:hover{
+		background-color:$light-green;
+	}
+}

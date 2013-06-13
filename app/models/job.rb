@@ -10,6 +10,9 @@ class Job < ActiveRecord::Base
   validates :discipline, presence: :true
   validates :info, presence: :true 
   
+  #swiftype information 
+  after_save :enqueue_create_or_update_document_job
+  after_destroy :enqueue_delete_document_job
   
   def find_company
     Company.find_by_id(self.company_id)
@@ -28,6 +31,16 @@ class Job < ActiveRecord::Base
   def has_website?
     self.link != nil
   end
+  
+  private
+
+    def enqueue_create_or_update_document_job
+      Delayed::Job.enqueue CreateOrUpdateSwiftypeDocumentJob.new(self.id)
+    end
+
+    def enqueue_delete_document_job
+      Delayed::Job.enqueue DeleteSwiftypeDocumentJob.new(self.id)
+    end
   
   
 end
