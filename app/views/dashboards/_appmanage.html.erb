@@ -11,7 +11,7 @@
 <% else %>
 
 	<h4>Job Apps Basket</h4>
-
+	<hr>
 	<% @appList.each do |apps| %>
 		<% job = apps.find_job %>
 		<% company = job.find_company %>
@@ -20,10 +20,10 @@
 		<div class="appManage" id="app-line-<%=apps.id%>">
 			<div class="row-fluid">	
 				
-				<div class="span7">
-					<%= link_to job do %>
+				<div class="span8">
+					<%= link_to '#',remote: true   do %>
 						<strong><%= company.name %></strong> | 
-						<%= job.name %>
+						<%= job.name %><span class ="hide" id ="expand-<%=apps.id%>">&nbsp&nbsp + Expand </span>
 					<% end %>
 				</div>
 				
@@ -32,7 +32,7 @@
 					<%= link_to "Website", company.website %>
 				</div>
 				
-				<div class="span4">
+				<div class="span3">
 					<span class="pull-right">Closes <%= job.show_due_date %></span>
 				</div>
 			</div>
@@ -40,7 +40,7 @@
 
 		
 		<!-- this is shown after -->
-		<div class="hidden editer" id="edit-line-<%=apps.id%>" style="background-color:orange; height:100px;padding:25px;">
+		<div class="hidden editer" id="edit-line-<%=apps.id%>">
 
 			<strong><%= company.name %></strong></br>
 			<%= job.name %></br>Closes <%= job.show_due_date %></br>
@@ -54,7 +54,6 @@
 			
 
 		</div>
-		
 	<% end %>
 	
 <% end %>

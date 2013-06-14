@@ -1,16 +1,28 @@
 $(document).ready(function(){
 
 
-	$("#app-line").click(function () {
-		//$(this).hide();
-		$("#edit-line").show();
-		$(this).hide();
-	});
+	<% @appList.each do |apps| %>
+
+		$("#app-line-<%= apps.id%>").click(function () {
+			//$(this).hide();
+			$("#edit-line-<%= apps.id%>").slideDown(100);
+			//$(this).hide();
+		});
 	
-	$("#edit-line").click(function(){
-		//$(this).slideUp(200);
-		$(this).hide();
-		$("#app-line").show();
-	});
+		$("#edit-line-<%= apps.id%>").click(function(){
+			//$(this).slideUp(200);
+			$(this).slideUp(100);
+			$("#app-line-<%= apps.id%>").show();
+		});
+		
+		$("#app-line-<%= apps.id%>").hover(function () {
+		    $("#expand-<%=apps.id%>").show();
+		  },
+		  function () {
+		    $("#expand-<%=apps.id%>").hide();
+		  });
+	<% end %>
 
 });
+
+	
