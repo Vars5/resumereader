@@ -11,35 +11,28 @@
 <% else %>
 
 	<h4>Job Apps Basket</h4>
-	<hr>
+
 	<% @appList.each do |apps| %>
 		<% job = apps.find_job %>
 		<% company = job.find_company %>
 		
 		<!-- This is shown initially -->
-		<div class="appManage" id="app-line">
+		<div class="appManage" id="app-line-<%=apps.id%>">
 			<div class="row-fluid">	
-				<div class="span3">
-					<%= form_for apps, :as => :applist, remote: true do |f| %>
-						<%= f.select :status, [['Not Started'], ['Researched'],
-	  				                       ['Sent Application'],['Completed All'],['Unfollow', 'unfollow']],{},
-											    :onchange => "this.form.submit();"%>	
-						<%= f.hidden_field :id, :value => apps.id %>
-					<% end %>
-				</div>	
-				<div class="span4">
+				
+				<div class="span7">
 					<%= link_to job do %>
-						<strong><%= company.name %></strong></br>
+						<strong><%= company.name %></strong> | 
 						<%= job.name %>
 					<% end %>
 				</div>
+				
+				
 				<div class="span1">
-					</br>
 					<%= link_to "Website", company.website %>
 				</div>
 				
 				<div class="span4">
-					</br>
 					<span class="pull-right">Closes <%= job.show_due_date %></span>
 				</div>
 			</div>
@@ -47,10 +40,16 @@
 
 		
 		<!-- this is shown after -->
-		<div class="hidden editer" id="edit-line" style="background-color:orange; height:100px;padding:25px;">
+		<div class="hidden editer" id="edit-line-<%=apps.id%>" style="background-color:orange; height:100px;padding:25px;">
 
 			<strong><%= company.name %></strong></br>
 			<%= job.name %></br>Closes <%= job.show_due_date %></br>
+				<%= form_for apps, :as => :applist, remote: true do |f| %>
+					<%= f.select :status, [['Not Started'], ['Researched'],
+  				                       ['Sent Application'],['Completed All'],['Unfollow', 'unfollow']],{},
+										    :onchange => "this.form.submit();"%>	
+					<%= f.hidden_field :id, :value => apps.id %>
+				<% end %>
 
 			
 
