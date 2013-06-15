@@ -1,59 +1,59 @@
-<% if current_user.has_no_applists? %>
+<div class="dash-area">
+	<% if current_user.has_no_applists? %>
+		<div class="introBar alert alert-info">
+			<%= link_to jobs_path do %>
+				<h4>Start tracking jobs now!</h4></br>
+				<p> ResumeQuery is great for reducing the stress and business of job applications
+					 by having them all sorted in one place for you </p>
+			<% end %>
+		</div>
+	<% else %>
 
-	<div class="introBar alert alert-info">
-		<%= link_to jobs_path do %>
-			<h4>Start tracking jobs now!</h4></br>
-			<p> ResumeQuery is great for reducing the stress and business of job applications
-				 by having them all sorted in one place for you </p>
-		<% end %>
-	</div>
-			
-<% else %>
+		<h3>Job Apps Basket</h3>
+		<hr>
+		<% @appList.each do |apps| %>
+			<% job = apps.find_job %>
+			<% company = job.find_company %>
 
-	<h4>Job Apps Basket</h4>
-	<hr>
-	<% @appList.each do |apps| %>
-		<% job = apps.find_job %>
-		<% company = job.find_company %>
-		
-		<!-- This is shown initially -->
-		<div class="appManage" id="app-line-<%=apps.id%>">
-			<div class="row-fluid">	
-				
-				<div class="span8">
-					<%= link_to '#',remote: true   do %>
-						<strong><%= company.name %></strong> | 
-						<%= job.name %><span class ="hide" id ="expand-<%=apps.id%>">&nbsp&nbsp + Expand </span>
-					<% end %>
-				</div>
-				
-				
-				<div class="span1">
-					<%= link_to "Website", company.website %>
-				</div>
-				
-				<div class="span3">
-					<span class="pull-right">Closes <%= job.show_due_date %></span>
+			<!-- This is shown initially -->
+			<div class="appManage" id="app-line-<%=apps.id%>">
+				<div class="row-fluid">	
+
+					<div class="span8">
+						<%= link_to '#',remote: true   do %>
+							<p><strong><%= company.name %></strong> | 
+							<%= job.name %><span class ="hide" id ="expand-<%=apps.id%>">&nbsp&nbsp + Expand </span></p>
+						<% end %>
+					</div>
+
+
+					<div class="span1">
+						<%= link_to "Website", company.website %>
+					</div>
+
+					<div class="span3">
+						<span class="pull-right">Closes <%= job.show_due_date %></span>
+					</div>
 				</div>
 			</div>
-		</div>
 
-		
-		<!-- this is shown after -->
-		<div class="hidden editer" id="edit-line-<%=apps.id%>">
-
-			<strong><%= company.name %></strong></br>
-			<%= job.name %></br>Closes <%= job.show_due_date %></br>
-				<%= form_for apps, :as => :applist, remote: true do |f| %>
-					<%= f.select :status, [['Not Started'], ['Researched'],
-  				                       ['Sent Application'],['Completed All'],['Unfollow', 'unfollow']],{},
-										    :onchange => "this.form.submit();"%>	
-					<%= f.hidden_field :id, :value => apps.id %>
-				<% end %>
-
-			
-
-		</div>
+			<!-- this is shown after -->
+			<div class="hidden editer" id="edit-line-<%=apps.id%>">
+				<div class="editer-header">
+					<strong><%= company.name %></strong>
+					<%= job.name %></br>Closes <%= job.show_due_date %></br>
+				</div>
+				<div class="editer-body">
+					<b>Job Summary</b>
+					<p><%= simple_format(job.info) %></p>
+					<%= form_for apps, :as => :applist, remote: true do |f| %>
+						<%= f.select :status, [['Not Started'], ['Researched'],
+	  				                       ['Sent Application'],['Completed All'],['Unfollow', 'unfollow']],{},
+											    :onchange => "this.form.submit();"%>	
+						<%= f.hidden_field :id, :value => apps.id %>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
 	<% end %>
-	
-<% end %>
+</div>

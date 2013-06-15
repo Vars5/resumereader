@@ -1,6 +1,17 @@
 @import "bootstrap";
 
 
+
+/* ========= SECTION: CONTENTS =========*/
+/*
+   1. STYLE VARIABLES
+   2. UNIVERSALS
+   3. HEADER
+/*
+/* ========= SECTION: CONTENTS =========*/
+
+
+
 /* ========= SECTION: STYLE VARIABLES =========*/
 
 $standard-padding: 20px;
@@ -10,17 +21,45 @@ $base-green:  #39b54a;
 $light-green: #B5F7C2;
 $top-green:   #54bb62;
 $light-grey: #F2F2F2;
+$background-grey: #f6f6f6;
 $ft-color: #fff1e0;
+$line-grey: #D6D6D6;
 
 /* ========= END SECTION: STYLE VARIABLES =========*/
 
+
+
+/* ========= SECTION: UNIVERSALS =========*/
 body {
 	font-family: 'Noto Sans', sans-serif;	
+	font-size:16px;
 }
 
+textarea {
+	width:100%;
+	height:90px;
+}
+
+.hidden{
+	display:none;
+}
+
+/* ========= END SECTION: UNIVERSALS =========*/
+
+
+
+/* ========= SECTION: HEADER =========*/
+
 .signedInHeader{
+	height:40px;
 	background-color: $base-green;
-	margin-bottom: $standard-padding;
+	border-bottom:1px solid $line-grey;
+	li {
+		line-height:40px;
+	}
+	li:hover{
+		background-color:$top-green;
+	}
 	a{
 		color:$light-green;
 	}
@@ -33,14 +72,9 @@ body {
 	}
 }
 
-textarea {
-	width:100%;
-	height:90px;
-}
+/* ========= END SECTION: HEADER =========*/
 
-.hidden{
-	display:none;
-}
+
 
 .appManage {
 	a {
@@ -48,9 +82,40 @@ textarea {
 	}
 }
 
+/* ========= SECTION: EDITER ON APPS_LIST =========*/
+
 .editer {
-	background-color:$light-grey;
-	height:100px;
-	padding:25px;
+	background-color:$background-grey;
+	border:2px solid $line-grey;
+
 }
 
+.editer-header {
+
+	background-color:white;
+	padding:$standard-padding;
+	border-bottom: 1px solid $line-grey;
+}
+
+.editer-body{
+	padding:$standard-padding;
+}
+/* ========= END SECTION: EDITER =========*/
+
+
+.left-dashboard {
+	background-color:$base-green;
+	height:1000px;
+	border-right:1px solid $line-grey;
+	padding-left:25px;
+	margin-left:-20px;
+}
+
+.footing {
+	border-top:1px solid $line-grey;
+	padding:$standard-padding;
+}
+
+.dash-area {
+	padding-top:30px;
+}
