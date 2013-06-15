@@ -45,6 +45,9 @@ select {
 	width:95%;
 }
 
+input {
+	width:95%;
+}
 
 .hidden{
 	display:none;
@@ -106,7 +109,7 @@ select {
 .editer-body{
 
 	font-size:13px;
-	line-height:15px;
+	line-height:19px;
 }
 
 .editer-main{
@@ -118,12 +121,17 @@ select {
 	padding:$standard-padding;
 }
 
+.btn {
+	width:97% !important;
+}
+
 /* ========= END SECTION: EDITER =========*/
 
 
 .left-dashboard {
 	background-color:$base-green;
 	min-height:700px;
+	height:100%;
 	border-right:1px solid $line-grey;
 	padding-left:25px;
 	margin-left:-20px;

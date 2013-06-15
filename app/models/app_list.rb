@@ -2,6 +2,8 @@ class AppList < ActiveRecord::Base
 
   attr_accessible :job_id, :status, :comments
 
+  has_many :notes
+
   belongs_to :user  
   belongs_to :job, touch: true
   
@@ -18,6 +20,9 @@ class AppList < ActiveRecord::Base
       self.destroy
     end
   end
-  
+
+  def create_new_note
+    self.notes.build
+  end
 
 end

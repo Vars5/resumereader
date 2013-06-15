@@ -54,10 +54,11 @@
 							
 							<div class="editer-job-comments">
 								<h5>Notes</h5>
-								<%= form_for apps, :as => :applist do |a|%>
-									<%= a.text_area :comments %>
+								<%= form_for apps.create_new_note, :as => :note do |a|%>
+									<%= a.text_field :title, :placeholder => "Title for Note" %>
+									<%= a.text_area :info, :placeholder => "Your Note" %>
 									<%= a.hidden_field :id, :value => apps.id %>
-									<%= a.submit %>
+									<%= a.submit :class =>"btn btn-success" %>
 								<% end %>
 								
 							</div>
@@ -73,14 +74,27 @@
 								<%= f.hidden_field :id, :value => apps.id %>
 							<% end %>
 								<div class="editer-job-summary">
+									<b><i class="icon-briefcase"></i> Job Summary</b><br />
 									<%= link_to job do %>
-									<b>Job Summary</b><br />
-									<%= simple_format( (truncate((job.info), :length=>170)) ) %>
+										<%= simple_format( (truncate((job.info), :length=>170)) ) %>
 									<% end %>
 								</div>	
 							<br />
-							<b>HR Email:</b><br />
-							<%= company.hr_email%>
+							<b><i class="icon-user"></i> HR Email:</b><br />
+							<%= company.hr_email%><br />
+							<%= link_to "Add your own firm contacts", '#', :id => "hr-button-#{apps.id}" %>
+							<div class="hide" id="hr-contacts-<%=apps.id%>">
+								<%= form_for apps.create_new_note, :as => :note do |hr| %>
+									<%= hr.text_field :info, :placeholder => "HR Contact"%>
+									<%= hr.hidden_field :type, :value => "hr"%>
+									<%= hr.submit :class => "btn" %>
+								<% end %>
+							</div>
+							
+							<br /><br />
+							<b><i class="icon-globe"></i> Website:</b><br />
+							<%= company.website%>
+							
 						</div>
 					</div>
 				</div>

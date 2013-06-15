@@ -21,6 +21,12 @@ $(document).ready(function(){
 		  function () {
 		    $("#expand-<%=apps.id%>").hide();
 		  });
+		
+		$("#hr-button-<%=apps.id%>").click(function(){
+			$("#hr-contacts-<%=apps.id%>").show();
+			$(this).hide;
+		})
+		
 	<% end %>
 
 });
