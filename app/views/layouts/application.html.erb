@@ -32,8 +32,12 @@
 		<% end %>
 		
 		<%= yield %>
-		<% cache "footer" do %>
-			<%=render 'layouts/footer'%>
+		<% if signed_in? %>
+		
+		<% else %>
+			<% cache "footer" do %>
+				<%=render 'layouts/footer'%>
+			<% end %>
 		<% end %>
 		<%=render 'shared/google_analytics' if Rails.env.production? %>
 	</body>

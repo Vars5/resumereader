@@ -9,8 +9,10 @@
 		</div>
 	<% else %>
 
-		<h3>Job Apps Basket</h3>
-		<hr>
+		<div class="app-title">
+			<h3>Job Apps Basket</h3>
+		</div>
+		
 		<% @appList.each do |apps| %>
 			<% job = apps.find_job %>
 			<% company = job.find_company %>
@@ -44,14 +46,33 @@
 					<%= job.name %></br>Closes <%= job.show_due_date %></br>
 				</div>
 				<div class="editer-body">
-					<b>Job Summary</b>
-					<p><%= simple_format(job.info) %></p>
-					<%= form_for apps, :as => :applist, remote: true do |f| %>
-						<%= f.select :status, [['Not Started'], ['Researched'],
-	  				                       ['Sent Application'],['Completed All'],['Unfollow', 'unfollow']],{},
-											    :onchange => "this.form.submit();"%>	
-						<%= f.hidden_field :id, :value => apps.id %>
-					<% end %>
+					<div class="row-fluid">
+						<div class="span8 editer-main">
+						
+							<div class="editer-job-summary">
+								<h5>Job Summary</h5>
+								<p><%= simple_format(job.info) %></p>
+							</div>
+							
+							<div class="editer-job-comments">
+								
+							</div>
+						
+						
+						</div>
+						<div class="span4 editer-right-bar">
+							<%= form_for apps, :as => :applist, remote: true do |f| %>
+								<%= f.select :status, [['Not Started'], ['Researched'],
+			  				                       ['Sent Application'],['Completed All'],['Unfollow', 'unfollow']],{},
+													    :onchange => "this.form.submit();"%>	
+								<%= f.hidden_field :id, :value => apps.id %>
+							<% end %>
+							
+							<br />
+							<b>HR Email:</b><br />
+							<%= company.hr_email%>
+						</div>
+					</div>
 				</div>
 			</div>
 		<% end %>
