@@ -37,12 +37,12 @@ body {
 }
 
 textarea {
-	width:100%;
+	width:95%;
 	height:90px;
 }
 
 select {
-	width:100%;
+	width:95%;
 }
 
 
@@ -93,7 +93,7 @@ select {
 .editer {
 	background-color:$background-grey;
 	border:1px solid $line-grey;
-
+	margin-bottom: $standard-padding;
 }
 
 .editer-header {

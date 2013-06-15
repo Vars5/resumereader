@@ -42,32 +42,42 @@
 			<!-- this is shown after -->
 			<div class="hidden editer" id="edit-line-<%=apps.id%>">
 				<div class="editer-header">
-					<strong><%= company.name %></strong>
+					<strong><%= company.name %></strong><span id="hide-button-<%=apps.id%>">
+					<span class="pull-right">&nbsp &nbsp <%= link_to '(Hide)', '#', remote: true %></span> <br />
 					<%= job.name %></br>Closes <%= job.show_due_date %></br>
 				</div>
 				<div class="editer-body">
 					<div class="row-fluid">
 						<div class="span8 editer-main">
 						
-							<div class="editer-job-summary">
-								<h5>Job Summary</h5>
-								<p><%= simple_format(job.info) %></p>
-							</div>
+						
 							
 							<div class="editer-job-comments">
+								<h5>Notes</h5>
+								<%= form_for apps, :as => :applist do |a|%>
+									<%= a.text_area :comments %>
+									<%= a.hidden_field :id, :value => apps.id %>
+									<%= a.submit %>
+								<% end %>
 								
 							</div>
 						
 						
 						</div>
 						<div class="span4 editer-right-bar">
+							<b>Status:</b><br />
 							<%= form_for apps, :as => :applist, remote: true do |f| %>
 								<%= f.select :status, [['Not Started'], ['Researched'],
 			  				                       ['Sent Application'],['Completed All'],['Unfollow', 'unfollow']],{},
 													    :onchange => "this.form.submit();"%>	
 								<%= f.hidden_field :id, :value => apps.id %>
 							<% end %>
-							
+								<div class="editer-job-summary">
+									<%= link_to job do %>
+									<b>Job Summary</b><br />
+									<%= simple_format( (truncate((job.info), :length=>170)) ) %>
+									<% end %>
+								</div>	
 							<br />
 							<b>HR Email:</b><br />
 							<%= company.hr_email%>

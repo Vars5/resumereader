@@ -9,9 +9,9 @@ $(document).ready(function(){
 			$(this).hide();
 		});
 	
-		$("#edit-line-<%= apps.id%>").click(function(){
+		$("#hide-button-<%= apps.id%>").click(function(){
 			//$(this).slideUp(200);
-			$(this).slideUp(100);
+			$("#edit-line-<%= apps.id%>").slideUp(100);
 			$("#app-line-<%= apps.id%>").show();
 		});
 		
