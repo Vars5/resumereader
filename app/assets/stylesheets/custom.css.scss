@@ -18,12 +18,14 @@ $standard-padding: 20px;
 
 
 $base-green:  #39b54a;
-$light-green: #B5F7C2;
+$light-green: #F2F2F2;
 $top-green:   #54bb62;
+$dark-green: #46724C;
 $light-grey: #F2F2F2;
 $background-grey: #f6f6f6;
 $ft-color: #fff1e0;
 $line-grey: #D6D6D6;
+$dark-grey: #666A73;
 
 /* ========= END SECTION: STYLE VARIABLES =========*/
 
@@ -57,31 +59,63 @@ input {
 
 
 
-/* ========= SECTION: HEADER =========*/
+/* ========= SECTION: LEFT-BOARD =========*/
 
-.signedInHeader{
-	height:40px;
-	background-color: $base-green;
-	border-bottom:1px solid $line-grey;
+.logo {
+	
+	margin-left:-25px;
+	padding-left:23px;
+	width:101%;
+	height:102%;
+}
+
+.logo:hover {
+	background-color:$top-green;
+}
+
+.user-area{
+	background-color:$light-green;
+	margin-left:-25px;
+	border-top:1px solid $top-green;
+	border-bottom:1px solid $top-green;
+	padding:$standard-padding 5px $standard-padding 25px;
+	font-size:12px;
+    box-shadow: 0 4px 10px -5px $dark-grey;
+}
+
+
+
+.menu-area {
+	padding-top:20px;
 	li {
-		line-height:40px;
-	}
+		border-top:1px solid $dark-green;
+		border-bottom:1px solid $dark-green;
+		padding:10px 0px 10px 25px;
+		margin-left:-25px;
+		width:100%;		
+	}	
 	li:hover{
-		background-color:$top-green;
-	}
-	a{
-		color:$light-green;
-	}
-	a:hover{
+		background-color:$dark-green;
 		color:white;
-		text-decoration:none;
-		img {
-			background-color:$top-green;
-		}
+		border-right:5px solid black;
 	}
 }
 
-/* ========= END SECTION: HEADER =========*/
+.left-dashboard {
+	background-color:$base-green;
+	min-height:700px;
+	height:100%;
+
+	padding-left:25px;
+	margin-left:-20px;
+	a:hover{
+		color:white;
+		text-decoration:none;
+
+	}
+}
+
+/* ========= END SECTION: LEFT-BOARD =========*/
 
 
 
@@ -129,21 +163,7 @@ input {
 /* ========= END SECTION: EDITER =========*/
 
 
-.left-dashboard {
-	background-color:$base-green;
-	min-height:700px;
-	height:100%;
-	border-right:1px solid $line-grey;
-	padding-left:25px;
-	margin-left:-20px;
-	a:hover{
-		color:white;
-		text-decoration:none;
-		img {
-			background-color:$top-green;
-		}
-	}
-}
+
 
 .footing {
 	border-top:1px solid $line-grey;

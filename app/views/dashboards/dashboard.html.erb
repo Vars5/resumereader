@@ -101,7 +101,13 @@
 							<%= company.hr_email%><br />
 							<% apps.show_hr_notes.each do |hrc| %>
 								<%= hrc.info %><br />
+								<div class="hidden" id="hrc-<%hrc.id%>">
+								<%= form_for hrc do |fhr| %>
+									<%= fhr.text_field :info%>
+								<% end %>
+								</div>	
 							<% end %>
+							
 							<%= link_to "Add your own firm contacts", '#', :id => "hr-button-#{apps.id}" %>
 							<div class="hide" id="hr-contacts-<%=apps.id%>">
 								<%= form_for apps.create_new_note, :as => :note do |hr| %>
@@ -111,8 +117,6 @@
 									<%= hr.hidden_field :user_id, :value => current_user.id %>
 									<%= hr.submit :class => "btn" %>
 								<% end %>
-
-								
 							</div>
 							
 							<br /><br />
