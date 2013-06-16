@@ -81,7 +81,7 @@ input {
 	background-color:$light-green;
 	margin-left:-25px;
 	border-top:5px solid $dark-green;
-	border-bottom:1px solid $dark-green;
+	border-bottom:3px solid $dark-green;
 	padding:$standard-padding 5px $standard-padding 25px;
 	font-size:11px;
     box-shadow: 0 4px 10px -5px $dark-grey;
@@ -112,6 +112,7 @@ input {
 	box-shadow: 0 4px 10px -5px $dark-grey;
 	background-color:$base-green;
 	min-height:700px;
+	width:180px;
 	height:auto;
 
 	padding-left:25px;
@@ -127,13 +128,11 @@ input {
 
 
 .appManage {
-	margin-left:-26px;
+
 	margin-top:-1px;
 	
-	padding:9px 10px 0px 26px;
-	
-	border-top:1px solid $line-grey;
-	border-bottom:1px solid $line-grey;	
+	padding:9px 10px 0px 9px;
+	border: 1px solid $line-grey;
 	border-right:5px solid $base-green;	
 	a {
 		text-decoration:none;	
