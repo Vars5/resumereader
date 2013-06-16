@@ -9,6 +9,10 @@ class NotesController < ApplicationController
   end
   
   def update
+    @note = Note.find_by_id(params[:note][:note_id])
+    if @note.update_attributes(params[:note])
+      redirect_to root_path
+    end
   end
   
   def destroy
