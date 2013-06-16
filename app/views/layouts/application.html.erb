@@ -10,31 +10,19 @@
 	</head>
 	<body>
 		<% if signed_in? %>
-			<% if false %>
-			<% cache "header" do %>
-				<%=render 'layouts/signed_in_header'%>
-			<% end %>
-			<% end %>
-		<% else %>
-			<%=render 'staticpages/copywritearea'%>			
-		<% end %>
-		
-		<% if flash.count > 0 %>
-		<div class="container-fluid">
-			<div class="row-fluid">
-				<div class="span12">
-				<% flash.each do |key, message| %>
-					<%= content_tag :div, message,class: "alert alert-#{key}", :id => "flash" if message.length > 0 %>
-				<% end %>
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span2">
+						<%= render 'layouts/left-board'%>
+					</div>
+					<div class="span10">
+						<%= yield %>
+					</div>
 				</div>
 			</div>
-		</div>
-		<% end %>
-		
-		<%= yield %>
-		<% if signed_in? %>
-		
 		<% else %>
+			<%=render 'staticpages/copywritearea'%>
+			<%= yield %>			
 			<% cache "footer" do %>
 				<%=render 'layouts/footer'%>
 			<% end %>

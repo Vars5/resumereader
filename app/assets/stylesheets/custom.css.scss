@@ -32,7 +32,7 @@ $line-grey: #D6D6D6;
 /* ========= SECTION: UNIVERSALS =========*/
 body {
 	font-family: 'Noto Sans', sans-serif;	
-	font-size:16px;
+	font-size:15px;
 	height:100%;
 }
 
@@ -113,6 +113,7 @@ input {
 }
 
 .editer-main{
+	height:100%;
 	padding:$standard-padding;
 	border-right: 3px solid $line-grey;
 }
@@ -151,8 +152,4 @@ input {
 
 .dash-area {
 	padding-top:30px;
-}
-
-.app-title {
-	border-bottom:1px solid $line-grey;
 }

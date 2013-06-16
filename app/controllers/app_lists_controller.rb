@@ -20,7 +20,7 @@ class AppListsController < ApplicationController
     if @appList.update_attributes(params[:applist])
       #flash[:success] = "Updated your applications list"
       respond_to do |format|
-        format.html{redirect_to root_path}
+        #format.html{redirect_to root_path}
         format.js
       end
     end

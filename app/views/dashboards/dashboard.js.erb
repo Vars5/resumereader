@@ -2,19 +2,22 @@ $(document).ready(function(){
 
 
 	<% @appList.each do |apps| %>
-
+		
+		<%# Click on the app-line area to pull it down %>
 		$("#app-line-<%= apps.id%>").click(function () {
 			//$(this).hide();
 			$("#edit-line-<%= apps.id%>").slideDown(100);
 			$(this).hide();
 		});
-	
+
+		<%# Click on the hide button to pull up the edit area %>
 		$("#hide-button-<%= apps.id%>").click(function(){
 			//$(this).slideUp(200);
 			$("#edit-line-<%= apps.id%>").slideUp(100);
 			$("#app-line-<%= apps.id%>").show();
 		});
-		
+
+		<%# Hover over the app-line area to show the expand command %>
 		$("#app-line-<%= apps.id%>").hover(function () {
 		    $("#expand-<%=apps.id%>").show();
 		  },
@@ -22,13 +25,29 @@ $(document).ready(function(){
 		    $("#expand-<%=apps.id%>").hide();
 		  });
 		
+		<%# Click to add your own HR contacts under the given ones %>
 		$("#hr-button-<%=apps.id%>").click(function(){
 			$("#hr-contacts-<%=apps.id%>").show();
 			$(this).hide;
-		})
+		});
+		
+		<%# Auto-update app-list status when clicked %>		
+
+		$("#applist-select-<%=apps.id%>").change(function(){
+			$.ajax({
+				type: "PUT",
+				url:"<%= url_for(apps) %>",
+				data: { 
+				 	applists : $('#applist-select-<%=apps.id%>').param
+
+				},
+				dataType: "status"
+			})	.done(function( msg ) {
+				  alert( "Data Saved: ");
+				});
+		});
+		
 		
 	<% end %>
 
 });
-
-	

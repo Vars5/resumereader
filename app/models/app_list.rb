@@ -24,5 +24,17 @@ class AppList < ActiveRecord::Base
   def create_new_note
     self.notes.build
   end
+  
+  def has_no_notes?
+    self.notes.count == 0
+  end
+  
+  def show_normal_notes
+    self.notes.where(:kind => "comment")
+  end
+  
+  def show_hr_notes
+    self.notes.where(:kind => "hr")  
+  end
 
 end
