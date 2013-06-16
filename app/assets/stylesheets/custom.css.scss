@@ -36,6 +36,7 @@ body {
 	font-family: 'Noto Sans', sans-serif;	
 	font-size:15px;
 	height:100%;
+	background-color:$light-grey;
 }
 
 textarea {
@@ -62,11 +63,14 @@ input {
 /* ========= SECTION: LEFT-BOARD =========*/
 
 .logo {
-	
+	border-bottom:1px dotted $dark-green;
 	margin-left:-25px;
 	padding-left:23px;
 	width:101%;
 	height:102%;
+	img {
+		padding-left:16px;
+	}
 }
 
 .logo:hover {
@@ -86,10 +90,13 @@ input {
 
 
 .menu-area {
-	padding-top:20px;
+	padding-top:$standard-padding;
+	a{
+	color:#333;	
+	}
+
 	li {
-		border-top:1px solid $dark-green;
-		border-bottom:1px solid $dark-green;
+
 		padding:10px 0px 10px 25px;
 		margin-left:-25px;
 		width:100%;		
@@ -97,11 +104,12 @@ input {
 	li:hover{
 		background-color:$dark-green;
 		color:white;
-		border-right:5px solid black;
+		border-right:7px solid black;
 	}
 }
 
 .left-dashboard {
+	box-shadow: 0 4px 10px -5px $dark-grey;
 	background-color:$base-green;
 	min-height:700px;
 	height:100%;
