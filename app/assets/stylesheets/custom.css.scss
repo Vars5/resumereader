@@ -34,7 +34,7 @@ $dark-grey: #666A73;
 /* ========= SECTION: UNIVERSALS =========*/
 body {
 	font-family: 'Noto Sans', sans-serif;	
-	font-size:15px;
+	font-size:13px;
 	height:100%;
 	background-color:$light-grey;
 }
@@ -83,7 +83,7 @@ input {
 	border-top:1px solid $top-green;
 	border-bottom:1px solid $top-green;
 	padding:$standard-padding 5px $standard-padding 25px;
-	font-size:12px;
+	font-size:11px;
     box-shadow: 0 4px 10px -5px $dark-grey;
 }
 
@@ -112,14 +112,13 @@ input {
 	box-shadow: 0 4px 10px -5px $dark-grey;
 	background-color:$base-green;
 	min-height:700px;
-	height:100%;
+	height:auto;
 
 	padding-left:25px;
 	margin-left:-20px;
 	a:hover{
 		color:white;
 		text-decoration:none;
-
 	}
 }
 
@@ -128,9 +127,21 @@ input {
 
 
 .appManage {
+	margin-left:-26px;
+	margin-top:-1px;
+	
+	padding:9px 10px 0px 26px;
+	
+	border-top:1px solid $line-grey;
+	border-bottom:1px solid $line-grey;	
+	border-right:5px solid $base-green;	
 	a {
 		text-decoration:none;	
 	}
+}
+
+.appManage:hover{
+	background-color:$line-grey;
 }
 
 /* ========= SECTION: EDITER ON APPS_LIST =========*/
@@ -138,6 +149,7 @@ input {
 .editer {
 	background-color:$background-grey;
 	border:1px solid $line-grey;
+	border-left:6px solid #165468;
 	margin-bottom: $standard-padding;
 }
 
