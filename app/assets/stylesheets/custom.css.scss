@@ -16,16 +16,21 @@
 
 $standard-padding: 20px;
 
+/* greys */
+$light-grey: #F2F2F2;
+$background-grey: #f6f6f6;
+$line-grey: #D6D6D6;
+$dark-grey: #666A73;
 
+/* greens */
 $base-green:  #39b54a;
 $light-green: #F2F2F2;
 $top-green:   #54bb62;
 $dark-green: #46724C;
-$light-grey: #F2F2F2;
-$background-grey: #f6f6f6;
+
+/* other*/
 $ft-color: #fff1e0;
-$line-grey: #D6D6D6;
-$dark-grey: #666A73;
+
 
 /* ========= END SECTION: STYLE VARIABLES =========*/
 
@@ -54,6 +59,16 @@ input {
 
 .hidden{
 	display:none;
+}
+
+
+.time {
+	color:#787878;
+	font-size:8px;
+}
+
+.web-link{
+	overflow:hidden;
 }
 
 /* ========= END SECTION: UNIVERSALS =========*/
@@ -178,7 +193,11 @@ input {
 }
 
 .btn {
-	width:97% !important;
+	width:97% ;
+}
+
+.note-area{
+	height:40px;
 }
 
 /* ========= END SECTION: EDITER =========*/

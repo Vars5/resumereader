@@ -23,8 +23,8 @@
 
 					<div class="span8">
 						<%= link_to '#',remote: true   do %>
-							<p><strong><%= company.name %></strong> | 
-							<%= job.name %><span class ="hide" id ="expand-<%=apps.id%>">&nbsp&nbsp + Expand </span></p>
+							<p><strong> <%= company.name %></strong> | 
+							<%= job.name %><span class ="hide" id ="expand-<%=apps.id%>">&nbsp&nbsp + Expand  </span></p>
 						<% end %>
 					</div>
 
@@ -57,16 +57,21 @@
 									<%= apps.has_no_notes? %> MAKE A NOTE !<br />
 									<%= apps.notes.count %>
 								<% else %>
-									<% apps.show_normal_notes.each do |normal| %>
-										<b><%= normal.title %></b><br />
-										<%= normal.info %><br />
+									<% apps.show_normal_notes.reverse.each do |normal| %>
+										<div class="comments-header">
+											<span class="time"><%= (normal.updated_at).strftime("%d %b %I:%M %P") %></span>
+											<span class="pull-right time"><%= link_to "Delete", normal, method: :delete,
+																								  data: { confirm: 'You Sure?'}%>
+											</span>
+											<br />
+										</div>
+										<%= normal.info %><br /><br />
 									<% end %>
 								<% end %>
-								
-								<h5>Notes</h5>
+								<hr>	
+								<h5>Add Note</h5>
 								<%= form_for apps.create_new_note, :as => :note do |a|%>
-									<%= a.text_field :title, :placeholder => "Title for Note" %>
-									<%= a.text_area :info, :placeholder => "Your Note" %>
+									<%= a.text_area :info, :class=>"note-area", :placeholder => "Your Note" %>
 									<%= a.hidden_field :app_list_id, :value => apps.id %>
 									<%= a.hidden_field :user_id, :value => current_user.id %>
 									<%= a.hidden_field :kind, :value => "comment"%>
@@ -75,7 +80,8 @@
 								<% end %>
 								
 							</div>
-						
+
+							
 						
 						</div>
 						<div class="span4 editer-right-bar">
@@ -118,7 +124,7 @@
 							
 							<br /><br />
 							<b><i class="icon-globe"></i> Website:</b><br />
-							<%= link_to company.website, "http://#{company.website}" %>
+							<div class="web-link"><%= link_to company.website, "http://#{company.website}" %></div>
 							
 						</div>
 					</div>

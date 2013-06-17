@@ -4,6 +4,7 @@ class DashboardsController < ApplicationController
 
 
   #temporary fix for raw javascript showing up when 'back' is pressed on the dashboard
+  #move towards ember if possible
   after_filter do 
     response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
     response.headers["Pragma"] = "no-cache"

@@ -17,6 +17,8 @@ class NotesController < ApplicationController
   
   
   def destroy
+  @note = Note.find_by_id(params[:id]).destroy
+  redirect_to root_path
   end
 
 end
