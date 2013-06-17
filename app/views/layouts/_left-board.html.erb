@@ -20,6 +20,12 @@
 		</ul>
 	</div>
 	
+	<div class="blank-area">
+		
+	</div>
+	
+
+	
 	<div class="user-area">
 		<b><%= current_user.first_name %> <%= current_user.last_name %></b><br />
 		<%= current_user.email %><br />
@@ -27,4 +33,12 @@
 		<%= link_to 'User Settings', edit_user_registration_path %> &nbsp &nbsp &nbsp &nbsp
 		<%= link_to 'Log Out', destroy_user_session_path, :method =>'delete' %>
 	</div>
+	<div class="menu-area about-area">
+		<ul class="unstyled">
+			<li><i class="icon-comment"></i> &nbsp Contact Us</li>
+			<li><i class="icon-user"></i> &nbsp About ResumeQuery</li>
+			
+		</ul>
+	</div>
+
 </div>

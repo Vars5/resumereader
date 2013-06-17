@@ -49,12 +49,16 @@
 				<div class="editer-body">
 					<div class="row-fluid">
 						<div class="span8 editer-main">
-						
+							
+							<div class="editer-summary pad-all">
+								<p>Hello world</p>
+							</div>
+							
 						
 							
-							<div class="editer-job-comments">
+							<div class="editer-job-comments pad-all">
+								<div class="grey-text"><p class="grey-text">Make notes to remember useful things for the app</p></div>
 								<% if apps.has_no_notes? %>
-									<%= apps.has_no_notes? %> MAKE A NOTE !<br />
 									<%= apps.notes.count %>
 								<% else %>
 									<% apps.show_normal_notes.reverse.each do |normal| %>
@@ -65,20 +69,20 @@
 											</span>
 											<br />
 										</div>
-										<%= normal.info %><br /><br />
+										<%= normal.info %>
 									<% end %>
 								<% end %>
-								<hr>	
-								<h5>Add Note</h5>
-								<%= form_for apps.create_new_note, :as => :note do |a|%>
-									<%= a.text_area :info, :class=>"note-area", :placeholder => "Your Note" %>
-									<%= a.hidden_field :app_list_id, :value => apps.id %>
-									<%= a.hidden_field :user_id, :value => current_user.id %>
-									<%= a.hidden_field :kind, :value => "comment"%>
-									<%= a.hidden_field :id, :value => apps.id %>
-									<%= a.submit :class =>"btn btn-success" %>
-								<% end %>
-								
+								<div class="pad-top">
+									<%= form_for apps.create_new_note, :as => :note do |a|%>
+										<%= a.text_area :info, :class=>"note-area", 
+											:placeholder => "Add a useful note about this particular app.." %>
+										<%= a.hidden_field :app_list_id, :value => apps.id %>
+										<%= a.hidden_field :user_id, :value => current_user.id %>
+										<%= a.hidden_field :kind, :value => "comment"%>
+										<%= a.hidden_field :id, :value => apps.id %>
+										<%= a.submit :class =>"btn btn-success" %>
+									<% end %>
+								</div>
 							</div>
 
 							

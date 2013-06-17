@@ -21,6 +21,7 @@ $light-grey: #F2F2F2;
 $background-grey: #f6f6f6;
 $line-grey: #D6D6D6;
 $dark-grey: #666A73;
+$text-grey: #787878;
 
 /* greens */
 $base-green:  #39b54a;
@@ -63,13 +64,26 @@ input {
 
 
 .time {
-	color:#787878;
+	color:$text-grey;
 	font-size:8px;
 }
 
 .web-link{
 	overflow:hidden;
 }
+
+.pad-all{
+	padding:$standard-padding;
+}
+
+.pad-top{
+	padding-top:$standard-padding;
+}
+
+.grey-text{
+	color: $text-grey;
+}
+
 
 /* ========= END SECTION: UNIVERSALS =========*/
 
@@ -107,6 +121,10 @@ input {
 
 
 
+.about-area{
+
+}
+
 .menu-area {
 	padding-top:$standard-padding;
 	a{
@@ -125,6 +143,11 @@ input {
 		/*border-right:7px solid black;*/
 	}
 }
+
+.blank-area {
+	height:200px;
+}
+
 
 .left-dashboard {
 	box-shadow: 0 4px 17px -5px $dark-grey;
@@ -182,9 +205,12 @@ input {
 	line-height:19px;
 }
 
+.editer-summary{
+	border-bottom: 1px solid $line-grey;
+}
+
 .editer-main{
 	height:100%;
-	padding:$standard-padding;
 	border-right: 3px solid $line-grey;
 }
 
