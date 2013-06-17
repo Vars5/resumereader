@@ -29,6 +29,10 @@ class AppList < ActiveRecord::Base
     self.notes.count == 0
   end
   
+  def has_no_comment?
+    self.comments == nil
+  end
+  
   def show_normal_notes
     self.notes.where(:kind => "comment")
   end

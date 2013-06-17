@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="row">
-		<div class="span7 jobIndex">
+		<div class="span12 jobIndex">
 			<h3>All Job Opportunities</h3>
 			<ul class="unstyled">
 				<% @job.each do |j| %>
@@ -10,9 +10,6 @@
 						</li>
 					<% end %>
 				<% end %>
-		</div>
-		<div class="span3 pull-right">
-			<%= render 'shared/report_problems'%>
 		</div>
 	</div>
 </div>

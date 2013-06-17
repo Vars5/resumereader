@@ -51,13 +51,29 @@
 						<div class="span8 editer-main">
 							
 							<div class="editer-summary pad-all">
-								<p>Hello world</p>
+								<div class="grey-text"><i class="icon-edit"></i> Your Description</div><br />
+								
+								<% if apps.has_no_comment? %>
+									<%= form_for apps, :as => :applist, remote: true do |desc| %>
+										<%= desc.text_area :comments %>
+										<%= desc.hidden_field :id, :value => apps.id %>
+										<%= desc.submit "Save Description", :class => "btn btn-success"%>
+									<% end %>
+									
+								<% else %>
+									<%= simple_format(apps.comments)%>
+									
+								<% end %>
+								
+								
+								
+								
 							</div>
 							
 						
 							
 							<div class="editer-job-comments pad-all">
-								<div class="grey-text"><p class="grey-text">Make notes to remember useful things for the app</p></div>
+								<div class="grey-text"><i class="icon-list"></i> Make notes to remember useful things your application</div><br />
 								<% if apps.has_no_notes? %>
 									<%= apps.notes.count %>
 								<% else %>
@@ -75,7 +91,7 @@
 								<div class="pad-top">
 									<%= form_for apps.create_new_note, :as => :note do |a|%>
 										<%= a.text_area :info, :class=>"note-area", 
-											:placeholder => "Add a useful note about this particular app.." %>
+											:placeholder => "Add a useful note about this particular app, eg. from talking to HR, I should emphasise teamwork skills on my resume" %>
 										<%= a.hidden_field :app_list_id, :value => apps.id %>
 										<%= a.hidden_field :user_id, :value => current_user.id %>
 										<%= a.hidden_field :kind, :value => "comment"%>

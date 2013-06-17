@@ -6,7 +6,9 @@
 				<% @allCompanies.each do |c| %>
 					<%= link_to c do %>
 						<li><strong><%= c.name %></strong> - <%= c.industry%>  
-							<span class="pull-right"><%= c.jobs.count %> Job Opportunities</span>
+							<% if c.has_number_of_jobs != 0 %>
+								<span class="pull-right"><%= c.jobs.count %> Job Opportunities</span>
+							<% end %>
 						</li>
 					<% end %>
 				<% end %>
