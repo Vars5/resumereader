@@ -84,7 +84,7 @@ input {
 	border-bottom:3px solid $dark-green;
 	padding:$standard-padding 5px $standard-padding 25px;
 	font-size:11px;
-    box-shadow: 0 4px 10px -5px $dark-grey;
+    
 	a:hover{
 		color:$base-green !important;
 	};
@@ -112,7 +112,7 @@ input {
 }
 
 .left-dashboard {
-	box-shadow: 0 4px 10px -5px $dark-grey;
+	box-shadow: 0 4px 17px -5px $dark-grey;
 	background-color:$base-green;
 	min-height:700px;
 	height:auto;
@@ -132,7 +132,7 @@ input {
 .appManage {
 
 	margin-top:-1px;
-	
+	background-color:white;
 	padding:9px 10px 0px 9px;
 	border: 1px solid $line-grey;
 	border-right:5px solid $base-green;	
