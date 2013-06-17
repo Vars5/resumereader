@@ -59,7 +59,7 @@
 								<% else %>
 									<% apps.show_normal_notes.reverse.each do |normal| %>
 										<div class="comments-header">
-											<span class="time"><%= (normal.updated_at).strftime("%d %b %I:%M %P") %></span>
+											<span class="time"><%= (normal.updated_at).localtime.strftime("%d %b %I:%M %P") %></span>
 											<span class="pull-right time"><%= link_to "Delete", normal, method: :delete,
 																								  data: { confirm: 'You Sure?'}%>
 											</span>
