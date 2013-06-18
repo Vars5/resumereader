@@ -1,27 +1,32 @@
+<br />
 <div class="container">
-	<div class="row ">
-		<div class="span7">
+	<div class="row">
+		<div class="span6">
+			
 			<% cache @company do %>
-				<div class="bottomBorder">
+			
+				<div class="center-alignment hero-unit">
 					<h3><%= @company.name %></h3>
 						<% if can? :update, @company %>
 							<p><%= link_to 'Edit company details', edit_company_path %></p>
 						<% end %>
-						Industry: <%= @company.industry %></br>
-						Website: <%= link_to "#{@company.website}", "http://#{@company.website}" %></br>
-						HR Email: <%= @company.hr_email %></br>
-						<% if @company.has_image? %>
-							<%= image_tag @company.logo.url %></br>
-						<% end %></br>
+						<%= @company.industry %>&nbsp - &nbsp <%= link_to "#{@company.website}", "http://#{@company.website}" %></br>
+
 				</div>
-				<hr>
+				<div class="top-bottom-borders">
+					HR Email: <%= @company.hr_email %></br>
+				</div>
+				<br />
 				<p><%= simple_format(@company.info) %></p>
+			
+			
 			<% end %>
+		
 		</div>
+		
 	
 		
-		<div class="span3 pull-right">
-			<%= render 'shared/report_problems'%>
+		<div class="span5">
 			<% if can? :create, @job %>
 				<legend>Create a job</legend>
 				<%= form_for @jobs, :as => :jobs do |f| %>

@@ -103,6 +103,12 @@ input {
 	font-weight:bold;
 }
 
+.top-bottom-borders{
+	border-top:1px solid $line-grey;
+	border-bottom:1px solid $line-grey;
+	padding:9px 0px;
+}
+
 /* ========= END SECTION: UNIVERSALS =========*/
 
 
@@ -256,4 +262,8 @@ input {
 
 .dash-area {
 	padding-top:30px;
+}
+
+.companies-sell {
+	box-shadow: 0 4px 6px -5px $dark-grey;
 }
