@@ -29,7 +29,6 @@ class CompaniesController < ApplicationController
   
   def index
     @allCompanies = Company.all
-    @problem = Problem.new
   
   end
   

@@ -27,33 +27,19 @@ $(document).ready(function(){
 		    $("#expand-<%=apps.id%>").hide();
 		  });
 		
+		<%# Show edit description for each app-list %>
+		$("#edit-comment-button-<%=apps.id%>").click(function(){
+			$("#edit-comment-<%=apps.id%>").show();
+			$(this).hide;
+			$("#show-comment-<%=apps.id %>").hide();
+		});
+
+		
 		<%# Click to add your own HR contacts under the given ones %>
 		$("#hr-button-<%=apps.id%>").click(function(){
 			$("#hr-contacts-<%=apps.id%>").show();
 			$(this).hide;
 		});
-		
-		<%# Auto-update app-list status when clicked %>		
-
-		$("#applist-select-<%=apps.id%>").change(function(){
-			$.ajax({
-				type: "PUT",
-				url:"<%= url_for(apps) %>",
-				data: { 
-				 	applists : $('#applist-select-<%=apps.id%>').param
-
-				},
-				dataType: "status"
-			})	.done(function( msg ) {
-				  alert( "Data Saved: ");
-				});
-		});
-		
-		<% apps.show_hr_notes.each do |hrc| %>
-			
-			
-		<% end %>
-
 		
 	<% end %>
 
