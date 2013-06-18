@@ -1,3 +1,7 @@
-<%= if @note.kind ="comment" do %>
-	$('#comment-area-<%= apps.id%>').append("hello world ")
-<% end %> 
+
+if ( "<%=@note.kind%>" == "comment") {
+	$('#comment-area-<%=@note.app_list_id%>').append("<%= j render ('notes/comment')%>");
+} 
+else if ("<%=@note.kind%>"=="hr") {
+	$('#hr-area-<%=@note.app_list_id%>').append("<%= @note.info %><br />");
+}

@@ -5,4 +5,8 @@ class Note < ActiveRecord::Base
   
   validates :info, presence: :true
   
+  
+  
+
+  
 end

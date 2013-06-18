@@ -88,7 +88,7 @@
 								<div class="grey-text">
 									<i class="icon-list"></i> 
 									Make a note about the <%= company.name.pluralize %> <%= job.name %></div><br />
-									<div id="comment-area-<%= apps.id%>"></div>
+									<div class="comment-show" id="comment-area-<%=apps.id%>"></div>
 									<% apps.show_normal_notes.reverse.each do |normal| %>
 
 										<div id="comment-<%=normal.id%>">
@@ -135,7 +135,9 @@
 							</div>	
 							<br />
 							<b><i class="icon-user"></i> HR Contacts:</b><br />
-							<%= company.hr_email%><br />
+							<div id="hr-area-<%=apps.id%>">
+								<%= company.hr_email%><br />
+							</div>
 							<% apps.show_hr_notes.each do |hrc| %>
 								<%= hrc.info %><br />
 								<div class="hidden" id="hrc-<%hrc.id%>">
@@ -147,7 +149,7 @@
 							
 							<%= link_to "Add your own firm contacts", '#', :id => "hr-button-#{apps.id}" %>
 							<div class="hide" id="hr-contacts-<%=apps.id%>">
-								<%= form_for apps.create_new_note, :as => :note do |hr| %>
+								<%= form_for apps.create_new_note, :as => :note, remote: true do |hr| %>
 									<%= hr.text_field :info, :placeholder => "HR Contact"%>
 									<%= hr.hidden_field :app_list_id, :value => apps.id %>
 									<%= hr.hidden_field :kind, :value => "hr"%>
