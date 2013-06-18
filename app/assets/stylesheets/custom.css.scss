@@ -80,8 +80,21 @@ input {
 	padding-top:$standard-padding;
 }
 
+.pad-bottom{
+	padding-bottom:$standard-padding;
+}
+
 .grey-text{
 	color: $text-grey;
+}
+
+.center-alignment {
+	text-align:center;
+}
+
+.big-font{
+	font-size:16px;
+	text-decoration:underline;
 }
 
 

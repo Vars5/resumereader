@@ -1,16 +1,17 @@
 <div class="container">
 	<div class="row">
-		<div class="span8 jobIndex">
+		<div class="span6 jobIndex">
 			<h3>Companies List</h3>
 			<ul class="unstyled">
 				<% @allCompanies.each do |c| %>
 					<%= link_to c do %>
+						<span class="big-font"><strong><%= c.name %></strong> </span><br />
 						<% if c.has_number_of_jobs != 0 %>
-							<span class="badge badge-success"><%= c.jobs.count %> Opportunities</span>
-						<% end %>
-						<strong><%= c.name %></strong> - <%= c.industry%>
+							<%= c.industry%> - <%= c.jobs.count %> Opportunities
+						<% end %><br />
 					<% end %>
-					<br />
+						<%= simple_format( (truncate((c.info), :length=>200)) ) %>
+						<br />
 				<% end %>
 		</div>
 	</div>

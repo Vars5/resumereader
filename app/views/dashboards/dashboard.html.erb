@@ -1,4 +1,24 @@
 <div class="dash-area">
+	<div class="dashboard-instructions pad-bottom">
+			<div class="row-fluid center-alignment">
+				<div class="span3">
+				test - place guide circle here
+				</div>
+				<div class="span3">
+				test - place guide circle here
+				</div>
+				<div class="span3">
+				test - place guide circle here
+				</div>
+				<div class="span3">
+				test - place guide circle here
+				</div>	
+				
+			</div>
+	</div>
+	
+
+	
 	<% if current_user.has_no_applists? %>
 		<div class="introBar alert alert-info">
 			<%= link_to jobs_path do %>
@@ -8,6 +28,7 @@
 			<% end %>
 		</div>
 	<% else %>
+
 
 		<div class="app-title">
 			<h3>Your Apps Dashboard</h3>
