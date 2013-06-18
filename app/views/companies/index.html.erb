@@ -1,21 +1,35 @@
+<br />
 <div class="container">
 	<div class="row">
-		<div class="span6 jobIndex">
+		<div class="span12">
 			<h3>Companies List</h3>
 			<p class="grey-text"> <%= Company.count %> companies which offer  
 				worthwhile grad and internship jobs </p><br />
+		</div>
+	</div>	
+	<div class="row">
+		<div class="span6 jobIndex">
+			
 			<ul class="unstyled">
 				<% @allCompanies.each do |c| %>
 					<%= link_to c do %>
 						<span class="big-font"><strong><%= c.name %></strong> </span><br />
 						<%= c.industry%> -
 						<% if c.has_number_of_jobs != 0 %>
-							 <%= c.jobs.count %> Opportunities
+							 <%= c.jobs.count %> Job Opportunities
 						<% end %><br />
 					<% end %>
 						<%= simple_format( (truncate((c.info), :length=>170)) ) %>
 						<br />
 				<% end %>
+		</div>
+		
+		<div class="span5 inform-user">
+			<div class="hero-unit">
+				Do a google search and see how this pages looks like it.<hr>
+				The familiarity will be good. This box will be used to educate the consumer about companies, our products and offerings
+			</div>
+			
 		</div>
 	</div>
 </div>
