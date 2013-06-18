@@ -13,9 +13,8 @@ class DashboardsController < ApplicationController
   
   def dashboard
 
-    #New Problem Form
-    @problem = Problem.new
-   
+    
+    
     #AppList Feed
     @appListCount = current_user.app_list_count
     @appList = current_user.app_list_feed
@@ -25,8 +24,9 @@ class DashboardsController < ApplicationController
     
     #All Companies List
     @companies = Company.all
-  
     
+
+
   end
 
   #def resume
@@ -45,14 +45,13 @@ class DashboardsController < ApplicationController
   #def resumeQuestions
   #end
   
-  def changeSettings
-    @settings = current_user.setting
-  end
+  #def changeSettings
+  #  @settings = current_user.setting
+  #end
   
   def admin
     @list = User.all
-    authorize! :create, @job
-        
+    authorize! :create, @job      
   end
 
 end

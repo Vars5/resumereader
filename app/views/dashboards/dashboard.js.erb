@@ -1,8 +1,6 @@
-$(document).ready(function(){
+
 	
-	//Yeah if you're reading this code - sorry for the eyesore. -Pash
-	
-	$(".left-dashboard").css("overflow","hidden");
+	//Yeah if you're reading this code - sorry for the eyesore. -Pash	
 	<% @appList.each do |apps| %>
 		
 		<%# Click on the app-line area to pull it down %>
@@ -30,7 +28,7 @@ $(document).ready(function(){
 		<%# Show edit description for each app-list %>
 		$("#edit-comment-button-<%=apps.id%>").click(function(){
 			$("#edit-comment-<%=apps.id%>").show();
-			$(this).hide;
+			$(this).hide();
 			$("#show-comment-<%=apps.id %>").hide();
 		});
 
@@ -42,5 +40,3 @@ $(document).ready(function(){
 		});
 		
 	<% end %>
-
-});

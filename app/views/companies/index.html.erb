@@ -5,12 +5,12 @@
 			<ul class="unstyled">
 				<% @allCompanies.each do |c| %>
 					<%= link_to c do %>
-						<li><strong><%= c.name %></strong> - <%= c.industry%>  
-							<% if c.has_number_of_jobs != 0 %>
-								<span class="pull-right"><%= c.jobs.count %> Job Opportunities</span>
-							<% end %>
-						</li>
+						<% if c.has_number_of_jobs != 0 %>
+							<span class="badge badge-success"><%= c.jobs.count %> Opportunities</span>
+						<% end %>
+						<strong><%= c.name %></strong> - <%= c.industry%>
 					<% end %>
+					<br />
 				<% end %>
 		</div>
 	</div>

@@ -4,7 +4,10 @@ class NotesController < ApplicationController
   def create
     @note = Note.new(params[:note])
     if @note.save
-      redirect_to root_path
+      respond_to do |format|
+        #format.html { redirect_to root_path }
+        format.js
+      end
     end
   end
   
@@ -17,8 +20,12 @@ class NotesController < ApplicationController
   
   
   def destroy
-  @note = Note.find_by_id(params[:id]).destroy
-  redirect_to root_path
+    @note = Note.find_by_id(params[:id]).destroy
+    respond_to do |format|
+      #format.html { redirect_to root_path }
+      format.js
+    end
+    
   end
 
 end

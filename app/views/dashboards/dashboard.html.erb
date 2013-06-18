@@ -88,22 +88,22 @@
 								<div class="grey-text">
 									<i class="icon-list"></i> 
 									Make a note about the <%= company.name.pluralize %> <%= job.name %></div><br />
-								<% if apps.has_no_notes? %>
-									<%= apps.notes.count %>
-								<% else %>
+									<div id="comment-area-<%= apps.id%>"></div>
 									<% apps.show_normal_notes.reverse.each do |normal| %>
-										<div class="comments-header">
-											<span class="time"><%= (normal.updated_at).localtime.strftime("%d %b %I:%M %P") %></span>
-											<span class="pull-right time"><%= link_to "Delete", normal, method: :delete,
-																								  data: { confirm: 'You Sure?'}%>
-											</span>
-											<br />
+
+										<div id="comment-<%=normal.id%>">
+											<div class="comments-header">
+												<span class="time"><%= (normal.updated_at).localtime.strftime("%d %b %I:%M %P") %></span>
+												<span class="pull-right time"><%= link_to "Delete", normal, method: :delete,
+																									  remote: true, data: { confirm: 'You Sure?'}%>
+												</span>
+												<br />
+											</div>
+											<%= simple_format(normal.info) %>
 										</div>
-										<%= normal.info %>
-									<% end %>
 								<% end %>
 								<div class="pad-top">
-									<%= form_for apps.create_new_note, :as => :note do |a|%>
+									<%= form_for apps.create_new_note, :as => :note, remote: true do |a|%>
 										<%= a.text_area :info, :class=>"note-area", 
 											:placeholder => "Add a useful note about this particular app, eg. from talking to HR, I should emphasise teamwork skills on my resume" %>
 										<%= a.hidden_field :app_list_id, :value => apps.id %>
