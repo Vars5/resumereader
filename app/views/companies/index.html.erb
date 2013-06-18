@@ -4,7 +4,7 @@
 		<div class="span12">
 			<h3>Companies List</h3>
 			<p class="grey-text"> <%= Company.count %> companies which offer  
-				worthwhile grad and internship jobs </p><br />
+				worthwhile grad and internship opportunities </p><br />
 		</div>
 	</div>	
 	<div class="row">
@@ -22,6 +22,8 @@
 						<%= simple_format( (truncate((c.info), :length=>170)) ) %>
 						<br />
 				<% end %>
+				
+				<%= will_paginate @allCompanies %>
 		</div>
 		
 		<div class="span5 inform-user">
