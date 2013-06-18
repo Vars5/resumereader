@@ -31,6 +31,7 @@ $dark-green: #46724C;
 
 /* other*/
 $ft-color: #fff1e0;
+$dark-red: #D41528;
 
 
 /* ========= END SECTION: STYLE VARIABLES =========*/
@@ -97,6 +98,10 @@ input {
 	text-decoration:underline;
 }
 
+.red-text{
+	color:$dark-red;
+	font-weight:bold;
+}
 
 /* ========= END SECTION: UNIVERSALS =========*/
 

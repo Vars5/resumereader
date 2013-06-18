@@ -8,7 +8,9 @@
 				test - place guide circle here
 				</div>
 				<div class="span3">
-				test - place guide circle here
+				<p>Question: What tone do people resonate and talk about these career things? Its 
+					definitely not too formal (we're not HR), current thesis is that a tone of 'mentorship'
+					is what our demographic likes when it comes to career and apps advice</p>
 				</div>
 				<div class="span3">
 				test - place guide circle here
@@ -41,13 +43,18 @@
 			<!-- This is shown initially -->
 			<div class="appManage" id="app-line-<%=apps.id%>">
 				<div class="row-fluid">	
-					<div class="span8">
+					<div class="span6">
 						<%= link_to '#',remote: true   do %>
 							<p><strong> <%= company.name %></strong> | 
 							<%= job.name %><span class ="hide" id ="expand-<%=apps.id%>">&nbsp&nbsp + Expand  </span></p>
 						<% end %>
 					</div>
 
+					<div class="span2">
+						<div class="pull-right red-text">
+							<%= apps.status%>
+						</div>	
+					</div>
 
 					<div class="span1">
 						<%= link_to "Website", company.website %>
