@@ -1,7 +1,7 @@
 class AppListsController < ApplicationController
 
   before_filter :authenticate_user!
-
+  authorize_resource :except => [:create]
 
   def create
     @appList = current_user.app_lists.build(params[:applist])
@@ -13,6 +13,11 @@ class AppListsController < ApplicationController
       flash[:alert] = "You're already following this job!"
       redirect_to @job
     end
+  end
+
+
+  def show
+    @appList = AppList.accessible_by(current_ability).find_by_id(params[:id])
   end
 
   def update

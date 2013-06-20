@@ -1,7 +1,7 @@
 <br />
 <div class="container">
 	<div class="row">
-		<div class="span6">
+		<div class="span8">
 			
 			<% cache @company do %>
 			
@@ -10,7 +10,8 @@
 						<% if can? :update, @company %>
 							<p><%= link_to 'Edit company details', edit_company_path %></p>
 						<% end %>
-						<%= @company.industry %>&nbsp - &nbsp <%= link_to "#{@company.website}", "http://#{@company.website}" %></br>
+						<%= @company.industry %><br />
+						<%= link_to "#{@company.website}", "http://#{@company.website}" %></br>
 
 				</div>
 				<div class="top-bottom-borders">
@@ -26,7 +27,7 @@
 		
 	
 		
-		<div class="span5">
+		<div class="span4">
 			<% if can? :create, @job %>
 				<legend>Create a job</legend>
 				<%= form_for @jobs, :as => :jobs do |f| %>
@@ -42,7 +43,7 @@
 				
 			<% if @company.has_number_of_jobs > 0 %>
 				<strong> Job opportunities with <%= @company.name %>: </strong></br></br>
-				<ul>
+				<ul class="nav nav-pills nav-stacked">
 					<% @company.has_jobs.each do |job|%>
 						<li><%=link_to	"#{job.name}", job %></li>
 					<% end %>

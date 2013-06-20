@@ -14,7 +14,8 @@
 
 /* ========= SECTION: STYLE VARIABLES =========*/
 
-$standard-padding: 20px;
+
+
 
 /* greys */
 $light-grey: #F2F2F2;
@@ -33,6 +34,10 @@ $dark-green: #46724C;
 $ft-color: #fff1e0;
 $dark-red: #D41528;
 
+/* standards */
+
+$standard-padding: 20px;
+$standard-shadow:0 4px 9px -5px $dark-grey;
 
 /* ========= END SECTION: STYLE VARIABLES =========*/
 
@@ -192,7 +197,7 @@ input {
 
 
 .appManage {
-
+	box-shadow: $standard-shadow;
 	margin-top:-1px;
 	background-color:white;
 	padding:9px 10px 0px 9px;
@@ -214,6 +219,7 @@ input {
 	border:1px solid $line-grey;
 	border-right:6px solid #165468;
 	margin-bottom: $standard-padding;
+	box-shadow: $standard-shadow;
 }
 
 .editer-header {
