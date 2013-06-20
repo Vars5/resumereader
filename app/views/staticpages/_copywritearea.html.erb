@@ -1,17 +1,18 @@
 
-	<div class="copywriteArea">
+	<div class="copywriteArea background-white">
+		<br />
 		<div class="container">	
 			<div class="row">
 				<%= link_to image_tag('alpha-logo.png'), root_path %>
 
 				<div class="pull-right">
 					<div class="copywriteAreaRight">
-					</br>
-					<p>Happy <%= Time.now.strftime("%A") %> ! &nbsp  
-					<%= link_to 'Log In', new_user_session_path, :class=> "btn btn-small btn-info"%></p>
+					</br>  
+					<%= link_to 'Log In', new_user_session_path, :class=> "btn btn-small btn-info"%>
 					</div>
 				</div>
 			</div>
 		</div>
+		<br />
 	</div>
-	</br>
+
