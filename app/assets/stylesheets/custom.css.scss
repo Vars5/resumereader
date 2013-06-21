@@ -264,10 +264,13 @@ input {
 /* ========= END SECTION: EDITER =========*/
 
 
-
+.copywrite-area{
+	/*border-bottom:6px solid $base-green;*/
+	/*margin-bottom:$standard-padding*2;*/
+}
 
 .footing {
-	border-top:1px solid $line-grey;
+	/*border-top:1px solid $line-grey;*/
 	padding:$standard-padding;
 }
 
@@ -277,4 +280,31 @@ input {
 
 .companies-sell {
 	box-shadow: 0 4px 6px -5px $dark-grey;
+}
+
+.info-bar {
+	margin-bottom:$standard-padding;
+	padding:$standard-padding*3 0;
+	background:url('/assets/homepage.jpg'); 
+	background-repeat: no-repeat;
+	background-size:cover;
+	color:white;
+	h1 {
+	font-size:40px;
+	line-height:45px;
+	}
+	p{
+		font-size:18px;
+		line-height:23px;
+	}
+	.info-message{
+
+
+	}
+}
+
+.left-bar{
+	.btn{
+		width:100% ;
+	}
 }
