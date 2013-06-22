@@ -23,7 +23,7 @@ $(document).ready(function() {
 
 		(function cycle() { 
 		    divs.eq(i).fadeIn(500)
-		              .delay(4500)
+		              .delay(5500)
 		              .fadeOut(500, cycle);
 
 		    i = ++i % divs.length; // increment i, 
