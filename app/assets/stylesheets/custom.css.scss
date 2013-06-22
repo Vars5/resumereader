@@ -70,6 +70,10 @@ input {
 	border:1px solid $dark-grey !important;
 }
 
+input[type='checkbox'] {
+	margin:0px !important;
+}
+
 .hidden{
 	display:none;
 }
@@ -300,9 +304,8 @@ input {
 		font-size:18px;
 		line-height:23px;
 	}
-	.info-message{
-
-
+	a{
+		color:white;
 	}
 	background-color:$base-green;
 }
@@ -325,10 +328,6 @@ input {
 	padding-left:$standard-padding;
 }
 
-.sessions{
-	padding: $standard-padding*3 0;
-}
-
-.info-bar-sessions{
-		background-color:$base-green;
+.checkbox-area{
+	margin:0px 0px 8px;
 }
