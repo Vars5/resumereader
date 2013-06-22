@@ -67,7 +67,7 @@ select {
 
 input {
 	width:95%;
-	border:1px solid $dark-grey !important;
+	border:1px solid $dark-green !important;
 }
 
 input[type='checkbox'] {
@@ -288,6 +288,7 @@ input[type='checkbox'] {
 }
 
 .info-bar {
+	min-height:300px;
 	text-shadow: 0.1em 0.1em 0.2em $dark-grey;
 	background-color:$base-green;
 	margin-bottom:$standard-padding;
