@@ -67,6 +67,7 @@ select {
 
 input {
 	width:95%;
+	border:1px solid $dark-grey !important;
 }
 
 .hidden{
@@ -283,6 +284,7 @@ input {
 }
 
 .info-bar {
+	text-shadow: 0.1em 0.1em 0.2em $dark-grey;
 	background-color:$base-green;
 	margin-bottom:$standard-padding;
 	padding:$standard-padding*3 0;
@@ -302,6 +304,7 @@ input {
 
 
 	}
+	background-color:$base-green;
 }
 
 .left-bar{
@@ -313,12 +316,19 @@ input {
 
 .wrapper {
 	height:55px;
-	 width:55px; 
+	width:55px; 
 	border-radius:55px; 
-
 	overflow:hidden;
 }
 
 .info-subtext {
-	padding-left:20px;
+	padding-left:$standard-padding;
+}
+
+.sessions{
+	padding: $standard-padding*3 0;
+}
+
+.info-bar-sessions{
+		background-color:$base-green;
 }
