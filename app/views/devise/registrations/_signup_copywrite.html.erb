@@ -1,6 +1,3 @@
-
-
-
 <% cache do %>
 	<div class="info-message">	
 		
@@ -31,6 +28,28 @@
 			<p>We don't profit from employers so we can put students first.
 				This means we don't just list the companies that have paid us, we list all that
 				we can find for you</p>
+		</div>
+		
+		<div class="info-text hide center-alignment" id="content-3">
+			<h1>The numbers to show that we make it easier too:</h1>
+			<br />
+			<div class="row-fluid">
+				<div class="span4">
+					<h2><%= Company.count%></h2>
+					Reputable<br/> companies listed
+				</div>
+				<div class="span4">
+					<h2><%= Job.count %></h2>
+					Active jobs open for students
+				</div>
+				<div class="span4">
+					<h2> 500  </h2>
+					Number of grad jobs & internships in Australia
+				</div>
+			</div>
+
+
+
 		</div>
 		
 		<% if false %>
