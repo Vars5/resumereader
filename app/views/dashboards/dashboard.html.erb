@@ -8,7 +8,6 @@
 		</div>
 	<% else %>
 
-
 		<div class="app-title">
 			<h3>Your Apps Dashboard</h3>
 		</div>
@@ -21,7 +20,7 @@
 			<div class="appManage" id="app-line-<%=apps.id%>">
 				<div class="row-fluid">	
 					<div class="span6">
-						<%= link_to '#',remote: true   do %>
+						<%= link_to apps do %>
 							<p><strong> <%= company.name %></strong> | 
 							<%= job.name %><span class ="hide" id ="expand-<%=apps.id%>">&nbsp&nbsp + Expand  </span></p>
 						<% end %>
@@ -39,135 +38,6 @@
 
 					<div class="span3">
 						<span class="pull-right">Closes <%= job.show_due_date %></span>
-					</div>
-				</div>
-			</div>
-
-			<!-- this is shown after -->
-			<div class="hidden editer" id="edit-line-<%=apps.id%>">
-				<div class="editer-header">
-					<strong><%= company.name %></strong><span id="hide-button-<%=apps.id%>">
-					<span class="pull-right">&nbsp &nbsp <%= link_to 'Hide', '#', remote: true %></span> <br />
-					<%= job.name %></br>Closes <%= job.show_due_date %></br>
-				</div>
-				<div class="editer-body">
-					<div class="row-fluid">
-						<div class="span8 editer-main">
-							
-							<div class="editer-summary pad-all">
-								<div class="grey-text">
-									<i class="icon-edit"></i> Your Description
-									<% if apps.has_no_comment? %>
-									
-									<% else %>
-										<%= link_to 'Edit', '#', :class => "pull-right", :id => "edit-comment-button-#{apps.id}"%>
-									<% end %>
-									
-								</div><br />
-								
-								
-								
-								<% if apps.has_no_comment? %>
-									<%= form_for apps, :as => :applist, remote: true do |desc| %>
-										<%= desc.text_area :comments, :placeholder => "Add your own summary about this job" %>
-										<%= desc.hidden_field :id, :value => apps.id %>
-										<%= desc.submit "Save Description", :class => "btn btn-success"%>
-									<% end %>
-									
-								<% else %>
-									<div id="show-comment-<%=apps.id %>">
-										<%= simple_format(apps.comments)%>
-									</div>
-									<div class="hide" id="edit-comment-<%=apps.id%>">
-										<%= form_for apps, :as => :applist, remote: true do |descedit| %>
-											<%= descedit.text_area :comments%>
-											<%= descedit.hidden_field :id, :value => apps.id %>
-											<%= descedit.submit "Save Description", :class => "btn btn-success"%>
-										<% end %>
-									</div>
-								<% end %>
-
-							</div>
-							
-							<div class="editer-job-comments pad-all">
-								<div class="grey-text">
-									<i class="icon-list"></i> 
-									Make a note about the <%= company.name.pluralize %> <%= job.name %></div><br />
-									<div class="comment-show" id="comment-area-<%=apps.id%>"></div>
-									<% apps.show_normal_notes.reverse.each do |normal| %>
-
-										<div id="comment-<%=normal.id%>">
-											<div class="comments-header">
-												<span class="time"><%= (normal.updated_at).localtime.strftime("%d %b %I:%M %P") %></span>
-												<span class="pull-right time"><%= link_to "Delete", normal, method: :delete,
-																									  remote: true, data: { confirm: 'You Sure?'}%>
-												</span>
-												<br />
-											</div>
-											<%= simple_format(normal.info) %>
-										</div>
-								<% end %>
-								<div class="pad-top">
-									<%= form_for apps.create_new_note, :as => :note, remote: true do |a|%>
-										<%= a.text_area :info, :class=>"note-area", 
-											:placeholder => "Add a useful note about this particular app, eg. from talking to HR, I should emphasise teamwork skills on my resume" %>
-										<%= a.hidden_field :app_list_id, :value => apps.id %>
-										<%= a.hidden_field :user_id, :value => current_user.id %>
-										<%= a.hidden_field :kind, :value => "comment"%>
-										<%= a.hidden_field :id, :value => apps.id %>
-										<%= a.submit :class =>"btn btn-success" %>
-									<% end %>
-								</div>
-							</div>
-
-							
-						
-						</div>
-						<div class="span4 editer-right-bar">
-							<b>Status:</b><br />
-							
-							<%= form_for apps, :as => :applist, remote: true do |f| %>
-								<%= f.select :status, [['Not Started'], ['Researched'],
-							                       ['Sent Application'],['Completed All'],['Unfollow', 'unfollow']],{},:id => "applist-select-#{apps.id}", remote: true %>	
-								<%= f.hidden_field :id, :value => apps.id %>
-							<% end %>
-							
-							<div class="editer-job-summary">
-								<b><i class="icon-briefcase"></i> Job Summary</b><br />
-								<%= link_to job do %>
-									<%= simple_format( (truncate((job.info), :length=>140)) ) %>
-								<% end %>
-							</div>	
-							<br />
-							<b><i class="icon-user"></i> HR Contacts:</b><br />
-							<div id="hr-area-<%=apps.id%>">
-								<%= company.hr_email%><br />
-							</div>
-							<% apps.show_hr_notes.each do |hrc| %>
-								<%= hrc.info %><br />
-								<div class="hidden" id="hrc-<%hrc.id%>">
-								<%= form_for hrc do |fhr| %>
-									<%= fhr.text_field :info%>
-								<% end %>
-								</div>	
-							<% end %>
-							
-							<%= link_to "Add your own firm contacts", '#', :id => "hr-button-#{apps.id}" %>
-							<div class="hide" id="hr-contacts-<%=apps.id%>">
-								<%= form_for apps.create_new_note, :as => :note, remote: true do |hr| %>
-									<%= hr.text_field :info, :placeholder => "HR Contact"%>
-									<%= hr.hidden_field :app_list_id, :value => apps.id %>
-									<%= hr.hidden_field :kind, :value => "hr"%>
-									<%= hr.hidden_field :user_id, :value => current_user.id %>
-									<%= hr.submit :class => "btn" %>
-								<% end %>
-							</div>
-							
-							<br /><br />
-							<b><i class="icon-globe"></i> Website:</b><br />
-							<div class="web-link"><%= link_to company.website, "http://#{company.website}" %></div>
-							
-						</div>
 					</div>
 				</div>
 			</div>
