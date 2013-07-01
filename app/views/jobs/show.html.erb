@@ -1,14 +1,28 @@
-<div class="container">
-	<div class="row ">
-		<div class="span7">
+<div class="container pad-top">
+	<div class="row pad-top">
+		<div class="span7 pad-top">
 			<h3>
 			<% cache @job do %>
 				<%= @job.name %><br />
-				<% if @job.due_date != nil%>	
+			</h3>
+			<h4>
+				<strong><%= link_to @job.find_company.name, @job.find_company %></strong>
+				<% if @job.due_date != nil %>	
 					Closes <%= @job.due_date.strftime("%B %e")%>
 				<% end %>
-				</h3>
-				<strong><%= link_to @job.find_company.name, @job.find_company %></strong></br>
+			</h4>	
+				<hr>
+				<% if current_user.is_following_applist?(@job) %>
+					<div class='alert alert-info'>You are following this job</div>
+				<% else %>
+					<%= form_for @appList, :as => :applist do |f|%>
+						<%= f.hidden_field :job_id, :value => params[:id] %>
+						<%= f.submit "Follow Job", :class => "btn btn-info"%>
+					<% end %>
+				<% end %>
+				<hr>
+			
+				
 				Discipline: <%= @job.discipline %></br>
 				HR Contact: <%= @job.relevant_hr_email %></br>
 				<% if @job.has_website? %>
@@ -21,27 +35,8 @@
 		</div>
 		<div class="span3 pull-right">
 			<!-- Place company logo here later -->
-			<%= render 'shared/report_problems'%>
-			<% if can? :update, @job %>
-				<%= link_to 'Edit this Job', edit_job_path %>
-			<% end %>
 			
-			<% if current_user.is_following_applist?(@job) %>
-				<div class="alert">
-					You're following this job.</br></br> If there's anything
-					more information that could help you, e.g. minimum marks
-					or extra-curriculars, please submit it to the
-					suggestions box. We're committed to helping you through
-					the whole job process.
-				</div>
-			<% else %>
-			<div class="profileSpot">
-				<%= form_for @appList, :as => :applist do |f|%>
-					<%= f.hidden_field :job_id, :value => params[:id] %>
-					<%= f.submit "Follow Job", :class => "btn btn-info"%>
-				<% end %>
-			</div>
-			<% end %>
+
 		</div>
 	</div>
 </div>

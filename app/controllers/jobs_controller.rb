@@ -21,7 +21,7 @@ class JobsController < ApplicationController
   def show
     @job = Job.find_by_id(params[:id])
     @appList = current_user.app_lists.build
-    @problem = Problem.new
+
   end
   
   def edit

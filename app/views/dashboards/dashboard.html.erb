@@ -8,8 +8,8 @@
 		</div>
 	<% else %>
 
-		<div class="app-title">
-			<h3>Your Apps Dashboard</h3>
+		<div class="app-title pad-top">
+			<h4>Your Dashboard</h4>
 		</div>
 		
 		<% @appList.each do |apps| %>
@@ -19,7 +19,7 @@
 			<!-- This is shown initially -->
 			<div class="appManage" id="app-line-<%=apps.id%>">
 				<div class="row-fluid">	
-					<div class="span6">
+					<div class="span4">
 						<%= link_to apps do %>
 							<p><strong> <%= company.name %></strong> | 
 							<%= job.name %><span class ="hide" id ="expand-<%=apps.id%>">&nbsp&nbsp + Expand  </span></p>

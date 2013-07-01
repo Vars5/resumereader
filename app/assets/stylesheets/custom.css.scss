@@ -53,7 +53,10 @@ body {
 	font-family: 'Noto Sans', sans-serif;	
 	font-size:13px;
 	height:100%;
-	background-color:$light-grey;
+	/*background-color:$light-grey;*/
+	a{
+		color:#468966;
+	}
 }
 
 textarea {
@@ -146,7 +149,7 @@ input[type='checkbox'] {
 }
 
 .user-area{
-	background-color:$light-green;
+	background-color:white;
 	margin-left:-25px;
 	border-top:5px solid $dark-green;
 	border-bottom:3px solid $dark-green;
@@ -166,8 +169,10 @@ input[type='checkbox'] {
 
 .menu-area {
 	padding-top:$standard-padding;
+	color:white;
+	text-shadow: 0.1em 0.1em 0.1em $dark-grey;
 	a{
-	color:#333;	
+	color:white;	
 	}
 
 	li {
@@ -207,12 +212,13 @@ input[type='checkbox'] {
 
 
 .appManage {
-	box-shadow: $standard-shadow;
-	margin-top:-1px;
+	/*box-shadow: $standard-shadow;*/
+	/*margin-top:-1px;*/
+	
 	background-color:white;
 	padding:9px 10px 0px 9px;
-	border: 1px solid $line-grey;
-	border-right:5px solid $base-green;	
+	/*border: 1px solid $line-grey;*/
+	border-left:5px solid $base-green;	
 	a {
 		text-decoration:none;	
 	}
@@ -225,18 +231,19 @@ input[type='checkbox'] {
 /* ========= SECTION: EDITER ON APPS_LIST =========*/
 
 .editer {
-	background-color:$background-grey;
+	/*background-color:$background-grey;
 	border:1px solid $line-grey;
-	border-right:6px solid #165468;
+	border-right:6px solid #165468;*/
 	margin-bottom: $standard-padding;
-	box-shadow: $standard-shadow;
+	/*box-shadow: $standard-shadow;*/
 }
+
 
 .editer-header {
 
-	background-color:white;
-	padding:$standard-padding;
-	border-bottom: 1px solid $line-grey;
+	/*background-color:white;*/
+	/*padding:$standard-padding;*/
+	/*border-bottom: 1px solid $line-grey;*/
 }
 
 .editer-body{
@@ -255,7 +262,7 @@ input[type='checkbox'] {
 }
 
 .editer-right-bar{
-	padding:$standard-padding;
+	/*padding:$standard-padding;*/
 }
 
 .btn {
@@ -331,4 +338,10 @@ input[type='checkbox'] {
 
 .checkbox-area{
 	margin:0px 0px 8px;
+}
+
+
+.hierachy{
+	padding:$standard-padding*2 0px;
+	border-bottom:1px solid $dark-grey;
 }

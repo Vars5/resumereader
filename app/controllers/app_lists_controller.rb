@@ -18,6 +18,8 @@ class AppListsController < ApplicationController
 
   def show
     @appList = AppList.accessible_by(current_ability).find_by_id(params[:id])
+    @job = @appList.find_job
+    @company = @job.find_company
   end
 
   def update
