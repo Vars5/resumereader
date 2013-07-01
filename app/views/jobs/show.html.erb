@@ -8,18 +8,21 @@
 			<h4>
 				<strong><%= link_to @job.find_company.name, @job.find_company %></strong>
 				<% if @job.due_date != nil %>	
-					Closes <%= @job.due_date.strftime("%B %e")%>
+					- Closes <%= @job.due_date.strftime("%B %e")%>
 				<% end %>
 			</h4>	
 				<hr>
 				<% if current_user.is_following_applist?(@job) %>
-					<div class='alert alert-info'>You are following this job</div>
+					<span class="label label-inverse">You are following this job</span>
 				<% else %>
 					<%= form_for @appList, :as => :applist do |f|%>
 						<%= f.hidden_field :job_id, :value => params[:id] %>
-						<%= f.submit "Follow Job", :class => "btn btn-info"%>
+						<%= f.submit "Add to Dashboard", :class => "btn btn-info"%>
 					<% end %>
 				<% end %>
+				&nbsp
+				Type: <%= @job.role %>
+				
 				<hr>
 			
 				

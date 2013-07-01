@@ -1,67 +1,69 @@
 <div class="hierachy">
 	<div class="row-fluid">
-		<div class="span12">
-			<%= link_to "Dashboard", root_path%>
+		<div class="span12 bottom-border">
+			<%= link_to "Dashboard", root_path%> &nbsp >&nbsp <%= @job.name %>
 		</div>
 	</div>
 </div>
 
 	<div class="editer" id="edit-line-<%=@appList.id%>">
 		<div class="editer-header">
-			<strong><%= @company.name %></strong><span id="hide-button-<%=@appList.id%>">
-
-			<%= @job.name %></br>Closes <%= @job.show_due_date %></br>
+			<h4><%= @job.name %></h4>
+				<%= @company.name %> - Closes <%= @job.show_due_date %></br>
+				<i class="icon-globe"></i> Website: <%= link_to @company.website, "http://#{@company.website}" %>
 		</div>
 		<div class="editer-body">
 			
-			<div class="row-fluid">
-				<div class="span10">
-					<div class="span12 editer-right-bar">
-						<b>Status:</b><br />
+			<div class="row-fluid pad-top">
+				<div class="span10 editer-hub top-bottom-borders">
+					<div class="row-fluid">
+						<div class="span4">
+							<b>Status:</b><br />
 
-						<%= form_for @appList, :as => :applist, remote: true do |f| %>
-							<%= f.select :status, [['Not Started'], ['Researched'],
-						                       ['Sent Application'],['Completed All'],['Unfollow', 'unfollow']],{},:id => "applist-select-#{@appList.id}", remote: true %>	
-							<%= f.hidden_field :id, :value => @appList.id %>
-						<% end %>
-
-						<div class="editer-@job-summary">
-							<b><i class="icon-briefcase"></i> job Summary</b><br />
-							<%= link_to @job do %>
-								<%= simple_format( (truncate((@job.info), :length=>140)) ) %>
+							<%= form_for @appList, :as => :applist, remote: true do |f| %>
+								<%= f.select :status, [['Not Started'], ['Researched'],
+							                       ['Sent Application'],['Completed All'],['Unfollow', 'unfollow']],{},:id => "applist-select-#{@appList.id}", remote: true %>	
+								<%= f.hidden_field :id, :value => @appList.id %>
 							<% end %>
-						</div>	
-						<br />
-						<b><i class="icon-user"></i> HR Contacts:</b><br />
-						<div id="hr-area-<%=@appList.id%>">
-							<%= @company.hr_email%><br />
 						</div>
-						<% @appList.show_hr_notes.each do |hrc| %>
-							<%= hrc.info %><br />
-							<div class="hidden" id="hrc-<%hrc.id%>">
-							<%= form_for hrc do |fhr| %>
-								<%= fhr.text_field :info%>
-							<% end %>
+						<div class="span4">
+							<div class="editer-@job-summary">
+								<b><i class="icon-briefcase"></i> job Summary</b><br />
+								<%= link_to @job do %>
+									<%= simple_format( (truncate((@job.info), :length=>140)) ) %>
+								<% end %>
 							</div>	
-						<% end %>
-
-						<%= link_to "Add your own firm contacts", '#', :id => "hr-button-#{@appList.id}" %>
-						<div class="hide" id="hr-contacts-<%=@appList.id%>">
-							<%= form_for @appList.create_new_note, :as => :note, remote: true do |hr| %>
-								<%= hr.text_field :info, :placeholder => "HR Contact"%>
-								<%= hr.hidden_field :app_list_id, :value => @appList.id %>
-								<%= hr.hidden_field :kind, :value => "hr"%>
-								<%= hr.hidden_field :user_id, :value => current_user.id %>
-								<%= hr.submit :class => "btn" %>
-							<% end %>
 						</div>
+						<div class="span4">
+							<b><i class="icon-user"></i> HR Contacts:</b><br />
+							<div id="hr-area-<%=@appList.id%>">
+								<%= @company.hr_email%><br />
+							</div>
+							<% @appList.show_hr_notes.each do |hrc| %>
+								<%= hrc.info %><br />
+								<div class="hidden" id="hrc-<%hrc.id%>">
+								<%= form_for hrc do |fhr| %>
+									<%= fhr.text_field :info%>
+								<% end %>
+								</div>	
+							<% end %>
 
+							<%= link_to "Add your own firm contacts", '#', :id => "hr-button-#{@appList.id}" %>
+							<div class="hide" id="hr-contacts-<%=@appList.id%>">
+								<%= form_for @appList.create_new_note, :as => :note, remote: true do |hr| %>
+									<%= hr.text_field :info, :placeholder => "HR Contact"%>
+									<%= hr.hidden_field :app_list_id, :value => @appList.id %>
+									<%= hr.hidden_field :kind, :value => "hr"%>
+									<%= hr.hidden_field :user_id, :value => current_user.id %>
+									<%= hr.submit :class => "btn" %>
+								<% end %>
+							</div>
+						
 						<br /><br />
-						<b><i class="icon-globe"></i> Website:</b><br />
-						<div class="web-link"><%= link_to @company.website, "http://#{@company.website}" %></div>
 
 					</div>
-				
+					</div>
+				</div>
 				
 				</div>
 			</div>

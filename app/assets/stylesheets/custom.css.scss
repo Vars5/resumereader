@@ -127,6 +127,10 @@ input[type='checkbox'] {
 	padding:9px 0px;
 }
 
+.bottom-border{
+	border-bottom:1px solid $line-grey;
+}
+
 /* ========= END SECTION: UNIVERSALS =========*/
 
 
@@ -155,7 +159,7 @@ input[type='checkbox'] {
 	border-bottom:3px solid $dark-green;
 	padding:$standard-padding 5px $standard-padding 25px;
 	font-size:11px;
-    
+    border-right:1px solid $dark-green;
 	a:hover{
 		color:$base-green !important;
 	};
@@ -194,10 +198,10 @@ input[type='checkbox'] {
 
 
 .left-dashboard {
-	box-shadow: 0 4px 17px -5px $dark-grey;
+	/*box-shadow: 0 4px 17px -5px $dark-grey;*/
 	background-color:$base-green;
 	min-height:700px;
-	height:auto;
+	height:100%;
 
 	padding-left:25px;
 	margin-left:-20px;
@@ -252,13 +256,13 @@ input[type='checkbox'] {
 	line-height:19px;
 }
 
-.editer-summary{
-
+.editer-hub{
+	margin-bottom:10px;
 }
 
 .editer-main{
 	height:100%;
-	border-right: 3px solid $line-grey;
+	/*border-right: 3px solid $line-grey;*/
 }
 
 .editer-right-bar{
@@ -342,6 +346,11 @@ input[type='checkbox'] {
 
 
 .hierachy{
-	padding:$standard-padding*2 0px;
-	border-bottom:1px solid $dark-grey;
+	padding:10px 0px 10px;
+
+	margin-bottom:30px;
+}
+
+.app-title{
+	padding-top:8px;
 }

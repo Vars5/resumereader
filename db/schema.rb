@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130616020604) do
+ActiveRecord::Schema.define(:version => 20130701132059) do
 
   create_table "app_lists", :force => true do |t|
     t.integer  "job_id"
@@ -98,6 +98,8 @@ ActiveRecord::Schema.define(:version => 20130616020604) do
     t.date     "due_date"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "role"
+    t.string   "location"
   end
 
   create_table "notes", :force => true do |t|
