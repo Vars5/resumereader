@@ -18,6 +18,13 @@ class ArticlesController < ApplicationController
   def edit
     @article = Article.find(params[:id])
   end
+  
+  def update
+    @article = Article.find(params[:id])
+    if @article.update_attributes(params[:article])
+      redirect_to @article
+    end
+  end
 
   def show
     @article = Article.find(params[:id])

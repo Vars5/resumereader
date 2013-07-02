@@ -33,6 +33,9 @@ Resumereader::Application.routes.draw do
   #admin pages
   match '/admin', to: 'dashboards#admin'
   
+  #knowledge base
+  match '/knowledgebase', to: 'articles#index'
+  
   #Resources
   #resources :schools, except: [:show] 
   resources :problems, only: [:create, :index]
