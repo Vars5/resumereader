@@ -29,6 +29,7 @@ $base-green:  #39b54a;
 $light-green: #F2F2F2;
 $top-green:   #54bb62;
 $dark-green: #46724C;
+$menu-green: #DEFCCA;
 
 /* other*/
 $ft-color: #fff1e0;
@@ -44,6 +45,10 @@ $standard-shadow:0 4px 7px -5px $dark-grey;
 
 
 /* ========= SECTION: UNIVERSALS =========*/
+
+html{
+	height:100%;
+}
 
 .background-white{
 	background-color:white;
@@ -75,6 +80,7 @@ input {
 
 input[type='checkbox'] {
 	margin:0px !important;
+
 }
 
 .hidden{
@@ -131,6 +137,12 @@ input[type='checkbox'] {
 	border-bottom:1px solid $line-grey;
 }
 
+.top-border{
+	padding:9px 0px 0px;
+	border-top:1px solid $line-grey;
+}
+
+
 /* ========= END SECTION: UNIVERSALS =========*/
 
 
@@ -173,10 +185,10 @@ input[type='checkbox'] {
 
 .menu-area {
 	padding-top:$standard-padding;
-	color:white;
-	text-shadow: 0.1em 0.1em 0.1em $dark-grey;
+	color:$menu-green;
+	/*text-shadow: 0.1em 0.1em 0.1em $dark-green;*/
 	a{
-	color:white;	
+	color:$menu-green;	
 	}
 
 	li {
@@ -256,9 +268,7 @@ input[type='checkbox'] {
 	line-height:19px;
 }
 
-.editer-hub{
-	margin-bottom:10px;
-}
+
 
 .editer-main{
 	height:100%;
@@ -269,9 +279,7 @@ input[type='checkbox'] {
 	/*padding:$standard-padding;*/
 }
 
-.btn {
-	width:97% ;
-}
+
 
 .note-area{
 	height:40px;

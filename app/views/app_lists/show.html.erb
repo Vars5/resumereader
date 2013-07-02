@@ -6,67 +6,30 @@
 	</div>
 </div>
 
-	<div class="editer" id="edit-line-<%=@appList.id%>">
-		<div class="editer-header">
-			<h4><%= @job.name %></h4>
-				<%= @company.name %> - Closes <%= @job.show_due_date %></br>
-				<%= link_to "Website", "http://#{@company.website}" %>
-		</div>
-		<div class="editer-body">
+<div class="editer" id="edit-line-<%=@appList.id%>">
+	<div class="editer-header">
+		<h4><%= @job.name %></h4>
+			<%= @company.name %> - Closes <%= @job.show_due_date %></br>
+			<%= link_to "Website", "http://#{@company.website}" %>
+	</div>
+
 			
-			<div class="row-fluid pad-top">
-				<div class="span10 editer-hub top-bottom-borders">
-					<div class="row-fluid">
-						<div class="span4">
-							<b>Status:</b><br />
-
-							<%= form_for @appList, :as => :applist, remote: true do |f| %>
-								<%= f.select :status, [['Not Started'], ['Researched'],
-							                       ['Sent Application'],['Completed All'],['Unfollow', 'unfollow']],{},:id => "applist-select-#{@appList.id}", remote: true %>	
-								<%= f.hidden_field :id, :value => @appList.id %>
-							<% end %>
-						</div>
-						<div class="span4">
-							<div class="editer-@job-summary">
-								<b><i class="icon-briefcase"></i> job Summary</b><br />
-								<%= link_to @job do %>
-									<%= simple_format( (truncate((@job.info), :length=>140)) ) %>
-								<% end %>
-							</div>	
-						</div>
-						<div class="span4">
-							<b><i class="icon-user"></i> HR Contacts:</b><br />
-							<div id="hr-area-<%=@appList.id%>">
-								<%= @company.hr_email%><br />
-							</div>
-							<% @appList.show_hr_notes.each do |hrc| %>
-								<%= hrc.info %><br />
-								<div class="hidden" id="hrc-<%hrc.id%>">
-								<%= form_for hrc do |fhr| %>
-									<%= fhr.text_field :info%>
-								<% end %>
-								</div>	
-							<% end %>
-
-							<%= link_to "Add your own firm contacts", '#', :id => "hr-button-#{@appList.id}" %>
-							<div class="hide" id="hr-contacts-<%=@appList.id%>">
-								<%= form_for @appList.create_new_note, :as => :note, remote: true do |hr| %>
-									<%= hr.text_field :info, :placeholder => "HR Contact"%>
-									<%= hr.hidden_field :app_list_id, :value => @appList.id %>
-									<%= hr.hidden_field :kind, :value => "hr"%>
-									<%= hr.hidden_field :user_id, :value => current_user.id %>
-									<%= hr.submit :class => "btn" %>
-								<% end %>
-							</div>
-						
-						<br /><br />
-
-					</div>
-					</div>
-				</div>
+	<div class="row-fluid pad-top">
+		<div class="span10 top-border">	
+			<div class="row-fluid">
+				<div class="span4">
+					<%= form_for @appList, :as => :applist, remote: true do |f| %>
+											<%= f.select :status, [['Research'], ['Write Application'],
+									                       ['Application Submitted - waiting'],['Testing'],['Interview'],['Unfollow', 'unfollow']],{},:id => "applist-select-#{@appList.id}", remote: true %>	
+										<%= f.hidden_field :id, :value => @appList.id %>
+									<% end %>
 				</div>
 			</div>
 		</div>
+	</div>
+</div>
+			
+
 		
 		
 		<div class="row-fluid">
@@ -99,7 +62,7 @@
 							<%= a.hidden_field :user_id, :value => current_user.id %>
 							<%= a.hidden_field :kind, :value => "comment"%>
 							<%= a.hidden_field :id, :value => @appList.id %>
-							<%= a.submit :class =>"btn btn-success" %>
+							<%= a.submit :class => "btn btn-success" %> 
 						<% end %>
 					</div>
 				</div>				
