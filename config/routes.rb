@@ -1,6 +1,14 @@
 Resumereader::Application.routes.draw do
 
 
+  get "articles/new"
+
+  get "articles/edit"
+
+  get "articles/show"
+
+  get "articles/index"
+
   #Root to public home page unless signed in
   
   #Save time annd just root to new registration page for now
@@ -25,6 +33,9 @@ Resumereader::Application.routes.draw do
   #admin pages
   match '/admin', to: 'dashboards#admin'
   
+  #knowledge base
+  match '/knowledgebase', to: 'articles#index'
+  
   #Resources
   #resources :schools, except: [:show] 
   resources :problems, only: [:create, :index]
@@ -38,6 +49,7 @@ Resumereader::Application.routes.draw do
   resources :notes, only: [:create, :update, :destroy]
   
   resources :questions
+  resources :articles
   
   #resources :employments do
   #  resources :bullets
