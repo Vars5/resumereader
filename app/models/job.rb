@@ -5,6 +5,7 @@ class Job < ActiveRecord::Base
   belongs_to :company
   
   has_many :app_lists, dependent: :destroy
+  has_many :categories
   
   validates :name, presence: :true
   validates :discipline, presence: :true

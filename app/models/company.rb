@@ -4,6 +4,7 @@ class Company < ActiveRecord::Base
   
   has_many :jobs
   has_many :boards
+  has_many :categories
   
   validates :name,     presence: :true, :uniqueness => true
   validates :industry, presence: :true
