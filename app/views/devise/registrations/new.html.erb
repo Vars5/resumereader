@@ -12,6 +12,7 @@
 						<%= f.text_field :first_name, :placeholder => "Your First Name"%> </br>
 						<%= f.email_field :email, :placeholder => "Your Email" %></br> 
 						<%= f.password_field :password, :placeholder => "New Password" %>
+						<%= f.hidden_field :role, :value => "student" %>
 							<% if false %>
 								<%= f.password_field :password_confirmation, :placeholder => "Password Confirmation" %>
 							<% end %>

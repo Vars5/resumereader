@@ -1,6 +1,6 @@
 class Job < ActiveRecord::Base
   
-  attr_accessible :name, :link, :discipline, :info, :due_date
+  attr_accessible :name, :link, :discipline, :info, :due_date, :role
   
   belongs_to :company
   
@@ -31,6 +31,15 @@ class Job < ActiveRecord::Base
   def has_website?
     self.link != nil
   end
+  
+  def self.search(search)
+    if search
+      where('name LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+  
   
   private
 

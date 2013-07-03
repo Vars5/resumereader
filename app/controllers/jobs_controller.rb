@@ -14,7 +14,7 @@ class JobsController < ApplicationController
   end
   
   def index
-    @job = Job.order('due_date')
+    @jobs = Job.search(params[:search]).order('due_date')
     @problem = Problem.new
   end
   
