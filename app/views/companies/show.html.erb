@@ -37,7 +37,7 @@
 					<%= f.text_field :due_date, :placeholder => "Date, insert as DD/MM/YYYY"%>
 					<%= f.hidden_field :id, :value => params[:id] %>
 					<%= f.select :role, [['Graduate'], ['Internship'],
-	  				                       ['Clerkship']],{}%>
+	  				                       ['Clerkship']]%>
 					<%= f.submit %>
 				<% end %>
 			<% end %>
