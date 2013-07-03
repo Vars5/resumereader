@@ -1,0 +1,12 @@
+<%= form_for @search do |f| %>
+  <div class="field">
+    <%= f.label :discipline %><br />
+    <%= f.text_field :discipline %>
+  </div>
+  <div class="field">
+    <%= f.label :role %><br />
+	<%= f.select :role, [['Graduate'], ['Internship'],
+	                       ['Clerkship']],{}%>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>

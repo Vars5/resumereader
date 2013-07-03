@@ -32,6 +32,15 @@ class Job < ActiveRecord::Base
     self.link != nil
   end
   
+  def self.search(search)
+    if search
+      where('name LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+  
+  
   private
 
     def enqueue_create_or_update_document_job
