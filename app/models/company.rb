@@ -32,4 +32,13 @@ class Company < ActiveRecord::Base
     self.has_jobs.count
   end
       
+  #search
+  def self.search(search)
+    if search
+      where('name LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end    
+      
 end

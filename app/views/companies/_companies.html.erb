@@ -1,0 +1,14 @@
+
+				<% @company.each do |c| %>
+					<%= link_to c do %>
+						<span class="big-font"><strong><%= c.name %></strong> </span><br />
+						<%= c.industry%> -
+						<% if c.has_number_of_jobs != 0 %>
+							 <%= c.jobs.count %> Job Opportunities
+						<% end %><br />
+					<% end %>
+						<%= simple_format( (truncate((c.info), :length=>170)) ) %>
+						<br />
+				<% end %>
+				
+				<%= will_paginate @company %>
