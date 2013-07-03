@@ -8,7 +8,8 @@
 				<%= f.text_field :link, :placeholder => "Website Link in www.something.com form" %></br>
 				<%= f.text_field :due_date, :placeholder => "Date, insert as DD/MM/YYYY" %></br>
 				<%= f.hidden_field :id, :value => params[:id] %></br>
-		
+				<%= f.select :role, [['Graduate'], ['Internship'],
+  				                       ['Clerkship']],{}%> </br>
 				<%= f.submit %>
 			<% end %>
 
