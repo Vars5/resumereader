@@ -9,29 +9,15 @@
 	</div>	
 	<div class="row">
 		<div class="span6 jobIndex">
-			
 			<ul class="unstyled">
-				<% @allCompanies.each do |c| %>
-					<%= link_to c do %>
-						<span class="big-font"><strong><%= c.name %></strong> </span><br />
-						<%= c.industry%> -
-						<% if c.has_number_of_jobs != 0 %>
-							 <%= c.jobs.count %> Job Opportunities
-						<% end %><br />
-					<% end %>
-						<%= simple_format( (truncate((c.info), :length=>170)) ) %>
-						<br />
+
+				<%= form_tag companies_path, :method => 'get' do %>
+				  <p>
+				    <%= text_field_tag :search, params[:search] %>
+				    <%= submit_tag "Search", :name => nil %>
+				  </p>
+					<%= render 'companies' %></div>
 				<% end %>
-				
-				<%= will_paginate @allCompanies %>
-		</div>
-		
-		<div class="span5 inform-user">
-			<div class="hero-unit companies-sell">
-				Do a google search and see how this pages looks like it.<hr>
-				The familiarity will be good. This box will be used to educate the consumer about companies, our products and offerings
 			</div>
-			
-		</div>
 	</div>
-</div>
+</div>				

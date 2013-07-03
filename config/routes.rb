@@ -51,6 +51,7 @@ Resumereader::Application.routes.draw do
   resources :questions
   resources :articles
   
+  resources :searches
   #resources :employments do
   #  resources :bullets
   #  resources :responses

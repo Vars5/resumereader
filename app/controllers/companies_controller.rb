@@ -28,7 +28,8 @@ class CompaniesController < ApplicationController
   end
   
   def index
-    @allCompanies = Company.paginate(page: params[:page],:per_page => 4)
+    @company = Company.search(params[:search]).paginate(page: params[:page],:per_page => 10)
+
   
   end
   
