@@ -39,6 +39,7 @@ $dark-red: #D41528;
 
 $standard-padding: 20px;
 $standard-shadow:0 4px 7px -5px $dark-grey;
+$standard-line: 1px solid $line-grey;
 
 /* ========= END SECTION: STYLE VARIABLES =========*/
 
@@ -58,7 +59,6 @@ body {
 	font-family: 'Noto Sans', sans-serif;	
 	font-size:13px;
 	height:100%;
-	/*background-color:$light-grey;*/
 	a{
 		color:#468966;
 	}
@@ -128,18 +128,18 @@ input[type='checkbox'] {
 }
 
 .top-bottom-borders{
-	border-top:1px solid $line-grey;
-	border-bottom:1px solid $line-grey;
+	border-top:$standard-line ;
+	border-bottom:$standard-line;
 	padding:9px 0px;
 }
 
 .bottom-border{
-	border-bottom:1px solid $line-grey;
+	border-bottom:$standard-line;
 }
 
 .top-border{
 	padding:9px 0px 0px;
-	border-top:1px solid $line-grey;
+	border-top:$standard-line;
 }
 
 
@@ -247,43 +247,19 @@ input[type='checkbox'] {
 /* ========= SECTION: EDITER ON APPS_LIST =========*/
 
 .editer {
-	/*background-color:$background-grey;
-	border:1px solid $line-grey;
-	border-right:6px solid #165468;*/
 	margin-bottom: $standard-padding;
-	/*box-shadow: $standard-shadow;*/
+
 }
 
 
 .editer-header {
 
-	/*background-color:white;*/
-	/*padding:$standard-padding;*/
-	/*border-bottom: 1px solid $line-grey;*/
 }
-
-.editer-body{
-
-	font-size:13px;
-	line-height:19px;
-}
-
-
 
 .editer-main{
 	height:100%;
-	/*border-right: 3px solid $line-grey;*/
 }
 
-.editer-right-bar{
-	/*padding:$standard-padding;*/
-}
-
-
-
-.note-area{
-	height:40px;
-}
 
 /* ========= END SECTION: EDITER =========*/
 

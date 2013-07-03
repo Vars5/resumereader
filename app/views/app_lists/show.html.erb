@@ -12,8 +12,7 @@
 			<%= @company.name %> - Closes <%= @job.show_due_date %></br>
 			<%= link_to "Website", "http://#{@company.website}" %>
 	</div>
-
-			
+		
 	<div class="row-fluid pad-top">
 		<div class="span10 top-border">	
 			<div class="row-fluid">
@@ -29,46 +28,40 @@
 	</div>
 </div>
 			
-
-		
-		
-		<div class="row-fluid">
-			<div class="span10 editer-main">
-				<div class="editer-@job-comments">
-					<div class="grey-text">
-						<i class="icon-list"></i> 
-						Make a note about the <%= @company.name.pluralize %> <%= @job.name %>
-					</div>
-					<br />
-					<div class="comment-show" id="comment-area"></div>
-					<% @appList.show_normal_notes.reverse.each do |normal| %>
-						<div id="comment-<%=normal.id%>">
-							<div class="comments-header">
-								<span class="time"><%= (normal.updated_at).localtime.strftime("%d %b %I:%M %P") %></span>
-								<span class="pull-right time"><%= link_to "Delete", normal, method: :delete,
-																					  remote: true, data: { confirm: 'You Sure?'}%>
-								</span>
-								<br />
-							</div>
-							<%= simple_format(normal.info) %>
-						</div>
-					<% end %>
-					
-					<div class="pad-top">
-						<%= form_for @appList.create_new_note, :as => :note, remote: true do |a|%>
-							<%= a.text_area :info, :class=>"note-area", 
-								:placeholder => "Add a useful note about this particular app" %>
-							<%= a.hidden_field :app_list_id, :value => @appList.id %>
-							<%= a.hidden_field :user_id, :value => current_user.id %>
-							<%= a.hidden_field :kind, :value => "comment"%>
-							<%= a.hidden_field :id, :value => @appList.id %>
-							<%= a.submit :class => "btn btn-success" %> 
-						<% end %>
-					</div>
-				</div>				
+<div class="row-fluid">
+	<div class="span10 editer-main">
+		<div class="editer-@job-comments">
+			<div class="grey-text">
+				<i class="icon-list"></i> 
+				Make a note about the <%= @company.name.pluralize %> <%= @job.name %>
 			</div>
+			<br />
+			<div class="comment-show" id="comment-area"></div>
+				<% @appList.show_normal_notes.reverse.each do |normal| %>
+					<div id="comment-<%=normal.id%>">
+						<div class="comments-header">
+							<span class="time"><%= (normal.updated_at).localtime.strftime("%d %b %I:%M %P") %></span>
+							<span class="pull-right time"><%= link_to "Delete", normal, method: :delete,
+																				  remote: true, data: { confirm: 'You Sure?'}%>
+							</span>
+							<br />
+						</div>
+						<%= simple_format(normal.info) %>
+					</div>
+				<% end %>
+			
+				<div class="pad-top">
+					<%= form_for @appList.create_new_note, :as => :note, remote: true do |a|%>
+						<%= a.text_area :info, :class=>"note-area", 
+							:placeholder => "Add a useful note about this particular app" %>
+						<%= a.hidden_field :app_list_id, :value => @appList.id %>
+						<%= a.hidden_field :user_id, :value => current_user.id %>
+						<%= a.hidden_field :kind, :value => "comment"%>
+						<%= a.hidden_field :id, :value => @appList.id %>
+						<%= a.submit :class => "btn btn-success" %> 
+					<% end %>
+				</div>
+			</div>				
 		</div>
-		
-		
-		
 	</div>
+</div>
