@@ -29,6 +29,9 @@
 		
 		<div class="span4">
 			<% if can? :create, @job %>
+		
+				<%= link_to "Edit Company", edit_company_path %>
+				
 				<legend>Create a job</legend>
 				<%= form_for @jobs, :as => :jobs do |f| %>
 					<%= f.text_field :name, :placeholder => "Name" %>

@@ -12,7 +12,7 @@ class CompaniesController < ApplicationController
     if @company.save
       flash[:success] = "You have successfully created a new company"
       expire_fragment("companies_list")
-      redirect_to root_path
+      redirect_to @company
     else
       flash[:alert] = "Something went wrong when trying to create this company"
       render 'new'
