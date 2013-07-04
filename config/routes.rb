@@ -1,6 +1,12 @@
 Resumereader::Application.routes.draw do
 
 
+  get "categories/new"
+
+  get "categories/edit"
+
+  get "categories/index"
+
   get "articles/new"
 
   get "articles/edit"
@@ -52,6 +58,7 @@ Resumereader::Application.routes.draw do
   resources :articles
   
   resources :searches
+  resources :categories
   #resources :employments do
   #  resources :bullets
   #  resources :responses

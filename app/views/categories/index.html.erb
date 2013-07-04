@@ -1,0 +1,10 @@
+<h1>Categories#index</h1>
+
+Do Not delete Categories<p>
+
+<%= link_to "New Category", categories_new_path %>
+
+<br><% @categories.each do |f| %> </br>
+	<li> <%= f.discipline %> <%= f.id %></li>
+<% end %>
+
