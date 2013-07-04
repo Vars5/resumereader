@@ -21,7 +21,7 @@
 					<% end %>
 				<% end %>
 				&nbsp
-				Type: <%= @job.role %>
+				Type: <%= Role.find(@job.role_id).role %>
 				
 				<hr>
 			

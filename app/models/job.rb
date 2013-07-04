@@ -1,11 +1,12 @@
 class Job < ActiveRecord::Base
   
-  attr_accessible :name, :link, :discipline, :info, :due_date, :role, :category_id
+  attr_accessible :name, :link, :discipline, :info, :due_date, :role, :category_id, :role_id
   
   belongs_to :company
   
   has_many :app_lists, dependent: :destroy
   has_many :categories
+  has_many :roles
   
   validates :name, presence: :true
   #validates :discipline, presence: :true

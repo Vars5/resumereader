@@ -1,19 +1,16 @@
 class Search < ActiveRecord::Base
-  attr_accessible :discipline, :location, :role
+  attr_accessible :category_id, :location, :role_id
 
   def jobs
     @jobs ||= find_jobs
   end
   
-  
-  
-  
   private
   
   def find_jobs
     jobs = Job.order(:due_date)
-    jobs = jobs.where(discipline: discipline) if discipline.present?
-    jobs = jobs.where(role: role) if role.present?
+    jobs = jobs.where(category_id: category_id) if category_id.present?
+    jobs = jobs.where(role_id: role_id) if role_id.present?
     jobs
   end 
 
