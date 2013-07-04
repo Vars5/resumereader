@@ -3,13 +3,12 @@
 		<div class="span12">
 			<%= form_for @jobs, :as => :jobs do |f| %>
 				<%= f.text_field :name, :placeholder => "Name" %></br>
-				<%= f.text_field :discipline, :placeholder => "Discipline" %></br>
+				<%= f.collection_select :category_id, Category.order(:discipline), :id, :discipline, include_blank: true %></br>
 				<%= f.text_area :info, :placeholder => "Information" %></br>
 				<%= f.text_field :link, :placeholder => "Website Link in www.something.com form" %></br>
 				<%= f.text_field :due_date, :placeholder => "Date, insert as DD/MM/YYYY" %></br>
 				<%= f.hidden_field :id, :value => params[:id] %></br>
-				<%= f.select :role, [['Graduate'], ['Internship'],
-  				                       ['Clerkship']],{}%> </br>
+				<%= f.collection_select :role_id, Role.order(:role), :id, :role, include_blank: true %></br>
 				<%= f.submit %>
 			<% end %>
 
@@ -18,3 +17,4 @@
 		</div>
 	</div>
 </div>
+

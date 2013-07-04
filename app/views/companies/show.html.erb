@@ -29,15 +29,17 @@
 		
 		<div class="span4">
 			<% if can? :create, @job %>
+		
+				<%= link_to "Edit Company", edit_company_path %>
+				
 				<legend>Create a job</legend>
 				<%= form_for @jobs, :as => :jobs do |f| %>
 					<%= f.text_field :name, :placeholder => "Name" %>
-					<%= f.text_field :discipline, :placeholder => "Discipline" %>
+					<%= f.collection_select :category_id, Category.order(:discipline), :id, :discipline %></br>
 					<%= f.text_field :info, :placeholder => "Information" %>
 					<%= f.text_field :due_date, :placeholder => "Date, insert as DD/MM/YYYY"%>
 					<%= f.hidden_field :id, :value => params[:id] %>
-					<%= f.select :role, [['Graduate'], ['Internship'],
-	  				                       ['Clerkship']]%>
+					<%= f.collection_select :role_id, Role.order(:role), :id, :role, include_blank: true %>
 					<%= f.submit %>
 				<% end %>
 			<% end %>

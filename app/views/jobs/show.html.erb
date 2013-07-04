@@ -21,12 +21,12 @@
 					<% end %>
 				<% end %>
 				&nbsp
-				Type: <%= @job.role %>
+				Type: <%= Role.find(@job.role_id).role %>
 				
 				<hr>
 			
 				
-				Discipline: <%= @job.discipline %></br>
+				Discipline: <%= Category.find(@job.category_id).discipline %></br>
 				HR Contact: <%= @job.relevant_hr_email %></br>
 				<% if @job.has_website? %>
 					<%= link_to "Official Link", "http://#{@job.link}" %></br></br>

@@ -1,0 +1,9 @@
+<div class="container">
+	<%= form_for @category do |f| %>
+		<%= f.text_field :discipline, :placeholder => "Category" %> </br>		
+					
+		<%= f.submit %>
+	<% end %>
+
+	<%= link_to "Delete This Article", @category, method: :delete, data: { confirm: 'You Sure?'}%>
+</div>

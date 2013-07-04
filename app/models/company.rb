@@ -5,10 +5,11 @@ class Company < ActiveRecord::Base
   has_many :jobs
   has_many :boards
   
+  
   validates :name,     presence: :true, :uniqueness => true
-  validates :industry, presence: :true
-  validates :website,  presence: :true
-  validates :info,     presence: :true
+#  validates :industry, presence: :true
+#  validates :website,  presence: :true
+#  validates :info,     presence: :true
 
   has_attached_file :logo
 =begin

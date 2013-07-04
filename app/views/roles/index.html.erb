@@ -1,0 +1,10 @@
+<h1>Roles#index</h1>
+
+Do Not delete Roles<p>
+
+<%= link_to "New Role", roles_new_path %>
+
+<br><% @roles.each do |f| %> </br>
+	<li> <%= f.role %> <%= f.id %></li>
+<% end %>
+
