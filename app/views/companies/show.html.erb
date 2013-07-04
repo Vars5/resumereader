@@ -32,7 +32,7 @@
 				<legend>Create a job</legend>
 				<%= form_for @jobs, :as => :jobs do |f| %>
 					<%= f.text_field :name, :placeholder => "Name" %>
-					<%= f.text_field :discipline, :placeholder => "Discipline" %>
+					<%= f.collection_select :category_id, Category.order(:discipline), :id, :discipline %></br>
 					<%= f.text_field :info, :placeholder => "Information" %>
 					<%= f.text_field :due_date, :placeholder => "Date, insert as DD/MM/YYYY"%>
 					<%= f.hidden_field :id, :value => params[:id] %>

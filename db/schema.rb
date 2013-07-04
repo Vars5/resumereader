@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130703114418) do
+ActiveRecord::Schema.define(:version => 20130704014218) do
 
   create_table "app_lists", :force => true do |t|
     t.integer  "job_id"
@@ -136,10 +136,11 @@ ActiveRecord::Schema.define(:version => 20130703114418) do
     t.string   "discipline"
     t.text     "info"
     t.date     "due_date"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.string   "role"
     t.string   "location"
+    t.integer  "category_id"
   end
 
   create_table "notes", :force => true do |t|

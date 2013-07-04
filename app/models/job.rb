@@ -1,6 +1,6 @@
 class Job < ActiveRecord::Base
   
-  attr_accessible :name, :link, :discipline, :info, :due_date, :role
+  attr_accessible :name, :link, :discipline, :info, :due_date, :role, :category_id
   
   belongs_to :company
   
@@ -8,7 +8,7 @@ class Job < ActiveRecord::Base
   has_many :categories
   
   validates :name, presence: :true
-  validates :discipline, presence: :true
+  #validates :discipline, presence: :true
   validates :info, presence: :true 
   
   #swiftype information 
