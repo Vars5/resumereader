@@ -1,0 +1,12 @@
+Please let us know if you find any suggestions or you have found a bug in the website.
+
+Please use the form below
+
+<%= form_for @problem do |f| %>
+	
+	<%= f.text_area :problem %>
+	<%= f.hidden_field :reporter_id, :value => current_user.id %>
+	
+	<%= f.submit %>
+	
+<% end %>
