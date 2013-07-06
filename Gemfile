@@ -10,6 +10,7 @@ group :development, :test do
    gem 'sqlite3'
    gem 'rspec-rails'
    gem 'guard-rspec'
+   gem 'letter_opener' #email testing in development
 end
 
 # Gems used only for assets and not required
@@ -44,3 +45,4 @@ gem 'newrelic_rpm'
 gem 'swiftype'
 gem 'delayed_job_active_record'
 gem 'foreman'
+
