@@ -14,14 +14,16 @@
 	</div>
 		
 	<div class="row-fluid pad-top">
-		<div class="span10 top-border">	
+		<div class="span12 top-border">	
 			<div class="row-fluid">
 				<div class="span4">
 					<%= form_for @appList, :as => :applist, remote: true do |f| %>
-											<%= f.select :status, [['Research'], ['Write Application'],
-									                       ['Application Submitted - waiting'],['Testing'],['Interview'],['Unfollow', 'unfollow']],{},:id => "applist-select-#{@appList.id}", remote: true %>	
-										<%= f.hidden_field :id, :value => @appList.id %>
-									<% end %>
+						<%= f.select :status, [['Research'], ['Write Application'],
+											['Application Submitted - waiting'],['Testing'],
+											['Interview'],['Unfollow', 'unfollow']],
+											{},:onchange => "this.form.submit()"; %>	
+						<%= f.hidden_field :id, :value => @appList.id %>
+					<% end %>
 				</div>
 			</div>
 		</div>
@@ -29,14 +31,16 @@
 </div>
 			
 <div class="row-fluid">
-	<div class="span10 editer-main">
+	<div class="span12 editer-main">
 		<div class="editer-@job-comments">
 			<div class="grey-text">
 				<i class="icon-list"></i> 
 				Make a note about the <%= @company.name.pluralize %> <%= @job.name %>
 			</div>
 			<br />
-			<div class="comment-show" id="comment-area"></div>
+			<div class="comment-show" id="comment-area">
+				
+			</div>
 				<% @appList.show_normal_notes.reverse.each do |normal| %>
 					<div id="comment-<%=normal.id%>">
 						<div class="comments-header">
@@ -60,8 +64,7 @@
 						<%= a.hidden_field :id, :value => @appList.id %>
 						<%= a.submit :class => "btn btn-success" %> 
 					<% end %>
-				</div>
-			</div>				
-		</div>
+			</div>
+		</div>				
 	</div>
 </div>

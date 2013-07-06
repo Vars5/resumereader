@@ -25,10 +25,9 @@ class AppListsController < ApplicationController
   def update
     @appList = current_user.app_lists.find_by_id(params[:applist][:id])
     if @appList.update_attributes(params[:applist])
-      #flash[:success] = "Updated your applications list"
       respond_to do |format|
-        #format.html{redirect_to root_path}
-        format.js
+        format.html{redirect_to root_path}
+        #format.js
       end
     end
     @appList.check_destroy_status

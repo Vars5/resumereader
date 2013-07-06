@@ -1,18 +1,16 @@
-<div class="container">
-	<div class="row">
-		<div class="span12 jobIndex">
-			<h3>All Job Opportunities</h3>
-			
-			<%= link_to "Advanced Search", new_search_path %>
-			
-			<ul class="unstyled">
-				<% @jobs.each do |j| %>
-					<%= link_to j do %>
-						<li><strong><%= j.find_company.name %></strong> - <%= j.name %> - 
-						<span class="pull-right"><%= j.show_due_date%></span>
-						</li>
-					<% end %>
+<div class="row-fluid">
+	<div class="span12 jobIndex">
+		<h3>All Job Opportunities</h3>
+		
+		<%= link_to "Advanced Search", new_search_path %>
+		
+		<ul class="unstyled">
+			<% @jobs.each do |j| %>
+				<%= link_to j do %>
+					<li><strong><%= j.find_company.name %></strong> - <%= j.name %> - 
+					<span class="pull-right"><%= j.show_due_date%></span>
+					</li>
 				<% end %>
-		</div>
+			<% end %>
 	</div>
 </div>
