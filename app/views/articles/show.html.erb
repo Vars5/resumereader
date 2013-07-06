@@ -4,7 +4,7 @@
 			<h1> <%= @article.title %> </h1>
 			<h4> <%= @article.published %></h4></br>
  
-			<%= @article.content %>
+			<%= simple_format(@article.content) %>
 		</div>
 	</div>			
 </div>
