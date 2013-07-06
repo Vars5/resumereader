@@ -1,12 +1,16 @@
-Please let us know if you find any suggestions or you have found a bug in the website.
-
-Please use the form below
-
-<%= form_for @problem do |f| %>
+<div class="margin-top row-fluid">
+	<div class="span12">
+		Have you found any bugs on the website?<br />
+		Do you think we can improve the website to help you more?<br /> 
+		We're more than happy to hear from you, and we'll try to get back to you ASAP!
+		<br />
+		<%= form_for @problem do |f| %>
 	
-	<%= f.text_area :problem %>
-	<%= f.hidden_field :reporter_id, :value => current_user.id %>
+			<%= f.text_area :problem %>
+			<%= f.hidden_field :reporter_id, :value => current_user.id %>
 	
-	<%= f.submit %>
+			<%= f.submit %>
 	
-<% end %>
+		<% end %>
+	</div>
+</div>
