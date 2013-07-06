@@ -18,8 +18,8 @@
 			<div class="row-fluid">
 				<div class="span4">
 					<%= form_for @appList, :as => :applist, remote: true do |f| %>
-						<%= f.select :status, [['Research'], ['Write Application'],
-											['Application Submitted - waiting'],['Testing'],
+						<%= f.select :status, [['Research'], ['Writing Application'],
+											['Submitted & Waiting'],['Testing'],
 											['Interview'],['Unfollow', 'unfollow']],
 											{},:onchange => "this.form.submit()"; %>	
 						<%= f.hidden_field :id, :value => @appList.id %>
