@@ -13,14 +13,12 @@ class DashboardsController < ApplicationController
   
   def dashboard
 
-    
-    
     #AppList Feed
     @appListCount = current_user.app_list_count
     @appList = current_user.app_list_feed
     
     #All Jobs List
-    @jobs = Job.order('due_date')
+    @jobs = Job.paginate(page: params[:page],:per_page => 5)
     
     #All Companies List
     @companies = Company.all
