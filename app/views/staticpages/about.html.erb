@@ -1,10 +1,15 @@
 
+<% if signed_in? %>
+<div class="container-fluid margin-top">
+	<div class="row-fluid">
+<% else %>		
 <div class="container">
 	<div class="row">
+<% end %>		
 		<div class="span12">
 			<div class="listCopy">
 			<div class="sellingpoints">
-				<h4>ResumeQuery uses what works to separate you from the rest</h4>
+				<h4>ResQuery uses what works to separate you from the rest</h4>
 				<p>The information we put onto our website is based
 					off what has worked for other applicants in the past, 
 					continuously updated with relevant information - not
