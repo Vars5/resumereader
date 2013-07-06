@@ -1,9 +1,11 @@
 <div class="container">
 	<div class="row">
-		<hr><br/>
+		<% if !signed_in?%>
+			<hr><br/>
+		<% end %>
 		<div class="span12">
 			<h1>Knowledge Base </h1></br>
-			<h4><b> Investing Banking <b> </h4>
+			<h4><b> Investing Banking</b></h4>
 			<ul>
 				<li> Manual Link to first article </li>
 			</ul>

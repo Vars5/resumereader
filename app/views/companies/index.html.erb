@@ -1,13 +1,13 @@
-<br />
-<div class="container">
-	<div class="row">
+
+	<div class="row-fluid">
 		<div class="span12">
 			<h3>Companies List</h3>
 			<p class="grey-text"> <%= Company.count %> companies which offer  
 				reputable grad and internship opportunities </p><br />
 		</div>
 	</div>	
-	<div class="row">
+
+	<div class="row-fluid">
 		<div class="span6 jobIndex">
 			<ul class="unstyled">
 
@@ -16,8 +16,7 @@
 				    <%= text_field_tag :search, params[:search] %>
 				    <%= submit_tag "Search", :name => nil %>
 				  </p>
-					<%= render 'companies' %></div>
+					<%= render 'companies' %>
 				<% end %>
 			</div>
 	</div>
-</div>				
