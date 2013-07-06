@@ -48,9 +48,12 @@ Resumereader::Application.routes.draw do
   #knowledge base
   match '/knowledgebase', to: 'articles#index'
   
+  #suggestions & bugs
+  match '/suggestions', to: 'problems#new'
+  
   #Resources
   #resources :schools, except: [:show] 
-  resources :problems, only: [:create, :index]
+  resources :problems, only: [:create, :index, :new]
   resources :settings, except: [:index, :new, :edit]
   resources :questions
   resources :companies
