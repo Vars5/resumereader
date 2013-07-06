@@ -160,7 +160,7 @@ input[type='checkbox'] {
 	width:101%;
 	height:102%;
 	img {
-		padding-left:16px;
+
 	}
 }
 
@@ -341,4 +341,27 @@ input[type='checkbox'] {
 
 .app-title{
 	padding-top:8px;
+}
+
+.right-board{
+	font-size:10px;
+}
+
+.right-board-heading{
+
+	padding:1px 5px;
+	padding-right:25px;
+	background-color:$light-grey;
+	color:$dark-grey;
+	font-size:10px;
+	font-weight:bold;
+}
+
+.right-board-info{
+	border-bottom:1px solid $light-grey;
+	padding:20px 0px 10px;
+}
+
+.article-content{
+	font-size:15px;
 }

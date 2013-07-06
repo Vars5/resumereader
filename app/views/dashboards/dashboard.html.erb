@@ -1,11 +1,5 @@
 	<% if current_user.has_no_applists? %>	
-		<div class="margin-top">
-			<%= link_to jobs_path do %>
-				<h4>Start tracking jobs now!</h4>
-				<p> ResumeQuery is great for reducing the stress and business of job applications
-					 by having them all sorted in one place for you </p>
-			<% end %>
-		</div>
+		<%= render 'dashboards/new_user_page'%>
 	<% else %>
 
 		<div class="app-title pad-bottom">
@@ -28,7 +22,7 @@
 
 					<div class="span3">
 						<div class="pull-right red-text">
-							<%= apps.status%>
+							<%= apps.status %>
 						</div>	
 					</div>
 

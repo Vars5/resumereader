@@ -26,7 +26,7 @@ class AppListsController < ApplicationController
     @appList = current_user.app_lists.find_by_id(params[:applist][:id])
     if @appList.update_attributes(params[:applist])
       respond_to do |format|
-        format.html{redirect_to root_path}
+        format.html{redirect_to :back}
         #format.js
       end
     end

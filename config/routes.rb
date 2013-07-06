@@ -1,25 +1,6 @@
 Resumereader::Application.routes.draw do
 
 
-  get "roles/new"
-
-  get "roles/edit"
-
-  get "roles/index"
-
-  get "categories/new"
-
-  get "categories/edit"
-
-  get "categories/index"
-
-  get "articles/new"
-
-  get "articles/edit"
-
-  get "articles/show"
-
-  get "articles/index"
 
   #Root to public home page unless signed in
   
