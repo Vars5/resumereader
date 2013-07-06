@@ -121,6 +121,8 @@ GEM
     json (1.7.7)
     launchy (2.3.0)
       addressable (~> 2.3)
+    letter_opener (1.1.2)
+      launchy (~> 2.2)
     listen (0.7.3)
     lumberjack (1.0.3)
     mail (2.5.3)
@@ -251,6 +253,7 @@ DEPENDENCIES
   guard-rspec
   heroku
   jquery-rails
+  letter_opener
   newrelic_rpm
   paperclip
   pg
