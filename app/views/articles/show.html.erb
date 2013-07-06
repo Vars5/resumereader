@@ -1,10 +1,27 @@
+<% if signed_in? %>
+
+<div class="hierachy">
 	<div class="row-fluid">
-		<div class="span12">
+		<div class="span12 bottom-border">
+			<%= link_to "Dashboard", root_path%> &nbsp > Knowledge Base &nbsp > <%= @article.title %>
+		</div>
+	</div>
+</div>
+
+
+<div class="container-fluid margin-top">
+	<div class="row-fluid">
+<% else %>		
+<div class="container">
+	<div class="row">
+<% end %>
+
+		<div class="span10 offset1">
 			<h1> <%= @article.title %> </h1>
-			<h4> <%= @article.published %></h4></br>
- 			
-<div class="article-content">
-			<%= simple_format(@article.content) %>
-</div>			
+			</br>
+			<div class="article-content">
+				<%= simple_format(@article.content) %>
+			</div>					
 		</div>
 	</div>			
+</div>

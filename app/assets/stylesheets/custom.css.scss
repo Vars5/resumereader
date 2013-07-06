@@ -23,6 +23,7 @@ $background-grey: #f6f6f6;
 $line-grey: #D6D6D6;
 $dark-grey: #666A73;
 $text-grey: #787878;
+$light-text-grey:#9C9C9C;
 
 /* greens */
 $base-green:  #39b54a;
@@ -339,17 +340,24 @@ input[type='checkbox'] {
 	margin-bottom:30px;
 }
 
-.app-title{
-	padding-top:8px;
-}
+
 
 .right-board{
 	font-size:10px;
+	line-height:15px;
+	color:$light-text-grey;
+	margin-right:-20px;
+	margin-left:5px;
+}
+
+
+.right-board-info:hover{
+	color:$dark-grey;
 }
 
 .right-board-heading{
-
-	padding:1px 5px;
+	
+	padding:0px 5px;
 	padding-right:25px;
 	background-color:$light-grey;
 	color:$dark-grey;
@@ -359,9 +367,11 @@ input[type='checkbox'] {
 
 .right-board-info{
 	border-bottom:1px solid $light-grey;
-	padding:20px 0px 10px;
+	padding:20*2px 0px 10*2px;
 }
 
 .article-content{
-	font-size:15px;
+	font-size:17px;
+	line-height:30px;
+	color:$dark-grey;
 }
