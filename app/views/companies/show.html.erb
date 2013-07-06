@@ -1,9 +1,9 @@
-	<div class="row-fluid">
+	<div class="row-fluid margin-top">
 		<div class="span8">
 			
 			<% cache @company do %>
 			
-				<div class="center-alignment hero-unit">
+				<div class="center-alignment pad-bottom">
 					<h3><%= @company.name %></h3>
 						<% if can? :update, @company %>
 							<p><%= link_to 'Edit company details', edit_company_path %></p>
