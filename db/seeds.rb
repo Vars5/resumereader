@@ -8,5 +8,5 @@
 
 
 
-User.create(email: "team@resumequery.com", :password => 'munchable2', :password_confirmation => 'munchable2', :first_name =>
+User.create(email: "admin@email.com", :password => 'password', :password_confirmation => 'password', :first_name =>
               'Team', :last_name => 'ResumeQuery', :role => 'admin')
