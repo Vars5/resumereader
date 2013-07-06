@@ -1,10 +1,9 @@
 class UserMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "notifications@resquery.com"
 
   def signup_confirmation(user)
     @user = user
-    @greeting = "Hi"
-
-    mail to: user.email, subject: "Signup Confirmation- ResumeQuery", from: 'team@resumequery.com'
+    
+    mail to: user.email, subject: "Signup Confirmation- ResumeQuery", from: 'notifications@resquery.com'
   end
 end
