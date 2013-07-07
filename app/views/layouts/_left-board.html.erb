@@ -32,8 +32,10 @@
 
 	
 	<div class="user-area">
-		<b><%= current_user.first_name %> <%= current_user.last_name %></b><br />
-		<%= current_user.email %><br />
+		<%= link_to edit_user_registration_path do%>
+			<b><%= current_user.first_name %> <%= current_user.last_name %></b><br />
+			<%= current_user.email %><br />
+		<% end %>
 		<br />
 		<%= link_to 'User Settings', edit_user_registration_path %> &nbsp &nbsp &nbsp &nbsp
 		<%= link_to 'Log Out', destroy_user_session_path, :method =>"DELETE" %>
