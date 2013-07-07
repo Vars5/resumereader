@@ -1,9 +1,13 @@
-<%= form_for @search do |f| %>
-  <div class="field">
-	<%= f.collection_select :role_id, Role.order(:role), :id, :role, include_blank: true %>
+<div class="row-fluid margin-top">
+	<div class="span10">
+		<%= form_for @search do |f| %>
+		  <div class="field">
+			<%= f.collection_select :role_id, Role.order(:role), :id, :role, include_blank: true %>
 
-  </div>
-  <div class="field">
-   	<%= f.collection_select :category_id, Category.order(:discipline), :id, :discipline, include_blank: true %></br>  </div>
-  <div class="actions"><%= f.submit "Search" %></div>
-<% end %>
+		  </div>
+		  <div class="field">
+		   	<%= f.collection_select :category_id, Category.order(:discipline), :id, :discipline, include_blank: true %></br>  </div>
+		  <div class="actions"><%= f.submit "Search" %></div>
+		<% end %>
+	</div>
+</div>

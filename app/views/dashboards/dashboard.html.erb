@@ -3,7 +3,7 @@
 	<% else %>
 
 		<div class="app-title pad-bottom margin-top">
-			<h4>Your Dashboard</h4>
+			<p>Your Dashboard</p>
 		</div>
 		
 		<% @appList.each do |apps| %>
@@ -21,7 +21,7 @@
 					</div>
 
 					<div class="span3">
-						<div class="pull-right red-text">
+						<div class="pull-right red-text appManage-status">
 							<%= apps.status %>
 						</div>	
 					</div>

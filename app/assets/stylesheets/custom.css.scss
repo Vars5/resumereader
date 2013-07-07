@@ -158,10 +158,10 @@ input[type='checkbox'] {
 	border-bottom:1px dotted $dark-green;
 	margin-left:-25px;
 	padding-left:23px;
+	height:59px;
 	width:101%;
-	height:102%;
 	img {
-
+		
 	}
 }
 
@@ -219,13 +219,14 @@ input[type='checkbox'] {
 	background-color:$base-green;
 	min-height:700px;
 	height:100%;
-
+	position:absoloute;
 	padding-left:25px;
 	margin-left:-20px;
 	a:hover{
 		color:white;
 		text-decoration:none;
 	}
+	
 }
 
 /* ========= END SECTION: LEFT-BOARD =========*/
@@ -235,11 +236,12 @@ input[type='checkbox'] {
 .appManage {
 	/*box-shadow: $standard-shadow;*/
 	/*margin-top:-1px;*/
-	
+	font-size:15px;
 	background-color:white;
 	padding:9px 10px 0px 9px;
+	margin-bottom:10px;
 	/*border: 1px solid $line-grey;*/
-	border-left:5px solid $base-green;	
+	border-bottom:1px solid $light-grey;	
 	a {
 		text-decoration:none;	
 	}
@@ -247,6 +249,10 @@ input[type='checkbox'] {
 
 .appManage:hover{
 	background-color:$line-grey;
+}
+
+.appManage-status{
+	text-align:right;
 }
 
 /* ========= SECTION: EDITER ON APPS_LIST =========*/
@@ -335,7 +341,7 @@ input[type='checkbox'] {
 
 
 .hierachy{
-	padding:10px 0px 10px;
+	padding:30px 0px 30px;
 
 	margin-bottom:30px;
 }
