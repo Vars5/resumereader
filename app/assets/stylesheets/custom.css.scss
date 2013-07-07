@@ -162,10 +162,12 @@ input[type='checkbox'] {
 	border-bottom:1px dotted $dark-green;
 	margin-left:-25px;
 	padding-left:23px;
+
 	height:59px;
 	width:101%;
 	img {
-		
+	padding-top:10px;
+	padding-left:40px;		
 	}
 }
 
@@ -389,4 +391,8 @@ input[type='checkbox'] {
 .dashboard-heading{
 	font-weight:bold;
 	padding:9px 10px 0px 9px;	
+}
+
+.problem-heading{
+	color:$base-green;
 }
