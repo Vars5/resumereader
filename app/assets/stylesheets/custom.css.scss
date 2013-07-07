@@ -23,6 +23,7 @@ $background-grey: #f6f6f6;
 $line-grey: #D6D6D6;
 $dark-grey: #666A73;
 $text-grey: #787878;
+$light-text-grey:#9C9C9C;
 
 /* greens */
 $base-green:  #39b54a;
@@ -146,6 +147,10 @@ input[type='checkbox'] {
 	margin-top:60px;
 }
 
+.margin-top-right-board{
+	margin-top:59px;
+}
+
 
 /* ========= END SECTION: UNIVERSALS =========*/
 
@@ -157,10 +162,12 @@ input[type='checkbox'] {
 	border-bottom:1px dotted $dark-green;
 	margin-left:-25px;
 	padding-left:23px;
-	width:101%;
-	height:102%;
-	img {
 
+	height:59px;
+	width:101%;
+	img {
+	padding-top:10px;
+	padding-left:40px;		
 	}
 }
 
@@ -209,22 +216,23 @@ input[type='checkbox'] {
 }
 
 .blank-area {
-	height:200px;
+	height:140px;
 }
 
 
 .left-dashboard {
 	/*box-shadow: 0 4px 17px -5px $dark-grey;*/
 	background-color:$base-green;
-	min-height:700px;
-	height:100%;
-
+	min-width:180px;
+	min-height:100%;
+	position:fixed;
 	padding-left:25px;
 	margin-left:-20px;
 	a:hover{
 		color:white;
 		text-decoration:none;
 	}
+	
 }
 
 /* ========= END SECTION: LEFT-BOARD =========*/
@@ -234,11 +242,12 @@ input[type='checkbox'] {
 .appManage {
 	/*box-shadow: $standard-shadow;*/
 	/*margin-top:-1px;*/
-	
+	font-size:15px;
 	background-color:white;
 	padding:9px 10px 0px 9px;
+	margin-bottom:6px;
 	/*border: 1px solid $line-grey;*/
-	border-left:5px solid $base-green;	
+	border-bottom:1px solid $light-grey;	
 	a {
 		text-decoration:none;	
 	}
@@ -246,6 +255,10 @@ input[type='checkbox'] {
 
 .appManage:hover{
 	background-color:$line-grey;
+}
+
+.appManage-status{
+	text-align:right;
 }
 
 /* ========= SECTION: EDITER ON APPS_LIST =========*/
@@ -334,22 +347,29 @@ input[type='checkbox'] {
 
 
 .hierachy{
-	padding:10px 0px 10px;
+	padding:30px 0px 20px;
+	font-size:16px;
 
-	margin-bottom:30px;
 }
 
-.app-title{
-	padding-top:8px;
-}
 
 .right-board{
 	font-size:10px;
+	line-height:15px;
+	color:$light-text-grey;
+	margin-right:-20px;
+	margin-left:5px;
+}
+
+
+.right-board-info:hover{
+	color:$dark-grey;
 }
 
 .right-board-heading{
-
-	padding:1px 5px;
+	
+	border-top:1px solid $dark-grey;
+	padding:0px 5px;
 	padding-right:25px;
 	background-color:$light-grey;
 	color:$dark-grey;
@@ -359,9 +379,20 @@ input[type='checkbox'] {
 
 .right-board-info{
 	border-bottom:1px solid $light-grey;
-	padding:20px 0px 10px;
+	padding:20*2px 0px 10*2px;
 }
 
 .article-content{
-	font-size:15px;
+	font-size:17px;
+	line-height:30px;
+	color:$dark-grey;
+}
+
+.dashboard-heading{
+	font-weight:bold;
+	padding:9px 10px 0px 9px;	
+}
+
+.problem-heading{
+	color:$base-green;
 }

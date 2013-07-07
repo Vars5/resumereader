@@ -12,6 +12,10 @@
 		<h5>Follow your first job:</h5>
 		<% @jobs.each do |job| %>
 			<%=link_to job.name, job %><br />
+			<%= form_for job, :as => :applist do |f|%>
+				<%= f.hidden_field :job_id, :value => params[:id] %>
+				<%= f.submit "Add to Dashboard", :class => "btn btn-info"%>
+			<% end %>
 		<% end %>
 	</div>
 	<div class="span6">
