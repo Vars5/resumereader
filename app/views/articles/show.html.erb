@@ -13,24 +13,23 @@
 
 <div class="container-fluid margin-top">
 	<div class="row-fluid">
+		<div class="span10 offset1">
 <% else %>		
 <div class="container margin-top">
 	<div class="row">
+		<div class="span10">
 <% end %>
 
-		<div class="span10 offset1">
+		
 			<h1> <%= @article.title %> </h1>
 			<h3> <%= @article.tagline %> </h3>
 			<h4> <%= @article.published %></h4></br>
  			
-<div class="article-content">
-			<%= simple_format(@article.content) %>
-</div>			
-		</div>
-	</div>			
 
-			</br>
+			<div class="article-content pad-bottom">
+				<%= simple_format(@article.content) %>
+			</div>			
 		</div>
-	</div>			
+	</div>
 </div>
 

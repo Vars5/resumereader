@@ -226,6 +226,7 @@ input[type='checkbox'] {
 	min-width:180px;
 	min-height:100%;
 	position:fixed;
+	margin-right:1px;
 	padding-left:25px;
 	margin-left:-20px;
 	a:hover{
@@ -379,7 +380,8 @@ input[type='checkbox'] {
 
 .right-board-info{
 	border-bottom:1px solid $light-grey;
-	padding:20*2px 0px 10*2px;
+	padding:20*2px 5px 10*2px;
+
 }
 
 .article-content{
@@ -395,4 +397,10 @@ input[type='checkbox'] {
 
 .green-heading{
 	color:$base-green;
+}
+
+.pull-up{
+	margin-top:-10px;
+
+	font-size:14px;
 }
