@@ -176,13 +176,13 @@ input[type='checkbox'] {
 }
 
 .user-area{
-	background-color:white;
+	background-color:$menu-green;
 	margin-left:-25px;
 	border-top:5px solid $dark-green;
 	border-bottom:3px solid $dark-green;
 	padding:$standard-padding 5px $standard-padding 25px;
 	font-size:11px;
-    border-right:1px solid $dark-green;
+	color:$dark-green;
 	a:hover{
 		color:$base-green !important;
 	};
@@ -368,7 +368,7 @@ input[type='checkbox'] {
 
 .right-board-heading{
 	
-	border-top:1px solid $dark-grey;
+	
 	padding:0px 5px;
 	padding-right:25px;
 	background-color:$light-grey;
@@ -393,6 +393,6 @@ input[type='checkbox'] {
 	padding:9px 10px 0px 9px;	
 }
 
-.problem-heading{
+.green-heading{
 	color:$base-green;
 }
