@@ -239,7 +239,7 @@ input[type='checkbox'] {
 	font-size:15px;
 	background-color:white;
 	padding:9px 10px 0px 9px;
-	margin-bottom:10px;
+	margin-bottom:6px;
 	/*border: 1px solid $line-grey;*/
 	border-bottom:1px solid $light-grey;	
 	a {
@@ -341,11 +341,10 @@ input[type='checkbox'] {
 
 
 .hierachy{
-	padding:30px 0px 30px;
+	padding:30px 0px 20px;
 
-	margin-bottom:30px;
+
 }
-
 
 
 .right-board{
@@ -363,6 +362,7 @@ input[type='checkbox'] {
 
 .right-board-heading{
 	
+	border-top:1px solid $dark-grey;
 	padding:0px 5px;
 	padding-right:25px;
 	background-color:$light-grey;
@@ -380,4 +380,9 @@ input[type='checkbox'] {
 	font-size:17px;
 	line-height:30px;
 	color:$dark-grey;
+}
+
+.dashboard-heading{
+	font-weight:bold;
+	padding:9px 10px 0px 9px;	
 }

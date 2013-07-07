@@ -2,9 +2,13 @@
 		<%= render 'dashboards/new_user_page'%>
 	<% else %>
 
-		<div class="app-title pad-bottom margin-top">
-			<p>Your Dashboard</p>
+	<div class="hierachy">
+		<div class="row-fluid">
+			<div class="span12 bottom-border">
+				<span class="dashboard-heading">All the job applications you're doing</span>
+			</div>
 		</div>
+	</div>
 		
 		<% @appList.each do |apps| %>
 			<% job = apps.find_job %>
@@ -15,7 +19,7 @@
 				<div class="row-fluid">	
 					<div class="span5">
 						<%= link_to apps do %>
-							<p><strong> <%= company.name %></strong> | 
+							<p><strong> <%= company.name %></strong> - 
 							<%= job.name %><span class ="hide" id ="expand-<%=apps.id%>">&nbsp&nbsp + Expand  </span></p>
 						<% end %>
 					</div>
