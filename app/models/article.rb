@@ -1,3 +1,3 @@
 class Article < ActiveRecord::Base
-  attr_accessible :author, :content, :published, :title
+  attr_accessible :author, :content, :published, :title, :tagline
 end
