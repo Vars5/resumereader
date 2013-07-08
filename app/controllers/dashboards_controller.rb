@@ -42,7 +42,7 @@ class DashboardsController < ApplicationController
   #end
   
   def admin
-    @list = User.all
+    @list = User.order('created_at')
     authorize! :create, @job      
   end
 

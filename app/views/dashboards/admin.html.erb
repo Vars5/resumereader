@@ -15,6 +15,7 @@
 					<th> Email </th>
 					<th> Phone Number </th>
 					<th> User Id </th>
+					<th> Sign in Count </th>
 				</tr>
 				
 				<% @list.each do |user| %>
@@ -24,6 +25,7 @@
 					<td><%= user.email %> </td>
 					<td><%= user.mobile_number %> </td>
 					<td><%= user.id %>  </td>
+					<td><%= user.sign_in_count%>
 	
 				</tr>
 				<% end %>
