@@ -2,3 +2,5 @@
 <p>Find me in app/views/articles/edit.html.erb</p>
 
 <%= render "article_form" %>
+
+<%= link_to "Delete This Article", @article, method: :delete, data: { confirm: 'You Sure?'}%>
