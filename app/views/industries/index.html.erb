@@ -1,0 +1,9 @@
+<h1>Industries#index</h1>
+
+<%= link_to "New Industry", industries_new_path %>
+
+<br><% @industries.each do |f| %> </br>
+	<li> <%= f.industry %> <%= f.id %></li>
+<% end %>
+
+
