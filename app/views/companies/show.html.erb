@@ -16,7 +16,6 @@
 					<% end %>
 				</div>
 			<div class="top-bottom-borders">
-				<%= @company.industry %></br>
 				<%= Industry.find(@company.industry_id).industry %><br />
 				<%= link_to "#{@company.website}", "http://#{@company.website}" %></br>
 				HR Email: <%= @company.hr_email %></br>
