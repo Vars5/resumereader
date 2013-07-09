@@ -1,7 +1,9 @@
 <head>
 	<% provide(:title, "#{@job.find_company.name} | #{ @job.name }") %>
-		<meta property='st:type' content='Job Opening' />
-		 <meta property='st:info' content="Discipline: <% "#{Category.find(@job.category_id).discipline}" %>" />
+		<meta property='st:info' content="Discipline: <% "#{Category.find(@job.category_id).discipline}" %>" />
+		<meta property='st:info' content="Role: <% "#{Role.find(@job.role_id).role}" %>" />
+		<meta property='st:info' content="due_date: <% @job.due_date %>" />
+		
 </head>
 
 
