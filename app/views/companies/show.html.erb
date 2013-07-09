@@ -1,3 +1,6 @@
+<head>
+	<% provide(:title, "#{ @company.name } | #{@company.industry} ") %>
+
 <div class="hierachy">
 	<div class="row-fluid">
 		<div class="span12 bottom-border">
@@ -11,8 +14,12 @@
 		<% cache @company do %>		
 			<div class=" pad-bottom">
 				<h3><%= @company.name %></h3>
-					<% if can? :update, @company %>
-						<p><%= link_to 'Edit company details', edit_company_path %></p>
+					
+					<% if user_signed_in?%>
+					
+						<% if can? :update, @company %>
+							<p><%= link_to 'Edit company details', edit_company_path %></p>
+							<% end %>
 					<% end %>
 				</div>
 			<div class="top-bottom-borders">
@@ -25,9 +32,10 @@
 		
 		
 		<% end %>
-		<% if can? :create, @job %>	
-			<%= link_to "Edit Company", edit_company_path %>
-			
+		<% if user_signed_in?%>
+			<% if can? :create, @job %>	
+				<%= link_to "Edit Company", edit_company_path %>
+		<% end 	%>	
 			<legend>Create a job</legend>
 			<%= form_for @jobs, :as => :jobs do |f| %>
 				<%= f.text_field :name, :placeholder => "Name" %>
@@ -50,17 +58,18 @@
 		<% end %>
 	</div>
 </div>
-	
-<% if can? :create, @board %>
-	<div class="row-fluid">
-			<div class="span12">
-				<%= form_for @boards, :as => :boards do |f| %>
-					<%= f.text_field :name, :placeholder => "Board Name" %>
-					<%= f.hidden_field :company_id, :value => params[:id] %>
-					<%= f.submit%>
-				<% end %>
-			</div>
-		</div>	
+<% if user_signed_in?%>	
+	<% if can? :create, @board %>
+		<div class="row-fluid">
+				<div class="span12">
+					<%= form_for @boards, :as => :boards do |f| %>
+						<%= f.text_field :name, :placeholder => "Board Name" %>
+						<%= f.hidden_field :company_id, :value => params[:id] %>
+						<%= f.submit%>
+					<% end %>
+				</div>
+			</div>	
+	<% end %>
 <% end %>
 	<div class="row-fluid">
 		<div class="span12">

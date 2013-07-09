@@ -1,3 +1,8 @@
+<head>
+	<% provide(:title, "#{@job.find_company.name} | #{ @job.name }") %>
+</head>
+
+
 <div class="hierachy">
 	<div class="row-fluid">
 		<div class="span12 bottom-border">
@@ -19,13 +24,17 @@
 			<% end %>
 		</h4>	
 			<hr>
-			<% if current_user.is_following_applist?(@job) %>
-				<span class="label label-inverse">You are following this job</span>
-			<% else %>
-				<%= form_for @appList, :as => :applist do |f|%>
-					<%= f.hidden_field :job_id, :value => params[:id] %>
-					<%= f.submit "Add to Dashboard", :class => "btn btn-info"%>
+			<% if user_signed_in? %>
+				<% if current_user.is_following_applist?(@job) %>
+					<span class="label label-inverse">You are following this job</span>
+				<% else %>
+					<%= form_for @appList, :as => :applist do |f|%>
+						<%= f.hidden_field :job_id, :value => params[:id] %>
+						<%= f.submit "Add to Dashboard", :class => "btn btn-info"%>
+					<% end %>
 				<% end %>
+			<% else %>
+				<%= link_to "Signup", root_path %>
 			<% end %>
 			&nbsp
 
