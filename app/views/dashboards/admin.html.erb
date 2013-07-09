@@ -25,7 +25,8 @@
 					<td><%= user.email %> </td>
 					<td><%= user.mobile_number %> </td>
 					<td><%= user.id %>  </td>
-					<td><%= user.sign_in_count%>
+					<td><%= user.sign_in_count%></td>
+					<td><%= user.created_at.strftime("%e%b%y" )%></td>
 	
 				</tr>
 				<% end %>
