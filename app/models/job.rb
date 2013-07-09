@@ -17,6 +17,12 @@ class Job < ActiveRecord::Base
   after_save :enqueue_create_or_update_document_job
   after_destroy :enqueue_delete_document_job
   
+#  before_save :set_job_title
+  
+  def set_job_title
+
+  end
+  
   def find_company
     Company.find_by_id(self.company_id)
   end
