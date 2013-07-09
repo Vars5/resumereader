@@ -46,3 +46,6 @@ gem 'swiftype'
 gem 'delayed_job_active_record'
 gem 'foreman'
 
+#intercom.io
+gem 'intercom-rails', '~> 0.2.21'
+
