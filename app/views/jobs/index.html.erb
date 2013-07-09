@@ -2,6 +2,7 @@
 	<div class="row-fluid">
 		<div class="span12 bottom-border">
 			<b>Open Job Opportunities</b>
+			<span class="pull-right"><%= render 'layouts/swiftype'%></span>
 		</div>
 	</div>
 </div>
@@ -15,7 +16,7 @@
 		<ul class="unstyled">
 			<% @jobs.each do |j| %>
 				<%= link_to j do %>
-					<li><strong><%= j.find_company.name %></strong> - <%= j.name %> - 
+					<li><strong><%= j.find_company.name %></strong> - <%= j.name %>  
 					<span class="pull-right"><%= j.show_due_date%></span>
 					</li>
 				<% end %>

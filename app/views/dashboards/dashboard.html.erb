@@ -6,13 +6,14 @@
 		<div class="row-fluid">
 			<div class="span12 bottom-border">
 				<span class="dashboard-heading">All the job applications you're doing</span>
+				<span class="pull-right"><%= render 'layouts/swiftype'%></span>
 			</div>
 		</div>
 	</div>
 		
 
 
-		<%= render 'layouts/swiftype'%>
+		
 
 		<% @appList.each do |apps| %>
 			<% job = apps.find_job %>
