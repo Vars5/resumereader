@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:index, :show]
   authorize_resource :except => [:index, :show]
   
   def create
@@ -20,7 +20,10 @@ class JobsController < ApplicationController
   
   def show
     @job = Job.find_by_id(params[:id])
-    @appList = current_user.app_lists.build
+    if user_signed_in?
+      @appList = current_user.app_lists.build
+    end
+
 
   end
   
