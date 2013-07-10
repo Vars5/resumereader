@@ -4,6 +4,8 @@
 
 </head>
 
+
+
 <div class="hierachy">
 	<div class="row-fluid">
 		<div class="span12 bottom-border">
@@ -20,9 +22,24 @@
 				reputable grad and internship opportunities </p><br />
 		</div>
 	</div>	
+	
+	<div class="row-fluid">
+		<div class="span4">
+	
+		<%= form_tag companies_path, :method => 'get' do %>
+		  <p>
+			<%= select_tag :industry_id, options_from_collection_for_select(Industry.all, "id", "industry"), include_blank: true %>
+			
+		    <%= submit_tag "Search", :industry => nil %>
+		  </p>
+		<% end %>	
+		</div>
+	</div>
+			
 
 	<div class="row-fluid">
 		<div class="span10 jobIndex">
+		
 			<ul class="unstyled">				
 				<%= render 'companies' %>
 			</div>
