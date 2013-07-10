@@ -1,6 +1,7 @@
 <head>
-	<% provide(:title, "#{ @company.name } | #{@company.industry} ") %>
-
+	<% provide(:title, "#{ @company.name } | #{Industry.find(@company.industry_id).industry} ") %>
+	 <meta property='st:type' content='Company Profile ' />
+</head>
 <div class="hierachy">
 	<div class="row-fluid">
 		<div class="span12 bottom-border">
@@ -36,18 +37,21 @@
 		<% if user_signed_in?%>
 			<% if can? :create, @job %>	
 				<%= link_to "Edit Company", edit_company_path %>
+					<legend>Create a job</legend>
+					<%= form_for @jobs, :as => :jobs do |f| %>
+						<%= f.text_field :name, :placeholder => "Name" %>
+						<%= f.collection_select :category_id, Category.order(:discipline), :id, :discipline %></br>
+						<%= f.text_field :info, :placeholder => "Information" %>
+						<%= f.text_field :due_date, :placeholder => "Date, insert as DD/MM/YYYY"%>
+						<%= f.text_field :link, :placeholder => "Website Link in www.something.com form" %></br>
+						<%= f.hidden_field :id, :value => params[:id] %>
+						<%= f.collection_select :role_id, Role.order(:role), :id, :role, include_blank: true %>
+						<%= f.text_field :location, :placeholder => "Location" %>
+						<%= f.submit %>
+					<% end %>
+				<% end %>
 		<% end 	%>	
-			<legend>Create a job</legend>
-			<%= form_for @jobs, :as => :jobs do |f| %>
-				<%= f.text_field :name, :placeholder => "Name" %>
-				<%= f.collection_select :category_id, Category.order(:discipline), :id, :discipline %></br>
-				<%= f.text_field :info, :placeholder => "Information" %>
-				<%= f.text_field :due_date, :placeholder => "Date, insert as DD/MM/YYYY"%>
-				<%= f.hidden_field :id, :value => params[:id] %>
-				<%= f.collection_select :role_id, Role.order(:role), :id, :role, include_blank: true %>
-				<%= f.submit %>
-			<% end %>
-		<% end %>
+			
 			
 		<% if @company.has_number_of_jobs > 0 %>
 			<strong> Job opportunities with <%= @company.name %>: </strong></br></br>

@@ -1,6 +1,6 @@
 class Job < ActiveRecord::Base
   
-  attr_accessible :name, :link, :discipline, :info, :due_date, :role, :category_id, :role_id
+  attr_accessible :name, :link, :discipline, :info, :due_date, :role, :category_id, :role_id, :location
   
   belongs_to :company
   

@@ -9,6 +9,7 @@
 				<%= f.text_field :due_date, :placeholder => "Date, insert as DD/MM/YYYY" %></br>
 				<%= f.hidden_field :id, :value => params[:id] %></br>
 				<%= f.collection_select :role_id, Role.order(:role), :id, :role, include_blank: true %></br>
+				<%= f.text_field :location, :placeholder => "Location" %></br>
 				<%= f.submit %>
 			<% end %>
 
