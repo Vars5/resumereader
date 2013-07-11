@@ -17,8 +17,7 @@ class DashboardsController < ApplicationController
   end
   
   def follow
-      @feed = Company.joins(:users).where("users.id = ?", current_user.id )
-      #@feed = current_user.company_feed
+      @feed = current_user.companies.all
   end
   
   def graduate 

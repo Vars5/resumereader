@@ -51,5 +51,6 @@ class Company < ActiveRecord::Base
         where("user_id IN (#{followed_company_ids}) OR user_id = :user_id", user_id: user.id)
   end
 =end
+
   
 end
