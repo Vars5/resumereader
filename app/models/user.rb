@@ -21,6 +21,11 @@ class User < ActiveRecord::Base
   
   has_many :reviews, dependent: :destroy
   
+  #user follows company
+  has_many :follows
+  has_many :companies, through: :follows
+  
+  #validations
   validates :first_name, length: { maximum: 30 }
   validates :last_name, length: { maximum: 30 }
 
@@ -40,20 +45,19 @@ class User < ActiveRecord::Base
   def has_no_applists?
     self.app_lists.count == 0
   end
-=begin  
-  def confirm!
-      welcome_message
-      super
-    end
-
-    # ...
-
-  private
-
-    def welcome_message
-      UserMailer.signup_confirmation(self).deliver
-    end
-=end
-
+  
+  #User Follows a company
+  def follow!(company)
+    self.follows.create!(company_id: company.id)
+  end
+  
+  def following?(company)
+    self.follows.find_by_company_id(company.id)
+  end
+  
+  def unfollow!(company)
+    self.follows.find_by_company_id(company.id).destroy
+  end
+  
 
 end

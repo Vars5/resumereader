@@ -7,6 +7,8 @@ Resumereader::Application.routes.draw do
   get "industries/edit"
 
   get "industries/index"
+  
+  match '/follow', to: 'dashboards#follow'
 
   #Root to public home page unless signed in
   
@@ -58,6 +60,8 @@ Resumereader::Application.routes.draw do
   resources :categories
   resources :roles
   resources :industries
+  
+  resources :follows, only: [:create, :destroy]
   
   #resources :employments do
   #  resources :bullets

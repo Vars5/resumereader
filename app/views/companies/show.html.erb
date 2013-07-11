@@ -19,9 +19,13 @@
 					
 					<% if user_signed_in?%>
 					
+						<%= render 'follow_company' %>
+
+						Followers: <%= @company.users.count %>
+						
 						<% if can? :update, @company %>
 							<p><%= link_to 'Edit company details', edit_company_path %></p>
-							<% end %>
+						<% end %>
 					<% end %>
 				</div>
 			<div class="top-bottom-borders">
