@@ -18,21 +18,19 @@
 				<%= link_to j do %>
 					<li><strong><%= j.find_company.name %></strong> - <%= j.name %>  
 					<span class="pull-right"><%= j.show_due_date%></span>
-						<div id = "add_to_dashboard">
-											
-				<% end %>		
-				</div>
-						<%#= form_for @appList, :as => :applist do |f|%>
-							<%#= f.hidden_field :job_id, :value => params[:id] %>
-							<%#= f.submit "Add to Dashboard", :class => "btn btn-info"%>
-				
-					
-					<%= form_for(current_user.app_lists.build, :as => :applist) do |f| %>
-						<%= f.hidden_field :job_id, :value => j.id %>
-						<%= f.submit "Add to Dashboard" %>
-					</li>
+			   <% end %>
+						
+				<% if user_signed_in? %>
+					<% if current_user.is_following_applist?(j) %>
+						<span class="label label-inverse">You are following this job</span>
+					<% else %>
+						<%= form_for(current_user.app_lists.build, :as => :applist) do |f| %>
+							<%= f.hidden_field :job_id, :value => j.id %>
+							<%= f.submit "Add to Dashboard", class: "btn btn-primary" %>		
+						<% end %>
 					<% end %>
-				
+				<% end %>
+				</li>
 			<% end %>
 		
 		</br>
