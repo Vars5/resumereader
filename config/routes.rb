@@ -1,15 +1,6 @@
 Resumereader::Application.routes.draw do
 
 
-
-  get "industries/new"
-
-  get "industries/edit"
-
-  get "industries/index"
-  
-  match '/follow', to: 'dashboards#follow'
-
   #Root to public home page unless signed in
   
   #Save time annd just root to new registration page for now
@@ -61,7 +52,7 @@ Resumereader::Application.routes.draw do
   resources :roles
   resources :industries
   
-  resources :follows, only: [:create, :destroy]
+  resources :follows#, only: [:create, :destroy]
   
   #resources :employments do
   #  resources :bullets

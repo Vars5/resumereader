@@ -1,3 +1,9 @@
-<%= form_for(current_user.follows.find_by_company_id(@company), html: { method: :delete }, remote: true) do |f| %>
-		<%= f.submit "Unfollow", class: "btn btn-large btn-primary"%>
+<%= form_for(current_user.follows.find_by_company_id(@company), method: :delete , remote: true) do |f| %>
+		<%= f.submit "Unfollow", class: "btn btn-large btn-primary" %>
 	<% end %>
+
+<%= link_to "Unfollow", current_user.follows.find_by_company_id(@company), method: :delete %>
+
+<%# form_for(current_user.follows.find_by_company_id(@company), method: :delete, remote: true) do |f| %>
+		<%# f.submit "Unfollow", class: "btn btn-large btn-primary"%>
+	<%# end %>

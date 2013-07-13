@@ -55,9 +55,9 @@ class User < ActiveRecord::Base
     self.follows.find_by_company_id(company.id)
   end
   
-  def unfollow!(company)
-    self.follows.find_by_company_id(company.id).destroy
-  end
+#  def unfollow!(company)
+#    self.follows.find_by_company_id(company.id).destroy
+#  end
   
 
 end
