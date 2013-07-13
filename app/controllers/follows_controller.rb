@@ -6,8 +6,8 @@ class FollowsController < ApplicationController
     @company = Company.find(params[:follow][:company_id])
     current_user.follow!(@company)  
     respond_to do |format|
-       format.html { redirect_to @company }
-       format.js
+       format.html { redirect_to companies_path }
+#       format.js 
     end
   end
   
@@ -15,8 +15,8 @@ class FollowsController < ApplicationController
     @company = Follow.find_by_id(params[:id]).destroy
     
     respond_to do |format|
-       format.html { redirect_to @company }
-       format.js
+       format.html { redirect_to companies_path }
+#       format.js
     end
   end
 

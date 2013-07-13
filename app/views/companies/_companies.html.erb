@@ -9,21 +9,7 @@
 						
 
 					<% end %>
-							<div id = 'follow_company'>
-							<% if current_user.following?(c) %>
-								<%= form_for(current_user.follows.find_by_company_id(c), remote: true, method: :delete) do |f| %>
-									<%= f.submit "Unfollow", class: "btn btn-large btn-primary" %>
-								<% end %>
-								
-							<% else %>
-								<%= form_for(current_user.follows.build, remote: true) do |f| %>
-									<%= f.hidden_field :company_id, :value => c.id %>
-								<%= f.submit "Follow", class: "btn btn-large btn-primary" %>
-								
-								<% end %>
-						
-							<% end %>							
-							</div>
+						<%= render :partial => 'companies/follow_form', :locals => {:c => c} %>
 						<br />
 				<% end %>
 				
