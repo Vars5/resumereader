@@ -12,11 +12,8 @@ class FollowsController < ApplicationController
   end
   
   def destroy
-    @follows = Follow.find_by_id(params[:id]).destroy
+    @company = Follow.find_by_id(params[:id]).destroy
     
-    #current_user.follows.find_by_company_id(params[:id]).destroy
-    #current_user.follows.find_by_company_id(@company.id).destroy
-    #current_user.unfollow!(@company)
     respond_to do |format|
        format.html { redirect_to @company }
        format.js

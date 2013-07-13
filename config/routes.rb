@@ -52,7 +52,7 @@ Resumereader::Application.routes.draw do
   resources :roles
   resources :industries
   
-  resources :follows#, only: [:create, :destroy]
+  resources :follows, only: [:create, :destroy]
   
   #resources :employments do
   #  resources :bullets
