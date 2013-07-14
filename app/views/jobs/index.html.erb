@@ -8,28 +8,36 @@
 </div>
 
 <div class="row-fluid">
-	<div class="span10 jobIndex">
+	<div class="span12 jobIndex">
 		
 		<b><h4> <%= link_to "Advanced Search", new_search_path %> </h4></b>
 		</br>
 		
 		<ul class="unstyled">
 			<% @jobs.each do |j| %>
-				<%= link_to j do %>
-					<li><strong><%= j.find_company.name %></strong> - <%= j.name %>  
-					<span class="pull-right"><%= j.show_due_date%></span>
-			   <% end %>
-						
-				<% if user_signed_in? %>
-					<% if current_user.is_following_applist?(j) %>
-						<span class="label label-inverse">You are following this job</span>
-					<% else %>
-						<%= form_for(current_user.app_lists.build, :as => :applist) do |f| %>
-							<%= f.hidden_field :job_id, :value => j.id %>
-							<%= f.submit "Add to Dashboard", class: "btn btn-primary" %>		
-						<% end %>
-					<% end %>
-				<% end %>
+				<div class="row-fluid bottom-border pad-top">
+					<div class="span9">
+						<%= link_to j do %>
+							<li><strong><%= j.find_company.name %></strong> - <%= j.name %>  
+							<br/><%= j.show_due_date%>
+					   <% end %>
+					</div>
+					<div class="span3">
+						<div class="pull-right">
+							<% if user_signed_in? %>
+								<% if current_user.is_following_applist?(j) %>
+									<span class="label label-inverse">You are following this job</span>
+								<% else %>
+									<%= form_for(current_user.app_lists.build, :as => :applist) do |f| %>
+										<%= f.hidden_field :job_id, :value => j.id %>
+										<%= f.submit "Add to Dashboard", class: "btn btn-primary" %>		
+									<% end %>
+								<% end %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+				
 				</li>
 			<% end %>
 		
