@@ -7,7 +7,7 @@ class AppListsController < ApplicationController
     @appList = current_user.app_lists.build(params[:applist])
     @job = Job.find_by_id(params[:applist][:job_id])
     if @appList.save
-      redirect_to @job
+      redirect_to @appList
       flash[:success] = "You're now following the #{@job.find_company.name} #{@job.name}"
     else
       flash[:alert] = "You're already following this job!"
@@ -25,12 +25,19 @@ class AppListsController < ApplicationController
   def update
     @appList = current_user.app_lists.find_by_id(params[:applist][:id])
     if @appList.update_attributes(params[:applist])
-      respond_to do |format|
-        format.html{redirect_to :back}
-        #format.js
+      if @appList.status == "unfollow"
+        @appList.check_destroy_status        
+        redirect_to root_path
+      else
+        respond_to do |format|
+          format.html{redirect_to :back}
+          #format.js
+        end
       end
     end
-    @appList.check_destroy_status
+
+
+    
   end
   
   def destroy
