@@ -4,8 +4,6 @@
 
 </head>
 
-
-
 <div class="hierachy">
 	<div class="row-fluid">
 		<div class="span12 bottom-border">
@@ -36,9 +34,27 @@
 			
 
 	<div class="row-fluid">
-		<div class="span10 jobIndex">
+		<div class="span12 jobIndex">
 		
 			<ul class="unstyled">				
-				<%= render 'companies' %>
+				<% @company.each do |c| %>
+					<div class="row-fluid">
+						<div class="span4">
+							<%= link_to c do %>
+								<span class="big-font"><strong><%= c.name %></strong> </span><br />
+								<%= Industry.find(c.industry_id).industry %> 
+								<% if c.has_number_of_jobs != 0 %>
+									 <br /><%= c.jobs.count %> Job Opportunities
+								<% end %>		
+							<% end %>
+						</div>
+						<div class="span8">
+							<%= render :partial => 'companies/follow_form', :locals => {:c => c} %>
+						</div>
+					</div>
+					<hr>		
+				<% end %>
+
+				<%= will_paginate @company %>
 			</div>
 	</div>

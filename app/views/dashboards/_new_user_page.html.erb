@@ -34,8 +34,10 @@
 		<% @jobs.each do |job| %>
 			<div class="row-fluid">
 				<div class="span6">
-					<strong><%= job.find_company.name %></strong><br/>
-					<%=link_to job.name, job %><br />
+					<%= link_to job do %>
+						<strong><%= job.find_company.name %></strong><br/>
+						<%=job.name %><br />
+					<% end %>
 				</div>
 			
 				<div class="span6">

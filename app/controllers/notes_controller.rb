@@ -5,8 +5,8 @@ class NotesController < ApplicationController
     @note = Note.new(params[:note])
     if @note.save
       respond_to do |format|
-        #format.html { redirect_to root_path }
-        format.js
+        format.html { redirect_to root_path }
+        #format.js
       end
     end
   end
