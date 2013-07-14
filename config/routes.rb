@@ -1,13 +1,6 @@
 Resumereader::Application.routes.draw do
 
 
-
-  get "industries/new"
-
-  get "industries/edit"
-
-  get "industries/index"
-
   #Root to public home page unless signed in
   
   #Save time annd just root to new registration page for now
@@ -58,6 +51,8 @@ Resumereader::Application.routes.draw do
   resources :categories
   resources :roles
   resources :industries
+  
+  resources :follows, only: [:create, :destroy]
   
   #resources :employments do
   #  resources :bullets

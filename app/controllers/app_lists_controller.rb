@@ -7,7 +7,7 @@ class AppListsController < ApplicationController
     @appList = current_user.app_lists.build(params[:applist])
     @job = Job.find_by_id(params[:applist][:job_id])
     if @appList.save
-      redirect_to root_path
+      redirect_to @job
       flash[:success] = "You're now following the #{@job.find_company.name} #{@job.name}"
     else
       flash[:alert] = "You're already following this job!"

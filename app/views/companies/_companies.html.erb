@@ -6,10 +6,16 @@
 						<% if c.has_number_of_jobs != 0 %>
 							 <%= c.jobs.count %> Job Opportunities
 						<% end %><br />
+						
+
 					<% end %>
-							<%# simple_format( (truncate((c.info), :length=>170)) ) %>
-					
+						<%= render :partial => 'companies/follow_form', :locals => {:c => c} %>
 						<br />
 				<% end %>
 				
 				<%= will_paginate @company %>
+
+
+
+
+				

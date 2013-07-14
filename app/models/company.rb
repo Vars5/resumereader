@@ -1,10 +1,12 @@
 class Company < ActiveRecord::Base
   
-  attr_accessible :name, :industry, :website , :hr_email, :info, :logo, :industry_id
+  attr_accessible :name, :industry, :website , :hr_email, :info, :logo, :industry_id, :company_id
   
   has_many :jobs
   has_many :boards
   
+  has_many :follows
+  has_many :users, through: :follows
   
   validates :name,     presence: :true, :uniqueness => true
 #  validates :industry, presence: :true
@@ -36,10 +38,19 @@ class Company < ActiveRecord::Base
   #search
   def self.search(search)
     if search
-      where('name LIKE ?', "%#{search}%")
+      where('industry LIKE ?', "%#{search}%")
     else
       scoped
     end
   end    
-      
+
+=begin      
+  def self.companies_followed_by(user)
+    followed_company_ids = "SELECT company_id FROM follows 
+                            WHERE user_id = :user.id",
+        where("user_id IN (#{followed_company_ids}) OR user_id = :user_id", user_id: user.id)
+  end
+=end
+
+  
 end

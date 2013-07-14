@@ -16,6 +16,9 @@ class DashboardsController < ApplicationController
     
   end
   
+  def follow
+      @feed = current_user.companies.all
+  end
   
   def graduate 
     
