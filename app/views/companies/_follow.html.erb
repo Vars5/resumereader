@@ -1,5 +1,5 @@
 <%= form_for(current_user.follows.build) do |f| %>
 	<%= f.hidden_field :company_id, :value => c.id %>
-<%= f.submit "Follow", class: "btn btn-primary" %>
+<%= f.submit "Follow", class: "btn btn-primary follow-button" %>
 
 <% end %>
