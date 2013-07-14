@@ -1,49 +1,52 @@
 
 	<div class="info-message">	
+	
 		
-	<div class="info-text center-alignment">	
-		<h1>Your own personalised  space to coach you through your job applications</h1><br/>		
-	</div>
-		
-		<div class="info-text center-alignment" id="content-1">
-			
-
-			<h3>ResQuery turns the <%= Job.count %> reputable grad and internship jobs in Sydney into
-				opportunities for you, instead of stresses.</h3>
+		<div class="info-text center-alignment">	
+			<% ab_test "signup", "long", "short" do |style| %>
+				<h2>
+				<% if style == "long" %>Your own personalised  space to coach you through your job applications <% end %>
+				<% if style == "short" %>It is your Career. </br> </br>Signup for ResQuery and take control today by organising your job apps in one place <% end %>
+				</h2><br/>		
+	
+				<h3><%if style == "long" %>ResQuery turns the <%= Job.count %> reputable grad and internship jobs in Sydney into
+					opportunities for you, instead of stresses. </h3> <% end %>
+			<% end %>
 		</div>
+				
 		
-	<% if false %>	
-		<div class="info-text hide" id="content-2">
-			<h1>We list them all.</h1>
+		<% if false %>	
+			<div class="info-text hide" id="content-2">
+				<h1>We list them all.</h1>
+					<br />
+					<div class="row-fluid">
+						<div class="span4">
+							<h2><%= Company.count%></h2>
+							<p>Reputable<br/> companies listed</p>
+						</div>
+						<div class="span4">
+							<h2><%= Job.count %></h2>
+							<p>Active jobs open for students</p>
+						</div>
+						<div class="span4">
+							<h2> 500  </h2>
+							<p>Number of grad jobs & internships in Australia</p>
+						</div>
+					</div>
+			</div>
+		
+		
+
+			<br />Have their face as a circle here too!
+			<br />Another line: "You want to be on ResQuery"
+		
+		
+			<p> Are job apps being too messy?
 				<br />
-				<div class="row-fluid">
-					<div class="span4">
-						<h2><%= Company.count%></h2>
-						<p>Reputable<br/> companies listed</p>
-					</div>
-					<div class="span4">
-						<h2><%= Job.count %></h2>
-						<p>Active jobs open for students</p>
-					</div>
-					<div class="span4">
-						<h2> 500  </h2>
-						<p>Number of grad jobs & internships in Australia</p>
-					</div>
-				</div>
-		</div>
-		
-		
-
-		<br />Have their face as a circle here too!
-		<br />Another line: "You want to be on ResQuery"
-		
-		
-		<p> Are job apps being too messy?
-			<br />
-			Have an image of the app here
-			<br />
-			<br />
-			ResumeQuery lets you focus on doing your job apps by making finding jobs and
-			managing your apps easy</p>
+				Have an image of the app here
+				<br />
+				<br />
+				ResumeQuery lets you focus on doing your job apps by making finding jobs and
+				managing your apps easy</p>
 		<% end %>
 	</div>
