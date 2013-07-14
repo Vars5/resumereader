@@ -26,11 +26,11 @@
 						<div class="pull-right">
 							<% if user_signed_in? %>
 								<% if current_user.is_following_applist?(j) %>
-									<span class="label label-inverse">You are following this job</span>
+									<span class="label label-list">Already added</span>
 								<% else %>
 									<%= form_for(current_user.app_lists.build, :as => :applist) do |f| %>
 										<%= f.hidden_field :job_id, :value => j.id %>
-										<%= f.submit "Add to Dashboard", class: "btn btn-primary" %>		
+										<%= f.submit "Add to My Jobs", class: "btn btn-info" %>		
 									<% end %>
 								<% end %>
 							<% end %>
