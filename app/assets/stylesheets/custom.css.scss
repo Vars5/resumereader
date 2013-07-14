@@ -143,6 +143,10 @@ input[type='checkbox'] {
 	border-top:$standard-line;
 }
 
+.right-border{
+	border-right:$standard-line;
+}
+
 .margin-top{
 	margin-top:60px;
 }
@@ -410,10 +414,26 @@ input[type='checkbox'] {
 }
 
 .label-list{
-	padding:9px 5px;
+	padding:7px 5px;
 	width:114px;
 	text-align:center;
 	margin-bottom: $standard-padding;
+	border: 1px solid $dark-green;
 
+}
 
+.negative-margin{
+	margin-left:-20px;
+	margin-right:-20px;
+}
+
+.follow-button{
+	width:81px !important;
+}
+
+.info-text {
+	h1{
+	font-size:46px;
+	line-height:55px;
+	}
 }
