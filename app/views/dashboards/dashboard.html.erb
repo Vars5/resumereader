@@ -11,10 +11,6 @@
 			</div>
 		</div>
 	</div>
-		
-
-
-		
 
 		<% @appList.each do |apps| %>
 			<% job = apps.find_job %>
@@ -39,7 +35,7 @@
 					</div>
 
 					<div class="span1">
-						<%= link_to "Website", "http://#{company.website}" %>
+						<%= link_to "Website", "http://#{job.link}" %>
 					</div>
 
 					<div class="span3">
