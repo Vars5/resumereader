@@ -7,6 +7,8 @@
 			<p> There are <%= User.all.count %> Users </p>
 			
 			<p> There are <%= AppList.all.count %> jobs being followed
+				
+			<p> There are <%= Follow.all.count %> companies being followed
 			
 			<ul>
 				<table border = 2>
@@ -16,6 +18,9 @@
 					<th> Phone Number </th>
 					<th> User Id </th>
 					<th> Sign in Count </th>
+					<th> Signup Date </th>
+					<th> Company Follow </th>
+					<th> Applists </th>
 				</tr>
 				
 				<% @list.each do |user| %>
@@ -27,6 +32,8 @@
 					<td><%= user.id %>  </td>
 					<td><%= user.sign_in_count%></td>
 					<td><%= user.created_at.strftime("%e%b%y" )%></td>
+					<td><%= user.follows.count %></td>
+					<td><%= user.app_lists.count %></td>
 	
 				</tr>
 				<% end %>
