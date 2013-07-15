@@ -60,7 +60,7 @@
 				<tr>
 					<td><%= list.find_company.name %></td>
 					<td><%= list.name %> </td>
-					<td><%= link_to "Link", list.link %>
+					<td><%= link_to "Link", "http://#{list.link}" %>
 					<td><%= list.app_lists.count %> </td>
 					<td><%= link_to "Edit", edit_job_path(list) %>
 

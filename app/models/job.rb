@@ -44,7 +44,7 @@ class Job < ActiveRecord::Base
   
   def self.search(search)
     if search
-      where('name LIKE ?', "%#{search}%")
+      where('discipline LIKE ?', "%#{search}%")
     else
       scoped
     end
