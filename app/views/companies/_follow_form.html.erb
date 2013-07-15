@@ -1,7 +1,7 @@
 <div id = "follow_form_<%= c.id %>">
 	<% if current_user.following?(c) %>
-		<%= render :partial => 'companies/unfollow', :locals => {:c => c}, :sid => 0 %>
+		<%= render :partial => 'companies/unfollow', :locals => {:c => c} %>
 	<% else %>
-		<%= render :partial => 'companies/follow', :locals => {:c => c}, :sid => 0 %>
+		<%= render :partial => 'companies/follow', :locals => {:c => c} %>
 	<% end %>
 </div>

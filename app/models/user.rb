@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
   end
 
   def app_list_count
-    AppList.where("user_id = ?", self.id).count
+    AppList.where("user_id = ?", self.id)
   end
 
   def is_following_applist?(job)

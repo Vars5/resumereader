@@ -50,3 +50,6 @@ gem 'foreman'
 #intercom.io
 gem 'intercom-rails', '~> 0.2.21'
 
+#A/B spilt testing
+gem 'split', require: 'split/dashboard'
+

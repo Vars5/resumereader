@@ -7,6 +7,10 @@
 			<p> There are <%= User.all.count %> Users </p>
 			
 			<p> There are <%= AppList.all.count %> jobs being followed
+				
+			<p> There are <%= Follow.all.count %> companies being followed
+				
+			<p>	There are <%= Note.all.count %> notes created </p>
 			
 			<ul>
 				<table border = 2>
@@ -16,6 +20,10 @@
 					<th> Phone Number </th>
 					<th> User Id </th>
 					<th> Sign in Count </th>
+					<th> Signup Date </th>
+					<th> Company Follow </th>
+					<th> Applists </th>
+					
 				</tr>
 				
 				<% @list.each do |user| %>
@@ -27,13 +35,53 @@
 					<td><%= user.id %>  </td>
 					<td><%= user.sign_in_count%></td>
 					<td><%= user.created_at.strftime("%e%b%y" )%></td>
+					<td><%= user.follows.count %></td>
+					<td><%= user.app_lists.count %></td>
+					
 	
 				</tr>
 				<% end %>
 				</table>
 				</br>
-				# We should add a column to see how many jobs each user is following - that way we can get feedback from the most active users
+				
 			</ul>
+			
+				<table border = 1>
+				<tr>
+					<th> Company </th>
+					<th> Job </th>
+					<th> Users following </th>
+
+				</tr>
+			
+				<% @job.each do |list| %>
+				<tr>
+					<td><%= list.find_company.name %></td>
+					<td><%= list.name %> </td>
+					<td><%= list.app_lists.count %> </td>
+
+				</tr>
+				<% end %>
+				</table>
+				
+				</br>
+				<table border = 1>
+				<tr>
+					<th> Company </th>
+					<th> Users Following </th>
+				</tr>
+				<% @company.each do |company| %>
+					<tr>
+						<td><%= link_to "#{company.name}", company %></td>
+						<td><%= company.follows.count %></td>
+					</tr>
+				<% end %>
+				</table>
+				</br	>
+					
+			
+			
+			
 		</div>
 	</div>
 </div>
@@ -43,12 +91,7 @@
 		<ul>
 			<li><strong>LINKS - Remove when admin set up</strong></li>
 			<li><%= link_to 'Problems-Page', problems_path %></li>
-			<li>Companies:</li>
-			<ul>
-				<% Company.all.each do |company| %>
-					<li><%= link_to "#{company.name}", company %></li>
-				<% end %>
-			</ul>
+			
 			<li><%= link_to 'New company page', new_company_path %>
 		</ul>
 	</div>			

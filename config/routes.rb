@@ -54,6 +54,8 @@ Resumereader::Application.routes.draw do
   
   resources :follows, only: [:create, :destroy]
   
+  mount Split::Dashboard, at: 'split'
+  
   #resources :employments do
   #  resources :bullets
   #  resources :responses

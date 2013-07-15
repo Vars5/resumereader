@@ -4,7 +4,7 @@ class DashboardsController < ApplicationController
   
   def dashboard
     @appListCount = current_user.app_list_count
-    @appList = current_user.app_list_feed
+    @appList = current_user.app_lists.find(:all, :joins => :job, :order => :due_date)
     
     if current_user.has_no_applists?
       @company = Company.paginate(page: params[:page],:per_page => 5)
@@ -42,6 +42,8 @@ class DashboardsController < ApplicationController
   
   def admin
     @list = User.order('created_at')
+    @job = Job.all
+    @company = Company.all
     authorize! :create, @job      
   end
 

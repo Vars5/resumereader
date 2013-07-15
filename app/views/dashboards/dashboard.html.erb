@@ -1,4 +1,5 @@
-	<% if current_user.has_no_applists? %>	
+	<% if current_user.has_no_applists? %>
+		<% finished("signup") %>
 		<%= render 'dashboards/new_user_page'%>
 	<% else %>
 
