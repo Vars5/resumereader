@@ -42,6 +42,8 @@ class DashboardsController < ApplicationController
   
   def admin
     @list = User.order('created_at')
+    @job = Job.all
+    @company = Company.all
     authorize! :create, @job      
   end
 

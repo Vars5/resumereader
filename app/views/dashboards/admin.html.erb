@@ -9,6 +9,8 @@
 			<p> There are <%= AppList.all.count %> jobs being followed
 				
 			<p> There are <%= Follow.all.count %> companies being followed
+				
+			<p>	There are <%= Note.all.count %> notes created </p>
 			
 			<ul>
 				<table border = 2>
@@ -21,6 +23,7 @@
 					<th> Signup Date </th>
 					<th> Company Follow </th>
 					<th> Applists </th>
+					
 				</tr>
 				
 				<% @list.each do |user| %>
@@ -34,13 +37,51 @@
 					<td><%= user.created_at.strftime("%e%b%y" )%></td>
 					<td><%= user.follows.count %></td>
 					<td><%= user.app_lists.count %></td>
+					
 	
 				</tr>
 				<% end %>
 				</table>
 				</br>
-				# We should add a column to see how many jobs each user is following - that way we can get feedback from the most active users
+				
 			</ul>
+			
+				<table border = 1>
+				<tr>
+					<th> Company </th>
+					<th> Job </th>
+					<th> Users following </th>
+
+				</tr>
+			
+				<% @job.each do |list| %>
+				<tr>
+					<td><%= list.find_company.name %></td>
+					<td><%= list.name %> </td>
+					<td><%= list.app_lists.count %> </td>
+
+				</tr>
+				<% end %>
+				</table>
+				
+				</br>
+				<table border = 1>
+				<tr>
+					<th> Company </th>
+					<th> Users Following </th>
+				</tr>
+				<% @company.each do |company| %>
+					<tr>
+						<td><%= company.name %></td>
+						<td><%= company.follows.count %></td>
+					</tr>
+				<% end %>
+				</table>
+				</br>
+					
+			
+			
+			
 		</div>
 	</div>
 </div>
