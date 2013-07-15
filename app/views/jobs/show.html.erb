@@ -45,7 +45,7 @@
 			
 			<hr>		
 			<% if @job.has_website? %>
-				<h2><%= link_to "Official Link", "http://#{@job.link}" %></br></br></h2>
+				<h2><%= link_to "Official Link", "http://#{@job.link}", :target => "_blank" %></br></br></h2>
 			<% end %>
 			Type: <%= Role.find(@job.role_id).role %><br />			
 			Discipline: <%= Category.find(@job.category_id).discipline %><br />
