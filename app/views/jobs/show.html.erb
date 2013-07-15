@@ -33,6 +33,7 @@
 				<% else %>
 					<%= form_for @appList, :as => :applist do |f|%>
 						<%= f.hidden_field :job_id, :value => params[:id] %>
+						<%= f.hidden_field :status, :value => "Research" %>
 						<%= f.submit "Add to My Jobs", :class => "btn btn-info"%>
 					<% end %>
 				<% end %>

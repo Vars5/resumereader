@@ -30,6 +30,7 @@
 								<% else %>
 									<%= form_for(current_user.app_lists.build, :as => :applist) do |f| %>
 										<%= f.hidden_field :job_id, :value => j.id %>
+										<%= f.hidden_field :status, :value => "Research" %>
 										<%= f.submit "Add to My Jobs", class: "btn btn-info" %>		
 									<% end %>
 								<% end %>
