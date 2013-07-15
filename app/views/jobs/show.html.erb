@@ -43,12 +43,13 @@
 
 			
 			<hr>		
+			<% if @job.has_website? %>
+				<h2><%= link_to "Official Link", "http://#{@job.link}" %></br></br></h2>
+			<% end %>
 			Type: <%= Role.find(@job.role_id).role %><br />			
 			Discipline: <%= Category.find(@job.category_id).discipline %><br />
 			HR Contact: <%= @job.relevant_hr_email %><br />
-			<% if @job.has_website? %>
-				<%= link_to "Official Link", "http://#{@job.link}" %></br></br>
-			<% end %>
+
 			<hr>
 			<% if false %>
 				<%= simple_format(@job.info) %></br>
