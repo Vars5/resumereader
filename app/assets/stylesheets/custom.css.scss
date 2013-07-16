@@ -50,7 +50,7 @@ $standard-line: 1px solid $line-grey;
 
 html{
 	height:100%;
-	border-top:8px solid $base-green;
+	border-top:18px solid $base-green;
 	padding-top:$standard-padding;
 }
 
@@ -193,9 +193,7 @@ input[type='checkbox'] {
 
 
 
-.about-area{
 
-}
 
 .menu-area {
 	padding-top:$standard-padding;
@@ -207,8 +205,8 @@ input[type='checkbox'] {
 
 	li {
 
-		padding:10px 0px 10px 25px;
-		margin-left:-25px;
+		padding:10px 0px 10px 10px;
+
 		width:100%;		
 	}	
 	li:hover{
@@ -226,11 +224,10 @@ input[type='checkbox'] {
 .left-dashboard {
 	/*box-shadow: 0 4px 17px -5px $dark-grey;*/
 
-	min-width:180px;
+	/*min-width:180px;*/
 	min-height:100%;
-	position:fixed;
-	margin-right:1px;
-	padding-left:25px;
+
+
 
 	a:hover{
 		color:white;
