@@ -50,8 +50,6 @@ $standard-line: 1px solid $line-grey;
 
 html{
 	height:100%;
-	border-top:18px solid $base-green;
-	padding-top:$standard-padding;
 }
 
 .background-white{
@@ -193,26 +191,20 @@ input[type='checkbox'] {
 
 
 
-
-
 .menu-area {
 	padding-top:$standard-padding;
 	color:$base-green;
-	/*text-shadow: 0.1em 0.1em 0.1em $dark-green;*/
 	a{
 	color:$base-green;	
 	}
 
 	li {
-
 		padding:10px 0px 10px 10px;
-
 		width:100%;		
 	}	
 	li:hover{
 		background-color:$base-green;
 		color:white;
-		/*border-right:7px solid black;*/
 	}
 }
 
@@ -222,18 +214,12 @@ input[type='checkbox'] {
 
 
 .left-dashboard {
-	/*box-shadow: 0 4px 17px -5px $dark-grey;*/
-
-	/*min-width:180px;*/
+	min-width:140px;
 	min-height:100%;
-
-
-
 	a:hover{
 		color:white;
 		text-decoration:none;
-	}
-	
+	}	
 }
 
 /* ========= END SECTION: LEFT-BOARD =========*/
@@ -431,5 +417,14 @@ input[type='checkbox'] {
 	h1{
 	font-size:46px;
 	line-height:55px;
+	}
+}
+
+.header{
+	height:20px;
+	background-color:$base-green;
+	font-size:10px;
+	a{
+		color:$menu-green;
 	}
 }

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130713025756) do
+ActiveRecord::Schema.define(:version => 20130716084803) do
 
   create_table "app_lists", :force => true do |t|
     t.integer  "job_id"
@@ -136,12 +136,13 @@ ActiveRecord::Schema.define(:version => 20130713025756) do
     t.string   "discipline"
     t.text     "info"
     t.date     "due_date"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.string   "role"
     t.string   "location"
     t.integer  "category_id"
     t.integer  "role_id"
+    t.boolean  "open",        :default => true
   end
 
   create_table "memberships", :force => true do |t|

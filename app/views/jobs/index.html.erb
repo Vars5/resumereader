@@ -10,8 +10,19 @@
 <div class="row-fluid">
 	<div class="span12 jobIndex">
 		
-		<b><h4> <%= link_to "Advanced Search", new_search_path %> </h4></b>
+		
+		<div class="span4 jobIndex">	
+		<%= form_tag jobs_path, :method => 'get' do %>
+		  <p>
+			<h4>Search by Discipline: <h4> 
+			<%= select_tag :category_id, options_from_collection_for_select(Category.all, "id", "discipline"), 
+				include_blank: true, :onchange => "this.form.submit()" %> <% end %>
+				<h5> <%= link_to "Advanced Search", new_search_path %> </h4>
+		  
 		</br>
+		</br>	
+		
+		</div>
 		
 		<ul class="unstyled">
 			<% @jobs.each do |j| %>
