@@ -4,12 +4,21 @@
 		<%= link_to image_tag('menulogo.png'), root_path %>
 	</div>
 
-
+	<% if false %>
+	<div class="compose">
+		Button
+	</div>
+	<% end %>
 	
 	<div class="menu-area">
 		<ul class="unstyled">
+			
+			
+			
+			
 			<%= link_to root_path do %>
-				<li><i class="icon-pencil  "></i> &nbsp My Jobs</li>
+				<li><i class="icon-pencil  "></i> &nbsp My Jobs  <span class="pull-right badge badge-important">
+					<%= current_user.app_list_count %> </span></li>
 			<% end %>
 			<%= link_to jobs_path do %>
 				<li><i class="icon-briefcase  "></i> &nbsp  Job Opportunities </li>

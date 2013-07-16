@@ -359,7 +359,6 @@ input[type='checkbox'] {
 
 .pull-up{
 	margin-top:-10px;
-
 	font-size:14px;
 }
 
@@ -399,4 +398,16 @@ input[type='checkbox'] {
 	a{
 		color:$menu-green;
 	}
+}
+
+
+.compose{
+	text-align:center;
+	width:70%;
+	background-color:$base-green;
+	padding:5px 0px;
+	color:white;
+	margin-top:10px;
+	border-radius: 3px;
+	margin-left:30px;
 }
