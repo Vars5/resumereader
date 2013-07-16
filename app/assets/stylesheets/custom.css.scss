@@ -176,28 +176,9 @@ input[type='checkbox'] {
 	background-color:$top-green;
 }
 
-.user-area{
-	background-color:$menu-green;
-	margin-left:-25px;
-	border-top:5px solid $dark-green;
-	border-bottom:3px solid $dark-green;
-	padding:$standard-padding 5px $standard-padding 25px;
-	font-size:11px;
-	color:$dark-green;
-	a:hover{
-		color:$base-green !important;
-	};
-}
-
-
 
 .menu-area {
 	padding-top:$standard-padding;
-	color:$base-green;
-	a{
-	color:$base-green;	
-	}
-
 	li {
 		padding:10px 0px 10px 10px;
 		width:100%;		
