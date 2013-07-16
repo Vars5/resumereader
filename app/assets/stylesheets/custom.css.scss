@@ -57,7 +57,7 @@ html{
 
 body {
 	font-family: 'Noto Sans', sans-serif;	
-	font-size:13px;
+	font-size:12px;
 	height:100%;
 	a{
 		color:$link-green;
@@ -201,7 +201,7 @@ input[type='checkbox'] {
 .appManage {
 	/*box-shadow: $standard-shadow;*/
 	/*margin-top:-1px;*/
-	font-size:15px;
+	font-size:13px;
 	background-color:white;
 	padding:9px 10px 0px 9px;
 	margin-bottom:6px;
@@ -412,3 +412,7 @@ input[type='checkbox'] {
 	margin-left:30px;
 }
 
+
+.badge{
+	margin-right:5px;
+}
