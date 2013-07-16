@@ -1,26 +1,27 @@
 <div class="left-dashboard">
+	<%if false%>
 	<div class="logo">
 		<%= link_to image_tag('resumeQuery_white.png'), root_path %>
 	</div>
-
+	<% end %>
 
 	
 	<div class="menu-area">
 		<ul class="unstyled">
 			<%= link_to root_path do %>
-				<li><i class="icon-pencil icon-white"></i> &nbsp My Jobs</li>
+				<li><i class="icon-pencil  "></i> &nbsp My Jobs</li>
 			<% end %>
 			<%= link_to jobs_path do %>
-				<li><i class="icon-briefcase icon-white"></i> &nbsp  Job Opportunities </li>
+				<li><i class="icon-briefcase  "></i> &nbsp  Job Opportunities </li>
 			<% end %>
 			<%= link_to companies_path do %>
-				<li><i class="icon-certificate icon-white"></i> &nbsp Companies </li>
+				<li><i class="icon-certificate  "></i> &nbsp Companies </li>
 			<% end %>
 			<%= link_to knowledgebase_path do %>
-				<li><i class="icon-book icon-white"></i> &nbsp Knowledge Base</li>
+				<li><i class="icon-book  "></i> &nbsp Knowledge Base</li>
 			<% end %>
 			<%= link_to suggestions_path do %>	
-				<li><i class="icon-wrench icon-white"></i> &nbsp Suggestions & Bugs</li>
+				<li><i class="icon-wrench  "></i> &nbsp Suggestions & Bugs</li>
 			<% end %>
 		</ul>
 	</div>
@@ -44,7 +45,7 @@
 		<ul class="unstyled">
 			
 			
-			<li><i class="icon-comment icon-white"></i>
+			<li><i class="icon-comment  "></i>
 				&nbsp
 				<%= mail_to "team@resquery.com", "Contact Us" do %>
 				 	 Contact Us
@@ -52,7 +53,7 @@
 			</li>
 
 			<%= link_to about_path do %>
-				<li><i class="icon-user icon-white"></i> &nbsp About ResQuery</li>
+				<li><i class="icon-user  "></i> &nbsp About ResQuery</li>
 			<% end %>
 			
 		</ul>
