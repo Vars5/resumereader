@@ -22,16 +22,18 @@
 	</div>	
 	
 	<div class="row-fluid">
-		<div class="span4">	
+		<div class="span4">
+			<h4> <b> Search by Industry </h4></b>
+				
 		<%= form_tag companies_path, :method => 'get' do %>
 		  <p>
-			<%= select_tag :industry_id, options_from_collection_for_select(Industry.all, "id", "industry"), include_blank: true %>
-		    <%= submit_tag "Search", :industry => nil %>
+			<%= select_tag :industry_id, options_from_collection_for_select(Industry.all, "id", "industry"), include_blank: true, :onchange => "this.form.submit()" %>
+		    
 		  </p>
 		<% end %>	
 		</div>
 	</div>
-			
+	</br>
 
 	<div class="row-fluid">
 		<div class="span12 jobIndex">

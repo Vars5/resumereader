@@ -1,6 +1,6 @@
 class Job < ActiveRecord::Base
   
-  attr_accessible :name, :link, :discipline, :info, :due_date, :role, :category_id, :role_id, :location
+  attr_accessible :name, :link, :discipline, :info, :due_date, :role, :category_id, :role_id, :location, :open
   
   belongs_to :company
   
@@ -44,7 +44,7 @@ class Job < ActiveRecord::Base
   
   def self.search(search)
     if search
-      where('name LIKE ?', "%#{search}%")
+      where('discipline LIKE ?', "%#{search}%")
     else
       scoped
     end

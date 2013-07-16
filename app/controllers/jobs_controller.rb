@@ -14,8 +14,16 @@ class JobsController < ApplicationController
   end
   
   def index
-    @jobs = Job.search(params[:search]).order('due_date')
     @problem = Problem.new
+    if params[:category_id]
+      discipline = Category.find(params[:category_id])
+      @jobs = Job.where("category_id = ?", discipline)
+    else
+      @jobs = Job.where('open = ?', true).order('due_date')
+    end
+  
+  
+  
   end
   
   def show
@@ -28,14 +36,14 @@ class JobsController < ApplicationController
   end
   
   def edit
-    @jobs = Job.find_by_id(params[:id])
+    @job = Job.find_by_id(params[:id])
   end
   
   def update
-    @jobs = Job.find_by_id(params[:id])
-    if @jobs.update_attributes(params[:jobs])
-      expire_fragment("job_opportunities")
-      redirect_to @jobs
+    @job = Job.find_by_id(params[:id])
+    if @job.update_attributes(params[:jobs])
+      #expire_fragment("job_opportunities")
+      redirect_to @job
     end
   end
   
