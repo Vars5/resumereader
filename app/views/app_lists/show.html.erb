@@ -14,7 +14,7 @@
 				<div class="span8">
 					<h4><%= @job.name %></h4>
 						<%= @company.name %> - Closes <%= @job.show_due_date %></br>
-						<%= link_to "Website", "http://#{@company.website}" %>
+						<%= link_to "Website", "http://#{@job.link}" %>
 				</div>
 				<div class="span4">
 					<div class="pull-right red-text appManage-status pad-bottom">

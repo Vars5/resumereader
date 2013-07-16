@@ -1,7 +1,6 @@
 @import "bootstrap";
 
 
-
 /* ========= SECTION: CONTENTS =========*/
 /*
    1. STYLE VARIABLES
@@ -27,10 +26,10 @@ $light-text-grey:#9C9C9C;
 
 /* greens */
 $base-green:  #39b54a;
-$light-green: #F2F2F2;
 $top-green:   #54bb62;
 $dark-green: #46724C;
 $menu-green: #DEFCCA;
+$link-green: #468966;
 
 /* other*/
 $ft-color: #fff1e0;
@@ -61,7 +60,7 @@ body {
 	font-size:13px;
 	height:100%;
 	a{
-		color:#468966;
+		color:$link-green;
 	}
 }
 
