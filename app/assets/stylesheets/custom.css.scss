@@ -162,18 +162,10 @@ input[type='checkbox'] {
 /* ========= SECTION: LEFT-BOARD =========*/
 
 .logo {
-	border-bottom:1px dotted $dark-green;
-	height:59px;
-	width:101%;
-	img {
-		padding-top:10px;
-		padding-left:40px;		
-	}
+	padding-top:$standard-padding;
+	text-align:center;
 }
 
-.logo:hover {
-	background-color:$top-green;
-}
 
 
 .menu-area {
