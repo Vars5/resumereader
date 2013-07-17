@@ -23,12 +23,14 @@
 			<div class="container-fluid">
 				<div class="row-fluid">
 					<div class="span2">
-						<%= render 'layouts/left-board'%>
+						<div class="hidden-phone">
+							<%= render 'layouts/left-board'%>
+						</div>
 					</div>
 					<div class="span8">
 						<%= yield %>
 					</div>
-					<div class="span2">
+					<div class="span2 hidden-phone">
 
 					</div>	
 				</div>
