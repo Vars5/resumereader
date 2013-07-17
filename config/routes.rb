@@ -1,6 +1,14 @@
 Resumereader::Application.routes.draw do
 
 
+  get "groups/new"
+
+  get "groups/edit"
+
+  get "groups/show"
+
+  get "groups/index"
+
   #Root to public home page unless signed in
   
   #Save time annd just root to new registration page for now
@@ -53,6 +61,10 @@ Resumereader::Application.routes.draw do
   resources :industries
   
   resources :follows, only: [:create, :destroy]
+  
+  #social _feature_
+  resources :groups
+  resources :groupmembers, only: [:create, :destroy]
   
   mount Split::Dashboard, at: 'split'
   

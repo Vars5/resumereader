@@ -25,6 +25,11 @@ class User < ActiveRecord::Base
   has_many :follows
   has_many :companies, through: :follows
   
+  #social _feature_
+  has_many :groupmembers
+  has_many :groups, through: :groupmembers
+  
+  
   #validations
   validates :first_name, length: { maximum: 30 }
   validates :last_name, length: { maximum: 30 }
