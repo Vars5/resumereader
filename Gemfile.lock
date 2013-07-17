@@ -72,6 +72,10 @@ GEM
       warden (~> 1.2.1)
     devise-async (0.7.0)
       devise (>= 2.2)
+    devise_invitable (1.1.8)
+      actionmailer (~> 3.0)
+      devise (>= 2.1.2)
+      railties (~> 3.0)
     diff-lcs (1.2.3)
     dotenv (0.8.0)
     erubis (2.7.0)
@@ -268,6 +272,7 @@ DEPENDENCIES
   delayed_job_active_record
   devise
   devise-async
+  devise_invitable
   figaro
   foreman
   growl (= 1.0.3)
