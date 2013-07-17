@@ -1,15 +1,15 @@
-<%= form_for @group do |f| %>
+
+<%= simple_form_for @group do |f| %>
 	
-	<%# f.fields_for do |group| %>
+	<%= f.input :name, required: true, placeholder: "Your Group Name" %>
 	
-	<%= f.text_field :name, :placeholder => "Name" %>
-	<%# end %>
 	
 	<%= f.fields_for :groupmembers do |groupmembers| %>
 		<%= groupmembers.hidden_field :user_id, :value => current_user.id %>
 		<%= groupmembers.hidden_field :group_id, :value => params[:id] %>
 		<%= groupmembers.hidden_field :admin, :value => true %>
+		<%= groupmembers.hidden_field :owner, :value => true %>
 	<% end %>
-	<%= f.submit %>
+	<%= f.button :submit %>
 	
 <% end %>

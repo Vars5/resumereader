@@ -1,4 +1,8 @@
 class GroupsController < ApplicationController
+  
+  before_filter :authenticate_user!
+  load_and_authorize_resource
+  
   def new
     @group = Group.new
     @group.groupmembers.build
@@ -19,9 +23,11 @@ class GroupsController < ApplicationController
   
   def show
     @group = Group.find(params[:id])
+    @groupmembers = Groupmember.where("group_id = ?",params[:id])
   end
 
   def index
-    @groups = Groups.all
+    @groups = current_user.groups.all
+
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130717062842) do
+ActiveRecord::Schema.define(:version => 20130717075602) do
 
   create_table "app_lists", :force => true do |t|
     t.integer  "job_id"
@@ -146,6 +146,7 @@ ActiveRecord::Schema.define(:version => 20130717062842) do
     t.boolean  "admin",      :default => false
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.boolean  "owner",      :default => false
   end
 
   create_table "groups", :force => true do |t|

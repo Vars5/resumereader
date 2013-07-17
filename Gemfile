@@ -28,11 +28,18 @@ group :test do
 end
 
 gem 'jquery-rails'
+gem "heroku"
+
+#user registrations, invitations & authorizations
 gem "devise"
+gem "devise_invitable"
 gem "cancan"
+
+
+#styling
 gem "bootstrap-sass"
 gem "bootstrap-will_paginate"
-gem "heroku"
+gem 'simple_form'
 
 gem 'aws-sdk'
 gem 'paperclip'

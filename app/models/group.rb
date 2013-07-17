@@ -6,5 +6,7 @@ class Group < ActiveRecord::Base
   has_many :users, through: :groupmembers
   accepts_nested_attributes_for :groupmembers
 
+  #validations
+  validates :name, length: { maximum: 50 }
 
 end

@@ -1,2 +1,12 @@
+
+
 <h1>Groups#show</h1>
 <p>Find me in app/views/groups/show.html.erb</p>
+
+Users in this group:
+
+<% @groupmembers.each do |user| %>
+	<ul>
+		<li><%= User.find_by_id(user.user_id).first_name%> | <%=User.find_by_id(user.user_id).email %></li>
+	</ul>
+<% end %>
