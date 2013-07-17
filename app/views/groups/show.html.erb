@@ -10,3 +10,5 @@ Users in this group:
 		<li><%= User.find_by_id(user.user_id).first_name%> | <%=User.find_by_id(user.user_id).email %></li>
 	</ul>
 <% end %>
+
+<%= link_to "New User", new_user_invitation_path %>
