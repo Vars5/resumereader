@@ -11,4 +11,12 @@ Users in this group:
 	</ul>
 <% end %>
 
-<%= link_to "New User", new_user_invitation_path %>
+Invite Page
+
+form_for @post, as: :post, url: post_path(@post)
+
+
+<%= simple_form_for @invite, as: :invite, url: invite_path(@invite) do |f| %>
+	<%= f.input :email %>
+	<%= f.button :submit, "Invite person" %>
+<% end %>

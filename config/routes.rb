@@ -39,6 +39,9 @@ Resumereader::Application.routes.draw do
   #suggestions & bugs
   match '/suggestions', to: 'problems#new'
   
+  match '/invite', to: 'groups#invite'
+
+  
   #Resources
   #resources :schools, except: [:show] 
   resources :problems, only: [:create, :index, :new]

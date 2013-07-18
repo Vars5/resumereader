@@ -2,6 +2,7 @@ class GroupsController < ApplicationController
   
   before_filter :authenticate_user!
   load_and_authorize_resource
+  skip_authorize_resource :only => :new
   
   def new
     @group = Group.new
@@ -23,11 +24,26 @@ class GroupsController < ApplicationController
   
   def show
     @group = Group.find(params[:id])
-    @groupmembers = Groupmember.where("group_id = ?",params[:id])
+    @groupmembers = Groupmember.where("group_id = ?",params[:id])    
   end
 
   def index
     @groups = current_user.groups.all
-
   end
+
+
+  def invite
+=begin  
+    #Needs to be fixed
+    
+    email = User.find_by_email(@invite)
+    if email.blank?
+      link_to new_invitation_path(email)
+    else
+      redirect_to root_path
+    end
+=end
+  end
+
+    
 end
