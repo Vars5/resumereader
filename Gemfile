@@ -16,7 +16,7 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails'   
+  gem 'sass-rails', '~> 3.2'
   gem 'coffee-rails'
   gem 'uglifier'
 end
@@ -30,7 +30,7 @@ end
 gem 'jquery-rails'
 gem "devise"
 gem "cancan"
-gem "bootstrap-sass"
+gem 'bootstrap-sass', '~> 2.3.2.0'
 gem "bootstrap-will_paginate"
 gem "heroku"
 
