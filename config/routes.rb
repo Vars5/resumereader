@@ -68,6 +68,7 @@ Resumereader::Application.routes.draw do
   #social _feature_
   resources :groups
   resources :groupmembers, only: [:create, :destroy]
+  resources :comments, :only => [:create, :destroy]
   
   mount Split::Dashboard, at: 'split'
   

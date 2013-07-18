@@ -60,3 +60,6 @@ gem 'intercom-rails', '~> 0.2.21'
 #A/B spilt testing
 gem 'split', require: 'split/dashboard'
 
+#comments
+gem 'acts_as_commentable_with_threading'
+

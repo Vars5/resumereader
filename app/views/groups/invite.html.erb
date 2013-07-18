@@ -1,0 +1,23 @@
+
+
+<h1>Groups#show</h1>
+<p>Find me in app/views/groups/show.html.erb</p>
+
+Users in this group:
+
+<% @groupmembers.each do |user| %>
+	<ul>
+		<li><%= User.find_by_id(user.user_id).first_name%> | <%=User.find_by_id(user.user_id).email %></li>
+	</ul>
+<% end %>
+
+Invite Page
+
+form_for @post, as: :post, url: post_path(@post)
+
+
+<%= simple_form_for @invite, as: :invite, url: invite_path(@invite) do |f| %>
+	<%= f.input :email %>
+	<%= f.button :submit, "Invite person" %>
+<% end %>
+

@@ -1,5 +1,8 @@
 class Group < ActiveRecord::Base
-  attr_accessible :name, :private, :groupmembers_attributes
+  attr_accessible :name, :private, :groupmembers_attributes, :commentable, :body, :user_id
+
+  #comments
+  acts_as_commentable
 
   #social _feature_
   has_many :groupmembers

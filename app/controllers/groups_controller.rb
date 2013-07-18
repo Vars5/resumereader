@@ -24,7 +24,9 @@ class GroupsController < ApplicationController
   
   def show
     @group = Group.find(params[:id])
-    @groupmembers = Groupmember.where("group_id = ?",params[:id])    
+    #@groupmembers = Groupmember.where("group_id = ?",params[:id])    
+    @comments = @group.comment_threads.order('created_at desc')
+    @new_comment = Comment.build_from(@group, current_user, "")
   end
 
   def index
