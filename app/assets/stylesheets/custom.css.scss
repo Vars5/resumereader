@@ -423,3 +423,9 @@ input[type='checkbox'] {
 .badge{
 	margin-right:5px;
 }
+
+@media (min-width: 1200px) {
+  .span12, .container {
+    width: 1170px;
+  }
+}
