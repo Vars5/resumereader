@@ -428,3 +428,16 @@ input[type='checkbox'] {
     width: 1170px;
   }
 }
+
+@media (max-width: 978px) {
+
+
+    body {
+      padding:0;
+    }
+	
+	.container{
+		padding:10px;
+	}
+
+}
