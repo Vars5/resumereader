@@ -24,9 +24,10 @@ class GroupsController < ApplicationController
   
   def show
     @group = Group.find(params[:id])
-    #@groupmembers = Groupmember.where("group_id = ?",params[:id])    
-    @comments = @group.comment_threads.order('created_at desc')
+    @groupmembers = Groupmember.where("group_id = ?",params[:id])    
+    @comments = @group.comment_threads.order('created_at asc')
     @new_comment = Comment.build_from(@group, current_user, "")
+
   end
 
   def index
@@ -35,16 +36,7 @@ class GroupsController < ApplicationController
 
 
   def invite
-=begin  
-    #Needs to be fixed
-    
-    email = User.find_by_email(@invite)
-    if email.blank?
-      link_to new_invitation_path(email)
-    else
-      redirect_to root_path
-    end
-=end
+      
   end
 
     

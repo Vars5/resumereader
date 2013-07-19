@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
 
   before_filter :authenticate_user!
+  
 
   def create
     @comment_hash = params[:comment]
@@ -22,7 +23,5 @@ class CommentsController < ApplicationController
         render js: "alert('error deleting comment)";
       end
   end 
-  
-  
   
 end

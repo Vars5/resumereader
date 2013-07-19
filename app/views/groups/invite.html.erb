@@ -16,7 +16,7 @@ Invite Page
 form_for @post, as: :post, url: post_path(@post)
 
 
-<%= simple_form_for @invite, as: :invite, url: invite_path(@invite) do |f| %>
+<%= simple_form_for invite, as: :invite, url: invite_path(invite) do |f| %>
 	<%= f.input :email %>
 	<%= f.button :submit, "Invite person" %>
 <% end %>

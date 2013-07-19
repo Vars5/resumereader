@@ -1,8 +1,9 @@
 / _comment.html.haml
 
 %div.comment{ :id => "comment-#{comment.id}"}
-	%hr
-	=link_to "x", comment_path(comment), method: :delete, remote: true, confirm: "Are you sure?", disable_with: "x", class: 'close'
+	- if can? :destroy, Group
+		%hr
+		=link_to "x", comment_path(comment), method: :delete, remote: true, confirm: "Are you sure?", disable_with: "x", class: 'close'
 	%h4
 		=comment.user.first_name
 		%small= comment.updated_at

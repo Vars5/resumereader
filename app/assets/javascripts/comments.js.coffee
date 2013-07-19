@@ -15,7 +15,7 @@ jQuery ->
         
         .removeAttr('disabled', 'disabled')
         .val('');
-      $(xhr.responseText).insertAfter($(this)).show('slow')
+      $(xhr.responseText).insertBefore($(this)).show('slow')
 				
 	# Delete a comment
 	 $(document)
