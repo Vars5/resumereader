@@ -9,8 +9,6 @@
 
 <div class="row-fluid">
 	<div class="span12 jobIndex">
-		
-		
 		<div class="span4 jobIndex">	
 		<%= form_tag jobs_path, :method => 'get' do %>
 		  <p>
@@ -18,9 +16,6 @@
 			<%= select_tag :category_id, options_from_collection_for_select(Category.all, "id", "discipline"), 
 				include_blank: true, :onchange => "this.form.submit()" %> <% end %>
 				<h5> <%= link_to "Advanced Search", new_search_path %> </h4>
-		  
-		</br>
-		</br>	
 		
 		</div>
 		
@@ -34,7 +29,7 @@
 					   <% end %>
 					</div>
 					<div class="span3">
-						<div class="pull-right">
+						<div>
 							<% if user_signed_in? %>
 								<% if current_user.is_following_applist?(j) %>
 									<span class="label label-list">Already added</span>
