@@ -10,6 +10,9 @@ class CommentsController < ApplicationController
     @comment = Comment.build_from(@obj, current_user.id, @comment_hash[:body])
     if @comment.save
       render partial: 'comments/comment', locals: {comment: @comment}, layout: false, status: :created
+      
+      # Send email to all users in Groupmember
+      
     else
       render js: "alert('error saving comment');"
     end

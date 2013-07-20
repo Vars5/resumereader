@@ -4,14 +4,18 @@ class UserMailer < ActionMailer::Base
   def signup_confirmation(user)
     @user = user
     
-    mail to: user.email, subject: "Signup Confirmation- ResumeQuery", from: 'notifications@resquery.com'
+    mail to: user.email, subject: "Signup Confirmation- ResQuery", from: 'notifications@resquery.com'
   end
 
   def new_group(user)
     @user = user
-    mail to: user.email
+    
+    mail to: user.email, subject:"You have been invited to a group - ResQuery.", from: 'notifications@resquery.com'
   end
 
+  def new_comment(users)
+  
+  end
 
 end
 
