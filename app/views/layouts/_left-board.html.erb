@@ -39,11 +39,11 @@
 		<% else %>
 			<ul class="unstyled">	
 			<% current_user.groups.each do |group| %>
-				<li>
-					<%= link_to group do %>
+				<%= link_to group do %>
+					<li>
 						<%= group.name  %><br />
-					<% end %>
-				</li>
+					</li>					
+				<% end %>
 			<% end %>
 			<li><%= link_to "Make your own group!", groups_new_path%></li>
 			</ul>
