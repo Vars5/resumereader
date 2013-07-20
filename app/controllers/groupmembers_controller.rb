@@ -35,18 +35,16 @@ class GroupmembersController < ApplicationController
     
    
   end
-=begin
+
   def destroy
-     @invite_hash = params[:invite]
-      :email = User.find(@invite_hash[:email].constantize)
-      #email = User.find_by_email(@email)
-      if :email.blank?
-        link_to new_invitation_path(:email)
-      else
-        redirect_to root_path
-      end
+    
+    @invite = Groupmember.find_by_id(params[:id]).destroy
+    if @invite.destroy
+      render 'new'
+    end
+    
   end
-=end
+
 
 
 

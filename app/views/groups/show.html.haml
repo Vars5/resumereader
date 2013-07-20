@@ -1,14 +1,5 @@
 / show.html.haml
 
-.group
-	%h1= @group.name
-	%h3= "Group Members"
-	- @groupmembers.each do |user|
-		%h5= User.find_by_id(user.user_id).first_name   
-		
-	%h5=params[:id]
-
-
 .row-fluid
 	.span9
 		.group
@@ -31,4 +22,6 @@
 						.span3
 							.circle-user-list
 							.center-alignment
-								= User.find_by_id(user.user_id).first_name 
+								= user.first_name
+/								= form_for(user.groupmembers.find_by_user_id(user), method: :delete) do |f|
+/									= f.button :submit
