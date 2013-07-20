@@ -64,9 +64,6 @@ class User < ActiveRecord::Base
     Groupmember.where("user_id = ?", self.id)
   end
   
-  def is_group_admin?
-    
-  end
   
   def has_no_groups?
     self.groups_list.count == 0
