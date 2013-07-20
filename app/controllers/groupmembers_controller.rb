@@ -26,7 +26,7 @@ class GroupmembersController < ApplicationController
     else
       @invite = @user.groupmembers.build(params[:groupmember])
       if @invite.save
-        UserMailer.new_group(@user).deliver
+        UserMailer.new_group(@user, current_user,@group).deliver
         # Alert 
         # redirect_to 
         # respond_to do |format|
