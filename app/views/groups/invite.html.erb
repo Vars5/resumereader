@@ -7,7 +7,7 @@ Users in this group:
 
 <% @groupmembers.each do |user| %>
 	<ul>
-		<li><%= User.find_by_id(user.user_id).first_name%> | <%=User.find_by_id(user.user_id).email %></li>
+		<li class="pad-bottom"><%= User.find_by_id(user.user_id).first_name%> | <%=User.find_by_id(user.user_id).email %></li>
 	</ul>
 <% end %>
 

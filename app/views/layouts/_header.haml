@@ -2,6 +2,7 @@
 	.container-fluid
 		.row-fluid
 			.span12		
+				= link_to "New to ResQuery - Groups for discussions and feedback!", groups_path, :class=>"yellow-text"
 				.pull-right
 					- if current_user.role == "admin" 
 						=link_to 'Admin', admin_path

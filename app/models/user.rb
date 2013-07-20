@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me,
                   :first_name, :last_name, :mobile_number, :role,
-                  :schools_attributes, :employments_attributes, :extracurriculars_attributes, :invited_by_id
+                  :schools_attributes, :employments_attributes, :extracurriculars_attributes,
+                  :avatar
   # attr_accessible :title, :body
   
   has_one  :setting, dependent: :destroy
@@ -60,9 +61,23 @@ class User < ActiveRecord::Base
     self.follows.find_by_company_id(company.id)
   end
   
-#  def unfollow!(company)
-#    self.follows.find_by_company_id(company.id).destroy
-#  end
-  
+  has_attached_file :avatar,
+      :storage => :s3,
+      :bucket => 'resquery-avatars',
+#      :url  => ":s3_sydney_url",
+      :url => ":s3_domain_url",
+      :path => "/:class/avatars/:id_:basename.:style.:extension",
+      :s3_credentials => {
+        :access_key_id => 'AWS_ACCESS_KEY_ID',
+        :secret_access_key => 'AWS_SECRET_ACCESS_KEY'
+      }
 
+  def groups_list
+    Groupmember.where("user_id = ?", self.id)
+  end
+  
+  
+  def has_no_groups?
+    self.groups_list.count == 0
+  end
 end

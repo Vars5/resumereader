@@ -157,6 +157,9 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (>= 0.0.2)
       mime-types
+    paperclip-aws (1.6.7)
+      aws-sdk (>= 1.2.0)
+      paperclip (>= 2.5.0)
     pg (0.15.1)
     polyglot (0.3.3)
     pry (0.9.12)
@@ -291,6 +294,7 @@ DEPENDENCIES
   letter_opener
   newrelic_rpm
   paperclip
+  paperclip-aws
   pg
   rails
   rb-fsevent (= 0.9.1)

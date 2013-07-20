@@ -12,12 +12,36 @@
 		</div>
 	</div>
 
+
+
+		<div class="group-feed grey-text hidden-phone">
+			<div class="row-fluid">
+				<div class="span5">
+					Company & Job
+				</div>
+				<div class="span3 hidden-phone">
+					<div class="pull-right">
+						Status
+					</div>
+				</div>
+				<div class="span1">
+					Link
+				</div>
+				<div class="span3">
+					<div class="pull-right">
+						Closing Date
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<% @appList.each do |apps| %>
 			<% job = apps.find_job %>
 			<% company = job.find_company %>
 
 			<!-- This is shown initially -->
 			<div class="appManage" id="app-line-<%=apps.id%>">
+
 				<div class="row-fluid">	
 					<div class="span5">
 						<%= link_to apps do %>
@@ -29,7 +53,7 @@
 					<div class="span3 hidden-phone">
 						<%= link_to apps do %> 
 							<div class="pull-right red-text appManage-status ">
-								<%= apps.status %> 
+								<b><%= apps.status %></b>
 							</div>	
 						<% end %>
 					</div>
@@ -39,10 +63,16 @@
 					</div>
 
 					<div class="span3">
-						<span class="pull-right">Closes <%= job.show_due_date %></span>
+						<span class="pull-right"> <%= job.show_due_date %></span>
 					</div>
 				</div>
 			</div>
 		<% end %>
 	<% end %>
+	
+	<% if @appList.count < 5 %>
+		KEEP ADDING JOBS
+	<% end %>
+	
 
+		
