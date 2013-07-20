@@ -1,7 +1,11 @@
 class Document < ActiveRecord::Base
   attr_accessible :description, :group_id, :name, :user_id, :document
   
+  #associations
   belongs_to :groups
+  
+  #comments
+  acts_as_commentable
   
   has_attached_file :document,
       :storage => :s3,
