@@ -27,9 +27,8 @@ class GroupmembersController < ApplicationController
       @invite = @user.groupmembers.build(params[:groupmember])
       if @invite.save
         UserMailer.new_group(@user, current_user,@group).deliver
-        # Alert 
-        # redirect_to 
-        # respond_to do |format|
+        redirect_to @group
+#        "alert('@user.email has been added to the Group');"
     end 
   end
     
