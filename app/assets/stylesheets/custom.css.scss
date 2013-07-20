@@ -152,6 +152,10 @@ input[type='checkbox'] {
 	border-right:$standard-line;
 }
 
+.left-border{
+	border-left:$standard-line;
+}
+
 .margin-top{
 	margin-top:60px;
 }
@@ -190,12 +194,22 @@ input[type='checkbox'] {
 	height:140px;
 }
 
+.groups-list{
+
+	li{
+		padding:10px 0px 10px 10px;	
+	}
+	li:hover{
+		background-color:$menu-green;
+		color:red;
+	}
+}
+
 
 .left-dashboard {
 	
 	min-height:100%;
 	a:hover{
-		color:white;
 		text-decoration:none;
 	}	
 }
@@ -440,4 +454,9 @@ input[type='checkbox'] {
 		padding:10px;
 	}
 
+}
+
+.group-updates{
+	padding-left:$standard-padding;
+	color:$dark-grey;
 }

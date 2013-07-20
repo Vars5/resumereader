@@ -34,31 +34,6 @@ ActiveRecord::Schema.define(:version => 20130718074525) do
     t.text     "tagline"
   end
 
-  create_table "blog_comments", :force => true do |t|
-    t.string   "name",       :null => false
-    t.string   "email",      :null => false
-    t.string   "website"
-    t.text     "body",       :null => false
-    t.integer  "post_id",    :null => false
-    t.string   "state"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "blog_comments", ["post_id"], :name => "index_blog_comments_on_post_id"
-
-  create_table "blog_posts", :force => true do |t|
-    t.string   "title",                         :null => false
-    t.text     "body",                          :null => false
-    t.integer  "blogger_id"
-    t.string   "blogger_type"
-    t.integer  "comments_count", :default => 0, :null => false
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-  end
-
-  add_index "blog_posts", ["blogger_type", "blogger_id"], :name => "index_blog_posts_on_blogger_type_and_blogger_id"
-
   create_table "boards", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -195,10 +170,18 @@ ActiveRecord::Schema.define(:version => 20130718074525) do
     t.boolean  "open",        :default => true
   end
 
+  create_table "memberships", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.integer  "owner_id"
+    t.string   "type"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "notes", :force => true do |t|
     t.text     "info"
     t.string   "title"
-    t.string   "type"
     t.integer  "user_id"
     t.integer  "app_list_id"
     t.datetime "created_at",  :null => false
@@ -266,6 +249,8 @@ ActiveRecord::Schema.define(:version => 20130718074525) do
   end
 
   create_table "searches", :force => true do |t|
+    t.string   "role"
+    t.string   "discipline"
     t.string   "location"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -281,25 +266,8 @@ ActiveRecord::Schema.define(:version => 20130718074525) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "taggings", :force => true do |t|
-    t.integer  "tag_id"
-    t.integer  "taggable_id"
-    t.string   "taggable_type"
-    t.integer  "tagger_id"
-    t.string   "tagger_type"
-    t.string   "context"
-    t.datetime "created_at"
-  end
-
-  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
-  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
-
-  create_table "tags", :force => true do |t|
-    t.string "name"
-  end
-
   create_table "users", :force => true do |t|
-    t.string   "email",                                :default => "", :null => false
+    t.string   "email",                                :default => "",    :null => false
     t.string   "encrypted_password",                   :default => ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -309,12 +277,14 @@ ActiveRecord::Schema.define(:version => 20130718074525) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                                           :null => false
-    t.datetime "updated_at",                                           :null => false
+    t.datetime "created_at",                                              :null => false
+    t.datetime "updated_at",                                              :null => false
     t.string   "first_name"
     t.string   "last_name"
     t.string   "mobile_number"
     t.string   "role"
+    t.boolean  "completed_start",                      :default => false
+    t.integer  "startpage",                            :default => 0
     t.string   "invitation_token",       :limit => 60
     t.datetime "invitation_sent_at"
     t.datetime "invitation_accepted_at"

@@ -60,6 +60,15 @@ class User < ActiveRecord::Base
     self.follows.find_by_company_id(company.id)
   end
   
+  def groups_list
+    Groupmember.where("user_id = ?", self.id)
+  end
+  
+  
+  def has_no_groups?
+    self.groups_list.count == 0
+  end
+  
 #  def unfollow!(company)
 #    self.follows.find_by_company_id(company.id).destroy
 #  end
