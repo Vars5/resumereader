@@ -1,0 +1,24 @@
+.pad-top
+	%h3 Your Groups
+	%hr	
+	.row-fluid
+		.span7
+			- @groups.each do |group|
+				%ul{:class => "unstyled"}
+					%li
+						.pad-bottom
+						.row-fluid
+							.pad-bottom
+								.span2
+									.circle-index-page
+								.span8
+									%h5= link_to "#{group.name}", group 
+									This is a description of the group that would be useful to people reading it
+									Here is also a list of the people in the group
+									%br
+									=link_to "Add members"
+						
+		.span5
+			.left-border
+				.group-updates
+					%h5 People across your groups

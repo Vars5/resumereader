@@ -1,4 +1,5 @@
 / show.html.haml
+
 .group
 	%h1= @group.name
 	%h3= "Group Members"
@@ -7,15 +8,27 @@
 		
 	%h5=params[:id]
 
-.groupmember_invite-form
-	= simple_form_for :invite, as: :groupmembers, url: groupmembers_path(:invite) do |f|
-		= f.input :email
-		= f.input :group_id, as: :hidden, :input_html => { :value => params[:id] }
-		= f.button :submit, "Invite Person"
 
-.comments
-	%h2 Comments
-	= render partial: 'comments/comment', collection: @comments, as: :comment
-	= render partial: 'comments/form', locals: { comment: @new_comment }
-    
-	
+.row-fluid
+	.span9
+		.group
+			.pad-top
+				%h3= @group.name
+				= if can? :manage, Group
+					.groupmember_invite-form
+						= simple_form_for :invite, as: :groupmembers, url: groupmembers_path(:invite) do |f|
+							= f.input :email
+							= f.input :group_id, as: :hidden, :input_html => { :value => params[:id] }
+							= f.button :submit, "Invite Person"	
+				.comments
+				= render partial: 'comments/comment', collection: @comments, as: :comment
+				= render partial: 'comments/form', locals: { comment: @new_comment }
+	.hidden-phone
+		.span3
+			.pad-all
+				.row-fluid
+					- @groupmembers.each do |user|
+						.span3
+							.circle-user-list
+							.center-alignment
+								= User.find_by_id(user.user_id).first_name 

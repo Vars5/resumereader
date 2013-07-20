@@ -11,7 +11,9 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(params[:group])
-    @group.save
+    if @group.save 
+      redirect_to @group
+    end
   end
 
   def edit

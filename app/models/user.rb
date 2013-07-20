@@ -70,15 +70,14 @@ class User < ActiveRecord::Base
       :s3_credentials => {
         :access_key_id => 'AWS_ACCESS_KEY_ID',
         :secret_access_key => 'AWS_SECRET_ACCESS_KEY'
-
-        #:endpoint => 's3-resquery.avatars-ap-southeast-2.amazonaws.com'  
       }
+
+  def groups_list
+    Groupmember.where("user_id = ?", self.id)
+  end
   
-#  def unfollow!(company)
-#    self.follows.find_by_company_id(company.id).destroy
-#  end
-
-
   
-
+  def has_no_groups?
+    self.groups_list.count == 0
+  end
 end
