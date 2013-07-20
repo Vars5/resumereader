@@ -1,5 +1,5 @@
 class Group < ActiveRecord::Base
-  attr_accessible :name, :private, :groupmembers_attributes, :commentable, :body, :user_id
+  attr_accessible :name, :private, :groupmembers_attributes, :commentable, :body, :user_id, :description
 
   #comments
   acts_as_commentable
