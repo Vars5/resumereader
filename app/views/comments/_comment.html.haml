@@ -1,10 +1,15 @@
 / _comment.html.haml
 
 %div.comment{ :id => "comment-#{comment.id}"}
-	- if can? :destroy, Group
-		%hr
-		=link_to "x", comment_path(comment), method: :delete, remote: true, confirm: "Are you sure?", disable_with: "x", class: 'close'
-	%h4
-		=comment.user.first_name
-		%small= comment.updated_at
-	%p= comment.body
+
+	.row-fluid
+		.span1
+			.circle-index-comment
+		.span11
+			.comment-writing
+				%h5
+					=comment.user.first_name
+					%small= comment.updated_at
+					- if can? :destroy, Group
+						=link_to "x", comment_path(comment), method: :delete, remote: true, confirm: "Are you sure?", disable_with: "x", class: 'close'
+				%p= comment.body

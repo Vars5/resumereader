@@ -24,14 +24,14 @@
 				<li><i class="icon-certificate  "></i> &nbsp Companies </li>
 			<% end %>
 			<%= link_to groups_path do %>
-				<li><i class="icon-certificate  "></i> &nbsp My Groups </li>
+				<li><i class="icon-comment"></i> &nbsp My Groups </li>
 			<% end %>
 
 			
 		</ul>
 	</div>
 	
-	<div class="groups-list">
+	<div class="groups-list hidden-phone">
 		<hr>
 		
 		<% if current_user.has_no_groups? %>
@@ -41,7 +41,15 @@
 			<% current_user.groups.each do |group| %>
 				<%= link_to group do %>
 					<li>
-						<%= group.name  %><br />
+						<div class="row-fluid">
+							<div class="span2">
+								<div class="circle-left-board">
+							 
+								</div>
+							</div>
+							<div class="span8">
+								<%= group.name  %><br />
+							</div>
 					</li>					
 				<% end %>
 			<% end %>

@@ -129,8 +129,10 @@ input[type='checkbox'] {
 }
 
 .red-text{
-	color:$dark-red;
-	font-weight:bold;
+	color:$dark-red !important;
+	a {
+		color:$dark-red;
+	}
 }
 
 .top-bottom-borders{
@@ -239,6 +241,13 @@ input[type='checkbox'] {
 .appManage-status{
 	text-align:right;
 }
+
+
+
+.group-feed{
+	padding:9px 10px 0px 9px;
+}
+
 
 /* ========= SECTION: EDITER ON APPS_LIST =========*/
 
@@ -444,8 +453,6 @@ input[type='checkbox'] {
 }
 
 @media (max-width: 978px) {
-
-
     body {
       padding:0;
     }
@@ -459,4 +466,50 @@ input[type='checkbox'] {
 .group-updates{
 	padding-left:$standard-padding;
 	color:$dark-grey;
+}
+
+.circle-left-board{
+	border-radius:10px;
+	background-color:$dark-red;
+	width:20px;
+	height:20px;
+}
+
+.circle-index-page{
+	margin-top:10px;
+	border-radius:40px;
+	background-color:$dark-red;
+	width:80px;
+	height:80px;
+}
+
+.circle-index-comment{
+	margin-top:10px;
+	border-radius:25px;
+	background-color:$dark-red;
+	width:50px;
+	height:50px;
+}
+
+.circle-user-list{
+	margin-top:10px;
+	border-radius:15px;
+	background-color:$dark-red;
+	width:30px;
+	height:30px;
+}
+
+.comment-writing {
+	padding-left:10px;
+}
+
+.grey-text{
+	color:$dark-grey;
+}
+
+.yellow-text{
+	color:yellow;
+	a{
+		color:orange;
+	}
 }
