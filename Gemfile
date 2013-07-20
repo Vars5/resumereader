@@ -41,8 +41,12 @@ gem "bootstrap-sass"
 gem "bootstrap-will_paginate"
 gem 'simple_form'
 
+#upload
 gem 'aws-sdk'
 gem 'paperclip'
+gem 'paperclip-aws'
+
+
 gem 'devise-async'
 gem "haml"
 
