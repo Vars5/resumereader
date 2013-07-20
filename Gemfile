@@ -45,6 +45,7 @@ gem 'simple_form'
 gem 'aws-sdk'
 gem 'paperclip'
 gem 'paperclip-aws'
+gem 'rmagick', '~> 2.13.2'
 
 
 gem 'devise-async'
