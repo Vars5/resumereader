@@ -13,7 +13,7 @@ class UserMailer < ActionMailer::Base
     
     mail to: user.email, 
     subject:"#{current_user.first_name} invited you to #{group.name}  - ResQuery",
-     from: current_user.first_name
+    from: current_user.first_name
   end
 
   def new_comment(users)

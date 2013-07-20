@@ -14,7 +14,7 @@ class GroupmembersController < ApplicationController
     @group = Group.find(@invite_hash[:group_id])
     
     if @user.blank?
-      User.invite!(:email => @invite_hash[:email], :invited_by_id => current_user)
+      User.invite!({:email => @invite_hash[:email]}, current_user )
       
       @new_user = User.last #this is not good logic
       @invite = @new_user.groupmembers.build(:group_id => @invite_hash[:group_id])
@@ -28,7 +28,7 @@ class GroupmembersController < ApplicationController
       if @invite.save
         UserMailer.new_group(@user, current_user,@group).deliver
         redirect_to @group
-#        "alert('@user.email has been added to the Group');"
+        flash[:success] = "TEST" ##{@user.first_name} has been added #{@group.name}!"
     end 
   end
     

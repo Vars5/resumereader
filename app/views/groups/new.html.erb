@@ -3,6 +3,8 @@
 	
 	<%= f.input :name, required: true, placeholder: "Your Group Name" %>
 	
+	<%= f.input :description, placeholder: "Description" %>
+	
 	
 	<%= f.fields_for :groupmembers do |groupmembers| %>
 		<%= groupmembers.hidden_field :user_id, :value => current_user.id %>
