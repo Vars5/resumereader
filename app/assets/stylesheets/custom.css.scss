@@ -1,6 +1,5 @@
 @import "bootstrap";
-
-
+@import "bootstrap-responsive";
 /* ========= SECTION: CONTENTS =========*/
 /*
    1. STYLE VARIABLES
@@ -81,6 +80,13 @@ input {
 input[type='checkbox'] {
 	margin:0px !important;
 
+}
+
+
+.signed-in{
+	.container{
+
+	}
 }
 
 .hidden{
@@ -172,7 +178,7 @@ input[type='checkbox'] {
 	padding-top:$standard-padding;
 	li {
 		padding:10px 0px 10px 10px;
-		width:100%;		
+		
 	}	
 	li:hover{
 		background-color:$base-green;
@@ -186,7 +192,7 @@ input[type='checkbox'] {
 
 
 .left-dashboard {
-	min-width:140px;
+	
 	min-height:100%;
 	a:hover{
 		color:white;
@@ -415,4 +421,23 @@ input[type='checkbox'] {
 
 .badge{
 	margin-right:5px;
+}
+
+@media (min-width: 1200px) {
+  .span12, .container {
+    width: 1170px;
+  }
+}
+
+@media (max-width: 978px) {
+
+
+    body {
+      padding:0;
+    }
+	
+	.container{
+		padding:10px;
+	}
+
 }

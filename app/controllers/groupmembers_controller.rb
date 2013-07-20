@@ -14,7 +14,7 @@ class GroupmembersController < ApplicationController
     @group = Group.find(@invite_hash[:group_id])
     
     if @user.blank?
-      User.invite!(:email => @invite_hash[:email], :invited_by_id => current_user)
+      User.invite!(:email => @invite_hash[:email], :invited_by_id => current_user.id)
       
       @new_user = User.last #this is not good logic
       @invite = @new_user.groupmembers.build(:group_id => @invite_hash[:group_id])
