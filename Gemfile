@@ -28,11 +28,20 @@ group :test do
 end
 
 gem 'jquery-rails'
+gem "heroku"
+
+#user registrations, invitations & authorizations
 gem "devise"
+gem "devise_invitable"
 gem "cancan"
+
+
+
+
+#styling
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem "bootstrap-will_paginate"
-gem "heroku"
+gem 'simple_form'
 
 gem 'aws-sdk'
 gem 'paperclip'
@@ -52,4 +61,7 @@ gem 'intercom-rails', '~> 0.2.21'
 
 #A/B spilt testing
 gem 'split', require: 'split/dashboard'
+
+#comments
+gem 'acts_as_commentable_with_threading'
 

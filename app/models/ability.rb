@@ -8,6 +8,14 @@ class Ability
       can :manage, AppList, :user_id => current_user.id
       can :create, School
       cannot :index, Problem
+      
+      #social feature
+      can :manage, Group, :groupmembers => { :user_id => current_user.id, :admin => true, :owner => true }
+      can :read, Group, :groupmembers => { :user_id => current_user.id }
+      #can [:create, :destroy], Comment, :commentable_type => "Group", :groupmembers => { :user_id => current_user.id, :admin => true }
+      #can [:create], Comment, :groupmembers => { :user_id => current_user.id }
+      #can :manage, Comment, :groupmembers => { :user_id => current_user.id, :admin => true }
+      
     end 
   end
   
