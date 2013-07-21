@@ -11,7 +11,6 @@ class Group < ActiveRecord::Base
 
   has_many :documents
   
-
   #validations
   validates :name, length: { maximum: 50 }
 

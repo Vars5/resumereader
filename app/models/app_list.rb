@@ -10,6 +10,9 @@ class AppList < ActiveRecord::Base
   validates :job_id, presence: :true
   validates :user_id, presence: :true
   
+  #Comments
+  acts_as_commentable
+  
   def find_job
 #    Job.order("date(due_date) DESC").find(self.job_id)
     Job.find(self.job_id) #, order: "date(due_date) DESC")
