@@ -11,6 +11,16 @@
 	.hidden-phone
 		.span3
 			.pad-all
+			
+				.row-fluid
+					.span12
+						- if @group.documents.count > 0
+							%h5 Files	
+						- @group.documents.each do |document|
+							= document.name
+				
+			
+			
 				.row-fluid
 				- if can? :manage, Group
 					.info

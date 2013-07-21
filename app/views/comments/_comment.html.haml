@@ -6,7 +6,7 @@
 		.span1
 			.circle-index-comment
 				- if comment.user.avatar_file_name != nil
-					= image_tag comment.user.avatar.url(:comment)
+					= image_tag comment.user.avatar.url(:comment), :class => "circle-index-comment"
 		.span11
 			.comment-writing
 				%h5
