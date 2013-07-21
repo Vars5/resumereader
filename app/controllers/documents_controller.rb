@@ -2,6 +2,7 @@ class DocumentsController < ApplicationController
   
   before_filter :authenticate_user!
   
+  
   def new
     @group = Group.find(params[:group_id])
     @document = Document.new

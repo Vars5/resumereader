@@ -13,6 +13,8 @@ class Ability
       can :manage, Group, :groupmembers => { :user_id => current_user.id, :admin => true, :owner => true }
       can :read, Group, :groupmembers => { :user_id => current_user.id }
       
+#     can :manage, Groupmember, :user_id => current_user.id, :admin => true, :owner => true, :groups => {:group_id => } 
+      
 #      can :manage, Document, :user_id => current_user.id
 #      can :read, Document, :groupmembers => { :groupmembers => }
       
