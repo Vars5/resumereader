@@ -1,7 +1,8 @@
 class UserObserver < ActiveRecord::Observer 
-  if Rails.env.production?
+  
     def after_create(user)
-      UserMailer.signup_confirmation(user).deliver
+      if user.invited_by_id.nil?
+        UserMailer.signup_confirmation(user).deliver
+      end
     end  
-  end
 end

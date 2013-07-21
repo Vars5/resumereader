@@ -1,0 +1,12 @@
+/new.haml - documents
+
+.row-fluid
+	.span9
+		.group
+			.new_document
+				= simple_form_for [@group, @document] do |f|
+					= f.input :name
+					= f.input :description
+					= f.file_field :document
+					= f.input :user_id, as: :hidden, :input_html => { :value => current_user.id }
+					= f.button :submit
