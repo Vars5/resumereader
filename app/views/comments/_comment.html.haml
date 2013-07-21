@@ -14,5 +14,5 @@
 					%small= comment.updated_at.localtime.strftime("%d %b %I:%M %P")
 					- if (comment.user.id == current_user.id || current_user.role == "admin")
 						=link_to "x", comment_path(comment), method: :delete, remote: true, confirm: "Are you sure?", disable_with: "x", class: 'close'
-				%p= comment.body
+				%p= simple_format(comment.body)
 				
