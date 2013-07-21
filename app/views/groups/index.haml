@@ -13,10 +13,10 @@
 									.circle-index-page
 								.span8
 									%h5= link_to "#{group.name}", group 
-									This is a description of the group that would be useful to people reading it
-									Here is also a list of the people in the group
+									= simple_format(truncate((group.description),length: 160))
 									%br
-									=link_to "Add members"
+									- if can? :manage, @group
+										=link_to "Add members"
 			- if @groups.count == 0
 				.pad-bottom
 				.row-fluid

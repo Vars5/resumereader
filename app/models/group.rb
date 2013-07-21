@@ -13,6 +13,7 @@ class Group < ActiveRecord::Base
   
   #validations
   validates :name, length: { maximum: 50 }
+  validates :description, presence: true
 
   has_attached_file :grouplogos,
       :storage => :s3,
