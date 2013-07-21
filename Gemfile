@@ -35,16 +35,19 @@ gem "devise"
 gem "devise_invitable"
 gem "cancan"
 
-
-
-
 #styling
 gem 'bootstrap-sass', '~> 2.3.2.0'
+
 gem "bootstrap-will_paginate"
 gem 'simple_form'
 
+#upload
 gem 'aws-sdk'
 gem 'paperclip'
+gem 'paperclip-aws'
+gem 'rmagick', '~> 2.13.2'
+
+
 gem 'devise-async'
 gem "haml"
 

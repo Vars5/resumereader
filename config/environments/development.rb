@@ -19,7 +19,7 @@ Resumereader::Application.configure do
   config.action_mailer.raise_delivery_errors = true
   
   # paperclip attachment - AWS
-  
+
   Paperclip.options[:command_path] = "/usr/local/bin/"
   
   config.paperclip_defaults = {

@@ -1,6 +1,14 @@
 Resumereader::Application.routes.draw do
 
 
+  get "documents/new"
+
+  get "documents/show"
+
+  get "documents/edit"
+
+  get "documents/index"
+
   get "groups/new"
 
   get "groups/edit"
@@ -66,9 +74,15 @@ Resumereader::Application.routes.draw do
   resources :follows, only: [:create, :destroy]
   
   #social _feature_
-  resources :groups
+  resources :groups do 
+    resources :documents
+  end
+  
+  
   resources :groupmembers, only: [:create, :destroy]
   resources :comments, :only => [:create, :destroy]
+  
+  
   
   mount Split::Dashboard, at: 'split'
   

@@ -22,4 +22,6 @@
 						.span3
 							.circle-user-list
 							.center-alignment
-								= User.find_by_id(user.user_id).first_name 
+								= user.first_name
+/								= form_for(user.groupmembers.find_by_user_id(user), method: :delete) do |f|
+/										= f.button :submit
