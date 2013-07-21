@@ -11,7 +11,6 @@ class Group < ActiveRecord::Base
 
   has_many :documents
   
-
   #validations
   validates :name, length: { maximum: 50 }
 
@@ -19,7 +18,7 @@ class Group < ActiveRecord::Base
       :storage => :s3,
       :bucket => 'resquery-group-logos',
       :url => ":s3_domain_url",
-      :path => "/:class/avatars/:id_:basename.:style.:extension",
+      :path => "/:class/grouplogos/:id_:basename.:style.:extension",
       :s3_credentials => {
         :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
         :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']

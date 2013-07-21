@@ -59,7 +59,13 @@
 				<% end %>
 			
 				<div class="pad-top">
-					<%= form_for @appList.create_new_note, :as => :note, remote: true do |a|%>
+					
+					<%= render partial: 'comments/comment', collection: @comments, as: :comment %>
+					<%= render partial: 'comments/form', locals: { comment: @new_comment } %>
+					
+					
+					<% if false %>
+						<%= form_for @appList.create_new_note, :as => :note, remote: true do |a|%>
 						<%= a.text_area :info, :class=>"note-area", 
 							:placeholder => "Add a useful note about this particular app" %>
 						<%= a.hidden_field :app_list_id, :value => @appList.id %>
@@ -67,6 +73,7 @@
 						<%= a.hidden_field :kind, :value => "comment"%>
 						<%= a.hidden_field :id, :value => @appList.id %>
 						<%= a.submit :class => "btn btn-success" %> 
+						<% end %>
 					<% end %>
 			</div>
 		</div>				

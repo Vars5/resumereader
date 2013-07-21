@@ -4,7 +4,7 @@
 	.span9
 		.group
 			.pad-top
-				%h3= @group.name				
+				%h3= @group.name
 				.comments
 				= render partial: 'comments/comment', collection: @comments, as: :comment
 				= render partial: 'comments/form', locals: { comment: @new_comment }
@@ -22,19 +22,22 @@
 			
 			
 				.row-fluid
-				- if can? :manage, Group
-					.info
+				- if can? :manage, @group
 					.info
 						.groupmember_invite-form
 							= simple_form_for :invite, as: :groupmembers, url: groupmembers_path(:invite) do |f|
 								= f.input :email
 								= f.input :group_id, as: :hidden, :input_html => { :value => params[:id] }
 								= f.button :submit, "Invite Person"
-					- @groupmembers.each do |user|
-						.span4
-							.circle-user-list
 
-							.center-alignment
-								= user.first_name
-/								= form_for(user.groupmembers.find_by_user_id(user), method: :delete) do |f|
-/										= f.button :submit
+				- @groupmembers.each do |user|
+					= user.first_name
+					|
+					= user.email
+					%br
+/					= form_for(user.groupmembers.find_by_user_id(user), method: :delete) do |f|
+/						= f.button :submit
+/					= simple_form_for(user.groupmembers.find_by_user_id(user)) do |f|
+/						= f.input :admin, as: :select, onlick
+
+									

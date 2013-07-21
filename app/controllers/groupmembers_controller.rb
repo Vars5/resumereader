@@ -11,8 +11,6 @@ class GroupmembersController < ApplicationController
     
     if @user.blank?
       User.invite!({:email => @invite_hash[:email]}, current_user )
-
-      
       @new_user = User.last #this is not good logic
       @invite = @new_user.groupmembers.build(:group_id => @invite_hash[:group_id])
       
@@ -21,7 +19,7 @@ class GroupmembersController < ApplicationController
       end
       
     else
-      @invite = @user.groupmembers.build(params[:groupmember])
+      @invite = @user.groupmembers.build(:group_id => @invite_hash[:group_id])
       if @invite.save
         UserMailer.new_group(@user, current_user,@group).deliver
         redirect_to @group

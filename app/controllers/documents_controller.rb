@@ -1,5 +1,8 @@
 class DocumentsController < ApplicationController
   
+  before_filter :authenticate_user!
+  
+  
   def new
     @group = Group.find(params[:group_id])
     @document = Document.new
@@ -9,7 +12,7 @@ class DocumentsController < ApplicationController
    @group = Group.find(params[:group_id])
    @document = @group.documents.build(params[:document])
     if @document.save
-      redirect_to @document
+      redirect_to [@group, @document]
     else
       render 'new'
     end

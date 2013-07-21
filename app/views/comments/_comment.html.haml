@@ -11,7 +11,7 @@
 			.comment-writing
 				%h5
 					=comment.user.first_name
-					%small= comment.updated_at
+					%small= comment.updated_at.localtime.strftime("%d %b %I:%M %P")
 					- if can? :destroy, Group
 						=link_to "x", comment_path(comment), method: :delete, remote: true, confirm: "Are you sure?", disable_with: "x", class: 'close'
 				%p= comment.body
