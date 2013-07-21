@@ -11,6 +11,16 @@
 	.hidden-phone
 		.span3
 			.pad-all
+			
+				.row-fluid
+					.span12
+						- if @group.documents.count > 0
+							%h5 Files	
+						- @group.documents.each do |document|
+							= document.name
+				
+			
+			
 				.row-fluid
 				- if can? :manage, @group
 					.info
@@ -19,12 +29,15 @@
 								= f.input :email
 								= f.input :group_id, as: :hidden, :input_html => { :value => params[:id] }
 								= f.button :submit, "Invite Person"
+
 				- @groupmembers.each do |user|
-					.span4
-						.center-alignment
-							= user.first_name
-/							= form_for(user.groupmembers.find_by_user_id(user), method: :delete) do |f|
-/								= f.button :submit
-/							= simple_form_for(user.groupmembers.find_by_user_id(user)) do |f|
-/								= f.input :admin, as: :select, onlick
+					= user.first_name
+					|
+					= user.email
+					%br
+/					= form_for(user.groupmembers.find_by_user_id(user), method: :delete) do |f|
+/						= f.button :submit
+/					= simple_form_for(user.groupmembers.find_by_user_id(user)) do |f|
+/						= f.input :admin, as: :select, onlick
+
 									
