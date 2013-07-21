@@ -66,7 +66,7 @@ class User < ActiveRecord::Base
         :list => "40x40>",
         :comment =>"50x50",
         :large =>"80x80x"
-      }
+      },
       :storage => :s3,
       :bucket => 'resquery-avatars',
       :url => ":s3_domain_url",
