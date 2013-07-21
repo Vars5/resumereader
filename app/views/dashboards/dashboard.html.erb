@@ -68,11 +68,18 @@
 				</div>
 			</div>
 		<% end %>
+		
+		<% if @appList.count < 6 %>
+
+			<div class="group-feed">
+				<h5>Look at these other companies you could be following:</h5>
+			</div>
+
+		<% end %>
+		
 	<% end %>
 	
-	<% if @appList.count < 5 %>
-		KEEP ADDING JOBS
-	<% end %>
+
 	
 
 		
