@@ -70,13 +70,30 @@
 		<% end %>
 		
 		<% if @appList.count < 6 %>
-
 			<div class="group-feed">
-				<h5>Look at these other companies you could be following:</h5>
+				<h5>Look at these other jobs you could be following:</h5>
 			</div>
-
+				<% @jobs.reverse.each do |new_job| %>
+					<% new_job_company = new_job.find_company%>
+					<%= link_to new_job do %>
+						<div class="appManage pad-bottom">
+							<div class="row-fluid">
+								<div class="span5">
+									<b><%= new_job_company.name %> - </b><%= new_job.name %>
+								</div>
+								<div class="offset4 span3">
+									<div class="pull-right">									
+										<%= new_job.show_due_date %>
+									</div>
+								</div>	
+							</div>
+						</div>
+					<% end %>
+				<% end %>		
+				
+				<%= will_paginate @jobs %>
+						
 		<% end %>
-		
 	<% end %>
 	
 

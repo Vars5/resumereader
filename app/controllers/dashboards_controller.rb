@@ -6,7 +6,7 @@ class DashboardsController < ApplicationController
     @appListCount = current_user.app_list_count
     @appList = current_user.app_lists.find(:all, :joins => :job, :order => :due_date)
     
-    if current_user.has_no_applists?
+    if (current_user.has_no_applists? || @appListCount < 6 )
       @company = Company.paginate(page: params[:page],:per_page => 5)
       @jobs = Job.paginate(page: params[:page],:per_page => 5)
     end
