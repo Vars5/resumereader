@@ -62,6 +62,11 @@ class User < ActiveRecord::Base
   end
   
   has_attached_file :avatar,
+      :styles => {
+        :list => "40x40>",
+        :comment =>"50x50",
+        :large =>"80x80x"
+      }
       :storage => :s3,
       :bucket => 'resquery-avatars',
       :url => ":s3_domain_url",
