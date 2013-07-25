@@ -293,7 +293,6 @@ input[type='checkbox'] {
 
 .info-bar {
 	min-height:220px;
-
 	background-color:$aqua;
 	margin-bottom:$standard-padding;
 	padding:$standard-padding*3 0;
@@ -304,6 +303,24 @@ input[type='checkbox'] {
 	h1 {
 	font-size:30px;
 	line-height:45px;
+	}
+	a {
+		color:$light-green;
+	}
+	.sign-up-button{
+		min-width:99%;
+		padding: 3px 15px;
+	    background: $light-green;
+		color:$aqua;
+		border-radius: 4px;
+	}
+
+	.sign-up-button:hover, .sign-up-button:focus {
+	    background: $base-green;
+	    color: $dark-green;
+	    border: solid 1px #2A4E77;
+	    text-decoration: none;
+
 	}
 
 }
@@ -547,26 +564,13 @@ input[type='checkbox'] {
 	padding-bottom:10px;
 }
 
-.sign-up-button{
-	min-width:99%;
-	padding: 3px 15px;
-    background: $dark-aqua;
-    color: #FFF;
-	border-radius: 4px;
-}
 
-.sign-up-button:hover, .sign-up-button:focus {
-    background: $light-green;
-    border: solid 1px #2A4E77;
-    text-decoration: none;
-	color:$aqua;
-}
 
 .li-smaller-height{
 	padding:3px 0px 3px 10px !important;
 }
 
-.logo{
+.home-logo{
 	img {
 		height:55px;
 		width:204px;
