@@ -413,6 +413,7 @@ input[type='checkbox'] {
 
 
 .header{
+	padding:2px 0px;
 	height:20px;
 	background-color:$base-green;
 	font-size:10px;
@@ -559,4 +560,8 @@ input[type='checkbox'] {
     border: solid 1px #2A4E77;
     text-decoration: none;
 	color:$aqua;
+}
+
+.li-smaller-height{
+	padding:3px 0px 3px 10px !important;
 }

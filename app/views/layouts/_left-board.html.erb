@@ -38,18 +38,11 @@
 		 <%= link_to "Make your own group!", groups_new_path%>
 		<% else %>
 			<ul class="unstyled">	
+				<li> <b class="grey-text">Your Groups</b> </li>
 			<% current_user.groups.each do |group| %>
 				<%= link_to group do %>
-					<li>
-						<div class="row-fluid">
-							<div class="span2">
-								<div class="circle-left-board">
-							 
-								</div>
-							</div>
-							<div class="span8">
-								<%= group.name  %><br />
-							</div>
+					<li class="li-smaller-height">
+						<%= group.name  %>
 					</li>					
 				<% end %>
 			<% end %>
