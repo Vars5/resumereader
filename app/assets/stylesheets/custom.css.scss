@@ -30,6 +30,9 @@ $dark-green: #46724C;
 $menu-green: #DEFCCA;
 $link-green: #468966;
 
+$light-green: #acd373;
+$aqua: #00746b;
+
 /* other*/
 $ft-color: #fff1e0;
 $dark-red: #D41528;
@@ -270,8 +273,8 @@ input[type='checkbox'] {
 
 
 .copywrite-area{
-	/*border-bottom:6px solid $base-green;*/
-	/*margin-bottom:$standard-padding*2;*/
+	padding-top:30px;
+	height:110px;
 }
 
 .footing {
@@ -288,27 +291,20 @@ input[type='checkbox'] {
 }
 
 .info-bar {
-	min-height:300px;
-	text-shadow: 0.1em 0.1em 0.2em $dark-grey;
-	background-color:$base-green;
+	min-height:220px;
+
+	background-color:$aqua;
 	margin-bottom:$standard-padding;
 	padding:$standard-padding*3 0;
-	background:url('/assets/homepage.jpg'); 
+
 	background-repeat: no-repeat;
 	background-size:cover;
 	color:white;
 	h1 {
-	font-size:40px;
+	font-size:30px;
 	line-height:45px;
 	}
-	p{
-		font-size:18px;
-		line-height:23px;
-	}
-	a{
-		color:white;
-	}
-	background-color:$base-green;
+
 }
 
 .left-bar{
@@ -413,12 +409,7 @@ input[type='checkbox'] {
 	width:81px !important;
 }
 
-.info-text {
-	h1{
-	font-size:46px;
-	line-height:55px;
-	}
-}
+
 
 .header{
 	height:20px;
@@ -492,7 +483,7 @@ input[type='checkbox'] {
 }
 
 .circle-index-comment{
-
+	margin-top:15px;
 	border-radius:25px;
 	background-color:$dark-red;
 	width:50px;
@@ -520,4 +511,29 @@ input[type='checkbox'] {
 	a{
 		color:orange;
 	}
+}
+
+.big-title-text{
+	padding:60px 0px 5px;
+	font-size:32px;
+	font-weight:700;
+}
+
+.green-font{
+	color: $light-green;
+}
+
+.intro-text{
+	font-size:14px;
+}
+
+.sign-in-button{
+	font-size:23px;
+	font-weight:700;
+	color:$light-text-grey;
+}
+
+.sign-in-button:hover{
+	text-decoration:none;
+	color:$aqua;
 }

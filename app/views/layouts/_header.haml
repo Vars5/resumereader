@@ -2,10 +2,12 @@
 	.container-fluid
 		.row-fluid
 			.span12		
-				= link_to "New Stuff - Groups for discussions and feedback!", groups_path, :class=>"yellow-text hidden-phone"
+				
 				.pull-right
 					- if current_user.role == "admin" 
 						=link_to 'Admin', admin_path
+					&nbsp &nbsp
+					= link_to "New! ResQuery Groups ", groups_path, :class=>"yellow-text hidden-phone"
 					&nbsp &nbsp
 					= link_to 'Help', suggestions_path
 					&nbsp &nbsp

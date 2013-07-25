@@ -3,12 +3,14 @@
 		<br />
 		<div class="container">	
 			<div class="row">
-				<%= link_to image_tag('alpha-logo.png'), root_path %>
+				<div class="offset1 span10">
+					<%= link_to image_tag('alpha-logo.png'), root_path %>
 
-				<div class="pull-right">
-					<div class="copywriteAreaRight">
-					</br>  
-					<%= link_to 'Log In', new_user_session_path, :class=> "btn btn-small btn-info"%>
+					<div class="pull-right">
+						<div class="copywriteAreaRight">
+						</br>  
+						<%= link_to 'Sign in', new_user_session_path, :class => "sign-in-button" %>
+						</div>
 					</div>
 				</div>
 			</div>
