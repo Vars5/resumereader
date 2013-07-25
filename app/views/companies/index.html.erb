@@ -51,7 +51,9 @@
 							<% end %>
 						</div>
 						<div class="span8">
-							<%= render :partial => 'companies/follow_form', :locals => {:c => c} %>
+							<% if signed_in? %>
+								<%= render :partial => 'companies/follow_form', :locals => {:c => c} %>
+							<% end %>
 						</div>
 					</div>
 					<hr>		
