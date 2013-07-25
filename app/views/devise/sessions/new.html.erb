@@ -1,7 +1,7 @@
 <div class="info-bar">
 	<div class="container">
 		<div class="row">
-			<div class="offset1 span6">
+			<div class="offset4 span4 center-alignment">
 				<h3>Sign in</h3><br />
 					<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 					<div class="errors">
@@ -9,12 +9,7 @@
 					</div>
 					  <div><%= f.email_field :email, :autofocus => true, :placeholder => "Email Address" %> 
 							 <%= f.password_field :password, :placeholder => "Password" %></div>
-					  <% if devise_mapping.rememberable? -%>
-					   <div class="checkbox-area"> 
-							<p><%= f.check_box :remember_me %> Remember Me</p>
-							
-						</div>
-					  <% end %>
+
 
 					  <div><%= f.submit "Sign in", :class => "sign-up-button" %></div>
 					<% end %>

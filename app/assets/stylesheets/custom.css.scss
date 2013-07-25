@@ -33,6 +33,7 @@ $link-green: #468966;
 $light-green: #acd373;
 $aqua: #00746b;
 $dark-aqua:#003530;
+$aqua-midpoint:#73B370;
 
 /* other*/
 $ft-color: #fff1e0;
@@ -316,9 +317,9 @@ input[type='checkbox'] {
 	}
 
 	.sign-up-button:hover, .sign-up-button:focus {
-	    background: $base-green;
-	    color: $dark-green;
-	    border: solid 1px #2A4E77;
+	    background: $aqua-midpoint;
+	    color: $menu-green;
+	    border: solid 1px $aqua-midpoint;
 	    text-decoration: none;
 
 	}
