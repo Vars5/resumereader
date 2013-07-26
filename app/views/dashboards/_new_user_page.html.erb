@@ -9,24 +9,7 @@
 
 
 <div class="row-fluid bottom-border ">
-	<div class="span4 right-border">
-		<h5>Follow a company for updates:</h5>
-		<br />
-		<% @company.each do |c| %>
-		<div class="row-fluid">
-			<div class="span6">
-				<%= link_to c do %>
-					<b><%= c.name %></b><br />
-					<%= Industry.find(c.industry_id).industry %> 	
-				<% end %>
-			</div>
-		
-			<div class="span6">
-				<%= render :partial => 'companies/follow_form', :locals => {:c => c} %>
-			</div>
-		</div>
-		<% end %>
-	</div>
+	
 	
 	<div class="span8">
 		<h5>Follow your first job:</h5>
