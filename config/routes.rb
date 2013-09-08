@@ -1,21 +1,6 @@
 Resumereader::Application.routes.draw do
 
 
-  get "documents/new"
-
-  get "documents/show"
-
-  get "documents/edit"
-
-  get "documents/index"
-
-  get "groups/new"
-
-  get "groups/edit"
-
-  get "groups/show"
-
-  get "groups/index"
 
   #Root to public home page unless signed in
   
@@ -48,6 +33,9 @@ Resumereader::Application.routes.draw do
   match '/suggestions', to: 'problems#new'
   
   match '/invite', to: 'groups#invite'
+  
+  #dashboards
+  match'/my_jobs', to: 'dashboards#my_jobs'
 
   
   #Resources
@@ -61,6 +49,7 @@ Resumereader::Application.routes.draw do
   resources :posts, except: [:new]
   resources :app_lists, except: [:new]
   resources :notes, only: [:create, :update, :destroy]
+
   
   resources :questions
   resources :articles

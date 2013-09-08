@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
+
 /* ========= SECTION: CONTENTS =========*/
 /*
    1. STYLE VARIABLES
@@ -31,13 +32,15 @@ $menu-green: #DEFCCA;
 $link-green: #468966;
 
 $light-green: #acd373;
-$aqua: #00746b;
+$aqua: #F18419;
+$light-aqua: #E8F2F2;
 $dark-aqua:#003530;
 $aqua-midpoint:#73B370;
 
 /* other*/
 $ft-color: #fff1e0;
 $dark-red: #D41528;
+$orange: #F18419;
 
 /* standards */
 
@@ -55,16 +58,14 @@ html{
 	height:100%;
 }
 
-.background-white{
-	background-color:white;
-}
+
 
 body {
-	font-family: 'Noto Sans', sans-serif;	
+	font-family: 'Century Gothic','Noto Sans', sans-serif;	
 	font-size:12px;
 	height:100%;
 	a{
-		color:$link-green;
+		color:$dark-grey;
 	}
 }
 
@@ -171,6 +172,9 @@ input[type='checkbox'] {
 	margin-top:59px;
 }
 
+h3 {
+	color:$aqua;
+}
 
 /* ========= END SECTION: UNIVERSALS =========*/
 
@@ -179,8 +183,7 @@ input[type='checkbox'] {
 /* ========= SECTION: LEFT-BOARD =========*/
 
 .logo {
-	padding-top:$standard-padding;
-	text-align:center;
+	margin-top:$standard-padding*2;
 }
 
 
@@ -192,7 +195,7 @@ input[type='checkbox'] {
 		
 	}	
 	li:hover{
-		background-color:$base-green;
+		background-color:$orange;
 		color:white;
 	}
 }
@@ -275,6 +278,7 @@ input[type='checkbox'] {
 
 
 .copywrite-area{
+	background-color:$orange;
 	padding-top:30px;
 	height:110px;
 }
@@ -324,7 +328,7 @@ input[type='checkbox'] {
 
 	}
 	h3{
-		color:#E8F2F2;
+		color:$light-aqua;
 	}
 
 }
@@ -436,10 +440,10 @@ input[type='checkbox'] {
 .header{
 	padding:2px 0px;
 	height:20px;
-	background-color:$base-green;
+	background-color:$orange;
 	font-size:10px;
 	a{
-		color:$menu-green;
+		color:white;
 	}
 }
 
@@ -552,12 +556,12 @@ input[type='checkbox'] {
 .sign-in-button{
 	font-size:23px;
 	font-weight:700;
-	color:$light-text-grey;
+	color:$dark-grey;
 }
 
 .sign-in-button:hover{
 	text-decoration:none;
-	color:$aqua;
+	color:white;
 }
 
 .sign-up-text{
