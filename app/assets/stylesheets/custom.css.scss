@@ -32,10 +32,10 @@ $menu-green: #DEFCCA;
 $link-green: #468966;
 
 $light-green: #acd373;
-$aqua: #F18419;
+$orange: #F18419;
 $light-aqua: #E8F2F2;
 $dark-aqua:#003530;
-$aqua-midpoint:#73B370;
+$orange-midpoint:#73B370;
 
 /* other*/
 $ft-color: #fff1e0;
@@ -173,7 +173,7 @@ input[type='checkbox'] {
 }
 
 h3 {
-	color:$aqua;
+	color:$orange;
 }
 
 /* ========= END SECTION: UNIVERSALS =========*/
@@ -298,7 +298,7 @@ h3 {
 
 .info-bar {
 	min-height:220px;
-	background-color:$aqua;
+	background-color:$orange;
 	margin-bottom:$standard-padding;
 	padding:$standard-padding*3 0;
 
@@ -316,14 +316,14 @@ h3 {
 		min-width:99%;
 		padding: 3px 15px;
 	    background: $light-green;
-		color:$aqua;
+		color:$orange;
 		border-radius: 4px;
 	}
 
 	.sign-up-button:hover, .sign-up-button:focus {
-	    background: $aqua-midpoint;
+	    background: $orange-midpoint;
 	    color: $menu-green;
-	    border: solid 1px $aqua-midpoint;
+	    border: solid 1px $orange-midpoint;
 	    text-decoration: none;
 
 	}
@@ -540,7 +540,7 @@ h3 {
 }
 
 .big-title-text{
-	padding:60px 0px 5px;
+
 	font-size:32px;
 	font-weight:700;
 }
