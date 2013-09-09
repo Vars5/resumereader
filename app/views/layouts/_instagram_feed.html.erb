@@ -2,8 +2,11 @@
     var feed = new Instafeed({
         get: 'popular',
         tagName: 'awesome',
-        clientId: 'YOUR_CLIENT_ID',
+		  limit: '5',
+        clientId: 'dff714fb915a45459648a1fa496037fe',
         template: '<a class="animation" href="{{link}}"><img src="{{image}}" /></a>'
     });
     feed.run();
 </script>
+
+<div id="instafeed"></div>
