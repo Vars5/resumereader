@@ -1,15 +1,34 @@
 .header
 	.container-fluid
 		.row-fluid
-			.span12		
+			.span3
+				= link_to image_tag('menulogo.png'), root_path 
+			
+			.span6
+				=link_to my_jobs_path do
+					.my-jobs-button
+						%i( class="icon-pencil")
+						&nbsp My Jobs &nbsp 
+						%span( class="badge badge-important")
+							= current_user.app_list_count
+				=link_to jobs_path do
+					.my-jobs-button
+						%i(class="icon-briefcase")
+						Job Opportunities
+
+				=link_to companies_path do
+					.my-jobs-button
+						%i(class="icon-certificate")
+						Companies
+
+			
+			
+			.span3
 				.pull-right
 					- if current_user.role == "admin" 
 						=link_to 'Admin', admin_path
-					&nbsp &nbsp
-					= link_to "New! ResQuery Groups ", groups_path, :class=>"yellow-text hidden-phone"
-					&nbsp &nbsp
-					= link_to 'Help', suggestions_path
-					&nbsp &nbsp
-					= link_to 'Account Settings' , edit_user_registration_path 
-					&nbsp &nbsp
-					= link_to 'Log Out', destroy_user_session_path, :method =>"DELETE"
+					= link_to edit_user_registration_path do
+						.account-button					
+							Settings
+					.account-button
+						= link_to 'Log Out', destroy_user_session_path, :method =>"DELETE"

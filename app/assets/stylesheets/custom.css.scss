@@ -31,11 +31,11 @@ $dark-green: #46724C;
 $menu-green: #DEFCCA;
 $link-green: #468966;
 
-$light-green: #acd373;
-$orange: #F18419;
+
 $light-aqua: #E8F2F2;
 $dark-aqua:#003530;
-$orange-midpoint:#73B370;
+$orange-midpoint:#FAD2AB;
+$dark-orange:#DB7817;
 
 /* other*/
 $ft-color: #fff1e0;
@@ -57,11 +57,11 @@ $standard-line: 1px solid $line-grey;
 html{
 	height:100%;
 }
-
-
-
+a:hover{
+		text-decoration:none !important;
+}
 body {
-	font-family: 'Century Gothic','Noto Sans', sans-serif;	
+font-family: 'Oxygen', sans-serif;
 	font-size:12px;
 	height:100%;
 	a{
@@ -80,7 +80,6 @@ select {
 
 input {
 	width:95%;
-	border:1px solid $dark-green !important;
 }
 
 input[type='checkbox'] {
@@ -310,12 +309,12 @@ h3 {
 	line-height:45px;
 	}
 	a {
-		color:$light-green;
+		color:white;
 	}
 	.sign-up-button{
 		min-width:99%;
 		padding: 3px 15px;
-	    background: $light-green;
+
 		color:$orange;
 		border-radius: 4px;
 	}
@@ -438,12 +437,14 @@ h3 {
 
 
 .header{
-	padding:2px 0px;
-	height:20px;
+	padding:40px 0px 0px;
 	background-color:$orange;
 	font-size:10px;
 	a{
 		color:white;
+	}
+	img{
+		height:50px;
 	}
 }
 
@@ -540,14 +541,12 @@ h3 {
 }
 
 .big-title-text{
-
+	line-height:43px;
 	font-size:32px;
 	font-weight:700;
 }
 
-.green-font{
-	color: $light-green;
-}
+
 
 .intro-text{
 	font-size:14px;
@@ -566,7 +565,6 @@ h3 {
 
 .sign-up-text{
 	font-size:15px;
-	color:$light-green;
 	font-weight:400;
 	padding-bottom:10px;
 }
@@ -582,4 +580,33 @@ h3 {
 		height:55px;
 		width:204px;
 	}
+}
+
+.my-jobs-button{
+	height:40px;
+	padding-top:15px;
+	font-size:13px;
+	border-right:1px solid $dark-orange;
+	text-align:center;
+	border-left:1px solid $dark-orange;
+	width:155px;
+	float:left;
+}
+
+.my-jobs-button:hover{
+	background-color:$dark-orange;
+}
+
+.account-button{
+	height:40px;
+	padding-top:15px;
+	font-size:13px;
+	border-right:1px solid $dark-orange;
+	text-align:center;
+	width:80px;
+	float:left;	
+}
+
+.account-button:hover{
+	background-color:$dark-orange;
 }
