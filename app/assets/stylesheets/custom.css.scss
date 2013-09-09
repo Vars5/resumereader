@@ -647,3 +647,10 @@ h3 {
 	font-size: 8px;
 	text-decoration: strikethrough;
 }
+
+.search-header{
+	border-top:1px solid $text-grey;
+	border-bottom:1px solid $text-grey;
+	background-color:$line-grey;
+	padding-top:25px;
+}
