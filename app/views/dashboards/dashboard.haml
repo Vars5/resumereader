@@ -1,11 +1,33 @@
-.pad-top
-
-%h3 Groups
+.dashboard
 
 .row-fluid
-	- @groups.each do |group|		
-		.span4
-			= group.name 
-	
+	.span6
+		%h4(class="applist-area")
+			My Jobs List &nbsp - &nbsp
+			= current_user.app_list_count
+			
+		- @appList.each do |apps|
 
+			- job = apps.find_job
+			- company = job.find_company
+			
+			= link_to apps do 
+				.appManage
+					.row-fluid
+						.span8
+							%b= company.name 
+							\ &nbsp - &nbsp
+							= job.name 
+						.span2
+							%span(class="red-text")=apps.status
+						.span2
+							.pull-right
+								=job.show_due_date
+		%span(class="small-text") Export to excel (coming soon)
+	.span3
+		%h4(class="applist-area")
+			Discover
 		
+	.span3
+		%h4(class="applist-area")
+			\#rq #jobapps #ughapps

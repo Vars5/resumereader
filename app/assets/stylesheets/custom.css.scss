@@ -51,8 +51,27 @@ $standard-line: 1px solid $line-grey;
 /* ========= END SECTION: STYLE VARIABLES =========*/
 
 
+@media (min-width: 1200px) {
+  .span12, .container {
+    width: 1170;
+  }
+}
+
+@media (max-width: 978px) {
+    body {
+      padding:0;
+    }
+
+	.container{
+		padding:10px;
+	}
+
+}
+
 
 /* ========= SECTION: UNIVERSALS =========*/
+
+
 
 html{
 	height:100%;
@@ -62,7 +81,7 @@ a:hover{
 }
 body {
 font-family: 'Oxygen', sans-serif;
-	font-size:12px;
+	font-size:13px;
 	height:100%;
 	a{
 		color:$dark-grey;
@@ -232,10 +251,10 @@ h3 {
 	/*margin-top:-1px;*/
 	font-size:13px;
 	background-color:white;
-	padding:9px 10px 0px 9px;
-	margin-bottom:6px;
-	/*border: 1px solid $line-grey;*/
-	border-bottom:1px solid $light-grey;	
+	padding:20px 10px 9px 9px;
+
+
+	border-bottom:1px solid $line-grey;	
 	a {
 		text-decoration:none;	
 	}
@@ -243,6 +262,7 @@ h3 {
 
 .appManage:hover{
 	background-color:$line-grey;
+
 }
 
 .appManage-status{
@@ -589,7 +609,7 @@ h3 {
 	border-right:1px solid $dark-orange;
 	text-align:center;
 	border-left:1px solid $dark-orange;
-	width:155px;
+	width:134px;
 	float:left;
 }
 
@@ -609,4 +629,21 @@ h3 {
 
 .account-button:hover{
 	background-color:$dark-orange;
+}
+
+.applist-area{
+	color:$dark-grey;
+	border-bottom:1px solid $line-grey;
+	padding-bottom:10px;
+	padding-left:9px;
+}
+
+.dashboard{
+	padding-top:55px;
+}
+
+.small-text{
+	padding:9px;
+	font-size: 8px;
+	text-decoration: strikethrough;
 }

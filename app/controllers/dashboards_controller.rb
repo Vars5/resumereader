@@ -3,7 +3,13 @@ class DashboardsController < ApplicationController
   before_filter :authenticate_user!
   
   def dashboard
-    @groups = current_user.groups.all
+    @appListCount = current_user.app_list_count
+    @appList = current_user.app_lists.find(:all, :joins => :job, :order => :due_date)
+    
+    if (current_user.has_no_applists? || @appListCount < 6 )
+      @company = Company.paginate(page: params[:page],:per_page => 5)
+      @jobs = Job.paginate(page: params[:page],:per_page => 5)
+    end
   end
   
   def follow

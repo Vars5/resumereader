@@ -15,16 +15,9 @@
 	<body>
 		<!-- Hi! Hope ResumeQuery's helped you! Drop us an email with any questions: pasha.rayan@gmail.com. Best of luck! -->	
 		<% if signed_in? %>
-			<div class="signed-in">
 			<%= render 'layouts/header'%>
-				<div class="container-fluid">
-					<div class="row-fluid">
-
-						<div class="span10">
-						   <%= yield %>
-						</div>
-					</div>
-				</div>
+			<div class="container">
+				<%= yield %>
 			</div>
 		<% else %>
 			<%=render 'staticpages/copywritearea'%>
