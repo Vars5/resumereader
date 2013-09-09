@@ -1,10 +1,9 @@
 <script type="text/javascript">
     var feed = new Instafeed({
-        get: 'tagged',
+        get: 'popular',
         tagName: 'awesome',
-        clientId: 'dff714fb915a45459648a1fa496037fe',
-		  template: '<a href="{{link}}"><img src="{{image}}" /></a>'
+        clientId: 'YOUR_CLIENT_ID',
+        template: '<a class="animation" href="{{link}}"><img src="{{image}}" /></a>'
     });
     feed.run();
-
 </script>
