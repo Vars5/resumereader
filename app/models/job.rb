@@ -41,7 +41,7 @@ class Job < ActiveRecord::Base
       if self.due_date < DateTime.now
         "Closed"
       else
-        self.due_date.strftime("%B %e") 
+        self.due_date.strftime("%b %e") 
       end
     end
   end
