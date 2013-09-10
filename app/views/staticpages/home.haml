@@ -6,18 +6,26 @@
 			Jobs & Internships
 		-@jobs.each do |job|
 			.appManage
-				.pad-lightly
-					%b= job.show_company_name
-					\ &nbsp - &nbsp 
-					=job.name
-					.pull-right
-						=job.show_due_date
-						&nbsp &nbsp 
-						=link_to "Follow", new_user_registration_path, :class => "follow-button"
+				.row-fluid
+					.span8	
+						.pad-lightly
+							%b= job.show_company_name
+							\ &nbsp - &nbsp 
+							=job.name
+					.span4
+						.pull-right
+							=job.show_due_date
+							&nbsp &nbsp 
+							=link_to "Follow", new_user_registration_path, :class => "follow-button"
 		%span(class="small-text") Export to excel (coming soon)
 	.span3
 		%h4(class="applist-area")
 			Discover
+			
+		.info-box-yellow
+			.center-alignment
+				%h5 Prepare during off season!
+		
 	.span3
 		%h4(class="applist-area")
 			\#resumequery #jobapps 
