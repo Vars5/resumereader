@@ -1,14 +1,10 @@
 Resumereader::Application.routes.draw do
 
-
-
   #Root to public home page unless signed in
   
-  #Save time annd just root to new registration page for now
+
   root :to => 'dashboards#dashboard', :constraints => lambda {|r| r.env["warden"].authenticate? }
   root :to => 'staticpages#home'
-
-
 
   #root :to => 'staticpages#home'
   
