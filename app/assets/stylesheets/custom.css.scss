@@ -24,6 +24,9 @@ $dark-grey: #666A73;
 $text-grey: #787878;
 $light-text-grey:#9C9C9C;
 
+$dark-blue: #1BB7CC;
+$light-blue: #76D6E3;
+
 /* greens */
 $base-green:  #39b54a;
 $top-green:   #54bb62;
@@ -334,7 +337,6 @@ h3 {
 	.sign-up-button{
 		min-width:99%;
 		padding: 3px 15px;
-
 		color:$orange;
 		border-radius: 4px;
 	}
@@ -670,4 +672,21 @@ h3 {
 .tiny-pad-right{
 	padding-top:7px;
 	padding-right:5px;
+}
+
+.follow-button{
+	min-width:100px;
+	padding: 3px 15px;
+	background-color:$dark-blue;
+	border-radius: 2px;
+	color:white;
+	font-weight:bold;
+
+}
+.follow-button:hover{
+	background-color:$light-blue;
+}
+
+.pad-lightly{
+	padding-bottom:5px;
 }

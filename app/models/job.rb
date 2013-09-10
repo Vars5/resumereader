@@ -37,8 +37,12 @@ class Job < ActiveRecord::Base
   end
   
   def show_due_date
-    if self.due_date != nil
-      self.due_date.strftime("%B %e") 
+    if self.due_date != nil 
+      if self.due_date < DateTime.now
+        "Closed"
+      else
+        self.due_date.strftime("%B %e") 
+      end
     end
   end
   
