@@ -3,12 +3,12 @@
 .row-fluid
 	.span6
 		%h4(class="applist-area")
-			Jobs Area &nbsp - &nbsp
+			Jobs & Internships
 		-@jobs.each do |job|
 			.appManage
 				.pad-lightly
 					%b= job.show_company_name
-					- 
+					\ &nbsp - &nbsp 
 					=job.name
 					.pull-right
 						=job.show_due_date

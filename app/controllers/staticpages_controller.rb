@@ -3,7 +3,7 @@ class StaticpagesController < ApplicationController
   caches_page :about
   
   def home
-    @jobs = Job.all
+    @jobs = Job.order("due_date DESC")
   end
 
   def about
