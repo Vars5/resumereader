@@ -3,6 +3,7 @@ class StaticpagesController < ApplicationController
   caches_page :about
   
   def home
+    @jobs = Job.all
   end
 
   def about

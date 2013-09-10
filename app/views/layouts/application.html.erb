@@ -14,18 +14,20 @@
 	</head>
 	
 	<body>
-		<!-- Hi! Hope ResumeQuery's helped you! Drop us an email with any questions: pasha.rayan@gmail.com. Best of luck! -->	
+		<!-- Hi! Hope ResumeQuery's helped you! Drop us an email with any questions: pasha.rayan@gmail.com. Best of luck! -->
+		<!-- Go NEWSOUTH! -->			
 		<% if signed_in? %>
 			<%= render 'layouts/header'%>
 			<div class="container">
 				<%= yield %>
 			</div>
 		<% else %>
-			<%=render 'staticpages/copywritearea'%>
-			<%= yield %>	
-			<% cache "footer" do %>
-				<%=render 'layouts/footer'%>
-			<% end %>
+			<%= render 'layouts/header'%>
+			<div class="container">
+				<%= yield %>	
+			</div>
+			<%=render 'layouts/footer'%>
+
 		<% end %>
 		<%=render 'shared/google_analytics' if Rails.env.production? %>
 	</body>

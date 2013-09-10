@@ -21,11 +21,15 @@ class Job < ActiveRecord::Base
 #  before_save :set_job_title
   
   def set_job_title
-
+    
   end
   
   def find_company
     Company.find_by_id(self.company_id)
+  end
+  
+  def show_company_name
+    self.find_company.name
   end
   
   def relevant_hr_email

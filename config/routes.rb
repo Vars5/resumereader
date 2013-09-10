@@ -6,10 +6,8 @@ Resumereader::Application.routes.draw do
   
   #Save time annd just root to new registration page for now
   root :to => 'dashboards#dashboard', :constraints => lambda {|r| r.env["warden"].authenticate? }
+  root :to => 'staticpages#home'
 
-  devise_scope :user do
-    root to: "devise/registrations#new"
-  end
 
 
   #root :to => 'staticpages#home'
@@ -40,7 +38,6 @@ Resumereader::Application.routes.draw do
   
   #Resources
   #resources :schools, except: [:show] 
-  resources :problems, only: [:create, :index, :new]
   resources :settings, except: [:index, :new, :edit]
   resources :questions
   resources :companies
@@ -51,11 +48,10 @@ Resumereader::Application.routes.draw do
   resources :notes, only: [:create, :update, :destroy]
 
   
-  resources :questions
-  resources :articles
+
+
   
-  resources :searches
-  
+  resources :searches  
   resources :categories
   resources :roles
   resources :industries

@@ -303,8 +303,8 @@ h3 {
 }
 
 .footing {
-	/*border-top:1px solid $line-grey;*/
-	padding:$standard-padding;
+
+	padding:$standard-padding 0px;
 }
 
 .dash-area {
@@ -609,7 +609,7 @@ h3 {
 	border-right:1px solid $dark-orange;
 	text-align:center;
 	border-left:1px solid $dark-orange;
-	width:134px;
+	width:135px;
 	float:left;
 }
 
@@ -623,7 +623,7 @@ h3 {
 	font-size:13px;
 	border-right:1px solid $dark-orange;
 	text-align:center;
-	width:80px;
+	min-width:80px;
 	float:left;	
 }
 
@@ -660,4 +660,14 @@ h3 {
 	width:95%;
 	padding:10px;
 	}
+}
+
+.tiny-pad{
+	padding-top:7px;
+	padding-left:5px;
+}
+
+.tiny-pad-right{
+	padding-top:7px;
+	padding-right:5px;
 }
