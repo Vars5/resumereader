@@ -1,0 +1,33 @@
+.dashboard
+.row-fluid
+  .span6.jobIndex
+    .span4.jobIndex
+      = form_tag jobs_path, :method => 'get' do
+        %p
+          %h4
+            Search by Discipline:
+            %h4
+              = select_tag :category_id, options_from_collection_for_select(Category.all, "id", "discipline"), 
+                include_blank: true, :onchange => "this.form.submit()"                                         
+      %h5
+        = link_to "Advanced Search", new_search_path
+    %ul.unstyled
+      - @jobs.each do |j|
+        .row-fluid.bottom-border.pad-top
+          .span9
+            = link_to j do
+              %li
+                %strong= j.find_company.name
+                \- #{j.name}
+                %br/
+                = j.show_due_date
+          .span3
+            %div
+              - if user_signed_in?
+                - if current_user.is_following_applist?(j)
+                  %span.label.label-list Already added
+                - else
+                  = form_for(current_user.app_lists.build, :as => :applist) do |f|
+                    = f.hidden_field :job_id, :value => j.id
+                    = f.hidden_field :status, :value => "Research"
+                    = f.submit "Add to My Jobs", class: "btn btn-info"

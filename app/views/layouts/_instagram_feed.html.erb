@@ -3,7 +3,8 @@
 	var jobappsFeed = new Instafeed({
 
 		 target: 'instafeed',
-
+       get: 'tagged',
+       tagName: 'icecream',
 		 limit: '1',
 		 clientId: 'dff714fb915a45459648a1fa496037fe',
 		 resolution: 'low_resolution',
@@ -13,8 +14,9 @@
 	var rQfeed = new Instafeed({
 		target:'rQfeed',
        get: 'tagged',
-       tagName: 'resumequery',
+       tagName: 'jobs',
 		  limit: '1',
+
         clientId: 'dff714fb915a45459648a1fa496037fe',
 		  resolution: 'low_resolution',
         template: '<a class="animation" href="{{link}}"><img src="{{image}}" /></a>'
