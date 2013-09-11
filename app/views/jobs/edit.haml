@@ -11,7 +11,7 @@
 				= f.text_area :info, :placeholder => "Information"
 				= f.text_field :link, :placeholder => "Website Link in www.something.com form"
 				= f.text_field :due_date, :placeholder => "Date, insert as DD/MM/YYYY"
-				= f.select :type, [['Internship'], ['Graduate Job']]                               
+				= f.select :job_type, [['Internship'], ['Graduate Job']]                               
 				= f.hidden_field :id, :value => params[:id]
 				= f.collection_select :role_id, Role.order(:role), :id, :role, include_blank: true
 				= f.text_field :location, :placeholder => "Location"

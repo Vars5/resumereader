@@ -11,6 +11,8 @@ Resumereader::Application.routes.draw do
   #Public Pages
   match '/feedback', :to => 'staticpages#feedback'
   match '/about', :to => 'staticpages#about'
+  match'/internships', to: 'staticpages#internships'
+  match'/graduate_jobs', to: 'staticpages#graduate_jobs'
   
   #User's Signed In Pages
   #match '/resumeQuestions', :to => 'dashboards#resumeQuestions'
@@ -30,8 +32,7 @@ Resumereader::Application.routes.draw do
   
   #dashboards
   match'/my_jobs', to: 'dashboards#my_jobs'
-  
-  match'/graduate_jobs', to: 'staticpages#graduate_jobs'
+
 
   
   #Resources
