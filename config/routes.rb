@@ -30,6 +30,8 @@ Resumereader::Application.routes.draw do
   
   #dashboards
   match'/my_jobs', to: 'dashboards#my_jobs'
+  
+  match'/graduate_jobs', to: 'staticpages#graduate_jobs'
 
   
   #Resources

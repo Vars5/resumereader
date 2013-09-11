@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130720133022) do
+ActiveRecord::Schema.define(:version => 20130911211401) do
 
   create_table "app_lists", :force => true do |t|
     t.integer  "job_id"
@@ -186,6 +186,8 @@ ActiveRecord::Schema.define(:version => 20130720133022) do
     t.integer  "category_id"
     t.integer  "role_id"
     t.boolean  "open",        :default => true
+    t.string   "type"
+    t.string   "job_type"
   end
 
   create_table "memberships", :force => true do |t|

@@ -695,5 +695,20 @@ h3 {
 .info-box-yellow{
 	padding:10px;
 	border-radius: 4px;
-	background-color:#f238f2;
+	background-color:#F7F0BA;
+	h5{
+		color:$orange;
+	}
+}
+
+.about-text{
+	color:$light-text-grey;
+	font-size:20px;
+}
+
+.about-area{
+	padding:$standard-padding 0px;
+	border-top: 1px solid $line-grey;
+
+
 }

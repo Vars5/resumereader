@@ -16,6 +16,10 @@ class StaticpagesController < ApplicationController
   def feedback
   end
   
+  def graduate_jobs
+    @jobs = Job.where('type = ?', "Graduate Job").order('due_date')
+  end
+  
   
   
 end
