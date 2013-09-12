@@ -33,7 +33,8 @@ $top-green:   #54bb62;
 $dark-green: #46724C;
 $menu-green: #DEFCCA;
 $link-green: #468966;
-
+$aqua: #00746b;
+$light-teal: #EDFCF8;
 
 $light-aqua: #E8F2F2;
 $dark-aqua:#003530;
@@ -681,6 +682,7 @@ h3 {
 	border-radius: 2px;
 	color:white;
 	font-weight:bold;
+	border:0px !important;
 
 }
 .follow-button:hover{
@@ -696,14 +698,44 @@ h3 {
 	padding:10px;
 	border-radius: 4px;
 	background-color:#F7F0BA;
+	color:$light-text-grey;
+	line-height:20px;
 	h5{
 		color:$orange;
 	}
 }
 
+.info-box-light-teal{
+	border-radius: 4px;
+	background-color:$light-teal;
+	padding:10px;
+	margin-top:15px;
+	color:$light-text-grey;
+	h5{
+		color:$aqua;
+	}
+}
+
+.info-box-light-teal:hover{
+	background-color:#D1E6E4;
+}
+
+.info-box-light-orange{
+	border-radius: 4px;
+	background-color:#FCE9D5;
+	padding:10px;
+	margin-top:15px;
+	color:$light-text-grey;
+	h5{
+		color:$dark-red;
+	}
+}
+
+
 .about-text{
 	color:$light-text-grey;
 	font-size:20px;
+	line-height:30px;
 }
 
 .about-area{
@@ -712,3 +744,4 @@ h3 {
 
 
 }
+
