@@ -17,11 +17,11 @@ class StaticpagesController < ApplicationController
   end
   
   def graduate_jobs
-    @jobs = Job.where('job_type = ?', "Graduate Job").order('due_date')
+    @jobs = Job.where('job_type = ?', "Graduate Job").order("due_date DESC")
   end
   
   def internships
-    @jobs = Job.where('job_type = ?', "Internship").order('due_date')
+    @jobs = Job.where('job_type = ?', "Internship").order("due_date DESC")
   end
   
   
