@@ -9,6 +9,7 @@ class Job < ActiveRecord::Base
   has_many :roles
   
   validates :name, presence: :true
+  validates :job_type, presence: :true
   validates :category_id, presence: :true
   validates :role_id, presence: :true
   validates :info, presence: :true 
