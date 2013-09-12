@@ -18,12 +18,12 @@
 										- if user_signed_in?
 											- if current_user.is_following_applist?(j)
 												&nbsp &nbsp
-												%span.label.label-list Already added
+												%span.label.label-list Following
 											- else
 												= form_for(current_user.app_lists.build, :as => :applist) do |f|
 													= f.hidden_field :job_id, :value => j.id
 													= f.hidden_field :status, :value => "Research"
-													= f.submit "Follow", class: "follow-button"
+													= f.submit "Follow", class: "follow-button job-index"
 
 	.span3
 		%h4 Filter by Discipline:
