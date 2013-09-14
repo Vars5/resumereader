@@ -1,37 +1,18 @@
 Resumereader::Application.routes.draw do
 
-
-  get "documents/new"
-
-  get "documents/show"
-
-  get "documents/edit"
-
-  get "documents/index"
-
-  get "groups/new"
-
-  get "groups/edit"
-
-  get "groups/show"
-
-  get "groups/index"
-
   #Root to public home page unless signed in
   
-  #Save time annd just root to new registration page for now
+
   root :to => 'dashboards#dashboard', :constraints => lambda {|r| r.env["warden"].authenticate? }
-
-  devise_scope :user do
-    root to: "devise/registrations#new"
-  end
-
+  root :to => 'staticpages#home'
 
   #root :to => 'staticpages#home'
   
   #Public Pages
   match '/feedback', :to => 'staticpages#feedback'
   match '/about', :to => 'staticpages#about'
+  match'/internships', to: 'staticpages#internships'
+  match'/graduate_jobs', to: 'staticpages#graduate_jobs'
   
   #User's Signed In Pages
   #match '/resumeQuestions', :to => 'dashboards#resumeQuestions'
@@ -48,11 +29,14 @@ Resumereader::Application.routes.draw do
   match '/suggestions', to: 'problems#new'
   
   match '/invite', to: 'groups#invite'
+  
+  #dashboards
+  match'/my_jobs', to: 'dashboards#my_jobs'
+
 
   
   #Resources
   #resources :schools, except: [:show] 
-  resources :problems, only: [:create, :index, :new]
   resources :settings, except: [:index, :new, :edit]
   resources :questions
   resources :companies
@@ -61,12 +45,12 @@ Resumereader::Application.routes.draw do
   resources :posts, except: [:new]
   resources :app_lists, except: [:new]
   resources :notes, only: [:create, :update, :destroy]
+
   
-  resources :questions
-  resources :articles
+
+
   
-  resources :searches
-  
+  resources :searches  
   resources :categories
   resources :roles
   resources :industries

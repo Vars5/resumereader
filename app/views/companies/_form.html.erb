@@ -1,17 +1,30 @@
-<div class="container-fluid">
+<div class="container">
 	<div class="row-fluid">
-		
-		<%= form_for @company do |f| %>
+		<div class="span12">
+			<div class="info-box-light-orange">
+				<h5>To add a new job, sign-in and then go to the company that you want to add the job for</h5>
+			</div>
+		</div>
+	</div>
+	
+	<div class="dashboard">
+	</div>
+	
+	<div class="row-fluid">
+
 			<div class="span3">
+		<%= form_for @company do |f| %>
 				<p><%= f.text_field :name, :placeholder => "Company Name" %></p>
 				<p>	<%= f.collection_select :industry_id, Industry.order(:industry), :id, :industry, include_blank: true %></p>	
 				<p><%= f.text_field :website, :placeholder => "Website Link" %></p>
 				<p><%= f.text_field :hr_email, :placeholder => "HR Email" %></p>
 			</div>
 			<div class="span6">
-				<p><%= f.text_area  :info, :placeholder => "information"  %></p>
-				<p><%= f.file_field :logo, :placeholder => "logo" %>
-				<%= f.submit %>
+				<p><%= f.text_area  :info, :placeholder => "Company information"  %></p>
+				<% if current_user.role == 'admin '%>
+					<p><%= f.file_field :logo, :placeholder => "logo" %>
+				<% end %>
+				<%= f.submit :class => "sign-up-button" %>
 			</div>
 
 		<% end %>

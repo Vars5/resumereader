@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
 	<head>
 		<title><%= full_title(yield(:title)) %></title>  
 
@@ -10,37 +7,29 @@
 	  <%= javascript_include_tag "application" %>
 	  <%= csrf_meta_tags %>
 	  <%= favicon_link_tag 'favicon.ico' %>
-	  <link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'>
+	  <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+
  	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
 	</head>
 	
 	<body>
-		<!-- Yeah if you're reading this code, sorry for the eyesore -Pashpops -->
-		<!-- Alternatively if you're keen on making this code & whole project more awesome, email us: pasha.rayan@gmail.com -->		
+		<!-- Hi! Hope ResumeQuery's helped you! Drop us an email with any questions: pasha.rayan@gmail.com. Best of luck! -->
+		<!-- Go NEWSOUTH! -->			
 		<% if signed_in? %>
-			<div class="signed-in">
 			<%= render 'layouts/header'%>
-				<div class="container">
-					<div class="row-fluid">
-						<div class="span2">
-						   <div>
-						   	<%= render 'layouts/left-board'%>
-						   </div>
-						</div>
-						<div class="span10">
-						   <%= yield %>
-						</div>
-					</div>
-				</div>
+			<div class="container">
+				<%= yield %>
 			</div>
 		<% else %>
-			<%=render 'staticpages/copywritearea'%>
-			<%= yield %>			
-			<% cache "footer" do %>
-				<%=render 'layouts/footer'%>
-			<% end %>
+			<%= render 'layouts/header'%>
+			<div class="container">
+				<%= yield %>	
+			</div>
+
+
 		<% end %>
+		<%=render 'layouts/footer'%>
 		<%=render 'shared/google_analytics' if Rails.env.production? %>
 	</body>
 </html>

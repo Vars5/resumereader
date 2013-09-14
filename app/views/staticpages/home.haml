@@ -1,0 +1,33 @@
+.dashboard
+
+.row-fluid
+	.span6
+		%h4(class="applist-area")
+			Jobs & Internships
+		-@jobs.each do |job|
+			=link_to job do 
+				.appManage
+					.row-fluid
+						.span8	
+							.pad-lightly
+								%b= job.show_company_name
+								\ &nbsp - &nbsp 
+								=job.name
+						.span4
+							.pull-right								
+								-if job.show_due_date == "Closed"
+									%span(class="red-text")
+										=job.show_due_date
+								-else 
+									=job.show_due_date
+								&nbsp &nbsp 
+								=link_to "Follow", new_user_registration_path, :class => "follow-button"
+		%span(class="small-text") Export to excel (coming soon)
+	.span3
+		=render 'layouts/discover'
+	.span3
+		%h4(class="applist-area")
+			\#icecream #jobapps 
+		=render 'layouts/instagram_feed'
+		#rQfeed
+		#instafeed

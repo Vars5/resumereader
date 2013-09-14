@@ -1,7 +1,7 @@
 module ApplicationHelper
   
   def full_title(page_title)
-      base_title = "ResQuery"
+      base_title = "ResumeQuery"
       if page_title.empty?
         base_title
       else
@@ -17,5 +17,7 @@ module ApplicationHelper
           when :alert then "alert alert-error"
       end
   end
+
+
 
 end

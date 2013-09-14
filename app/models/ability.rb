@@ -6,12 +6,14 @@ class Ability
       can :manage, :all
     else 
       can :manage, AppList, :user_id => current_user.id
-      can :create, School
-      cannot :index, Problem
+      can :manage, Job
+      can :manage, Company
+      #can :create, School
+      #cannot :index, Problem
       
       #social feature
-      can :manage, Group, :groupmembers => { :user_id => current_user.id, :admin => true, :owner => true }
-      can :read, Group, :groupmembers => { :user_id => current_user.id }
+      #can :manage, Group, :groupmembers => { :user_id => current_user.id, :admin => true, :owner => true }
+      #can :read, Group, :groupmembers => { :user_id => current_user.id }
       
 #     can :manage, Groupmember, :user_id => current_user.id, :admin => true, :owner => true, :groups => {:group_id => } 
       

@@ -1,0 +1,95 @@
+.container-fluid
+  .row-fluid
+    .span12
+      %b Summary
+      %p
+        There are #{Company.all.count} Companies
+      %p
+        There are #{User.all.count} Users
+      %p
+        There are #{AppList.all.count} jobs being followed
+        %p
+          There are #{Follow.all.count} companies being followed
+          %p
+            There are #{Note.all.count} notes created
+          %ul
+            %table{:border => "2"}
+              %tr
+                %th First Name
+                %th Email
+                %th Phone Number
+                %th User Id
+                %th Sign in Count
+                %th Signup Date
+                %th Company Follow
+                %th Applists
+              - @list.each do |user|
+                %tr
+                  %td
+                    = user.first_name
+                  %td
+                    = user.email
+                  %td
+                    = user.mobile_number
+                  %td
+                    = user.id
+                  %td= user.sign_in_count
+                  %td= user.created_at.strftime("%e%b%y" )
+                  %td= user.follows.count
+                  %td= user.app_lists.count
+          %table{:border => "1"}
+            %tr
+              %th Company
+              %th Job
+              %th Link
+              %th Users following
+              %th Edit
+            - @job.each do |list|
+              %tr
+                %td= list.find_company.name
+                %td
+                  = list.name
+                %td
+                  = link_to "Link", "http://#{list.link}"
+                  %td
+                    = list.app_lists.count
+                  %td
+                    = link_to "Edit", edit_job_path(list)
+          %table{:border => "1"}
+            %tr
+              %th Company
+              %th Users Following
+            - @company.each do |company|
+              %tr
+                %td= link_to "#{company.name}", company
+                %td= company.follows.count
+          %ul
+            - @list.each do |user|
+              %li
+                = user.first_name
+                \- #{user.email}
+              %table{:cellpadding => "10"}
+                %tr
+                  %th Company
+                  %th Job
+                  %th Due Date
+                  %th Status
+                - user.app_lists.each do |applists|
+                  %tr
+                    %td
+                      = Company.find(Job.find_by_id(applists.job_id).company_id).name
+                    %td
+                      = Job.find_by_id(applists.job_id).name
+                    %td
+                      = Job.find_by_id(applists.job_id).show_due_date
+                    %td
+                      = applists.status
+                      - if applists.status.blank?
+                        Not Started
+- if can? :create, @job
+  .row-fluid.profileSpot
+    %ul
+      %li
+        %strong LINKS - Remove when admin set up
+      %li
+        = link_to 'New company page', new_company_path

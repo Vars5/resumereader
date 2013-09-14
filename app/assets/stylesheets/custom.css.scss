@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import "bootstrap-responsive";
+
 /* ========= SECTION: CONTENTS =========*/
 /*
    1. STYLE VARIABLES
@@ -23,21 +24,27 @@ $dark-grey: #666A73;
 $text-grey: #787878;
 $light-text-grey:#9C9C9C;
 
+$dark-blue: #1BB7CC;
+$light-blue: #76D6E3;
+
 /* greens */
 $base-green:  #39b54a;
 $top-green:   #54bb62;
 $dark-green: #46724C;
 $menu-green: #DEFCCA;
 $link-green: #468966;
-
-$light-green: #acd373;
 $aqua: #00746b;
+$light-teal: #EDFCF8;
+
+$light-aqua: #E8F2F2;
 $dark-aqua:#003530;
-$aqua-midpoint:#73B370;
+$orange-midpoint:#FAD2AB;
+$dark-orange:#DB7817;
 
 /* other*/
 $ft-color: #fff1e0;
 $dark-red: #D41528;
+$orange: #F18419;
 
 /* standards */
 
@@ -48,23 +55,40 @@ $standard-line: 1px solid $line-grey;
 /* ========= END SECTION: STYLE VARIABLES =========*/
 
 
+@media (min-width: 1200px) {
+  .span12, .container {
+    width: 1170;
+  }
+}
+
+@media (max-width: 978px) {
+    body {
+      padding:0;
+    }
+
+	.container{
+		padding:10px;
+	}
+
+}
+
 
 /* ========= SECTION: UNIVERSALS =========*/
+
+
 
 html{
 	height:100%;
 }
-
-.background-white{
-	background-color:white;
+a:hover{
+		text-decoration:none !important;
 }
-
 body {
-	font-family: 'Noto Sans', sans-serif;	
-	font-size:12px;
+font-family: 'Oxygen', sans-serif;
+	font-size:13px;
 	height:100%;
 	a{
-		color:$link-green;
+		color:$dark-grey;
 	}
 }
 
@@ -79,7 +103,6 @@ select {
 
 input {
 	width:95%;
-	border:1px solid $dark-green !important;
 }
 
 input[type='checkbox'] {
@@ -171,6 +194,9 @@ input[type='checkbox'] {
 	margin-top:59px;
 }
 
+h3 {
+	color:$orange;
+}
 
 /* ========= END SECTION: UNIVERSALS =========*/
 
@@ -179,8 +205,7 @@ input[type='checkbox'] {
 /* ========= SECTION: LEFT-BOARD =========*/
 
 .logo {
-	padding-top:$standard-padding;
-	text-align:center;
+	margin-top:$standard-padding*2;
 }
 
 
@@ -192,7 +217,7 @@ input[type='checkbox'] {
 		
 	}	
 	li:hover{
-		background-color:$base-green;
+		background-color:$orange;
 		color:white;
 	}
 }
@@ -230,10 +255,10 @@ input[type='checkbox'] {
 	/*margin-top:-1px;*/
 	font-size:13px;
 	background-color:white;
-	padding:9px 10px 0px 9px;
-	margin-bottom:6px;
-	/*border: 1px solid $line-grey;*/
-	border-bottom:1px solid $light-grey;	
+	padding:20px 10px 9px 9px;
+
+
+	border-bottom:1px solid $line-grey;	
 	a {
 		text-decoration:none;	
 	}
@@ -241,6 +266,7 @@ input[type='checkbox'] {
 
 .appManage:hover{
 	background-color:$line-grey;
+
 }
 
 .appManage-status{
@@ -275,13 +301,14 @@ input[type='checkbox'] {
 
 
 .copywrite-area{
+	background-color:$orange;
 	padding-top:30px;
 	height:110px;
 }
 
 .footing {
-	/*border-top:1px solid $line-grey;*/
-	padding:$standard-padding;
+
+	padding:$standard-padding 0px;
 }
 
 .dash-area {
@@ -294,7 +321,7 @@ input[type='checkbox'] {
 
 .info-bar {
 	min-height:220px;
-	background-color:$aqua;
+	background-color:$orange;
 	margin-bottom:$standard-padding;
 	padding:$standard-padding*3 0;
 
@@ -306,25 +333,24 @@ input[type='checkbox'] {
 	line-height:45px;
 	}
 	a {
-		color:$light-green;
+		color:white;
 	}
 	.sign-up-button{
 		min-width:99%;
 		padding: 3px 15px;
-	    background: $light-green;
-		color:$aqua;
+		color:$orange;
 		border-radius: 4px;
 	}
 
 	.sign-up-button:hover, .sign-up-button:focus {
-	    background: $aqua-midpoint;
+	    background: $orange-midpoint;
 	    color: $menu-green;
-	    border: solid 1px $aqua-midpoint;
+	    border: solid 1px $orange-midpoint;
 	    text-decoration: none;
 
 	}
 	h3{
-		color:#E8F2F2;
+		color:$light-aqua;
 	}
 
 }
@@ -434,12 +460,14 @@ input[type='checkbox'] {
 
 
 .header{
-	padding:2px 0px;
-	height:20px;
-	background-color:$base-green;
+	padding:40px 0px 0px;
+	background-color:$orange;
 	font-size:10px;
 	a{
-		color:$menu-green;
+		color:white;
+	}
+	img{
+		height:50px;
 	}
 }
 
@@ -536,14 +564,12 @@ input[type='checkbox'] {
 }
 
 .big-title-text{
-	padding:60px 0px 5px;
+	line-height:43px;
 	font-size:32px;
 	font-weight:700;
 }
 
-.green-font{
-	color: $light-green;
-}
+
 
 .intro-text{
 	font-size:14px;
@@ -552,17 +578,16 @@ input[type='checkbox'] {
 .sign-in-button{
 	font-size:23px;
 	font-weight:700;
-	color:$light-text-grey;
+	color:$dark-grey;
 }
 
 .sign-in-button:hover{
 	text-decoration:none;
-	color:$aqua;
+	color:white;
 }
 
 .sign-up-text{
 	font-size:15px;
-	color:$light-green;
 	font-weight:400;
 	padding-bottom:10px;
 }
@@ -578,4 +603,160 @@ input[type='checkbox'] {
 		height:55px;
 		width:204px;
 	}
+}
+
+.my-jobs-button{
+	height:40px;
+	padding-top:15px;
+	font-size:13px;
+	border-right:1px solid $dark-orange;
+	text-align:center;
+	border-left:1px solid $dark-orange;
+	width:135px;
+	float:left;
+}
+
+.my-jobs-button:hover{
+	background-color:$dark-orange;
+}
+
+.account-button{
+	height:40px;
+	padding-top:15px;
+	font-size:13px;
+	border-right:1px solid $dark-orange;
+	text-align:center;
+	min-width:80px;
+	float:left;	
+}
+
+.account-button:hover{
+	background-color:$dark-orange;
+}
+
+.applist-area{
+	color:$dark-grey;
+	border-bottom:1px solid $line-grey;
+	padding-bottom:10px;
+	padding-left:9px;
+}
+
+.dashboard{
+	padding-top:55px;
+}
+
+.small-text{
+	padding:9px;
+	font-size: 8px;
+	text-decoration: strikethrough;
+}
+
+.search-header{
+	border-top:1px solid $text-grey;
+	border-bottom:1px solid $text-grey;
+	background-color:$line-grey;
+	padding-top:25px;
+}
+
+.animation{
+	img{
+	width:95%;
+	padding:10px;
+	}
+}
+
+.tiny-pad{
+	padding-top:7px;
+	padding-left:5px;
+}
+
+.tiny-pad-right{
+	padding-top:7px;
+	padding-right:5px;
+}
+
+.follow-button{
+	min-width:100px;
+	padding: 3px 15px;
+	background-color:$dark-blue;
+	border-radius: 2px;
+	color:white;
+	font-weight:bold;
+	border:0px !important;
+
+}
+.follow-button:hover{
+	background-color:$light-blue;
+}
+
+.pad-lightly{
+	padding-bottom:5px;
+}
+
+
+.info-box-yellow{
+	padding:10px;
+	border-radius: 4px;
+	background-color:#F7F0BA;
+	color:$light-text-grey;
+	line-height:20px;
+	h5{
+		color:$orange;
+	}
+}
+
+.info-box-light-teal{
+	border-radius: 4px;
+	background-color:$light-teal;
+	padding:10px;
+	margin-top:15px;
+	color:$light-text-grey;
+	h5{
+		color:$aqua;
+	}
+}
+
+.info-box-light-teal:hover{
+	background-color:#D1E6E4;
+}
+
+.info-box-light-orange{
+	border-radius: 4px;
+	background-color:#FCE9D5;
+	padding:10px;
+	margin-top:15px;
+	color:$light-text-grey;
+	h5{
+		color:$dark-red;
+	}
+}
+
+
+.about-text{
+	color:$light-text-grey;
+	font-size:20px;
+	line-height:30px;
+}
+
+.about-area{
+	padding:$standard-padding 0px;
+	border-top: 1px solid $line-grey;
+
+
+}
+
+
+.sign-up-button{
+	min-width:99%;
+	padding: 3px 15px;
+	color:white;
+	border-radius: 4px;
+	border:0px !important;
+	background-color:#54bb62;
+}
+
+.sign-up-button:hover, .sign-up-button:focus {
+    background: $dark-green;
+    text-decoration: none;
+
 }

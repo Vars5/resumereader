@@ -1,6 +1,6 @@
 class Job < ActiveRecord::Base
   
-  attr_accessible :name, :link, :discipline, :info, :due_date, :role, :category_id, :role_id, :location, :open
+  attr_accessible :name, :link, :discipline, :info, :due_date, :role, :category_id, :role_id, :location, :open, :job_type
   
   belongs_to :company
   
@@ -9,6 +9,7 @@ class Job < ActiveRecord::Base
   has_many :roles
   
   validates :name, presence: :true
+  validates :job_type, presence: :true
   validates :category_id, presence: :true
   validates :role_id, presence: :true
   validates :info, presence: :true 
@@ -21,11 +22,15 @@ class Job < ActiveRecord::Base
 #  before_save :set_job_title
   
   def set_job_title
-
+    
   end
   
   def find_company
     Company.find_by_id(self.company_id)
+  end
+  
+  def show_company_name
+    self.find_company.name
   end
   
   def relevant_hr_email
@@ -33,8 +38,12 @@ class Job < ActiveRecord::Base
   end
   
   def show_due_date
-    if self.due_date != nil
-      self.due_date.strftime("%B %e") 
+    if self.due_date != nil 
+      if self.due_date < DateTime.now
+        "Closed"
+      else
+        self.due_date.strftime("%b %e") 
+      end
     end
   end
   
