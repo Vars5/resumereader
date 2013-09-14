@@ -14,8 +14,12 @@
 								\ &nbsp - &nbsp 
 								=job.name
 						.span4
-							.pull-right
-								=job.show_due_date
+							.pull-right								
+								-if job.show_due_date == "Closed"
+									%span(class="red-text")
+										=job.show_due_date
+								-else 
+									=job.show_due_date
 								&nbsp &nbsp 
 								=link_to "Follow", new_user_registration_path, :class => "follow-button"
 		%span(class="small-text") Export to excel (coming soon)

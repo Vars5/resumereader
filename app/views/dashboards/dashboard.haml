@@ -22,6 +22,10 @@
 							%span(class="red-text")=apps.status
 						.span2
 							.pull-right
+							-if job.show_due_date == "Closed"
+								%span(class="red-text")
+									=job.show_due_date
+							-else 
 								=job.show_due_date
 		%span(class="small-text") Export to excel (coming soon)
 	.span3
