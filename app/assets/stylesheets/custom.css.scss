@@ -699,9 +699,13 @@ h3 {
 	border-radius: 4px;
 	background-color:#F7F0BA;
 	color:$light-text-grey;
-	line-height:20px;
+	line-height:16px;
+	font-size:11px;
 	h5{
 		color:$orange;
+	}
+	img {
+		max-width:100px;
 	}
 }
 
@@ -711,8 +715,13 @@ h3 {
 	padding:10px;
 	margin-top:15px;
 	color:$light-text-grey;
+	line-height:16px;
+	font-size:11px;
 	h5{
 		color:$aqua;
+	}
+	img {
+		max-width:100px;
 	}
 }
 
@@ -726,8 +735,13 @@ h3 {
 	padding:10px;
 	margin-top:15px;
 	color:$light-text-grey;
+	line-height:16px;
+	font-size:11px;
 	h5{
 		color:$dark-red;
+	}
+	img {
+		max-width:100px;
 	}
 }
 

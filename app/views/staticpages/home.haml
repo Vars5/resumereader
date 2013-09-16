@@ -1,7 +1,7 @@
 .dashboard
 
 .row-fluid
-	.span6
+	.span7
 		%h4(class="applist-area")
 			Jobs & Internships
 		-@jobs.each do |job|
@@ -23,11 +23,11 @@
 								&nbsp &nbsp 
 								=link_to "Follow", new_user_registration_path, :class => "follow-button"
 		%span(class="small-text") Export to excel (coming soon)
-	.span3
+	.offset1.span2
 		=render 'layouts/discover'
-	.span3
+	.span2
 		%h4(class="applist-area")
-			\#icecream #jobapps 
+			\#jobapps 
 		=render 'layouts/instagram_feed'
 		#rQfeed
 		#instafeed
