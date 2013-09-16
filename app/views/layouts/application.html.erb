@@ -11,6 +11,11 @@
 
  	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+
+
+
+
 	</head>
 	
 	<body>
@@ -31,5 +36,8 @@
 		<% end %>
 		<%=render 'layouts/footer'%>
 		<%=render 'shared/google_analytics' if Rails.env.production? %>
+		<%= render 'layouts/uservoice' %>
+		
+		
 	</body>
 </html>
