@@ -1,7 +1,7 @@
 .dashboard
 
 .row-fluid
-	.span6
+	.span7
 		%h4(class="applist-area")
 			My Jobs List &nbsp - &nbsp
 			= current_user.app_list_count
@@ -28,9 +28,9 @@
 							-else 
 								=job.show_due_date
 		%span(class="small-text") Export to excel (coming soon)
-	.span3
+	.offset1.span2
 		=render 'layouts/discover'
-	.span3
+	.span2
 		%h4(class="applist-area")
 			\#icecream #jobapps 
 		=render 'layouts/instagram_feed'

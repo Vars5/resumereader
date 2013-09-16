@@ -8,5 +8,5 @@
 
 
 
-User.create(email: "admin@email.com", :password => 'password', :password_confirmation => 'password', :first_name =>
+User.create(email: "team@resumequery.com", :password => 'antifragile2', :password_confirmation => 'antifragile2', :first_name =>
               'Team', :last_name => 'ResumeQuery', :role => 'admin')
