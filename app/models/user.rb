@@ -44,10 +44,9 @@ class User < ActiveRecord::Base
     discipline_jobs = Job.where("category_id = ?", "1")
     discipline_jobs.each do |job|
       if self.is_following_applist?(job)
-       #do nothing
+        #do nothing
       else  
-        self.app_lists.buid( :job_id => job.id )
-        
+        self.app_lists.create( :job_id => job.id )        
       end
     end
   end
@@ -74,12 +73,7 @@ class User < ActiveRecord::Base
     self.follows.find_by_company_id(company.id)
   end
   
-  def quick_follow_list
-    discipline_jobs = Job.where("category_id = ?", "1")
-    discipline_jobs.each do |job|
-      self.app_lists.create( :job_id => job.id )
-    end
-  end
+
   
   
   has_attached_file :avatar,
