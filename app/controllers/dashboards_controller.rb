@@ -11,11 +11,14 @@ class DashboardsController < ApplicationController
       @company = Company.paginate(page: params[:page],:per_page => 5)
       @jobs = Job.paginate(page: params[:page],:per_page => 5)
     end
+    
+    @category = Category.all
+    
   end
   
   
   def add_quick_follow_list
-    current_user.quick_follow_list
+    current_user.quick_follow_list(params[:quicklist][:follow_number])
     redirect_to root_path
   end
   

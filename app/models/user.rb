@@ -40,8 +40,9 @@ class User < ActiveRecord::Base
     self.app_lists.find_by_job_id(job.id) != nil
   end
 
-  def quick_follow_list
-    discipline_jobs = Job.where("category_id = ?", "1")
+  def quick_follow_list(category_id)
+    
+    discipline_jobs = Job.where("category_id = ?", category_id)
     discipline_jobs.each do |job|
       if self.is_following_applist?(job)
         #do nothing

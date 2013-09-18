@@ -2,32 +2,33 @@
 
 .row-fluid
 	.span7
-		%h4(class="applist-area")
-			My Jobs List &nbsp - &nbsp
-			= current_user.app_list_count
+		- if @appList.count != 0
+			%h4(class="applist-area")
+				My Jobs List &nbsp - &nbsp
+				= current_user.app_list_count
 			
-		- @appList.each do |apps|
+			- @appList.each do |apps|
 
-			- job = apps.find_job
-			- company = job.find_company
+				- job = apps.find_job
+				- company = job.find_company
 			
-			= link_to apps do 
-				.appManage
-					.row-fluid
-						.span8
-							%b= company.name 
-							\ &nbsp - &nbsp
-							= job.name 
-						.span2
-							%span(class="red-text")=apps.status
-						.span2
-							.pull-right
-							-if job.show_due_date == "Closed"
-								%span(class="red-text")
+				= link_to apps do 
+					.appManage
+						.row-fluid
+							.span8
+								%b= company.name 
+								\ &nbsp - &nbsp
+								= job.name 
+							.span2
+								%span(class="red-text")=apps.status
+							.span2
+								.pull-right
+								-if job.show_due_date == "Closed"
+									%span(class="red-text")
+										=job.show_due_date
+								-else 
 									=job.show_due_date
-							-else 
-								=job.show_due_date
-		%span(class="small-text") Export to excel (coming soon)
+			%span(class="small-text") Export to excel (coming soon)
 	.offset1.span2
 		=render 'layouts/discover'
 	.span2
@@ -37,5 +38,9 @@
 		#rQfeed
 		#instafeed
 
-		
-= button_to "QuickList", quicklist_path
+
+- @category.each do |category|
+	= form_for :quicklist, :url => {:action=>"add_quick_follow_list"} do |f|
+		=f.hidden_field :follow_number, :value => category.id
+		=f.submit "#{category.discipline}"
+
