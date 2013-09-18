@@ -1,0 +1,34 @@
+
+.hierachy
+
+.row-fluid
+  .span7
+    %h3
+      - cache @job do
+        = @job.name
+        %br/
+    %h4
+      %strong= link_to @job.find_company.name, @job.find_company
+      - if @job.due_date != nil
+        \- Closes #{@job.due_date.strftime("%B %e")}
+
+      - if user_signed_in?
+        - if current_user.is_following_applist?(@job)
+          %span.label.label-inverse You are following this job
+        - else
+          = form_for @appList, :as => :applist do |f|
+            = f.hidden_field :job_id, :value => params[:id]
+            = f.hidden_field :status, :value => "Research"
+            = f.submit "Add to My Jobs", :class => "btn btn-info btn-large"
+
+      \&nbsp
+      %hr
+        - if @job.has_website?
+          %h2
+            = link_to "Official Link", "http://#{@job.link}", :target => "_blank"
+        Type: #{Role.find(@job.role_id).role}
+        %br/
+        Discipline: #{Category.find(@job.category_id).discipline}
+        %hr
+          - if false
+            = simple_format(@job.info)

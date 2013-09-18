@@ -14,15 +14,14 @@ class JobsController < ApplicationController
   end
   
   def index
-    @problem = Problem.new
+
     if params[:category_id]
       discipline = Category.find(params[:category_id])
       @jobs = Job.where("category_id = ?", discipline).order("due_date DESC")
     else
       @jobs = Job.where('open = ?', true).order("due_date DESC")
     end
-  
-  
+    
   
   end
   

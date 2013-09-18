@@ -18,6 +18,8 @@ Resumereader::Application.routes.draw do
   #match '/resumeQuestions', :to => 'dashboards#resumeQuestions'
   #match '/resume', :to => 'dashboards#resume'
   match '/changeSettings', :to => 'dashboards#changeSettings'
+  match '/quicklist', :to => 'dashboards#add_quick_follow_list', via: [:post]
+
   
   #admin pages
   match '/admin', to: 'dashboards#admin'

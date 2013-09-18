@@ -24,7 +24,7 @@ class CompaniesController < ApplicationController
     @jobs = @company.jobs.build
     @boards = @company.boards.new
     @allBoards = Board.where("company_id = ?", params[:id])
-    @problem = Problem.new
+
   end
   
   def index

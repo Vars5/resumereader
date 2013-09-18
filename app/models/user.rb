@@ -36,6 +36,21 @@ class User < ActiveRecord::Base
   validates :first_name, length: { maximum: 30 }
   validates :last_name, length: { maximum: 30 }
 
+  def is_following_applist?(job)
+    self.app_lists.find_by_job_id(job.id) != nil
+  end
+
+  def quick_follow_list
+    discipline_jobs = Job.where("category_id = ?", "1")
+    discipline_jobs.each do |job|
+      if self.is_following_applist?(job)
+       #do nothing
+      else  
+        self.app_lists.buid( :job_id => job.id )
+        
+      end
+    end
+  end
   
   def app_list_feed
     AppList.where("user_id = ?", self.id)
@@ -45,15 +60,12 @@ class User < ActiveRecord::Base
     AppList.where("user_id = ?", self.id).count
   end
 
-  def is_following_applist?(job)
-    self.app_lists.find_by_job_id(job.id) != nil
-  end
+
 
   def has_no_applists?
     self.app_lists.count == 0
   end
   
-  #User Follows a company
   def follow!(company)
     self.follows.create!(company_id: company.id)
   end
@@ -61,6 +73,14 @@ class User < ActiveRecord::Base
   def following?(company)
     self.follows.find_by_company_id(company.id)
   end
+  
+  def quick_follow_list
+    discipline_jobs = Job.where("category_id = ?", "1")
+    discipline_jobs.each do |job|
+      self.app_lists.create( :job_id => job.id )
+    end
+  end
+  
   
   has_attached_file :avatar,
       :styles => {
