@@ -777,7 +777,8 @@ h3 {
 }
 
 .quicklist-box{
-	width:95%;
+	max-width:100%;
+	min-width:100%;
 	border:0px !important;
 	border-radius: 4px;
 	background-color:$ft-color;
@@ -785,8 +786,12 @@ h3 {
 	margin-top:15px;
 	color:$dark-red;
 	line-height:16px;
-	font-size:15px;
+	font-size:11px;
 	img {
 		max-width:100px;
 	}
 }
+
+.quicklist-box:hover{
+	background-color:#FCE9D5;
+};
