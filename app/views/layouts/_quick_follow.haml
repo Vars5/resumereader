@@ -1,7 +1,7 @@
 - @category.each_slice(4).to_a.each do |category_group|
 	.row-fluid	
 		-category_group.each do |category|
-			.span4		
+			.span3		
 				= form_for :quicklist, :url => {:action=>"add_quick_follow_list"} do |f|
 					=f.hidden_field :follow_number, :value => category.id
 					=f.submit "#{category.discipline}", :class => "quicklist-box"	
