@@ -14,6 +14,7 @@ class Job < ActiveRecord::Base
   validates :role_id, presence: :true
   validates :info, presence: :true 
   validates :link, presence: true
+  validates :due_date, presence: true
   
   #swiftype information 
   after_save :enqueue_create_or_update_document_job

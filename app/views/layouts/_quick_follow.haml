@@ -1,0 +1,6 @@
+.row-fluid
+	- @category.each do |category|
+		.span4
+			= form_for :quicklist, :url => {:action=>"add_quick_follow_list"} do |f|
+				=f.hidden_field :follow_number, :value => category.id
+				=f.submit "#{category.discipline}", :class => "sign-up-button"

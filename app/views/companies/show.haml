@@ -1,44 +1,35 @@
 .dashboard
 .row-fluid
-  .span6
-    - cache @company do
-      .pad-bottom
-        %h3= @company.name
-        - if user_signed_in?
-          - #render 'follow_company'
-          -#Followers: #{@company.users.count}
-          - if can? :update, @company
-            %p= link_to 'Edit company details', edit_company_path
-      .top-bottom-borders
-        = Industry.find(@company.industry_id).industry
-        %br/
-        = link_to "#{@company.website}", "http://#{@company.website}"
-        HR Email: #{@company.hr_email}
-      %br/
-      %p/
+
+  .span7
+    .pad-bottom
+      %h3= @company.name
+      = Industry.find(@company.industry_id).industry
+      %br
+      = link_to "#{@company.website}", "http://#{@company.website}"
+
     - if @company.has_number_of_jobs > 0
-      %strong
+      %strong(class="applist-area")
         Job opportunities with #{@company.name}:
-      %ul.unstyled
-        - @company.has_jobs.each do |job|
-          .appManage
-            %li= link_to "#{job.name} - #{job.discipline}", job
-  .span6
-    - if user_signed_in?
-      - if can? :update, @company
-        .info-box-light-orange
-          %h5 
-            List a job for 
-            = @company.name 
-          = form_for @jobs, :as => :jobs do |f|
-            = f.text_field :name, :placeholder => "Name"
-            = f.collection_select :category_id, Category.order(:discipline), :id, :discipline
-            = f.text_field :info, :placeholder => "Information"
-            = f.text_field :due_date, :placeholder => "Date, insert as DD/MM/YYYY"
-            = f.text_field :link, :placeholder => "Website Link in www.something.com form"
-            = f.select :job_type, [['Internship'], ['Graduate Job']]                               
-            = f.hidden_field :id, :value => params[:id]
-            = f.collection_select :role_id, Role.order(:role), :id, :role, include_blank: true
-            = f.text_field :location, :placeholder => "Location"
-            = f.submit
+      - @company.has_jobs.each do |job|
+        .appManage
+          = link_to "#{job.name} - #{job.discipline}", job
+
+  .offset1.span4
+    - if can? :update, @company
+      .info-box-light-orange
+        %h5
+          List a job for 
+          = @company.name 
+        = form_for @jobs, :as => :jobs do |f|
+          = f.text_field :name, :placeholder => "Name"
+          = f.collection_select :category_id, Category.order(:discipline), :id, :discipline
+          = f.text_field :info, :placeholder => "Information"
+          = f.text_field :due_date, :placeholder => "Date, insert as DD/MM/YYYY"
+          = f.text_field :link, :placeholder => "Website Link in www.something.com form"
+          = f.select :job_type, [['Internship'], ['Graduate Job']]                               
+          = f.hidden_field :id, :value => params[:id]
+          = f.collection_select :role_id, Role.order(:role), :id, :role, include_blank: true
+          = f.text_field :location, :placeholder => "Location"
+          = f.submit
   

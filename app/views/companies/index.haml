@@ -1,0 +1,30 @@
+.dashboard
+  %h4 Companies List
+
+.row-fluid
+  .span7
+    %h5
+      %b Search by Industry
+    = form_tag companies_path, :method => 'get' do
+      = select_tag :industry_id, options_from_collection_for_select(Industry.all, "id", "industry"), include_blank: true, :onchange => "this.form.submit()"
+
+.row-fluid
+  .span7.jobIndex
+    .appManage
+      - @company.each do |c|
+        .row-fluid
+          .span10
+            = link_to c do
+              %span.big-font
+                %strong= c.name
+              %br/
+              = Industry.find(c.industry_id).industry
+              - if c.has_number_of_jobs != 0
+                %br/
+                = c.jobs.count
+                Job Opportunities
+          .span2
+            - if signed_in?
+              = render :partial => 'companies/follow_form', :locals => {:c => c}
+
+      = will_paginate @company

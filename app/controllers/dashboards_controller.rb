@@ -8,8 +8,7 @@ class DashboardsController < ApplicationController
     
     
     if (current_user.has_no_applists? || @appListCount < 6 )
-      @company = Company.paginate(page: params[:page],:per_page => 5)
-      @jobs = Job.paginate(page: params[:page],:per_page => 5)
+      @category = Category.all
     end
     
     @category = Category.all

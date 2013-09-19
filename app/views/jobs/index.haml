@@ -1,6 +1,6 @@
 .dashboard
 .row-fluid
-	.span6.jobIndex
+	.span7.jobIndex
 		.info-box-light-orange
 			%h5 Filter by Discipline:
 			= select_tag :category_id, options_from_collection_for_select(Category.all, "id", "discipline"), include_blank: true, :onchange => "this.form.submit()"

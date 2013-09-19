@@ -2,7 +2,11 @@
 
 .row-fluid
 	.span7
-		- if @appList.count != 0
+		- if @appList.count == 0
+		
+			=render 'layouts/quick_follow' 
+		
+		- else 
 			%h4(class="applist-area")
 				My Jobs List &nbsp - &nbsp
 				= current_user.app_list_count
@@ -28,6 +32,8 @@
 										=job.show_due_date
 								-else 
 									=job.show_due_date
+									
+									
 			%span(class="small-text") Export to excel (coming soon)
 	.offset1.span2
 		=render 'layouts/discover'
@@ -42,5 +48,5 @@
 - @category.each do |category|
 	= form_for :quicklist, :url => {:action=>"add_quick_follow_list"} do |f|
 		=f.hidden_field :follow_number, :value => category.id
-		=f.submit "#{category.discipline}"
+		=f.submit "#{category.discipline}", :class => "sign-up-button"
 

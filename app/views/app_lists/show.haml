@@ -1,13 +1,13 @@
 .hierachy
   .row-fluid
-    .span6.bottom-border
+    .span7.bottom-border
       = link_to "My Jobs", root_path
       \&nbsp >&nbsp #{@job.name}
 .editer{:id => "edit-line-#{@appList.id}"}
   .editer-header
     .container-fluid.negative-margin
       .row-fluid
-        .span3
+        .span4
           %h4= @job.name
           = @company.name
           \- Closes #{@job.show_due_date}
@@ -22,7 +22,7 @@
               {},:onchange => "this.form.submit()";                     
             = f.hidden_field :id, :value => @appList.id
 .row-fluid
-  .span6.editer-main.pad-top.top-border
+  .span7.editer-main.pad-top.top-border
     %div{:class => "editer-@job-comments"}
       .grey-text
         %i.icon-list

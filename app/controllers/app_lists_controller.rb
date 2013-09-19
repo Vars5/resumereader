@@ -5,6 +5,7 @@ class AppListsController < ApplicationController
 
   def create
     @appList = current_user.app_lists.build(params[:applist])
+    @appList.status = "Research"
     @job = Job.find_by_id(params[:applist][:job_id])
     if @appList.save
       redirect_to @appList
