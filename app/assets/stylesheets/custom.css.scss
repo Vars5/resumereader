@@ -710,6 +710,7 @@ h3 {
 }
 
 .info-box-light-teal{
+	border:0px !important;
 	border-radius: 4px;
 	background-color:$light-teal;
 	padding:10px;
@@ -773,4 +774,19 @@ h3 {
     background: $dark-green;
     text-decoration: none;
 
+}
+
+.quicklist-box{
+	width:95%;
+	border:0px !important;
+	border-radius: 4px;
+	background-color:$ft-color;
+	padding:10px;
+	margin-top:15px;
+	color:$dark-red;
+	line-height:16px;
+	font-size:15px;
+	img {
+		max-width:100px;
+	}
 }

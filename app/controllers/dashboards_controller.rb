@@ -6,12 +6,9 @@ class DashboardsController < ApplicationController
     @appListCount = current_user.app_list_count
     @appList = current_user.app_lists.find(:all, :joins => :job, :order => "due_date DESC")
     
-    
-    if (current_user.has_no_applists? || @appListCount < 6 )
+    if (@appListCount < 6 )
       @category = Category.all
-    end
-    
-    @category = Category.all
+    end    
     
   end
   

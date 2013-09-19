@@ -4,6 +4,7 @@ class Category < ActiveRecord::Base
   
   belongs_to :jobs
   
-  validates :first_name, :presence => true
+  validates :discipline, :presence => true
+  validates :discipline, :uniqueness => true
 
 end
