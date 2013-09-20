@@ -22,11 +22,14 @@
 							%span(class="red-text")=apps.status
 						.span2
 							.pull-right
-							-if job.show_due_date == "Closed"
-								%span(class="red-text")
+								-if job.show_due_date == "Closed"
+									%span(class="red-text")
+										=job.show_due_date
+								-else 
 									=job.show_due_date
-							-else 
-								=job.show_due_date
+								&nbsp	
+								= link_to content_tag(:i, "", class: "icon-trash", :data => {:app_id => apps.id}), apps, method: :delete
+
 		-if @appList.count < 6
 			=render 'layouts/quick_follow' 
 									
