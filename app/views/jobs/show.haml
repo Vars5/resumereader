@@ -3,7 +3,8 @@
 .row-fluid
   .span7
     %h3
-      = @job.name
+      = @job.find_company.name
+      = @job.name 
     %h4
       %strong= link_to @job.find_company.name, @job.find_company
       \- Closes #{@job.due_date.strftime("%B %e")}
