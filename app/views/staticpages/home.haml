@@ -2,6 +2,18 @@
 
 .row-fluid
 	.span7
+		
+		=link_to new_user_registration_path do 
+			.info-box-call
+				.row-fluid
+					.span8.call
+						Quickly follow all of the jobs you'll apply for
+					.span4	
+						.sign-up-call
+							Sign Up Now
+				
+		.dashboard
+		
 		%h4(class="applist-area orange-text")
 			Jobs & Internships
 		-@jobs.each do |job|

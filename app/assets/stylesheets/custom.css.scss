@@ -800,3 +800,34 @@ h3 {
 .orange-text{
 	color:$orange;
 }
+
+.sign-up-call{
+	min-height:28px;
+	padding-top:8px;
+	font-size:19px;
+	font-weight:700;
+	background-color:$aqua;
+	text-align:center;
+	color:white;
+	border-radius:4px;
+}
+
+.sign-up-call:hover{
+	background-color:$base-green;
+}	
+
+.info-box-call{
+	border:0px !important;
+	border-radius: 4px;
+	background-color:$light-teal;
+	padding:10px;
+	margin-top:15px;
+	color:$base-green;
+	line-height:16px;
+	font-size:19px;
+}
+
+.call{
+	padding-top:8px;
+	text-align:center;
+}
