@@ -16,7 +16,7 @@
           = link_to "#{job.name} - #{job.discipline}", job
 
   .offset1.span4
-    - if can? :update, @company
+    - if signed_in?
       .info-box-light-orange
         %h5
           List a job for 
