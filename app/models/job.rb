@@ -1,6 +1,6 @@
 class Job < ActiveRecord::Base
   
-  attr_accessible :name, :link, :discipline, :info, :due_date, :role, :category_id, :role_id, :location, :open, :job_type
+  attr_accessible :name, :link, :discipline, :info, :due_date, :role, :category_id, :role_id, :location, :open, :job_type, :wiki
   
   belongs_to :company
   
@@ -9,10 +9,11 @@ class Job < ActiveRecord::Base
   has_many :roles
   
   validates :name, presence: :true
+  validates :name, length: {maximum: 200}
   validates :job_type, presence: :true
   validates :category_id, presence: :true
   validates :role_id, presence: :true
-  validates :info, presence: :true 
+  #validates :info, presence: :true 
   validates :link, presence: true
   validates :due_date, presence: true
   

@@ -36,7 +36,7 @@ $link-green: #468966;
 $aqua: #00746b;
 $light-teal: #EDFCF8;
 $light-green: #DBF2DE;
-$fade-green:#EDF8EF;
+$fade-green:#F4FBF5;
 
 $light-aqua: #E8F2F2;
 $dark-aqua:#003530;
@@ -858,13 +858,36 @@ h3 {
 
 .wiki-title{
 	margin-top:20px;
-	padding:2px 10px;
+	padding:2px 20px;
 	background-color: $light-green;
 	border-top:4px solid $base-green;
 	border-bottom:1px dotted $base-green;
 }
 
 .wiki-info{
-	padding:20px 10px;	
+	padding:20px 14px;	
 	background-color:$fade-green;
+	textarea{
+		border:0px;
+		background-color:$fade-green;
+		outline: none;
+		box-shadow:none !important;
+		height:300px;
+	}
+}
+
+.wiki-editor{
+	background-color:$fade-green;
+	border-bottom:1px dotted $base-green;
+	ul{
+		margin:0px !important;
+	}
+	li{
+		padding:10px 20px !important;
+;
+	}
+	li:hover{
+		background-color:$light-green;
+	}
+
 }

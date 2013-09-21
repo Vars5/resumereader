@@ -5,10 +5,10 @@
 				-if current_user.role == 'admin'
 					= f.text_field :name, :placeholder => "Name"
 				-else
-					%h4=@job.name
+					%h3=@job.name
 			
 				= f.collection_select :category_id, Category.order(:discipline), :id, :discipline, include_blank: true
-				= f.text_area :info, :placeholder => "Information"
+				-# f.text_area :info, :placeholder => "Information"
 				= f.text_field :link, :placeholder => "Website Link in www.something.com form"
 				= f.text_field :due_date, :placeholder => "Date, insert as DD/MM/YYYY"
 				= f.select :job_type, [['Internship'], ['Graduate Job']]                               
@@ -18,4 +18,21 @@
 				- if current_user.role == "admin"
 					Is this job open? #{f.check_box :open, {}, "t", "f"}
 				= f.submit
-				= link_to "Delete This Job", @job, method: :delete, data: { confirm: 'You Sure?'}                     
+				-if current_user.role == 'admin'
+					= link_to "Delete This Job", @job, method: :delete, data: { confirm: 'You Sure?'} 
+		.offset1.span5
+			.wiki-title
+				%h6
+					Public Wiki for 
+					= @job.find_company.name
+					= @job.name
+			.wiki-editor
+				= render 'layouts/textarea-settings'
+			.wiki-info
+				=form_for @job, :as => :jobs do |w|
+					= render 'layouts/textarea-settings'
+					=w.text_area :wiki, :placeholder =>"Add your information to this job listing...", :class =>"focus_", :id => "wysihtml5-textarea"
+					=w.submit "Update Wiki", :class=>"sign-up-button"
+
+					
+=render 'layouts/wysihtml5'

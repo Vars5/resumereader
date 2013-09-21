@@ -6,22 +6,31 @@
       .row-fluid
         .span4
           = link_to @job do 
-            %h4
+            %h3
               = @company.name
               = @job.name  
-          Closes #{@job.show_due_date}
+          Closes #{@job.due_date.strftime("%B %e")}
           %br
-          = link_to "Website", "http://#{@job.link}"
-        .span3
-          .pull-right.red-text.appManage-status.pad-bottom
-          = form_for @appList, :as => :applist, remote: true do |f|
-            = f.select :status, [['Research'], ['Writing Application'], 
-              ['Submitted & Waiting'],['Testing'],                      
-              ['Interview'],['Unfollow', 'unfollow']],                  
-              {},:onchange => "this.form.submit()";                     
-            = f.hidden_field :id, :value => @appList.id
+          Type: #{Role.find(@job.role_id).role}
+          %br
+          Discipline: #{Category.find(@job.category_id).discipline}
+
+        .offset1.span2
+          .pull-right
+            =link_to "http://#{@job.link}", :target => "blank" do
+              .go-to-link
+                Apply now at their website
+
 .row-fluid
-  .span7.top-border
+  .span7.top-border	
+    = form_for @appList, :as => :applist, remote: true do |f|
+      = f.select :status, [['Research'], ['Writing Application'], 
+        ['Submitted & Waiting'],['Testing'],                      
+        ['Interview'],['Unfollow', 'unfollow']],                  
+       {},:onchange => "this.form.submit()";                     
+      = f.hidden_field :id, :value => @appList.id
+    %hr
+	
     %div{:class => "editer-@job-comments"}
 
 
