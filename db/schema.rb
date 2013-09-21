@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130911211401) do
+ActiveRecord::Schema.define(:version => 20130921100138) do
 
   create_table "app_lists", :force => true do |t|
     t.integer  "job_id"
@@ -87,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20130911211401) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
     t.integer  "industry_id"
+    t.text     "wiki"
   end
 
   create_table "delayed_jobs", :force => true do |t|
@@ -187,6 +188,8 @@ ActiveRecord::Schema.define(:version => 20130911211401) do
     t.integer  "role_id"
     t.boolean  "open",        :default => true
     t.string   "job_type"
+    t.text     "wiki"
+    t.text     "forum_link"
   end
 
   create_table "notes", :force => true do |t|

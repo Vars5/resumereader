@@ -32,10 +32,10 @@
 									= link_to content_tag(:i, "", class: "icon-trash", :data => {:app_id => apps.id}), apps,remote: true, method: :delete
 		-if (@appList.count > 0)&&(@appList.count <8)
 			.dashboard
-		-if @appList.count < 8
-			=render 'layouts/quick_follow' 
+		
+		=render 'layouts/quick_follow' 
 				
-			%span(class="small-text") Export to excel (coming soon)
+		%span(class="small-text") Export to excel (coming soon)
 	.offset1.span2
 		=render 'layouts/discover'
 	.span2

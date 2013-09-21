@@ -35,6 +35,8 @@ $menu-green: #DEFCCA;
 $link-green: #468966;
 $aqua: #00746b;
 $light-teal: #EDFCF8;
+$light-green: #DBF2DE;
+$fade-green:#EDF8EF;
 
 $light-aqua: #E8F2F2;
 $dark-aqua:#003530;
@@ -677,7 +679,7 @@ h3 {
 }
 
 .follow-button{
-	min-width:100px;
+	min-width:110px;
 	padding: 3px 15px;
 	background-color:$dark-blue;
 	border-radius: 2px;
@@ -802,6 +804,7 @@ h3 {
 }
 
 .sign-up-call{
+	border:0px;
 	min-height:28px;
 	padding-top:8px;
 	font-size:19px;
@@ -830,4 +833,37 @@ h3 {
 .call{
 	padding-top:8px;
 	text-align:center;
+}
+
+.go-to-link{
+	font-weight:700;
+	font-size:19px;
+	width:120px;
+	margin-top:20px;
+	min-height:50px;
+	padding:30px 20px 20px;
+	border:1px solid $base-green;
+	border-radius:4px;
+	color:$base-green;
+	text-align:center;
+	a{
+		color:white;
+	}
+}
+
+.go-to-link:hover{
+	background-color:$top-green;
+	color:white;
+}
+
+.wiki-title{
+	margin-top:20px;
+	padding:2px 10px;
+	background-color: $light-green;
+	border-top:4px solid $base-green;
+}
+
+.wiki-info{
+	padding:20px 10px;	
+	background-color:$fade-green;
 }

@@ -1,27 +1,39 @@
 .hierachy
-
 .row-fluid
-  .span7
-    %h3
-      = @job.find_company.name
-      = @job.name 
-    %h4
-      %strong= link_to @job.find_company.name, @job.find_company
-      \- Closes #{@job.due_date.strftime("%B %e")}
+	.span7
+		.row-fluid
+			.span8
+				%h3
+					= @job.find_company.name
+					= @job.name 
+				%span
+			
+					Closes #{@job.due_date.strftime("%B %e")}
+					%br
+					Type: #{Role.find(@job.role_id).role}
+					%br
+					Discipline: #{Category.find(@job.category_id).discipline}
 
-      - if user_signed_in?
-        - if current_user.is_following_applist?(@job)
-          %br
-          %span.label.label-inverse You are following this job
-        - else
-          = form_for @appList, :as => :applist do |f|
-            = f.hidden_field :job_id, :value => params[:id]
-            = f.submit "Add to My Jobs", :class => "btn btn-info btn-large"
+			.offset1.span3
+				.pull-right
+					=link_to "http://#{@job.link}", :target => "blank" do
+						.go-to-link
+							Apply now at their website
 
-
-          = link_to "Official Link", "http://#{@job.link}", :target => "_blank"
-        Type: #{Role.find(@job.role_id).role}
-        %br/
-        Discipline: #{Category.find(@job.category_id).discipline}
-        %hr
-          = simple_format(@job.info)
+		%hr          
+		- if current_user.is_following_applist?(@job)
+			%br
+			%span.label.label-inverse You are following this job
+		- else
+			= form_for @appList, :as => :applist do |f|
+				= f.hidden_field :job_id, :value => params[:id]
+				= f.submit "Follow Job ", :class => "follow-button"
+		%hr
+	.span5
+		.wiki-title
+			%h6
+				Public Wiki for 
+				= @job.find_company.name
+				= @job.name
+		.wiki-info
+			Hello
