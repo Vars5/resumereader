@@ -1,28 +1,24 @@
-.hierachy
-
-.editer
-  .editer-header
-    .container-fluid.negative-margin
-      .row-fluid
-        .span4
-          = link_to @job do 
-            %h3
-              = @company.name
-              = @job.name  
-          Closes #{@job.due_date.strftime("%B %e")}
-          %br
-          Type: #{Role.find(@job.role_id).role}
-          %br
-          Discipline: #{Category.find(@job.category_id).discipline}
-
-        .offset1.span2
-          .pull-right
-            =link_to "http://#{@job.link}", :target => "blank" do
-              .go-to-link
-                Apply now at their website
-
+.dashboard
 .row-fluid
-  .span7.top-border	
+  .span7	
+    .row-fluid
+      .span8  
+        = link_to @job do 
+          %h3
+            = @company.name
+            = @job.name  
+        Closes #{@job.due_date.strftime("%B %e")}
+        %br
+        Type: #{Role.find(@job.role_id).role}
+        %br
+        Discipline: #{Category.find(@job.category_id).discipline}
+
+      .span4
+        .pull-right
+          =link_to "http://#{@job.link}", :target => "blank" do
+            .go-to-link
+              Apply now at their website
+    %hr
     = form_for @appList, :as => :applist, remote: true do |f|
       = f.select :status, [['Research'], ['Writing Application'], 
         ['Submitted & Waiting'],['Testing'],                      
@@ -56,3 +52,21 @@
             = a.hidden_field :kind, :value => "comment"
             = a.hidden_field :id, :value => @appList.id
             = a.submit :class => "btn btn-success"
+
+  .span5
+    .wiki-title
+      %h6
+        Public Wiki for 
+        = @job.find_company.name
+        = @job.name
+    .wiki-info
+      -if @job.wiki == nil
+        Add your insights to this wiki - edit this wiki
+      -else
+        =simple_format(@job.wiki)
+      .pad-top
+        %br
+        -if signed_in?
+          =link_to "Edit Wiki", edit_job_path(@job), :class => "sign-up-button"
+        -else
+          =link_to "Edit Job", new_user_registration_path, :class => "sign-up-button"
