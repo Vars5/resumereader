@@ -3,14 +3,11 @@
 %div.comment{ :id => "comment-#{comment.id}"}
 
 	.row-fluid
-		.span1
-			.circle-index-comment
-				- if comment.user.avatar_file_name != nil
-					= image_tag comment.user.avatar.url, :class => "circle-index-comment"
-		.span11
+		.span12
 			.comment-writing
 				%h5
 					=comment.user.first_name
+					&nbsp &nbsp
 					%small= comment.updated_at.localtime.strftime("%d %b %I:%M %P")
 					- if (comment.user.id == current_user.id || current_user.role == "admin")
 						=link_to "x", comment_path(comment), method: :delete, remote: true, confirm: "Are you sure?", disable_with: "x", class: 'close'

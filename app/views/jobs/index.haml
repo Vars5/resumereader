@@ -28,6 +28,6 @@
 												= form_for(current_user.app_lists.build, :as => :applist) do |f|
 													= f.hidden_field :job_id, :value => j.id
 													= f.hidden_field :status, :value => "Research"
-													= f.submit "Follow", class: "follow-button job-index"
+													= f.submit "Follow Job", class: "follow-button job-index"
 
 	.span3

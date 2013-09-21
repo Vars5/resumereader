@@ -1,20 +1,19 @@
 .hierachy
-  .row-fluid
-    .span7.bottom-border
-      = link_to "My Jobs", root_path
-      \&nbsp >&nbsp #{@job.name}
-.editer{:id => "edit-line-#{@appList.id}"}
+
+.editer
   .editer-header
     .container-fluid.negative-margin
       .row-fluid
         .span4
-          %h4= @job.name
-          = @company.name
-          \- Closes #{@job.show_due_date}
+          = link_to @job do 
+            %h4
+              = @company.name
+              = @job.name  
+          Closes #{@job.show_due_date}
+          %br
           = link_to "Website", "http://#{@job.link}"
         .span3
           .pull-right.red-text.appManage-status.pad-bottom
-            Status: #{@appList.status}
           = form_for @appList, :as => :applist, remote: true do |f|
             = f.select :status, [['Research'], ['Writing Application'], 
               ['Submitted & Waiting'],['Testing'],                      
@@ -22,12 +21,10 @@
               {},:onchange => "this.form.submit()";                     
             = f.hidden_field :id, :value => @appList.id
 .row-fluid
-  .span7.editer-main.pad-top.top-border
+  .span7.top-border
     %div{:class => "editer-@job-comments"}
-      .grey-text
-        %i.icon-list
-        Make a note about this application
-      %br/
+
+
       #comment-area.comment-show
       - @appList.show_normal_notes.reverse.each do |normal|
         %div{:id => "comment-#{normal.id}"}

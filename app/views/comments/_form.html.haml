@@ -2,7 +2,7 @@
 .pad-top
 	.comment-form
 		= simple_form_for comment, remote: true do |f|
-			= f.input :body, input_html: {rows: '2'}, label: false
+			= f.input :body, input_html: {rows: '2'}, label: false, :placeholder => "Make a note about this application"
 			= f.input :commentable_id, as: :hidden, value: comment.commentable_id
 			= f.input :commentable_type, as: :hidden, value: comment.commentable_type
 			= f.button :submit, "Add Comment", class: 'btn btn-primary'
