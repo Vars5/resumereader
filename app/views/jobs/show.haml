@@ -20,15 +20,16 @@
 						.go-to-link
 							Apply now at their website
 
-		%hr          
-		- if current_user.is_following_applist?(@job)
-			%br
-			%span.label.label-inverse You are following this job
-		- else
-			= form_for @appList, :as => :applist do |f|
-				= f.hidden_field :job_id, :value => params[:id]
-				= f.submit "Follow Job ", :class => "follow-button"
-		%hr
+		%hr 
+		- if signed_in?         
+			- if current_user.is_following_applist?(@job)
+				%br
+				%span.label.label-inverse You are following this job
+			- else
+				= form_for @appList, :as => :applist do |f|
+					= f.hidden_field :job_id, :value => params[:id]
+					= f.submit "Follow Job ", :class => "follow-button"
+			%hr
 	.span5
 		.wiki-title
 			%h6
@@ -36,4 +37,4 @@
 				= @job.find_company.name
 				= @job.name
 		.wiki-info
-			Hello
+			Hellox
