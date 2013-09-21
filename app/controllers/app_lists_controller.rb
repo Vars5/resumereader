@@ -37,15 +37,15 @@ class AppListsController < ApplicationController
           #format.js
         end
       end
-    end
-
-
-    
+    end    
   end
   
   def destroy
     @appList = current_user.app_lists.find_by_id(params[:id]).destroy
-    redirect_to root_path
+    respond_to do |format|
+      #format.html { redirect_to root_path }
+      format.js
+    end
   end
 
 end

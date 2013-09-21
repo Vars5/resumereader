@@ -8,27 +8,28 @@
 				= current_user.app_list_count
 			
 		- @appList.each do |apps|
-			- job = apps.find_job
-			- company = job.find_company
+			= content_tag("div", id: "item-#{apps.id}" ) do
+				- job = apps.find_job
+				- company = job.find_company
 		
-			= link_to apps do 
-				.appManage
-					.row-fluid
-						.span8
-							%b= company.name 
-							\ &nbsp - &nbsp
-							= job.name 
-						.span2
-							%span(class="red-text")=apps.status
-						.span2
-							.pull-right
-								-if job.show_due_date == "Closed"
-									%span(class="red-text")
+				= link_to apps do 
+					.appManage
+						.row-fluid
+							.span8
+								%b= company.name 
+								\ &nbsp - &nbsp
+								= job.name 
+							.span2
+								%span(class="red-text")=apps.status
+							.span2
+								.pull-right
+									-if job.show_due_date == "Closed"
+										%span(class="red-text")
+											=job.show_due_date
+									-else 
 										=job.show_due_date
-								-else 
-									=job.show_due_date
-								&nbsp	
-								= link_to content_tag(:i, "", class: "icon-trash", :data => {:app_id => apps.id}), apps, method: :delete
+									&nbsp	
+									= link_to content_tag(:i, "", class: "icon-trash", :data => {:app_id => apps.id}), apps,remote: true, method: :delete
 
 		-if @appList.count < 6
 			=render 'layouts/quick_follow' 
