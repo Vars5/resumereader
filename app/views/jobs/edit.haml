@@ -5,7 +5,9 @@
 				-if current_user.role == 'admin'
 					= f.text_field :name, :placeholder => "Name"
 				-else
-					%h3=@job.name
+					%h3
+						= @job.find_company.name 
+						= @job.name
 			
 				= f.collection_select :category_id, Category.order(:discipline), :id, :discipline, include_blank: true
 				-# f.text_area :info, :placeholder => "Information"
