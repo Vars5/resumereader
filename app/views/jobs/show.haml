@@ -49,7 +49,10 @@
 				-else
 					=link_to "Edit Job", new_user_registration_path, :class => "sign-up-button"
 
-		.wiki-title
-			%h6 Link to Whirlpool forum
-		.wiki-info
-			Hello
+		-if @job.forum_link != nil			
+			.wiki-title
+				=link_to @job.forum_link do
+					%h6 Link to Whirlpool forum
+					
+					
+					

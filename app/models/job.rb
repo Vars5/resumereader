@@ -2,7 +2,7 @@ class Job < ActiveRecord::Base
   
   require 'obscenity/active_model'
   
-  attr_accessible :name, :link, :discipline, :info, :due_date, :role, :category_id, :role_id, :location, :open, :job_type, :wiki
+  attr_accessible :name, :link, :discipline, :info, :due_date, :role, :category_id, :role_id, :location, :open, :job_type, :wiki, :forum_link
   
   belongs_to :company
   

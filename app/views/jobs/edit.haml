@@ -15,6 +15,7 @@
 				= f.hidden_field :id, :value => params[:id]
 				= f.collection_select :role_id, Role.order(:role), :id, :role, include_blank: true
 				= f.text_field :location, :placeholder => "Location"
+				= f.text_field :forum_link, :placeholder => "Whirlpool link"
 				- if current_user.role == "admin"
 					Is this job open? #{f.check_box :open, {}, "t", "f"}
 				= f.submit

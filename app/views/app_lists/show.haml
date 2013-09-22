@@ -70,3 +70,8 @@
           =link_to "Edit Wiki", edit_job_path(@job), :class => "sign-up-button"
         -else
           =link_to "Edit Job", new_user_registration_path, :class => "sign-up-button"
+
+    -if @job.forum_link != nil			
+      .wiki-title
+        =link_to @job.forum_link do
+          %h6 Go to the Whirlpool forum for this job
