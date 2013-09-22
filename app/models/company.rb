@@ -21,7 +21,9 @@ class Company < ActiveRecord::Base
     }
 =end  
 
-   
+   def to_param
+       "#{id}-#{name}".parameterize
+   end
    
   def has_image?
     self.logo_file_name != nil
