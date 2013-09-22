@@ -1,26 +1,17 @@
 <script type="text/javascript">
-    
-	var jobappsFeed = new Instafeed({
-		target: 'instafeed',
-		get: 'tagged',
-		tagName: 'icecream',
-		limit: '2',
-		clientId: 'dff714fb915a45459648a1fa496037fe',
-		resolution: 'low_resolution',
-		template: '<a class="animation" href="{{link}}"><img src="{{image}}" /></a>'
-	});
+ 
 
 	var rQfeed = new Instafeed({
 		target:'rQfeed',
     	get: 'tagged',
     	tagName: 'jobapps',
-		limit: '4',
+		limit: '6',
         clientId: 'dff714fb915a45459648a1fa496037fe',
 		resolution: 'low_resolution',
         template: '<a class="animation" href="{{link}}"><img src="{{image}}" /></a>'
     });
 
-    jobappsFeed.run();
+
 	 rQfeed.run();
 </script>
 

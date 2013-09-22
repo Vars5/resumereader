@@ -45,7 +45,7 @@
 			.pad-top
 				%br
 				-if signed_in?
-					=link_to "Edit Wiki", edit_job_path(@job), :class => "sign-up-button"
+					=link_to "Edit Public Wiki", edit_job_path(@job), :class => "sign-up-button"
 				-else
 					=link_to "Edit Job", new_user_registration_path, :class => "sign-up-button"
 

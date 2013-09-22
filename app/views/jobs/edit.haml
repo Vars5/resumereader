@@ -33,7 +33,7 @@
 				=form_for @job, :as => :jobs do |w|
 					= render 'layouts/textarea-settings'
 					=w.text_area :wiki, :placeholder =>"Add your information to this job listing...", :id => "wysihtml5-textarea"
-					=w.submit "Update Wiki", :class=>"sign-up-button"
+					=w.submit "Update Public Wiki", :class=>"sign-up-button"
 
 					
 =render 'layouts/wysihtml5'
