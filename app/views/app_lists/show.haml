@@ -73,5 +73,5 @@
 
     -if @job.forum_link != nil			
       .wiki-title
-        =link_to @job.forum_link do
+        =link_to @job.forum_link, :target => "blank" do
           %h6 Go to the Whirlpool forum for this job
