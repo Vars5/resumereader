@@ -30,7 +30,7 @@
 										=job.show_due_date
 									&nbsp	
 									= link_to content_tag(:i, "", class: "icon-trash", :data => {:app_id => apps.id}), apps,remote: true, method: :delete
-		-if (@appList.count > 0)&&(@appList.count <8)
+		-if (@appList.count > 0)
 			.dashboard
 		
 		=render 'layouts/quick_follow' 
