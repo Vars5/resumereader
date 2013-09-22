@@ -27,6 +27,7 @@ class JobsController < ApplicationController
   
   def show
     @job = Job.find_by_id(params[:id])
+
     if user_signed_in?
       @appList = current_user.app_lists.build
     end
