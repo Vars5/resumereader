@@ -1,5 +1,7 @@
 class Job < ActiveRecord::Base
   
+  require 'obscenity/active_model'
+  
   attr_accessible :name, :link, :discipline, :info, :due_date, :role, :category_id, :role_id, :location, :open, :job_type, :wiki
   
   belongs_to :company
@@ -16,6 +18,7 @@ class Job < ActiveRecord::Base
   #validates :info, presence: :true 
   validates :link, presence: true
   validates :due_date, presence: true
+  validates :wiki,  obscenity: { sanitize: true, replacement: "#!@$%" }
   
   #swiftype information 
   after_save :enqueue_create_or_update_document_job

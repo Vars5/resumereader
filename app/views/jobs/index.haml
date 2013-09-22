@@ -12,22 +12,23 @@
 			- @jobs.each do |j|
 				.appManage
 					.row-fluid
-						.span12
+						.span7
 							= link_to j do
 								%li
 									%strong= j.find_company.name
 									\ &nbsp - &nbsp #{j.name}
-									.pull-right
-										= j.show_due_date
-
-										- if user_signed_in?
-											- if current_user.is_following_applist?(j)
-												&nbsp &nbsp
-												%span.label.label-list Following
-											- else
-												= form_for(current_user.app_lists.build, :as => :applist) do |f|
-													= f.hidden_field :job_id, :value => j.id
-													= f.hidden_field :status, :value => "Research"
-													= f.submit "Follow Job", class: "follow-button job-index"
+						.span2
+							= j.show_due_date
+						.span3
+							.pull-right
+								- if user_signed_in?
+									- if current_user.is_following_applist?(j)
+										&nbsp &nbsp
+										%span.label-list Following
+									- else
+										= form_for(current_user.app_lists.build, :as => :applist) do |f|
+											= f.hidden_field :job_id, :value => j.id
+											= f.hidden_field :status, :value => "Research"
+											= f.submit "Follow Job", class: "follow-button"
 
 	.span3

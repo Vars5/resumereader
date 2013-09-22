@@ -86,7 +86,7 @@ a:hover{
 		text-decoration:none !important;
 }
 body {
-font-family: 'Oxygen', sans-serif;
+font-family: 'Oxygen', sans-serif !important;
 	font-size:13px;
 	height:100%;
 	a{
@@ -443,12 +443,15 @@ h3 {
 }
 
 .label-list{
-	padding:7px 5px;
-	width:114px;
-	text-align:center;
-	margin-bottom: $standard-padding;
-	border: 1px solid $dark-green;
-
+	width:110px;
+	padding: 5px 20px;
+	background-color:$dark-grey;
+	border-radius:2px;
+	color:white;
+	font-weight:bold;
+	border:0px !important;
+	font-size:14px;
+	font-weight:700;
 }
 
 .negative-margin{
@@ -679,6 +682,7 @@ h3 {
 }
 
 .follow-button{
+	font-family: 'Oxygen', sans-serif !important;
 	min-width:110px;
 	padding: 3px 15px;
 	background-color:$dark-blue;

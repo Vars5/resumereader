@@ -47,7 +47,7 @@ gem 'aws-sdk'
 gem 'paperclip'
 gem 'paperclip-aws'
 
-
+gem 'obscenity'
 
 gem 'devise-async'
 gem "haml"

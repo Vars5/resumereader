@@ -150,6 +150,7 @@ GEM
     netrc (0.7.7)
     newrelic_rpm (3.6.2.96)
     nokogiri (1.5.9)
+    obscenity (1.0.2)
     orm_adapter (0.4.0)
     paperclip (3.1.4)
       activemodel (>= 3.0.0)
@@ -294,6 +295,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   newrelic_rpm
+  obscenity
   paperclip
   paperclip-aws
   pg
