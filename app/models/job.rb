@@ -22,6 +22,10 @@ class Job < ActiveRecord::Base
   after_destroy :enqueue_delete_document_job
   
 #  before_save :set_job_title
+  def to_param
+      "#{id}-#{self.find_company.name}-#{name}".parameterize
+  end
+  
   
   def set_job_title
     

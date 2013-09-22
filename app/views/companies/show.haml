@@ -9,11 +9,14 @@
       = link_to "#{@company.website}", "http://#{@company.website}"
 
     - if @company.has_number_of_jobs > 0
-      %strong(class="applist-area")
-        Job opportunities with #{@company.name}:
+
+      %strong Job opportunities with #{@company.name}:
+      %br
+      %br
       - @company.has_jobs.each do |job|
-        .appManage
-          = link_to "#{job.name} - #{job.discipline}", job
+        =link_to job do
+          .appManage
+            = job.name
 
   .offset1.span4
     - if signed_in?

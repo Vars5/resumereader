@@ -10,8 +10,8 @@
 
 .row-fluid
   .span7.jobIndex
-    .appManage
-      - @company.each do |c|
+    - @company.each do |c|
+      .appManage
         .row-fluid
           .span10
             = link_to c do
@@ -24,7 +24,7 @@
                 = c.jobs.count
                 Job Opportunities
           .span2
-            - if signed_in?
-              = render :partial => 'companies/follow_form', :locals => {:c => c}
+            -# if signed_in?
+              -# render :partial => 'companies/follow_form', :locals => {:c => c}
 
       = will_paginate @company
