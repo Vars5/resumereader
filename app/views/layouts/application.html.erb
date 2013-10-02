@@ -20,14 +20,11 @@
 			<div class="container">
 				<%= yield %>
 			</div>
+			<%= render 'layouts/uservoice' %>	
+			<%= render 'layouts/footer'%>
 		<% else %>
-			<%= render 'layouts/header'%>
-			<div class="container">
-				<%= yield %>	
-			</div>
+			<%= yield %>	
 		<% end %>
-		<%= render 'layouts/footer'%>
 
-		<%= render 'layouts/uservoice' %>
 	</body>
 </html>

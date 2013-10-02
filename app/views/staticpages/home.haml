@@ -1,45 +1,19 @@
-.dashboard
+.tiny-orange
 
-.row-fluid
-	.span7
+.home-page
+	.dashboard
 		
-		=link_to new_user_registration_path do 
-			.info-box-call
-				.row-fluid
-					.span8.call
-						Quickly follow all of the jobs you'll apply for
-					.span4	
-						.sign-up-call
-							Sign Up Now
-				
-		.dashboard
-		
-		%h4(class="applist-area orange-text")
-			Jobs & Internships List
-		-@jobs.each do |job|
-			=link_to job do 
-				.appManage
-					.row-fluid
-						.span8	
-							.pad-lightly
-								%b= job.show_company_name
-								\ &nbsp - &nbsp 
-								=job.name
-						.span4
-							.pull-right								
-								-if job.show_due_date == "Closed"
-									%span(class="red-text")
-										=job.show_due_date
-								-else 
-									=job.show_due_date
-								&nbsp &nbsp 
-								=link_to "Follow Job", new_user_registration_path, :class => "follow-button"
-		%span(class="small-text") Export to excel (coming soon)
-	.offset1.span2
-		=render 'layouts/discover'
-	.span2
-		%h4(class="applist-area")
-			\#jobapps 
-		=render 'layouts/instagram_feed'
-		#rQfeed
-		#instafeed
+		.container
+			.row-fluid
+				.offset3.span6
+					.center-alignment
+						= link_to image_tag('white-logo.png'), root_path 
+						.home-page-text
+							Your infinite leg-up network.
+						.dashboard
+						=link_to new_user_registration_path do
+							.account-button
+								Sign Up
+						=link_to new_user_session_path do
+							.account-button
+								Login

@@ -466,9 +466,9 @@ h3 {
 
 
 .header{
-	padding:40px 0px 0px;
+	padding:20px 0px 0px;
 	background-color:$orange;
-	font-size:10px;
+	font-size:10px !important;
 	a{
 		color:white;
 	}
@@ -895,4 +895,26 @@ h3 {
 		background-color:$light-green;
 	}
 
+}
+
+
+.home-page{
+
+	min-height:100%;
+		img {
+			height:55px;
+			width:204px;
+		}
+	.home-page-text{
+		color:$light-text-grey;
+		font-size:22px;
+		font-weight:700;
+		margin-top:20px;
+	}
+
+}
+
+.tiny-orange{
+	background-color:$orange;
+	height:10px;
 }
