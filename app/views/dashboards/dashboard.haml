@@ -1,4 +1,10 @@
 #container
+
+	- @company.each do |company|
+		.item
+			.info-box-light-orange
+				= company.name
+
 	- xar = 0
 	- 20.times do
 		-if xar%2 == 0
@@ -9,11 +15,14 @@
 							=  image_tag('unsw.png')
 							%h5 At UNSW? Don't lose a chance to stand out
 							There's a brilliant team at UNSW Careers & Employment waiting to improve your resume and apps. Get in before its busy.
-		-else 
+		-elsif xar%3 == 0 
 			.item 
 				.info-box-light-orange
 					.center-alignment
-						=  image_tag('atom.png')
-						%h5 ResumeQuery is an open platform
+						=  image_tag('http://www.rb.com/site/rkbr/uploadedresources/rb_logo.gif')
+						%h5 Reckitt Benckiser
 						Anyone can edit and add jobs or companies. Help build a powerful database of the best jobs for students so they can make the world a better place.						Anyone can edit and add jobs or companies. Help build a powerful database of the best jobs for students so they can make the world a better place.						Anyone can edit and add jobs or companies. Help build a powerful database of the best jobs for students so they can make the world a better place.						Anyone can edit and add jobs or companies. Help build a powerful database of the best jobs for students so they can make the world a better place.
+						
+
+						
 		- xar += 1 

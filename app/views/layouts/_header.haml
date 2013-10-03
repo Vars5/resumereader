@@ -2,7 +2,7 @@
 	.container
 		.row-fluid
 			.span3
-				= link_to image_tag('menulogo.png'), root_path 
+				= link_to image_tag('menulogo.png'), root_path, :class => "menulogo"
 			
 			.span6
 				-if signed_in?

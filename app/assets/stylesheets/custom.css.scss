@@ -702,7 +702,9 @@ h3 {
 
 
 .info-box-yellow{
+	width:250px;
 	padding:10px;
+	
 	border-radius: 4px;
 	background-color:#F7F0BA;
 	color:$light-text-grey;
@@ -717,10 +719,12 @@ h3 {
 }
 
 .info-box-light-teal{
-	width:200px;
-	border:0px !important;
+	border:1px solid $light-grey;
+	border-top: 10px solid $light-teal;
+	width:250px;
+//	border:0px !important;
 	border-radius: 4px;
-	background-color:$light-teal;
+	//background-color:$light-teal;
 	padding:10px;
 	margin-top:15px;
 	color:$light-text-grey;
@@ -739,9 +743,12 @@ h3 {
 }
 
 .info-box-light-orange{
-		width:200px;
-	border-radius: 4px;
-	background-color:#FCE9D5;
+	width:250px;
+	//border-radius: 4px;
+	//background-color:#FCE9D5;
+	border:1px solid $light-grey;
+	border-top: 10px solid #FCE9D5;
+
 	padding:10px;
 	margin-top:15px;
 	color:$light-text-grey;
@@ -919,4 +926,11 @@ h3 {
 .tiny-orange{
 	background-color:$orange;
 	height:10px;
+}
+
+.menulogo{
+	img{
+		width:136px;
+		height:40px;
+	}
 }
