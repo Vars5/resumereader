@@ -1,49 +1,19 @@
-.dashboard
-
-.row-fluid
-	.span7
-		- if @appList.count != 0
-			%h4(class="applist-area orange-text")
-				My Jobs List &nbsp - &nbsp
-				= current_user.app_list_count
-			
-		- @appList.each do |apps|
-			= content_tag("div", id: "item-#{apps.id}" ) do
-				- job = apps.find_job
-				- company = job.find_company
-		
-				= link_to apps do 
-					.appManage
-						.row-fluid
-							.span7
-								%b= company.name 
-								\ &nbsp - &nbsp
-								= job.name 
-							.span3
-								%span(class="red-text")=apps.status
-							.span2
-								.pull-right
-									-if job.show_due_date == "Closed"
-										%span(class="red-text")
-											=job.show_due_date
-									-else 
-										=job.show_due_date
-									&nbsp	
-									= link_to content_tag(:i, "", class: "icon-trash", :data => {:app_id => apps.id}), apps,remote: true, method: :delete
-		-if (@appList.count > 0)
-			.dashboard
-		
-		=render 'layouts/quick_follow' 
-				
-		%span(class="small-text") Export to excel (coming soon)
-	.offset1.span2
-		=render 'layouts/discover'
-	.span2
-		%h4(class="applist-area")
-			\ #jobapps 
-		=render 'layouts/instagram_feed'
-		#rQfeed
-		#instafeed
-
-
-
+#container
+	- xar = 0
+	- 20.times do
+		-if xar%2 == 0
+			.item
+				=link_to 'http://www.careers.unsw.edu.au/', :target => '_blank' do 
+					.info-box-light-teal
+						.center-alignment
+							=  image_tag('unsw.png')
+							%h5 At UNSW? Don't lose a chance to stand out
+							There's a brilliant team at UNSW Careers & Employment waiting to improve your resume and apps. Get in before its busy.
+		-else 
+			.item 
+				.info-box-light-orange
+					.center-alignment
+						=  image_tag('atom.png')
+						%h5 ResumeQuery is an open platform
+						Anyone can edit and add jobs or companies. Help build a powerful database of the best jobs for students so they can make the world a better place.						Anyone can edit and add jobs or companies. Help build a powerful database of the best jobs for students so they can make the world a better place.						Anyone can edit and add jobs or companies. Help build a powerful database of the best jobs for students so they can make the world a better place.						Anyone can edit and add jobs or companies. Help build a powerful database of the best jobs for students so they can make the world a better place.
+		- xar += 1 

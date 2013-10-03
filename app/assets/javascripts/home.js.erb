@@ -6,4 +6,11 @@ $(document).ready(function(){
 	//$('#item-69').hover(function(){
 	//	$(this).slideUp(200);
 	//})
+	var $container = $('#container');
+	// initialize
+	$container.masonry({
+	  columnWidth: 60,
+	  itemSelector: '.item'
+	});
+	
 })
