@@ -3,7 +3,9 @@
 	- @company.each do |company|
 		.item
 			.info-box-light-orange
-				= company.name
+				%h5= company.name
+				=company.industry
+				=company.info
 
 	- xar = 0
 	- 20.times do
