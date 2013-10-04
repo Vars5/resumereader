@@ -17,7 +17,7 @@
 				.center-alignment
 					- if !company.logo.url.blank?
 						= image_tag(company.logo.url)
-				%h5= company.name
+				%h5= link_to company.name, company
 				=company.industry
 				%br
 				=company.info
