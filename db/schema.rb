@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131004052305) do
+ActiveRecord::Schema.define(:version => 20131004125704) do
 
   create_table "app_lists", :force => true do |t|
     t.integer  "job_id"
@@ -355,6 +355,7 @@ ActiveRecord::Schema.define(:version => 20131004052305) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.boolean  "access"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

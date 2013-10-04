@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me,
                   :first_name, :last_name, :mobile_number, :role,
                   :schools_attributes, :employments_attributes, :extracurriculars_attributes,
-                  :avatar
+                  :avatar, :access
   # attr_accessible :title, :body
   
   has_one  :setting, dependent: :destroy

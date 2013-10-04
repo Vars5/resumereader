@@ -33,6 +33,7 @@ class StaticpagesController < ApplicationController
     if @user.blank?
       User.invite!({:email => @invite_hash[:email]}, current_user)
       redirect_to root_path
+      current_user.update_attributes(:access => "true")
     else
       #display message 
     end
