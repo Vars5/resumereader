@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+
 =begin
   def create
     @user = User.new(params[:user])

@@ -15,4 +15,7 @@
 					- if (comment.user.id == current_user.id || current_user.role == "admin")
 						=link_to "x", comment_path(comment), method: :delete, remote: true, confirm: "Are you sure?", disable_with: "x", class: 'close'
 				%p= simple_format(comment.body)
+				%p= comment.upvotes.size
+				%p= comment.downvotes.size
+				= render partial: 'comments/vote', locals: { comment: comment }	
 				

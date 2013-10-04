@@ -26,7 +26,7 @@ class CompaniesController < ApplicationController
     @allBoards = Board.where("company_id = ?", params[:id])
     @problem = Problem.new
     
-    @comments = @company.comment_threads.order('created_at asc')
+    @comments = @company.comment_threads.order('cached_votes_up desc')
     @new_comment = Comment.build_from(@company, current_user, "")
   end
   
