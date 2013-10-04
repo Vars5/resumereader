@@ -32,6 +32,7 @@ GEM
       activerecord (>= 3.0)
       activesupport (~> 3.0)
       awesome_nested_set (>= 2.0)
+    acts_as_votable (0.7.1)
     addressable (2.3.4)
     arel (3.0.2)
     awesome_nested_set (2.1.6)
@@ -275,6 +276,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_commentable_with_threading
+  acts_as_votable (~> 0.7.1)
   aws-sdk
   bootstrap-sass (~> 2.3.2.0)
   bootstrap-will_paginate

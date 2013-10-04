@@ -1,6 +1,6 @@
 class Company < ActiveRecord::Base
   
-  attr_accessible :name, :industry, :website , :hr_email, :info, :logo, :industry_id, :company_id
+  attr_accessible :name, :industry, :website , :hr_email, :info, :logo, :industry_id, :company_id,  :comments
   
   has_many :jobs
   has_many :boards
@@ -21,9 +21,14 @@ class Company < ActiveRecord::Base
     }
 =end  
 
+
    def to_param
        "#{id}-#{name}".parameterize
    end
+
+  #Comments
+  acts_as_commentable
+
    
   def has_image?
     self.logo_file_name != nil

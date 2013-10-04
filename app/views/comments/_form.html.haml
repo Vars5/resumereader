@@ -3,6 +3,15 @@
 	.comment-form
 		= simple_form_for comment, remote: true do |f|
 			= f.input :body, input_html: {rows: '2'}, label: false, :placeholder => "Make a note about this application"
+			= f.input :title, label: false, placeholder: "I know this because ..."
 			= f.input :commentable_id, as: :hidden, value: comment.commentable_id
 			= f.input :commentable_type, as: :hidden, value: comment.commentable_type
+			= f.input :subject, collection: ["Interview Review", "Salary Review", "Company Review"]
 			= f.button :submit, "Add Comment", class: 'btn btn-primary'
+
+		-if false	
+			=form_for comment, remote: true do |f|
+				= f.text_field :title, placeholder: "I know this because..."
+				= f.text_area :body
+				= f.hidden_field :commentable_id, value: comment.commentable_id
+				= f.hidden_field :commentable_type, value: comment.commentable_type

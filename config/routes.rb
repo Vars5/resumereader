@@ -48,10 +48,6 @@ Resumereader::Application.routes.draw do
   resources :app_lists, except: [:new]
   resources :notes, only: [:create, :update, :destroy]
 
-  
-
-
-  
   resources :searches  
   resources :categories
   resources :roles
@@ -68,9 +64,20 @@ Resumereader::Application.routes.draw do
   resources :groupmembers, only: [:create, :destroy]
   resources :comments, :only => [:create, :destroy]
   
-  
-  
   mount Split::Dashboard, at: 'split'
+
+  put '/comments/:id/:action' => 'comments#upvote'
+  put '/comments/:id/:action' => 'comments#downvote'
+
+
+=begin  
+  resources :comments do 
+    member do 
+      put 'like', to: "comments#upvote"
+      put 'dislike', to: 'comments#downvote'
+    end
+  end
+=end  
   
   #resources :employments do
   #  resources :bullets

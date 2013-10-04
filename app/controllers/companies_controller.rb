@@ -23,8 +23,10 @@ class CompaniesController < ApplicationController
     @company = Company.find_by_id(params[:id])
     @jobs = @company.jobs.build
     @boards = @company.boards.new
-    @allBoards = Board.where("company_id = ?", params[:id])
-    
+    @allBoards = Board.where("company_id = ?", params[:id])    
+    @comments = @company.comment_threads.order('cached_votes_up desc')
+    @new_comment = Comment.build_from(@company, current_user, "", "", "")
+
   end
   
   def index

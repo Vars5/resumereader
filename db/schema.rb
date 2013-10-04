@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130921100138) do
+=======
+ActiveRecord::Schema.define(:version => 20131004052305) do
+>>>>>>> e65514c2986222ff16c48f7381fcdbc0dbb0b88b
 
   create_table "app_lists", :force => true do |t|
     t.integer  "job_id"
@@ -33,6 +37,31 @@ ActiveRecord::Schema.define(:version => 20130921100138) do
     t.string   "title"
     t.text     "tagline"
   end
+
+  create_table "blog_comments", :force => true do |t|
+    t.string   "name",       :null => false
+    t.string   "email",      :null => false
+    t.string   "website"
+    t.text     "body",       :null => false
+    t.integer  "post_id",    :null => false
+    t.string   "state"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "blog_comments", ["post_id"], :name => "index_blog_comments_on_post_id"
+
+  create_table "blog_posts", :force => true do |t|
+    t.string   "title",                         :null => false
+    t.text     "body",                          :null => false
+    t.integer  "blogger_id"
+    t.string   "blogger_type"
+    t.integer  "comments_count", :default => 0, :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "blog_posts", ["blogger_type", "blogger_id"], :name => "index_blog_posts_on_blogger_type_and_blogger_id"
 
   create_table "boards", :force => true do |t|
     t.string   "name"
@@ -58,19 +87,27 @@ ActiveRecord::Schema.define(:version => 20130921100138) do
   end
 
   create_table "comments", :force => true do |t|
-    t.integer  "commentable_id",   :default => 0
-    t.string   "commentable_type", :default => ""
-    t.string   "title",            :default => ""
-    t.text     "body",             :default => ""
-    t.string   "subject",          :default => ""
-    t.integer  "user_id",          :default => 0,  :null => false
+    t.integer  "commentable_id",     :default => 0
+    t.string   "commentable_type",   :default => ""
+    t.string   "title",              :default => ""
+    t.text     "body",               :default => ""
+    t.string   "subject",            :default => ""
+    t.integer  "user_id",            :default => 0,  :null => false
     t.integer  "parent_id"
     t.integer  "lft"
     t.integer  "rgt"
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.integer  "cached_votes_total", :default => 0
+    t.integer  "cached_votes_score", :default => 0
+    t.integer  "cached_votes_up",    :default => 0
+    t.integer  "cached_votes_down",  :default => 0
   end
 
+  add_index "comments", ["cached_votes_down"], :name => "index_comments_on_cached_votes_down"
+  add_index "comments", ["cached_votes_score"], :name => "index_comments_on_cached_votes_score"
+  add_index "comments", ["cached_votes_total"], :name => "index_comments_on_cached_votes_total"
+  add_index "comments", ["cached_votes_up"], :name => "index_comments_on_cached_votes_up"
   add_index "comments", ["commentable_id", "commentable_type"], :name => "index_comments_on_commentable_id_and_commentable_type"
   add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
 
@@ -188,8 +225,11 @@ ActiveRecord::Schema.define(:version => 20130921100138) do
     t.integer  "role_id"
     t.boolean  "open",        :default => true
     t.string   "job_type"
+<<<<<<< HEAD
     t.text     "wiki"
     t.text     "forum_link"
+=======
+>>>>>>> e65514c2986222ff16c48f7381fcdbc0dbb0b88b
   end
 
   create_table "notes", :force => true do |t|
@@ -263,8 +303,6 @@ ActiveRecord::Schema.define(:version => 20130921100138) do
   end
 
   create_table "searches", :force => true do |t|
-    t.string   "role"
-    t.string   "discipline"
     t.string   "location"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -278,6 +316,23 @@ ActiveRecord::Schema.define(:version => 20130921100138) do
     t.string   "forum_name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context"
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", :force => true do |t|
+    t.string "name"
   end
 
   create_table "users", :force => true do |t|
@@ -313,5 +368,21 @@ ActiveRecord::Schema.define(:version => 20130921100138) do
   add_index "users", ["invitation_token"], :name => "index_users_on_invitation_token", :unique => true
   add_index "users", ["invited_by_id"], :name => "index_users_on_invited_by_id"
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "votes", :force => true do |t|
+    t.integer  "votable_id"
+    t.string   "votable_type"
+    t.integer  "voter_id"
+    t.string   "voter_type"
+    t.boolean  "vote_flag"
+    t.string   "vote_scope"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "votes", ["votable_id", "votable_type", "vote_scope"], :name => "index_votes_on_votable_id_and_votable_type_and_vote_scope"
+  add_index "votes", ["votable_id", "votable_type"], :name => "index_votes_on_votable_id_and_votable_type"
+  add_index "votes", ["voter_id", "voter_type", "vote_scope"], :name => "index_votes_on_voter_id_and_voter_type_and_vote_scope"
+  add_index "votes", ["voter_id", "voter_type"], :name => "index_votes_on_voter_id_and_voter_type"
 
 end

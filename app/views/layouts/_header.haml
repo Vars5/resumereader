@@ -5,18 +5,8 @@
 				= link_to image_tag('menulogo.png'), root_path, :class => "menulogo"
 			
 			.span6
-				-if signed_in?
-					.visible-desktop
-						=link_to root_path do
-							.my-jobs-button
-								%i( class="icon-pencil")
-								&nbsp My Jobs &nbsp 
-								%span( class="badge badge-important")
-									= current_user.app_list_count
-				=link_to jobs_path do
-					.my-jobs-button
-						%i(class="icon-briefcase")
-						Job Opportunities
+
+
 
 				=link_to companies_path do
 					.my-jobs-button
