@@ -25,6 +25,9 @@ class CompaniesController < ApplicationController
     @boards = @company.boards.new
     @allBoards = Board.where("company_id = ?", params[:id])
     @problem = Problem.new
+    
+    @comments = @company.comment_threads.order('created_at asc')
+    @new_comment = Comment.build_from(@company, current_user, "")
   end
   
   def index

@@ -21,7 +21,8 @@ class Company < ActiveRecord::Base
     }
 =end  
 
-   
+  #Comments
+  acts_as_commentable
    
   def has_image?
     self.logo_file_name != nil

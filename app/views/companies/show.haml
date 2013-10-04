@@ -23,6 +23,12 @@
         - @company.has_jobs.each do |job|
           .appManage
             %li= link_to "#{job.name} - #{job.discipline}", job
+
+      .pad-top
+        = render partial: 'comments/comment', collection: @comments, as: :comment
+        = render partial: 'comments/form', locals: { comment: @new_comment }
+
+
   .span6
     - if user_signed_in?
       - if can? :update, @company
