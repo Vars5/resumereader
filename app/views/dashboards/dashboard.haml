@@ -1,9 +1,15 @@
 #container
 	.item
-		.info-box-light-teal
-			%h5 Welcome to ResumeQuery!
-
-
+		.info-box-light-orange
+			.center-alignment
+				%h5 Welcome to ResumeQuery!
+				%br This is an awesome website where you can become more awesome by being awesome
+			
+	- @comments.each do |comment|
+		.item
+			.info-box-light-teal
+				%h5= comment.body
+				=comment.subject
 
 	- @company.each do |company|
 		.item
