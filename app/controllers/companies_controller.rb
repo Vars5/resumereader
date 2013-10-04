@@ -27,7 +27,7 @@ class CompaniesController < ApplicationController
     @problem = Problem.new
     
     @comments = @company.comment_threads.order('cached_votes_up desc')
-    @new_comment = Comment.build_from(@company, current_user, "")
+    @new_comment = Comment.build_from(@company, current_user, "", "", "")
   end
   
   def index

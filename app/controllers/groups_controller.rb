@@ -28,7 +28,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @groupmembers = @group.users   
     @comments = @group.comment_threads.order('created_at asc')
-    @new_comment = Comment.build_from(@group, current_user, "")
+    @new_comment = Comment.build_from(@group, current_user, "", "", "")
     
   end
 

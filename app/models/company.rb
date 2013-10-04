@@ -1,6 +1,6 @@
 class Company < ActiveRecord::Base
   
-  attr_accessible :name, :industry, :website , :hr_email, :info, :logo, :industry_id, :company_id
+  attr_accessible :name, :industry, :website , :hr_email, :info, :logo, :industry_id, :company_id,  :comments
   
   has_many :jobs
   has_many :boards

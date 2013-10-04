@@ -1,6 +1,6 @@
 class Comment < ActiveRecord::Base
   
-  attr_accessible :commentable, :body, :user_id
+  attr_accessible :commentable, :body, :user_id, :title, :subject
   
   #Voteable
   acts_as_votable
@@ -22,11 +22,13 @@ class Comment < ActiveRecord::Base
   # Helper class method that allows you to build a comment
   # by passing a commentable object, a user_id, and comment text
   # example in readme
-  def self.build_from(obj, user_id, comment)
+  def self.build_from(obj, user_id, comment, title, subject)
     new \
       :commentable => obj,
       :body        => comment,
-      :user_id     => user_id
+      :user_id     => user_id,
+      :title       => title,
+      :subject     => subject
   end
 
   #helper method to check if a comment has children

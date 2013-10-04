@@ -21,7 +21,7 @@ class AppListsController < ApplicationController
     @job = @appList.find_job
     @company = @job.find_company
     @comments = @appList.comment_threads.order('created_at asc')
-    @new_comment = Comment.build_from(@appList, current_user, "")
+    @new_comment = Comment.build_from(@appList, current_user, "", "", "")
   end
 
   def update
