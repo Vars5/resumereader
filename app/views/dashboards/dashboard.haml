@@ -15,8 +15,8 @@
 		.item
 			.info-box-light-orange
 				.center-alignment
-					-# if !company.logo_file_name.blank?
-						=# image_tag(company.logo_content_type)
+					- if !company.logo.url.blank?
+						= image_tag(company.logo.url)
 				%h5= company.name
 				=company.industry
 				%br
