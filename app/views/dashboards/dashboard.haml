@@ -14,6 +14,9 @@
 	- @company.each do |company|
 		.item
 			.info-box-light-orange
+				.center-alignment
+					- if !company.logo_file_name.blank?
+						= image_tag(company.logo_file_name)
 				%h5= company.name
 				=company.industry
 				%br
