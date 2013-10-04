@@ -60,8 +60,6 @@ class User < ActiveRecord::Base
     AppList.where("user_id = ?", self.id).count
   end
 
-
-
   def has_no_applists?
     self.app_lists.count == 0
   end
@@ -73,10 +71,7 @@ class User < ActiveRecord::Base
   def following?(company)
     self.follows.find_by_company_id(company.id)
   end
-  
 
-  
-  
   has_attached_file :avatar,
       :styles => {
         :list => "40x40>",
@@ -100,4 +95,7 @@ class User < ActiveRecord::Base
   def has_no_groups?
     self.groups_list.count == 0
   end
+  
+  
+  
 end
