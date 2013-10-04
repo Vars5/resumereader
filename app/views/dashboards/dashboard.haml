@@ -1,10 +1,10 @@
 #container
-
 	- @company.each do |company|
 		.item
 			.info-box-light-orange
 				%h5= company.name
 				=company.industry
+				%br
 				=company.info
 
 	- xar = 0
@@ -24,7 +24,5 @@
 						=  image_tag('http://www.rb.com/site/rkbr/uploadedresources/rb_logo.gif')
 						%h5 Reckitt Benckiser
 						Anyone can edit and add jobs or companies. Help build a powerful database of the best jobs for students so they can make the world a better place.						Anyone can edit and add jobs or companies. Help build a powerful database of the best jobs for students so they can make the world a better place.						Anyone can edit and add jobs or companies. Help build a powerful database of the best jobs for students so they can make the world a better place.						Anyone can edit and add jobs or companies. Help build a powerful database of the best jobs for students so they can make the world a better place.
-						
-
-						
+											
 		- xar += 1 
