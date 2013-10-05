@@ -1,31 +1,18 @@
-- provide(:title, "Companies") 
-.dashboard
-  %h4 Companies List
-
-.row-fluid
-  .span7
-    %h5
-      %b Search by Industry
-    = form_tag companies_path, :method => 'get' do
-      = select_tag :industry_id, options_from_collection_for_select(Industry.all, "id", "industry"), include_blank: true, :onchange => "this.form.submit()"
-
-.row-fluid
-  .span7.jobIndex
-    - @company.each do |c|
-      .appManage
-        .row-fluid
-          .span10
-            = link_to c do
-              %span.big-font
-                %strong= c.name
-              %br/
-              = Industry.find(c.industry_id).industry
-              - if c.has_number_of_jobs != 0
-                %br/
-                = c.jobs.count
-                Job Opportunities
-          .span2
-            -# if signed_in?
-              -# render :partial => 'companies/follow_form', :locals => {:c => c}
-
-    = will_paginate @company
+#companies
+	- @company.each do |company|
+		.item
+			.info-box-light-orange
+				.pad-top-tiny
+				.center-alignment
+					- if !company.logo.url.blank?
+						= image_tag(company.logo.url)
+						%h5= link_to company.name, company
+				=company.industry
+				%br
+				=company.info
+				%br
+				%i(class="icon-briefcase")
+				Go to company website
+				%br				
+				=image_tag('whirlpool-logo.png', size: "15x15") 
+				Go to Whirlpool Forum
