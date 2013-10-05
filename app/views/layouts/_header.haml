@@ -5,30 +5,18 @@
 				= link_to image_tag('menulogo.png'), root_path, :class => "menulogo"
 			
 			.span6
-
-
-
 				=link_to companies_path do
 					.my-jobs-button
 						Companies
 			.span3
-				.pull-right
-					-if signed_in?
-						= link_to edit_user_registration_path do
-							.account-button
+				= link_to edit_user_registration_path do
+					.account-button
+						&nbsp 						
+						= current_user.first_name
+				=link_to destroy_user_session_path, :method =>"DELETE" do
+					.account-button
+						Log Out
 
-								&nbsp 						
-								= current_user.first_name
-						=link_to destroy_user_session_path, :method =>"DELETE" do
-							.account-button
-								Log Out
-					-else
-						=link_to new_user_registration_path do
-							.account-button
-								Sign Up
-						=link_to new_user_session_path do
-							.account-button
-								Login
 
 .search-header.hidden
 	.container
