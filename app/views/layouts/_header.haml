@@ -10,14 +10,13 @@
 
 				=link_to companies_path do
 					.my-jobs-button
-						%i(class="icon-certificate")
 						Companies
 			.span3
 				.pull-right
 					-if signed_in?
 						= link_to edit_user_registration_path do
 							.account-button
-								%i(class="icon-user")
+
 								&nbsp 						
 								= current_user.first_name
 						=link_to destroy_user_session_path, :method =>"DELETE" do
