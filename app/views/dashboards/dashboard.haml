@@ -14,6 +14,7 @@
 	- @company.each do |company|
 		.item
 			.info-box-light-orange
+				.pad-top-tiny
 				.center-alignment
 					- if !company.logo.url.blank?
 						= image_tag(company.logo.url)
@@ -21,6 +22,12 @@
 				=company.industry
 				%br
 				=company.info
+				%br
+				%i(class="icon-briefcase")
+				Go to company website
+				%br				
+				=image_tag('whirlpool-logo.png', size: "15x15") 
+				Go to Whirlpool Forum
 
 	.item
 		=link_to 'http://www.careers.unsw.edu.au/', :target => '_blank' do 
