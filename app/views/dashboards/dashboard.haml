@@ -7,9 +7,18 @@
 			
 	- @comments.each do |comment|
 		.item
-			.info-box-light-teal
-				%h5= comment.body
-				=comment.subject
+			- if comment.subject == "Interview Review"
+				.info-box-light-teal
+					%h5= comment.body
+					=comment.subject
+			- elsif comment.subject == "Salary Review"
+				.info-box-light-orange
+					%h5= comment.body
+					=comment.subject
+			-elsif comment.subject == "Company Review"
+				.info-box-yellow
+					%h5= comment.body
+					=comment.subject
 
 	- @company.each do |company|
 		.item

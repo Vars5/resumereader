@@ -702,14 +702,15 @@ h3 {
 
 
 .info-box-yellow{
+	border:1px solid $light-grey;
+	border-top: 10px solid #F7F0BA;
 	width:250px;
 	padding:10px;
-	
 	border-radius: 4px;
-	background-color:#F7F0BA;
 	color:$text-grey;
 	line-height:16px;
 	font-size:11px;
+	margin-top:15px;
 	h5{
 		color:$orange;
 	}
