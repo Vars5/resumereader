@@ -1,6 +1,9 @@
 %ul
 	-@comment.each do |comment|
+		- user = User.find(comment.user_id)
 		%li
+			= user.first_name
+			|
 			= comment.title
 			|
 			= comment.body
