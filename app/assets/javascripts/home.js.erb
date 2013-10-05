@@ -8,9 +8,10 @@ $(document).ready(function(){
 	//})
 	var $container = $('#container');
 	// initialize
-	$container.masonry({
-	  columnWidth: 58,
-	  itemSelector: '.item'
+	$container.imagesLoaded( function() {
+		$container.masonry({
+		  columnWidth: 58,
+		  itemSelector: '.item'
+		});
 	});
-	
 })
