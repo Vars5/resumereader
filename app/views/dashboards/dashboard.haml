@@ -3,7 +3,7 @@
 		.span12
 			.item
 				.content-box
-					%h3 I am a UNSW student studying commerce & want a job in marketing. I need to intern this year. mpppp
+					%h3 I am a UNSW student studying commerce & want a job in marketing. I need to intern this year. mpppp	
 
 	.item
 		.info-box-light-orange
@@ -12,17 +12,24 @@
 				%br This is an awesome website where you can become more awesome by being awesome
 			
 	- @comments.each do |comment|
+		- comment_company = comment.get_company_for_comment
 		.item
 			- if comment.subject == "Interview Review"
 				.info-box-light-teal
+					= comment_company.name
 					%h5= comment.body
 					=comment.subject
 			- elsif comment.subject == "Salary Review"
 				.info-box-light-orange
-					%h5= comment.body
+					= comment_company.name
+					%h5
+						"
+						= comment.body
+						"
 					=comment.subject
 			-elsif comment.subject == "Company Review"
 				.info-box-yellow
+					= comment_company.name
 					%h5= comment.body
 					=comment.subject
 
