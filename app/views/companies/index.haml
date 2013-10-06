@@ -11,7 +11,8 @@
 				%br
 				-#company.info
 				%br
-				=link_to company.website do
+				.icon-fix
+				=link_to url_with_protocol(company.website) do
 					%i(class="icon-briefcase")
 					Go to company website
 				%br				
