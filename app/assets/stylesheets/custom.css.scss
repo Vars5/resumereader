@@ -739,9 +739,7 @@ h3 {
 	}
 }
 
-.info-box-light-teal:hover{
-	background-color:#D1E6E4;
-}
+
 
 .info-box-light-orange{
 	width:250px;
@@ -915,10 +913,12 @@ h3 {
 .home-page{
 
 	min-height:100%;
-		img {
-			height:55px;
-			width:204px;
-		}
+		.home-logo{
+			img {
+				height:55px;
+				width:204px;
+			}
+		}	
 	.home-page-text{
 		color:$light-text-grey;
 		font-size:22px;
