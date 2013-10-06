@@ -11,12 +11,13 @@
 						.home-page-text
 							Your infinite leg-up network.
 						.dashboard
-						=link_to new_user_registration_path do
-							.account-button
-								Sign Up
-						=link_to new_user_session_path do
-							.account-button
-								Login
+						.center-alignment
+							=link_to "Sign Up", new_user_registration_path, :class => "signup-button"
+							%br
+							%br
+							Already have an account? 
+							=link_to "Log in now", new_user_session_path 
+
 			.row-fluid
 				.dashboard
 				.offset1.span10

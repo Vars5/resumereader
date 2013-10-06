@@ -926,7 +926,7 @@ h3 {
 		margin-top:20px;
 	}
 	#container{
-		padding-left:40px;
+		padding-left:25px;
 	}
 
 }
@@ -986,4 +986,18 @@ h3 {
 
 .info-box-full-yellow:hover{
 	background-color:#F7F0BA;
+}
+
+
+.signup-button{
+	font-size:15px;
+	padding:10px 100px;
+	border:1px solid $orange;
+	margin-bottom:20px;
+	font-weight:700;
+}
+
+.signup-button:hover{
+	background-color: $orange;
+	color:white;
 }
