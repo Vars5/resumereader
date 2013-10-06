@@ -926,7 +926,7 @@ h3 {
 		margin-top:20px;
 	}
 	#container{
-		padding-left:50px;
+		padding-left:40px;
 	}
 
 }
@@ -968,4 +968,22 @@ h3 {
 	img {
 		max-width:100px;
 	}
+}
+
+.info-box-full-yellow{
+
+	background-color: #FCFAE6;
+	width:250px;
+	padding:10px;
+	border-radius: 4px;
+	line-height:16px;
+	font-size:11px;
+	margin-top:15px;
+	h5{
+		color:$orange;
+	}
+}
+
+.info-box-full-yellow:hover{
+	background-color:#F7F0BA;
 }
