@@ -1,12 +1,72 @@
+<html>
+<head><title>Welcome to #######!</title></head>
+<body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" bgcolor='#ffffff' >
 
 
-<p>Hi <%= @resource.email %>!</p>
+<STYLE>
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700);
+body{	font-family: 'Noto Sans', sans-serif;}
+.headerTop{background-color:#FC6;border-top:0 solid #000;border-bottom:1px solid #FFF;text-align:center}
+.adminText{font-size:10px;color:#960;line-height:200%;font-family:verdana;text-decoration:none}
+.headerBar{background-color:#FFF;border-top:0 solid #333;border-bottom:10px solid #FFF}
+.title{font-size:20px;font-weight:700;color:#C60;font-family:arial;line-height:110%}
+.subTitle{font-size:11px;font-weight:400;color:#666;font-style:italic;font-family:arial}
+.defaultText{font-size:12px;color:#000;line-height:150%;font-family:trebuchet ms}
+.footerRow{background-color:#FFC;border-top:10px solid #FFF}
+.footerText{font-size:10px;color:#960;line-height:100%;font-family:verdana}
+a{color:#1c51a8}
+h1{font-size:16pt;line-height:100%}
+h2{color:#fff;background:#0090ca;font-size:12pt;line-height:100%;margin:0 0 .5em;padding:.5em}
+</STYLE>
 
-<p><%= User.find_by_id(@resource.invited_by_id).first_name %> (<%= User.find_by_id(@resource.invited_by_id).email%>) invited you to their Group on ResQuery. <p>
-	
+
+
+<table width="100%" cellpadding="10" cellspacing="0" class="backgroundTable" bgcolor='#ffffff' >
+<tr>
+<td valign="top" align="center">
+<table width="550" cellpadding="20" cellspacing="0" bgcolor="#FFFFFF">
+<tr>
+<td bgcolor="#FFFFFF" valign="top" style="font-size:10pt;color:#000000;font-family:trebuchet ms; text-align:left;" align="left">
+
+<p style="text-align:justify">
+
+<h1> <p>Hi <%= @resource.email %> </h1>
+
+<p><%= User.find_by_id(@resource.invited_by_id).first_name %> (<%= User.find_by_id(@resource.invited_by_id).email%>) has invited you to #New Company Name, the best destination for graduate and internship advice on the internet. <p>
+
 <p>You can accept it through the link below.</p>
 
 <p><%= link_to 'Accept invitation', accept_invitation_url(@resource, :invitation_token => @resource.invitation_token) %></p>
 
-<p>If you don't want to accept the invitation, please ignore this email.<br />
-Your account won't be created until you access the link above and set your password.</p>
+<p>Your account won't be activated until you access the link above and set your password.<br />
+
+</br>
+
+<p style="text-align:justify">
+
+The Team at #####
+
+
+
+
+</td>
+</tr>
+
+<tr>
+<td style="background-color:#ececec;border-top:10px solid #FFFFFF;" valign="top">
+<span style="font-size:10px;color:#898989;font-family:verdana;">
+Copyright &#169; #####. All Rights Reserved.<br /><br />
+Room 1025, Quadrangle Building, UNSW Sydney NSW 2052<br />
+Contact us at <a href="mailto:info@unswbsoc.com">team@resumequery.com<br />
+
+
+</span>
+</td>
+</tr>
+
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

@@ -55,7 +55,7 @@ class Comment < ActiveRecord::Base
   end
   
   def get_company_for_comment
-    Company.find(self.commentable_id)
+    Company.where(self.commentable_type = ?, "company", self.commentable_id)  
   end
   
 end
