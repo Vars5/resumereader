@@ -3,7 +3,7 @@ class StaticpagesController < ApplicationController
   caches_page :about
   
   def home
-    @jobs = Job.order("due_date DESC")
+    @comments = Comment.order("RANDOM()")
   end
 
   def about

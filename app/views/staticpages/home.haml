@@ -17,3 +17,33 @@
 						=link_to new_user_session_path do
 							.account-button
 								Login
+			.row-fluid
+				.offset1.span10
+					#container
+						- @comments.each do |comment|
+							- comment_company = comment.get_company_for_comment
+							.item
+								- if comment.subject == "Interview Review"
+									.info-box-light-teal
+										= comment_company.name
+										\- 
+										= comment.subject
+										%h5= comment.body
+
+								- elsif comment.subject == "Salary Review"
+									.info-box-light-orange
+										= comment_company.name
+										\-
+										=comment.subject
+										%h5
+											"
+											= comment.body
+											"
+								-elsif comment.subject == "Company Review"
+									.info-box-yellow
+										= comment_company.name
+										\-
+										=comment.subject
+										%h5= comment.body
+								
+		
