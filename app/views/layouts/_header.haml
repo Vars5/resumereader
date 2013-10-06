@@ -9,13 +9,14 @@
 					.my-jobs-button
 						Companies
 			.span3
-				= link_to edit_user_registration_path do
-					.account-button
-						&nbsp 						
-						= current_user.first_name
-				=link_to destroy_user_session_path, :method =>"DELETE" do
-					.account-button
-						Log Out
+				.pull-right
+					= link_to edit_user_registration_path do
+						.account-button
+							&nbsp 						
+							= current_user.first_name
+					=link_to destroy_user_session_path, :method =>"DELETE" do
+						.account-button
+							Log Out
 
 
 .search-header.hidden
