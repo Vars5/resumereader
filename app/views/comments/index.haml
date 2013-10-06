@@ -1,0 +1,13 @@
+%ul
+	-@comment.each do |comment|
+		- user = User.find(comment.user_id)
+		%li
+			= user.first_name
+			|
+			= comment.title
+			|
+			= comment.body
+			| 
+			=comment.subject
+			|
+			=link_to "Delete", comment_path(comment), method: :delete, remote: true, confirm: "Are you sure?", disable_with: "x"

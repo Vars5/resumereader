@@ -702,14 +702,15 @@ h3 {
 
 
 .info-box-yellow{
+	border:1px solid $light-grey;
+	border-top: 10px solid #F7F0BA;
 	width:250px;
 	padding:10px;
-	
 	border-radius: 4px;
-	background-color:#F7F0BA;
 	color:$text-grey;
 	line-height:16px;
 	font-size:11px;
+	margin-top:15px;
 	h5{
 		color:$orange;
 	}
@@ -942,4 +943,26 @@ h3 {
 
 .pad-top-tiny{
 	padding-top:15px;
+}
+
+
+.content-box{
+	text-align:center;
+	max-width: 1120px;
+	border:1px solid $light-grey;
+	border-top: 10px solid $light-teal;
+//	border:0px !important;
+	border-radius: 4px;
+	//background-color:$light-teal;
+	padding:10px;
+	margin-top:15px;
+	color:$text-grey;
+	line-height:16px;
+	font-size:12px;
+	h5{
+		color:$aqua;
+	}
+	img {
+		max-width:100px;
+	}
 }

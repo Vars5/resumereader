@@ -44,6 +44,11 @@ class CommentsController < ApplicationController
     
   end
   
+  def index
+      authorize! :manage, :all
+      @comment = Comment.all
+  end
+  
   private
 
     def load_commentable
