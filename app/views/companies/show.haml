@@ -36,7 +36,7 @@
           = f.collection_select :role_id, Role.order(:role), :id, :role, include_blank: true
           = f.text_field :location, :placeholder => "Location"
           = f.submit
-            %li= link_to "#{job.name} - #{job.discipline}", job
+        
 
       .pad-top
         = render partial: 'comments/comment', collection: @comments, as: :comment
@@ -62,5 +62,3 @@
             = f.collection_select :role_id, Role.order(:role), :id, :role, include_blank: true
             = f.text_field :location, :placeholder => "Location"
             = f.submit
->>>>>>> e65514c2986222ff16c48f7381fcdbc0dbb0b88b
-  

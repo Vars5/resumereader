@@ -707,7 +707,7 @@ h3 {
 	
 	border-radius: 4px;
 	background-color:#F7F0BA;
-	color:$light-text-grey;
+	color:$text-grey;
 	line-height:16px;
 	font-size:11px;
 	h5{
@@ -727,9 +727,9 @@ h3 {
 	//background-color:$light-teal;
 	padding:10px;
 	margin-top:15px;
-	color:$light-text-grey;
+	color:$text-grey;
 	line-height:16px;
-	font-size:11px;
+	font-size:12px;
 	h5{
 		color:$aqua;
 	}
@@ -748,15 +748,19 @@ h3 {
 	//background-color:#FCE9D5;
 	border:1px solid $light-grey;
 	border-top: 10px solid #FCE9D5;
-
 	padding:10px;
 	margin-top:15px;
-	color:$light-text-grey;
+	color:$text-grey;
 	line-height:16px;
-	font-size:11px;
+	font-size:12px;
 	h5{
 		color:$dark-red;
 	}
+	
+	a{
+		color:$dark-red;	
+	}
+	
 	img {
 		max-width:100px;
 	}
@@ -933,4 +937,9 @@ h3 {
 		width:136px;
 		height:40px;
 	}
+}
+
+
+.pad-top-tiny{
+	padding-top:15px;
 }

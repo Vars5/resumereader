@@ -1,34 +1,38 @@
 #container
 	.item
-		.info-box-light-teal
-			%h5 Welcome to ResumeQuery!
-
-
+		.info-box-light-orange
+			.center-alignment
+				%h5 Welcome to ResumeQuery!
+				%br This is an awesome website where you can become more awesome by being awesome
+			
+	- @comments.each do |comment|
+		.item
+			.info-box-light-teal
+				%h5= comment.body
+				=comment.subject
 
 	- @company.each do |company|
 		.item
 			.info-box-light-orange
-				%h5= company.name
+				.pad-top-tiny
+				.center-alignment
+					- if !company.logo.url.blank?
+						= image_tag(company.logo.url)
+						%h5= link_to company.name, company
 				=company.industry
 				%br
 				=company.info
+				%br
+				%i(class="icon-briefcase")
+				Go to company website
+				%br				
+				=image_tag('whirlpool-logo.png', size: "15x15") 
+				Go to Whirlpool Forum
 
-	- xar = 0
-	- 20.times do
-		-if xar%2 == 0
-			.item
-				=link_to 'http://www.careers.unsw.edu.au/', :target => '_blank' do 
-					.info-box-light-teal
-						.center-alignment
-							=  image_tag('unsw.png')
-							%h5 At UNSW? Don't lose a chance to stand out
-							There's a brilliant team at UNSW Careers & Employment waiting to improve your resume and apps. Get in before its busy.
-		-elsif xar%3 == 0 
-			.item 
-				.info-box-light-orange
-					.center-alignment
-						=  image_tag('http://www.rb.com/site/rkbr/uploadedresources/rb_logo.gif')
-						%h5 Reckitt Benckiser
-						Anyone can edit and add jobs or companies. Help build a powerful database of the best jobs for students so they can make the world a better place.						Anyone can edit and add jobs or companies. Help build a powerful database of the best jobs for students so they can make the world a better place.						Anyone can edit and add jobs or companies. Help build a powerful database of the best jobs for students so they can make the world a better place.						Anyone can edit and add jobs or companies. Help build a powerful database of the best jobs for students so they can make the world a better place.
-											
-		- xar += 1 
+	.item
+		=link_to 'http://www.careers.unsw.edu.au/', :target => '_blank' do 
+			.info-box-light-teal
+				.center-alignment
+					=  image_tag('unsw.png')
+					%h5 At UNSW? Don't lose a chance to stand out
+					There's a brilliant team at UNSW Careers & Employment waiting to improve your resume and apps. Get in before its busy.

@@ -21,9 +21,9 @@
 			</div>
 			<div class="span6">
 				<p><%= f.text_area  :info, :placeholder => "Company information"  %></p>
-				<% if current_user.role == 'admin '%>
+
 					<p><%= f.file_field :logo, :placeholder => "logo" %>
-				<% end %>
+
 				<%= f.submit :class => "sign-up-button" %>
 			</div>
 
