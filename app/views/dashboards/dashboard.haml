@@ -17,21 +17,25 @@
 			- if comment.subject == "Interview Review"
 				.info-box-light-teal
 					= comment_company.name
+					\- 
+					= comment.subject
 					%h5= comment.body
-					=comment.subject
+
 			- elsif comment.subject == "Salary Review"
 				.info-box-light-orange
 					= comment_company.name
+					\-
+					=comment.subject
 					%h5
 						"
 						= comment.body
 						"
-					=comment.subject
 			-elsif comment.subject == "Company Review"
 				.info-box-yellow
 					= comment_company.name
-					%h5= comment.body
+					\-
 					=comment.subject
+					%h5= comment.body
 
 	- @company.each do |company|
 		.item
