@@ -12,9 +12,7 @@ class CommentsController < ApplicationController
     @comment = Comment.build_from(@obj, current_user.id, @comment_hash[:body], @comment_hash[:title], @comment_hash[:subject])
     if @comment.save
       render partial: 'comments/comment', locals: {comment: @comment}, layout: false, status: :created
-      
       # Send email to all users in Groupmember
-      
     else
       render js: "alert('error saving comment');"
     end
@@ -31,26 +29,24 @@ class CommentsController < ApplicationController
   
   def upvote
     @comment.liked_by current_user
-    respond_to do |format|
-      format.js 
-      format.html {redirect_to root_path}
+    if( (current_user.voted_as_when_voted_for (@comment) == true) || (current_user.voted_as_when_voted_for (@comment) == nil))
+      respond_to do |format|
+        format.js 
+        format.html {redirect_to root_path}
+      end
+    else
+      redirect_to root_path
     end
-#    redirect_to(@comment.commentable)
-#    @comment = Comment.find(params[:id])
-#    @comment.liked_by current_user
   end
   
   def downvote
-    @comment.downvote_from current_user
-    respond_to do |format|
-      format.js 
-      format.html {redirect_to root_path}
+    if current_user.voted_as_when_voted_for (@comment) == false || current_user.voted_as_when_voted_for (@comment) == nil
+      @comment.downvote_from current_user
+      respond_to do |format|
+        format.js 
+        format.html {redirect_to root_path}
+      end
     end
-
-#    redirect_to(@comment.commentable)
-#    @comment = Comment.find(params[:id])
-#    @comment.downvote_from current_user
-    
   end
   
   def index
@@ -68,8 +64,5 @@ class CommentsController < ApplicationController
     def find_comment
       @comment = Comment.find(@commentable.id)
     end
-  
-  
-  
   
 end
