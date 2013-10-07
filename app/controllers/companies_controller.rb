@@ -22,20 +22,11 @@ class CompaniesController < ApplicationController
   def show
     @company = Company.find_by_id(params[:id])
     @company_comments = Comment.where("commentable_id = ?", @company.id)
-
+    
   end
   
   def index
-
     @company = Company.order("name")
-
-
-  #  if params[:industry_id]
-   #   industry = Industry.find(params[:industry_id])
-    #  @company = Company.where("industry_id = ?", industry).paginate(page: params[:page],:per_page => 10)
-    #else
-    #  @company = Company.search(params[:search]).paginate(page: params[:page],:per_page => 10)
-  #  end 
   end
   
   def edit
