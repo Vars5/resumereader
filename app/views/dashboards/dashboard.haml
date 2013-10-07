@@ -8,12 +8,21 @@
 	.item
 		.info-box-light-orange
 			.center-alignment
-				%h5 Welcome to ResumeQuery!
-				%br This is an awesome website where you can become more awesome by being awesome
-			
+				%h5 Welcome to DemPoints!
+				%br You can post interesting and useful points about companies & their intern/grad jobs here
+	- counter = 1		
 	- @comments.each do |comment|
 		- comment_company = comment.get_company_for_comment
-		.item
+		-if counter == 5
+			.item
+				=link_to 'http://bit.ly/1hv6Fbw', :target => '_blank' do 
+					.info-box-light-teal
+						.center-alignment
+							=  image_tag('unsw.png')
+							%h5 At UNSW? Don't lose a chance to stand out
+							There's a brilliant team at UNSW Careers & Employment waiting to improve your resume and apps. Get in before its busy
+		
+		.item		
 			- if comment.subject == "Interview Review"
 				.info-box-light-teal
 					.center-alignment
@@ -58,12 +67,5 @@
 							%h5= comment.body
 						.offset1.span1.vote
 							= render partial: 'comments/vote', locals: { comment: comment }	
-							
-
-	.item
-		=link_to 'http://bit.ly/1hv6Fbw', :target => '_blank' do 
-			.info-box-light-teal
-				.center-alignment
-					=  image_tag('unsw.png')
-					%h5 At UNSW? Don't lose a chance to stand out
-					There's a brilliant team at UNSW Careers & Employment waiting to improve your resume and apps. Get in before its busy.
+		-counter += 1
+	
