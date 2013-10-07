@@ -51,7 +51,6 @@
 					.row-fluid
 						.span10
 							%h5= comment.body
-							=current_user.voted_as_when_voted_for comment
 						.offset1.span1.vote
 							= render partial: 'comments/vote', locals: { comment: comment }	
 							

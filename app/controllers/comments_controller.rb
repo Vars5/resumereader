@@ -28,10 +28,10 @@ class CommentsController < ApplicationController
   end 
   
   def upvote
-    @comment.liked_by current_user
-    if( (current_user.voted_as_when_voted_for (@comment) == true) || (current_user.voted_as_when_voted_for (@comment) == nil))
+    if((current_user.voted_as_when_voted_for(@comment) == false) || (current_user.voted_as_when_voted_for(@comment) == nil))
+      @comment.liked_by current_user
       respond_to do |format|
-        format.js 
+        format.js
         format.html {redirect_to root_path}
       end
     else
@@ -40,12 +40,14 @@ class CommentsController < ApplicationController
   end
   
   def downvote
-    if ((current_user.voted_as_when_voted_for (@comment) == false) ||( current_user.voted_as_when_voted_for (@comment) == nil))
+    if((current_user.voted_as_when_voted_for(@comment) == true) || (current_user.voted_as_when_voted_for(@comment) == nil))
       @comment.downvote_from current_user
       respond_to do |format|
         format.js 
         format.html {redirect_to root_path}
       end
+    else
+      redirect_to root_path        
     end
   end
   
