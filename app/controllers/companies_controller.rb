@@ -22,7 +22,7 @@ class CompaniesController < ApplicationController
   def show
     @company = Company.find_by_id(params[:id])
     @company_comments = Comment.where("commentable_id = ?", @company.id)
-    
+    @new_comment = Comment.build_from(@company, current_user, "", "", "")
   end
   
   def index
