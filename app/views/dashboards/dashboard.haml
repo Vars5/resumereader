@@ -17,7 +17,7 @@
 			- if comment.subject == "Interview Review"
 				.info-box-light-teal
 					.center-alignment
-						= image_tag(comment_company.logo.url)
+						= link_to image_tag(comment_company.logo.url), comment_company
 					%br
 					%br
 					= comment_company.name
@@ -32,7 +32,7 @@
 			- elsif comment.subject == "Salary Review"
 				.info-box-light-orange
 					.center-alignment
-						= image_tag(comment_company.logo.url)
+						= link_to image_tag(comment_company.logo.url), comment_company
 					%br
 					%br
 					= comment_company.name
