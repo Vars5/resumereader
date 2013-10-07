@@ -1,4 +1,5 @@
 #container
+
 	- @company.each do |company|
 		.item
 			.info-box-light-orange
@@ -16,5 +17,6 @@
 						%i(class="icon-briefcase")
 					Go to company website
 				%br				
-				- #image_tag('whirlpool-logo.png', size: "15x15") 
-				- #Go to Whirlpool Forum
+
+				=image_tag('whirlpool-logo.png', size: "15x15") 
+				Go to Whirlpool Forum

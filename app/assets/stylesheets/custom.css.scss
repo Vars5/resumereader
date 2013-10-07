@@ -1021,3 +1021,23 @@ h3 {
 .vote-item{
 	padding:0px 3px;
 }
+
+.light-teal-message{
+		background-color:$light-teal;
+		width:250px;
+	//	border:0px !important;
+		border-radius: 4px;
+		//background-color:$light-teal;
+		padding:10px;
+		margin-top:15px;
+		color:$text-grey;
+		line-height:16px;
+		font-size:12px;
+		h5{
+			color:$aqua;
+		}
+		img {
+			max-width:100px;
+		}
+	
+}

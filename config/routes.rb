@@ -13,6 +13,9 @@ Resumereader::Application.routes.draw do
   match '/about', :to => 'staticpages#about'
   match'/internships', to: 'staticpages#internships'
   match'/graduate_jobs', to: 'staticpages#graduate_jobs'
+  match'/invite', to: 'staticpages#invite'
+  match'/invitation', to: 'staticpages#invitation'
+
   
   #User's Signed In Pages
   #match '/resumeQuestions', :to => 'dashboards#resumeQuestions'
