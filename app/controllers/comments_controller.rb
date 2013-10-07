@@ -40,7 +40,7 @@ class CommentsController < ApplicationController
   end
   
   def downvote
-    if current_user.voted_as_when_voted_for (@comment) == false || current_user.voted_as_when_voted_for (@comment) == nil
+    if ((current_user.voted_as_when_voted_for (@comment) == false) ||( current_user.voted_as_when_voted_for (@comment) == nil))
       @comment.downvote_from current_user
       respond_to do |format|
         format.js 
