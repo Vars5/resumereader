@@ -16,7 +16,7 @@ Resumereader::Application.configure do
   
   # Mandrill settings
   
-  config.action_mailer.default_url_options = { :host => 'www.resquery.com' }
+  config.action_mailer.default_url_options = { :host => 'www.dempoints.com' }
   
   config.action_mailer.smtp_settings = {
       :port =>           '587',
