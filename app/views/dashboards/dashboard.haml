@@ -23,8 +23,11 @@
 					= comment_company.name
 					\- 
 					= comment.subject
-					%h5= comment.body
-					
+					.row-fluid
+						.span10
+							%h5= comment.body
+						.offset1.span1.vote
+							= render partial: 'comments/vote', locals: { comment: comment }	
 
 			- elsif comment.subject == "Salary Review"
 				.info-box-light-orange
@@ -35,10 +38,12 @@
 					= comment_company.name
 					\-
 					=comment.subject
-					%h5
-						"
-						= comment.body
-						"
+					.row-fluid
+						.span10
+							%h5= comment.body
+						.offset1.span1.vote
+							= render partial: 'comments/vote', locals: { comment: comment }	
+
 			-elsif comment.subject == "Company Review"
 				.info-box-yellow
 					.center-alignment
