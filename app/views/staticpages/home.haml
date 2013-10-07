@@ -6,14 +6,65 @@
 		.container
 			.row-fluid
 				.offset3.span6
-					.center-alignment
+					.center-alignment.home-logo
 						= link_to image_tag('white-logo.png'), root_path 
 						.home-page-text
 							Your infinite leg-up network.
 						.dashboard
+						.center-alignment
+							=link_to "Sign Up", new_user_registration_path, :class => "signup-button"
+							%br
+							%br
+							Already have an account? 
+							&nbsp
+							=link_to "Log in now", new_user_session_path 
+
+			.row-fluid
+				.dashboard
+				.offset1.span10
+					#container
+						- @comments.each do |comment|
+							- comment_company = comment.get_company_for_comment
+							.item
+								- if comment.subject == "Interview Review"
+									.info-box-light-teal
+										.center-alignment
+											= image_tag(comment_company.logo.url)
+										%br
+										%br
+										= comment_company.name
+										\- 
+										= comment.subject
+										%h5= comment.body
+
+								- elsif comment.subject == "Salary Review"
+									.info-box-light-orange
+										.center-alignment
+											= image_tag(comment_company.logo.url)
+										%br
+										%br		
+										= comment_company.name
+										\-
+										=comment.subject
+										%h5
+											"
+											= comment.body
+											"
+								-elsif comment.subject == "Company Review"
+									.info-box-yellow
+										.center-alignment
+											= image_tag(comment_company.logo.url)
+										%br
+										%br
+										= comment_company.name
+										\-
+										=comment.subject
+										%h5= comment.body
 						=link_to new_user_registration_path do
-							.account-button
-								Sign Up
-						=link_to new_user_session_path do
-							.account-button
-								Login
+							.item
+								.info-box-full-yellow
+									.center-alignment
+										%h5 Sign up to see more advice
+				
+								
+		

@@ -6,13 +6,13 @@
 		.span12
 			.comment-writing
 				%h5
-					=comment.user.first_name
+					-#comment.user.first_name
 					&nbsp &nbsp
 					%small= comment.updated_at.localtime.strftime("%d %b %I:%M %P")
 					- if (comment.user.id == current_user.id || current_user.role == "admin")
 						=link_to "x", comment_path(comment), method: :delete, remote: true, confirm: "Are you sure?", disable_with: "x", class: 'close'
 				%p= simple_format(comment.body)
-				%p= comment.upvotes.size
-				%p= comment.downvotes.size
+				- comment_number = comment.upvotes.size - comment.downvotes.size
+				%p= comment_number
 				= render partial: 'comments/vote', locals: { comment: comment }	
 				

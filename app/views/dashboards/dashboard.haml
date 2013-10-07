@@ -1,5 +1,5 @@
 #container
-	.row-fluid
+	.row-fluid.hidden
 		.span12
 			.item
 				.content-box
@@ -16,13 +16,22 @@
 		.item
 			- if comment.subject == "Interview Review"
 				.info-box-light-teal
+					.center-alignment
+						= image_tag(comment_company.logo.url)
+					%br
+					%br
 					= comment_company.name
 					\- 
 					= comment.subject
 					%h5= comment.body
+					
 
 			- elsif comment.subject == "Salary Review"
 				.info-box-light-orange
+					.center-alignment
+						= image_tag(comment_company.logo.url)
+					%br
+					%br
 					= comment_company.name
 					\-
 					=comment.subject
@@ -32,10 +41,17 @@
 						"
 			-elsif comment.subject == "Company Review"
 				.info-box-yellow
+					.center-alignment
+						= image_tag(comment_company.logo.url)
+					%br
+					%br
 					= comment_company.name
 					\-
 					=comment.subject
 					%h5= comment.body
+					%p= comment.upvotes.size - comment.downvotes.size
+					= render partial: 'comments/vote', locals: { comment: comment }	
+					
 
 	- @company.each do |company|
 		.item
@@ -56,7 +72,7 @@
 				Go to Whirlpool Forum
 
 	.item
-		=link_to 'http://www.careers.unsw.edu.au/', :target => '_blank' do 
+		=link_to 'http://bit.ly/1hv6Fbw', :target => '_blank' do 
 			.info-box-light-teal
 				.center-alignment
 					=  image_tag('unsw.png')

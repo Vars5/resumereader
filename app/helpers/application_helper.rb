@@ -17,6 +17,10 @@ module ApplicationHelper
           when :alert then "alert alert-error"
       end
   end
+  
+  def url_with_protocol(url)
+     /^http/.match(url) ? url : "http://#{url}"
+   end
 
 
 
