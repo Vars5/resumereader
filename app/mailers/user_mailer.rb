@@ -1,10 +1,10 @@
 class UserMailer < ActionMailer::Base
-  default from: "notifications@resquery.com"
+  default from: "team@dempoints.com"
 
   def signup_confirmation(user)
     @user = user
     
-    mail to: user.email, subject: "Signup Confirmation- ResQuery", from: 'notifications@resquery.com'
+    mail to: user.email, subject: "Signup Confirmation - DemPoints", from: 'team@dempoints.com'
   end
 
   def new_group(user, current_user, group)
@@ -12,7 +12,7 @@ class UserMailer < ActionMailer::Base
     @current_user = current_user
     
     mail to: user.email, 
-    subject:"#{current_user.first_name} invited you to #{group.name}  - ResQuery",
+    subject:"#{current_user.first_name} invited you to #{group.name}  - DemPoints",
     from: current_user.email
   end
 
