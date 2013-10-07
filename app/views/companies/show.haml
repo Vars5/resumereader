@@ -1,64 +1,25 @@
-- provide(:title, "#{@company.name}") 
 .dashboard
 .row-fluid
+	.span7
+		.pad-bottom
+			%h3= @company.name
+			= Industry.find(@company.industry_id).industry
+			%br
+			= link_to "#{@company.website}", "http://#{@company.website}"
 
-  .span7
-    .pad-bottom
-      %h3= @company.name
-      = Industry.find(@company.industry_id).industry
-      %br
-      = link_to "#{@company.website}", "http://#{@company.website}"
-
-    - if @company.has_number_of_jobs > 0
-
-      %strong Job opportunities with #{@company.name}:
-      %br
-      %br
-      - @company.has_jobs.each do |job|
-        =link_to job do
-          .appManage
-            = job.name
-
-  .offset1.span4
-    - if signed_in?
-      .info-box-light-orange
-        %h5
-          List a job for 
-          = @company.name 
-        = form_for @jobs, :as => :jobs do |f|
-          = f.text_field :name, :placeholder => "Name"
-          = f.collection_select :category_id, Category.order(:discipline), :id, :discipline
-          = f.text_field :info, :placeholder => "Information"
-          = f.text_field :due_date, :placeholder => "Date, insert as DD/MM/YYYY"
-          = f.text_field :link, :placeholder => "Website Link in www.something.com form"
-          = f.select :job_type, [['Internship'], ['Graduate Job']]                               
-          = f.hidden_field :id, :value => params[:id]
-          = f.collection_select :role_id, Role.order(:role), :id, :role, include_blank: true
-          = f.text_field :location, :placeholder => "Location"
-          = f.submit
-        
-
-      .pad-top
-        = render partial: 'comments/comment', collection: @comments, as: :comment
-        = render partial: 'comments/form', locals: { comment: @new_comment }
-
-
-  .span6
-  - if false
-    - if user_signed_in?
-      - if can? :update, @company
-        .info-box-light-orange
-          %h5 
-            List a job for 
-            = @company.name 
-          = form_for @jobs, :as => :jobs do |f|
-            = f.text_field :name, :placeholder => "Name"
-            = f.collection_select :category_id, Category.order(:discipline), :id, :discipline
-            = f.text_field :info, :placeholder => "Information"
-            = f.text_field :due_date, :placeholder => "Date, insert as DD/MM/YYYY"
-            = f.text_field :link, :placeholder => "Website Link in www.something.com form"
-            = f.select :job_type, [['Internship'], ['Graduate Job']]                               
-            = f.hidden_field :id, :value => params[:id]
-            = f.collection_select :role_id, Role.order(:role), :id, :role, include_blank: true
-            = f.text_field :location, :placeholder => "Location"
-            = f.submit
+#container
+	- @company_comments.each do |comment|
+		.item
+			.info-box-light-orange
+				.center-alignment
+					= image_tag(@company.logo.url)
+				%br
+				%br
+				= @company.name
+				\-
+				=comment.subject
+				%h5
+					"
+					= comment.body
+					"
+			

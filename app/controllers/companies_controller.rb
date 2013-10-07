@@ -21,11 +21,7 @@ class CompaniesController < ApplicationController
   
   def show
     @company = Company.find_by_id(params[:id])
-    @jobs = @company.jobs.build
-    @boards = @company.boards.new
-    @allBoards = Board.where("company_id = ?", params[:id])    
-    @comments = @company.comment_threads.order('cached_votes_up desc')
-    @new_comment = Comment.build_from(@company, current_user, "", "", "")
+    @company_comments = Comment.where("commentable_id = ?", @company.id)
 
   end
   
