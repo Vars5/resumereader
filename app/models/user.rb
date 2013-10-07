@@ -36,6 +36,8 @@ class User < ActiveRecord::Base
   validates :first_name, length: { maximum: 30 }
   validates :last_name, length: { maximum: 30 }
 
+  acts_as_voter
+
   def is_following_applist?(job)
     self.app_lists.find_by_job_id(job.id) != nil
   end
@@ -60,8 +62,6 @@ class User < ActiveRecord::Base
     AppList.where("user_id = ?", self.id).count
   end
 
-
-
   def has_no_applists?
     self.app_lists.count == 0
   end
@@ -73,10 +73,7 @@ class User < ActiveRecord::Base
   def following?(company)
     self.follows.find_by_company_id(company.id)
   end
-  
 
-  
-  
   has_attached_file :avatar,
       :styles => {
         :list => "40x40>",

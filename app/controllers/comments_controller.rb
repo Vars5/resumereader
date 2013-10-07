@@ -31,14 +31,23 @@ class CommentsController < ApplicationController
   
   def upvote
     @comment.liked_by current_user
-    redirect_to(@comment.commentable)
+    respond_to do |format|
+      format.js 
+      format.html {redirect_to root_path}
+    end
+#    redirect_to(@comment.commentable)
 #    @comment = Comment.find(params[:id])
 #    @comment.liked_by current_user
   end
   
   def downvote
     @comment.downvote_from current_user
-    redirect_to(@comment.commentable)
+    respond_to do |format|
+      format.js 
+      format.html {redirect_to root_path}
+    end
+
+#    redirect_to(@comment.commentable)
 #    @comment = Comment.find(params[:id])
 #    @comment.downvote_from current_user
     

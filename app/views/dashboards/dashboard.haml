@@ -42,14 +42,14 @@
 			-elsif comment.subject == "Company Review"
 				.info-box-yellow
 					.center-alignment
-						= image_tag(comment_company.logo.url)
+						= link_to image_tag(comment_company.logo.url), comment_company
 					%br
 					%br
 					= comment_company.name
 					\-
 					=comment.subject
 					%h5= comment.body
-					%p= comment.upvotes.size - comment.downvotes.size
+					= content_tag(:p, comment.upvotes.size - comment.downvotes.size, :id => "vote-#{comment.id}")
 					= render partial: 'comments/vote', locals: { comment: comment }	
 					
 
@@ -59,7 +59,7 @@
 				.pad-top-tiny
 				.center-alignment
 					- if !company.logo.url.blank?
-						= image_tag(company.logo.url)
+						= link_to image_tag(company.logo.url), company
 						%h5= link_to company.name, company
 				=company.industry
 				%br

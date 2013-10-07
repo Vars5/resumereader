@@ -1,3 +1,2 @@
-= link_to "Upvote", {:controller =>"comments", :action => "upvote", :id => comment.id}, :class => 'btn', method: :put
-= link_to "Downvote", {:controller =>"comments", :action => "downvote", :id => comment.id}, :class => 'btn', method: :put
-
+=link_to raw("<i class=\"icon-arrow-up\"></i>"), {:controller =>"comments", :action => "upvote", :id => comment.id},method: :put, :remote => true
+=link_to raw("<i class=\"icon-arrow-down\"></i>"), {:controller =>"comments", :action => "downvote", :id => comment.id},method: :put, :remote => true
