@@ -38,7 +38,8 @@ class DashboardsController < ApplicationController
   end
 
   def upvoted_comments
-    @voted_items = current_user.votes
+
+    
   end
 
 end
