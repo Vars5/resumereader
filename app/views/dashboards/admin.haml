@@ -21,8 +21,8 @@
                 %th User Id
                 %th Sign in Count
                 %th Signup Date
-                %th Company Follow
-                %th Applists
+                %th Votes
+                %th Comments
               - @list.each do |user|
                 %tr
                   %td
@@ -35,8 +35,8 @@
                     = user.id
                   %td= user.sign_in_count
                   %td= user.created_at.strftime("%e%b%y" )
-                  %td= user.follows.count
-                  %td= user.app_lists.count
+                  %td= user.votes.count
+                  %td= Comment.where('user_id = ?', user.id).count
           %table{:border => "1"}
             %tr
               %th Company
