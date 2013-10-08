@@ -3,7 +3,12 @@ class CommentsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :load_commentable, :only => [:upvote, :downvote]
   before_filter :find_comment, :only => [:upvote, :downvote]
-  
+
+
+  def new
+    @company = Company.new
+    @new_comment = Comment.build_from(@company, current_user, "", "", "")
+  end
 
   def create
     @comment_hash = params[:comment]

@@ -16,13 +16,14 @@ Resumereader::Application.routes.draw do
   match'/invite', to: 'staticpages#invite'
   match'/invitation', to: 'staticpages#invitation'
 
+
   
   #User's Signed In Pages
   #match '/resumeQuestions', :to => 'dashboards#resumeQuestions'
   #match '/resume', :to => 'dashboards#resume'
   match '/changeSettings', :to => 'dashboards#changeSettings'
   match '/quicklist', :to => 'dashboards#add_quick_follow_list', via: [:post]
-
+  match '/upvoted_comments', :to => 'dashboards#upvoted_comments'
   
   #admin pages
   match '/admin', to: 'dashboards#admin'
