@@ -715,6 +715,9 @@ h3 {
 	img {
 		max-width:100px;
 	}
+	a{
+		color:$orange;
+	}
 }
 
 .info-box-light-teal{
@@ -730,6 +733,10 @@ h3 {
 	line-height:16px;
 	font-size:12px;
 	h5{
+		color:$aqua;
+	}
+	
+	a{
 		color:$aqua;
 	}
 	img {
