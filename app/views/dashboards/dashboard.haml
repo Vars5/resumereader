@@ -34,7 +34,7 @@
 					= comment.subject
 					.row-fluid
 						.span10
-							%h5= comment.body
+							%h5= sanitize(comment.body)
 						.offset1.span1.vote
 							= render partial: 'comments/vote', locals: { comment: comment }	
 
@@ -49,7 +49,7 @@
 					=comment.subject
 					.row-fluid
 						.span10
-							%h5= comment.body
+							%h5= sanitize(comment.body)
 						.offset1.span1.vote
 							= render partial: 'comments/vote', locals: { comment: comment }	
 
@@ -64,7 +64,7 @@
 					=comment.subject
 					.row-fluid
 						.span10
-							%h5= comment.body
+							%h5= sanitize(comment.body)
 						.offset1.span1.vote
 							= render partial: 'comments/vote', locals: { comment: comment }	
 		-counter += 1
