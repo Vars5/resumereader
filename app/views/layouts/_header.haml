@@ -13,14 +13,20 @@
 						My Upvoted Posts
 						
 				=link_to new_comment_path do
-					.my-jobs-button.hidden
-						Add a point
+					.my-jobs-button
+						Add advice
 				
 			.span3
 				.pull-right
-					= link_to edit_user_registration_path do
+					=link_to invite_path do 
 						.account-button
-							&nbsp 						
+							&nbsp
+							&nbsp 								
+							Invite a friend					
+							&nbsp
+							&nbsp 		
+					= link_to edit_user_registration_path do
+						.account-button				
 							= current_user.first_name
 					=link_to destroy_user_session_path, :method =>"DELETE" do
 						.account-button

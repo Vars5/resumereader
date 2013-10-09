@@ -1,5 +1,13 @@
-=form_for :invite, as: :staticpages, url: :invitation do |f|
-	=f.email_field :email, placeholder: "Email"
-	=f.submit "Invite Person"
+.dashboard
+
+.row-fluid
+	.offset3.span6
+		.dashboard
+		.center-alignment
+			%h3 Invite a friend
+			%br
+		=form_for :invite, as: :staticpages, url: :invitation do |f|
+			=f.email_field :email, placeholder: "Email"
+			=f.submit "Invite Person", :class => "sign-up-button"
 	
 	

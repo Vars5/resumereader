@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :load_commentable, :only => [:upvote, :downvote]
   before_filter :find_comment, :only => [:upvote, :downvote]
-  autocomplete :company, :name, :extra_data => [:id]
+  
 
   def new
     @comment = Comment.new

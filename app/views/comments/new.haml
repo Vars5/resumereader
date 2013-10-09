@@ -1,7 +1,16 @@
 /_form.html.haml
+/%script
+/	$(document).ready(function() { $("#comment_commentable_id").select2(); });
+
+.dashboard
+
+%h3
+	Add a comment
+
 .pad-top
 	.comment-form
 		=form_for @new_comment do |f|
+			%h5 Company:
 			= f.collection_select :commentable_id, Company.order(:name), :id, :name, include_blank: true
 			= f.text_area :body, :placeholder => "Make a note about this application"
 			= f.text_field :title, placeholder: "I know this because ..."
