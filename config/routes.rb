@@ -16,7 +16,7 @@ Resumereader::Application.routes.draw do
   match'/invite', to: 'staticpages#invite'
   match'/invitation', to: 'staticpages#invitation'
 
-
+  #match '/create_comment', to: 'comments#create_comment'
   
   #User's Signed In Pages
   #match '/resumeQuestions', :to => 'dashboards#resumeQuestions'
@@ -71,8 +71,7 @@ Resumereader::Application.routes.draw do
   mount Split::Dashboard, at: 'split'
 
   put '/comments/:id/:action' => 'comments#upvote'
-  put '/comments/:id/:action' => 'comments#downvote'
-
+  put '/comments/:id/:action' => 'comments#downvote'  
 
 =begin  
   resources :comments do 
@@ -99,7 +98,9 @@ Resumereader::Application.routes.draw do
   #error pages
   match '(errors)/:status', to: 'errors#show', constraints: {status: /\d{3}/} # via: :all
 
-
+  resources :comments do
+    get :autocomplete_company_name, :on => :collection
+  end
 
 end
 

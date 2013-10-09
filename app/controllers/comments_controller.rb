@@ -3,20 +3,34 @@ class CommentsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :load_commentable, :only => [:upvote, :downvote]
   before_filter :find_comment, :only => [:upvote, :downvote]
-
+  autocomplete :company, :name, :extra_data => [:id]
 
   def new
-    @company = Company.new
-    @new_comment = Comment.build_from(@company, current_user, "", "", "")
+    @comment = Comment.new
+    @new_comment = Comment.build_from(@comment, current_user, "", "", "")
   end
 
-  def create
+=begin
+  def create_comment
     @comment_hash = params[:comment]
-    @obj = @comment_hash[:commentable_type].constantize.find(@comment_hash[:commentable_id])
+    @obj = @comment_hash[:commentable_id]
     # Not implemented: check to see whether the user has permission to create a comment on this object
     @comment = Comment.build_from(@obj, current_user.id, @comment_hash[:body], @comment_hash[:title], @comment_hash[:subject])
     if @comment.save
-      render partial: 'comments/comment', locals: {comment: @comment}, layout: false, status: :created
+      redirect_to root_path
+    end
+  end
+=end
+
+  def create
+    @comment_hash = params[:comment]
+#    @obj = @comment_hash[:commentable_type].constantize.find(@comment_hash[:commentable_id])
+    @company = Company.find(@comment_hash[:commentable_id])
+    # Not implemented: check to see whether the user has permission to create a comment on this object
+    @comment = Comment.build_from(@company, current_user.id, @comment_hash[:body], @comment_hash[:title], @comment_hash[:subject])
+    if @comment.save
+      redirect_to @company
+      #render partial: 'comments/comment', locals: {comment: @comment}, layout: false, status: :created
       # Send email to all users in Groupmember
     else
       render js: "alert('error saving comment');"

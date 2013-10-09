@@ -20,7 +20,9 @@ class Company < ActiveRecord::Base
     :medium => [">600x"]
     }
 =end  
-
+  
+  #methods
+  
 
    def to_param
        "#{id}-#{name}".parameterize
