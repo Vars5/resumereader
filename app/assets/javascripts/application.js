@@ -11,7 +11,6 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require select2_locale_pt-BR
 //= require jquery_ujs
 //= require jquery-ui
 //= require_tree .
