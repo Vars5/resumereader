@@ -2,7 +2,7 @@
 .pad-top
 	.comment-form
 		= simple_form_for comment do |f|
-			= f.input :body, input_html: {rows: '2'}, label: false, :placeholder => "Make a note about this application"
+			= f.input :body, input_html: {rows: '2'}, label: false, :placeholder => "Make a note about this company"
 			= f.input :title, label: false, placeholder: "I know this because ..."
 			= f.input :commentable_id, as: :hidden, value: comment.commentable_id
 			= f.input :commentable_type, as: :hidden, value: comment.commentable_type
