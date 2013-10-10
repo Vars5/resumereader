@@ -13,7 +13,18 @@
 	- counter = 1		
 	- @comments.each do |comment|
 		- comment_company = comment.get_company_for_comment
-		-if counter == 5	
+		-if counter == 5
+			.item
+				=link_to 'http://bit.ly/1hv6Fbw', :target => '_blank' do 
+					.light-blue-message
+						.center-alignment
+							=  image_tag('bsoc_logo.png')
+							%h5 The UNSW Business Society in collaboration with the ASB Young Alumni is presenting a special event: Confessions of a Recent Graduate!
+							This is a great opportunity to learn about the Alumni community that you will be a part of when you graduate, and find out more about where the degrees of these recent graduates have taken them! 
+			
+			
+			
+		-if counter == 10		
 			.item
 				=link_to 'http://bit.ly/1hv6Fbw', :target => '_blank' do 
 					.light-teal-message
