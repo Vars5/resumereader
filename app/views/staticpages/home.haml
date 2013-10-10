@@ -9,7 +9,7 @@
 					.center-alignment.home-logo
 						= link_to image_tag('white-logo.png'), root_path 
 						.home-page-text
-							Job advice cards, by students, to help students
+							=ab_test("signup_title", "Job advice cards, by students, to help students.", "Your infinite leg-up network.")
 						.dashboard
 						.center-alignment
 							=link_to "Sign Up", new_user_registration_path, :class => "signup-button"
