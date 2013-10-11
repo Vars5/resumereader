@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
 #    @obj = @comment_hash[:commentable_type].constantize.find(@comment_hash[:commentable_id])
     @company = Company.find(@comment_hash[:commentable_id])
     # Not implemented: check to see whether the user has permission to create a comment on this object
-    @comment = Comment.build_from(@company, current_user.id, @comment_hash[:body], @comment_hash[:title], @comment_hash[:subject])
+    @comment = Comment.build_from(@company, current_user.id, @comment_hash[:body], @comment_hash[:title], @comment_hash[:category_id])
     if @comment.save
       redirect_to @company
       #render partial: 'comments/comment', locals: {comment: @comment}, layout: false, status: :created
@@ -69,6 +69,20 @@ class CommentsController < ApplicationController
       redirect_to root_path        
     end
   end
+  
+  def edit
+    authorize! :manage, :all
+    @comment = Comment.find(params[:id])
+  end
+  
+  def update
+    authorize! :manage, :all
+    @comment = Comment.find(params[:id])
+      if @comment.update_attributes(params[:comment])
+        redirect_to comments_path
+      end
+  end
+  
   
   def index
       authorize! :manage, :all

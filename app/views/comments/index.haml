@@ -10,4 +10,8 @@
 			| 
 			=comment.subject
 			|
+			=Category.find_by_id(comment.category_id).name
+			|
 			=link_to "Delete", comment_path(comment), method: :delete, remote: true, confirm: "Are you sure?", disable_with: "x"
+			|
+			=link_to "Edit", edit_comment_path(comment)

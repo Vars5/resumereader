@@ -14,7 +14,7 @@
 			= f.collection_select :commentable_id, Company.order(:name), :id, :name, include_blank: true
 			= f.text_area :body, :placeholder => "Make a note about this application"
 			= f.text_field :title, placeholder: "I know this because ..."
-			= f.select :subject, ["Interview Review", "Salary Review", "Company Review"]
+			= f.collection_select :category_id, Category.order(:name).where("category = ?", "Review"), :id, :name
 			= f.hidden_field :commentable_type, value: "Company"
 			= f.submit
 

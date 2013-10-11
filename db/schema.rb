@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131004125704) do
+ActiveRecord::Schema.define(:version => 20131011142635) do
 
   create_table "app_lists", :force => true do |t|
     t.integer  "job_id"
@@ -34,6 +34,31 @@ ActiveRecord::Schema.define(:version => 20131004125704) do
     t.text     "tagline"
   end
 
+  create_table "blog_comments", :force => true do |t|
+    t.string   "name",       :null => false
+    t.string   "email",      :null => false
+    t.string   "website"
+    t.text     "body",       :null => false
+    t.integer  "post_id",    :null => false
+    t.string   "state"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "blog_comments", ["post_id"], :name => "index_blog_comments_on_post_id"
+
+  create_table "blog_posts", :force => true do |t|
+    t.string   "title",                         :null => false
+    t.text     "body",                          :null => false
+    t.integer  "blogger_id"
+    t.string   "blogger_type"
+    t.integer  "comments_count", :default => 0, :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "blog_posts", ["blogger_type", "blogger_id"], :name => "index_blog_posts_on_blogger_type_and_blogger_id"
+
   create_table "boards", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -53,8 +78,10 @@ ActiveRecord::Schema.define(:version => 20131004125704) do
 
   create_table "categories", :force => true do |t|
     t.string   "discipline"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+    t.string   "category"
   end
 
   create_table "comments", :force => true do |t|
@@ -73,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20131004125704) do
     t.integer  "cached_votes_score", :default => 0
     t.integer  "cached_votes_up",    :default => 0
     t.integer  "cached_votes_down",  :default => 0
+    t.integer  "category_id"
   end
 
   add_index "comments", ["cached_votes_down"], :name => "index_comments_on_cached_votes_down"
@@ -271,8 +299,6 @@ ActiveRecord::Schema.define(:version => 20131004125704) do
   end
 
   create_table "searches", :force => true do |t|
-    t.string   "role"
-    t.string   "discipline"
     t.string   "location"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
@@ -286,6 +312,23 @@ ActiveRecord::Schema.define(:version => 20131004125704) do
     t.string   "forum_name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context"
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], :name => "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", :force => true do |t|
+    t.string "name"
   end
 
   create_table "users", :force => true do |t|

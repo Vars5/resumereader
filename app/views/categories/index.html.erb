@@ -5,6 +5,6 @@ Do Not delete Categories<p>
 <%= link_to "New Category", new_category_path %>
 
 <br><% @categories.each do |f| %> </br>
-	<li> <%= f.discipline %> <%= f.id %></li>
+	<li><%= f.discipline %> |<%= f.name %> | <%= f.category %> | <%= f.id %> <%= link_to "edit", edit_category_path(f)%></li>
 <% end %>
 

@@ -1,10 +1,10 @@
 class Category < ActiveRecord::Base
 
-  attr_accessible :discipline
+  attr_accessible :discipline, :name, :category
   
   belongs_to :jobs
-  
-  validates :discipline, :presence => true
-  validates :discipline, :uniqueness => true
+  has_many :comments
+
+  validates :name, :uniqueness => true
 
 end

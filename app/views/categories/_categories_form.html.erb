@@ -1,6 +1,7 @@
 <div class="container">
 	<%= form_for @category do |f| %>
-		<%= f.text_field :discipline, :placeholder => "Category" %> </br>		
+		<%= f.text_field :name, :placeholder => "Name" %> </br>
+		<%= f.text_field :category, :placeholder => "Type of Category" %>		
 					
 		<%= f.submit %>
 	<% end %>
