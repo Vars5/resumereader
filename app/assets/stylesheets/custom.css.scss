@@ -1108,7 +1108,7 @@ h3 {
      right: 2%;
 	 font-size:11px;
 	 font-weight:700;
-	color:white;
+	color:white !important;
 	background-color:#BABABA;
 	padding:2px 9px;
 	border-radius:4px;
@@ -1117,6 +1117,6 @@ h3 {
 .about-button:hover{
 	background-color:$dark-grey;
 	a {
-		color:white;
+		color:white !important;
 	}
 }
