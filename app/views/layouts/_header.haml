@@ -31,21 +31,7 @@
 					=link_to destroy_user_session_path, :method =>"DELETE" do
 						.account-button
 							Log Out
-
-
-.search-header.hidden
-	.container
-		.row-fluid
-			.span3
-				.tiny-pad
-					=link_to "Graduate Jobs", graduate_jobs_path
-					&nbsp &nbsp &nbsp
-					=link_to "Internships", internships_path
-			.span6
-				= render 'layouts/swiftype'
-				
-			.span3
-				.pull-right
-					.tiny-pad-right
-						=link_to "Add to our list of jobs", new_company_path
-						
+.second-header
+	Do you think DemPoints is helpful? &nbsp - &nbsp 
+	= link_to "Share it to a friend", invite_path
+	-# & like our facebook page

@@ -80,9 +80,17 @@
 					\-
 					=comment.subject
 					.row-fluid
-						.span10
+						.span12
 							%h5= link_to truncate((sanitize(comment.body)), length: 320), comment_company
-						.offset1.span1.vote
-							= render partial: 'comments/vote', locals: { comment: comment }	
+					%br
+					=link_to raw("Thank Author &nbsp <i class=\"icon-thumbs-up\"></i> "), {:controller =>"comments", :action => "upvote", :id => comment.id}, method: :put, :class => "btn btn-small"
+					.pull-right
+						- thanks = comment.upvotes.size 
+						- unless thanks == 0 
+							%span[comment]
+								=thanks
+							have given thanks
+					%br 
+					-# Mark as inaccurate
 		-counter += 1
 	
