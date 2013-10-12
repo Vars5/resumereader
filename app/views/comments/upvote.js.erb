@@ -1,5 +1,6 @@
 <% if current_user.voted_for?(@comment) %>
-	$("#vote-<%= @comment.id %>").html(function(i, val) { return +val+2 });
+	$("#comment_<%= @comment.id %>").html(function(i, val) { return +val+2 });
 <% else %>
-	$("#vote-<%= @comment.id %>").html(function(i, val) { return +val+1 });
+	$("#comment_<%= @comment.id %>").html(function(i, val) { return +val+1 });
 <% end %>
+
