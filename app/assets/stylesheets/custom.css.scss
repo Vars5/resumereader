@@ -84,9 +84,10 @@ a:hover{
 		text-decoration:none !important;
 }
 body {
-font-family: 'Oxygen', sans-serif !important;
+	font-family: 'Oxygen', sans-serif !important;
 	font-size:13px;
 	height:100%;
+	background-color:#F0F0F0;
 	a{
 		color:$dark-grey;
 	}
@@ -700,6 +701,8 @@ h3 {
 
 
 .info-box-yellow{
+	box-shadow: 2px 2px 1px #E8E8E8;
+		background-color:white;
 	border:1px solid $light-grey;
 	border-top: 10px solid #F7F0BA;
 	width:250px;
@@ -721,6 +724,8 @@ h3 {
 }
 
 .info-box-light-teal{
+	box-shadow: 2px 2px 1px #E8E8E8;
+	background-color:white;
 	border:1px solid $light-grey;
 	border-top: 10px solid $light-teal;
 	width:250px;
@@ -747,6 +752,8 @@ h3 {
 
 
 .info-box-light-orange{
+	box-shadow: 2px 2px 1px #E8E8E8;
+	background-color:white;
 	width:250px;
 	//border-radius: 4px;
 	//background-color:#FCE9D5;
@@ -976,7 +983,7 @@ h3 {
 }
 
 .info-box-full-yellow{
-
+	box-shadow: 2px 2px 1px #E8E8E8;	
 	background-color: #FCFAE6;
 	width:250px;
 	padding:10px;
@@ -1030,6 +1037,7 @@ h3 {
 }
 
 .light-teal-message{
+	box-shadow: 2px 2px 1px #E8E8E8;
 		background-color:$light-teal;
 		width:250px;
 	//	border:0px !important;
@@ -1050,6 +1058,7 @@ h3 {
 }
 
 .light-blue-message{
+		box-shadow: 2px 2px 1px #E8E8E8;
 		background-color:#EBF8FC;
 		width:250px;
 	//	border:0px !important;
@@ -1067,3 +1076,8 @@ h3 {
 			max-width:100px;
 		}
 }
+
+.signed-out{
+	background-color:white;
+}
+

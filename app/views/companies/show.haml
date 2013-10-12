@@ -1,4 +1,5 @@
 .dashboard
+
 .row-fluid
 	.span7
 		.pad-bottom
@@ -20,6 +21,6 @@
 				=comment.subject
 				%h5
 					"
-					= comment.body
+					= simple_format(comment.body)
 					"
 = render partial: 'comments/form', locals: { comment: @new_comment }
