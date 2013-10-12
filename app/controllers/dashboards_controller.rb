@@ -22,7 +22,7 @@ class DashboardsController < ApplicationController
   
   def admin
     @list = User.order('created_at')
-    @job = Job.order('due_date')
+    @comment = Comment.order('created_at')
     @company = Company.all
     authorize! :create, @job      
   end
