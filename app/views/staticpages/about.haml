@@ -1,18 +1,37 @@
+- if !signed_in?
+	.tiny-orange
+
 .dashboard
+	
+- if !signed_in?	
+	.container
+		.row-fluid
+			.span12
+				.home-logo
+					= link_to image_tag('white-logo.png'), root_path	
+	%br
+	%br
+	%br
+	
+.container
+	.row-fluid
+		.span6
+			
+			%h3 About Us
 
-.row-fluid
-	.span6
-		%h3 About us
-
-.row-fluid
-	.span6
-		.about-area
-			.about-text
-				%p DemPoints stands for Democratising Points. 
-				%br
-				%p Our guiding principle is to give every student the opportunities we had when we applied for our internship & grad jobs.
-				%br
+	.row-fluid
+		.span8
+			.about-area
+				.about-text
+					%b
+						%p Founded by two students who held leadership positions at student societies at UNSW, Dempoints is an online platform to read, create and share job advice by students for students. 
+					%br
+					%p Whether an engineer, a prospective lawyer, a future consultant or a marketer to-be, DemPoints is one reference point (of many) for you to help you find out what it really takes to enter these industries and give you a better idea of what you're aiming for.
+					%br
+					%p Our guiding principle with DemPoints is to give every student the opportunities we had when we applied for our internship & grad jobs.
+					%br
+				
 					
-	.span3
-		-#about-area
+		.span3
+			-#about-area
 	

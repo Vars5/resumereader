@@ -20,7 +20,7 @@ $background-grey: #f6f6f6;
 $line-grey: #D6D6D6;
 $dark-grey: #666A73;
 $text-grey: #787878;
-$light-text-grey:#9C9C9C;
+$light-text-grey:#808080;
 
 $dark-blue: #1BB7CC;
 $light-blue: #76D6E3;
@@ -1100,4 +1100,23 @@ h3 {
 
 .sign-up-page{
 	padding-bottom:400px;
+}
+
+.about-button{
+     position: absolute;
+     bottom: 5%;
+     right: 2%;
+	 font-size:11px;
+	 font-weight:700;
+	color:white;
+	background-color:#BABABA;
+	padding:2px 9px;
+	border-radius:4px;
+}
+
+.about-button:hover{
+	background-color:$dark-grey;
+	a {
+		color:white;
+	}
 }

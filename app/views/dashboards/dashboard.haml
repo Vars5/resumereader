@@ -53,7 +53,7 @@
 						.span12
 							%h5= link_to truncate((sanitize(comment.body)), length: 320), comment_company
 					%br
-					=link_to raw("Thank Author &nbsp <i class=\"icon-thumbs-up\"></i> "), {:controller =>"comments", :action => "upvote", :id => comment.id}, method: :put, :class => "btn btn-small", :remote => true
+					=link_to raw("Thank author &nbsp <i class=\"icon-thumbs-up\"></i> "), {:controller =>"comments", :action => "upvote", :id => comment.id}, method: :put, :class => "btn btn-small", :remote => true
 					.pull-right
 						- thanks = comment.upvotes.size 
 						- unless thanks == 0 
@@ -74,7 +74,7 @@
 						.span12
 							%h5= link_to truncate((sanitize(comment.body)), length: 320), comment_company
 					%br
-					=link_to raw("Thank Author &nbsp <i class=\"icon-thumbs-up\"></i> "), {:controller =>"comments", :action => "upvote", :id => comment.id}, method: :put, :class => "btn btn-small", :remote => true
+					=link_to raw("Thank author &nbsp <i class=\"icon-thumbs-up\"></i> "), {:controller =>"comments", :action => "upvote", :id => comment.id}, method: :put, :class => "btn btn-small", :remote => true
 					.pull-right
 						- thanks = comment.upvotes.size 
 						- unless thanks == 0 
@@ -97,7 +97,7 @@
 							%h5= link_to truncate((sanitize(comment.body)), length: 320), comment_company
 			
 					%br
-					=link_to raw("Thank Author &nbsp <i class=\"icon-thumbs-up\"></i> "), {:controller =>"comments", :action => "upvote", :id => comment.id}, method: :put, :class => "btn btn-small", :remote => true
+					=link_to raw("Thank author &nbsp <i class=\"icon-thumbs-up\"></i> "), {:controller =>"comments", :action => "upvote", :id => comment.id}, method: :put, :class => "btn btn-small", :remote => true
 					.pull-right
 						- thanks = comment.upvotes.size 
 						- unless thanks == 0 
@@ -121,7 +121,7 @@
 							%h5= link_to truncate((sanitize(comment.body)), length: 320), comment_company
 
 					%br
-					=link_to raw("Thank Author &nbsp <i class=\"icon-thumbs-up\"></i> "), {:controller =>"comments", :action => "upvote", :id => comment.id}, method: :put, :class => "btn btn-small"
+					=link_to raw("Thank author &nbsp <i class=\"icon-thumbs-up\"></i> "), {:controller =>"comments", :action => "upvote", :id => comment.id}, method: :put, :class => "btn btn-small"
 					.pull-right
 						- thanks = comment.upvotes.size 
 						- unless thanks == 0 
