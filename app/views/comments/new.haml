@@ -20,13 +20,14 @@
 					= f.collection_select :commentable_id, Company.order(:name), :id, :name,{}, :id => "search", include_blank: true
 					%br
 					%br
+					= f.collection_select :category_id, Category.order(:name).where("category = ?", "Review"), :id, :name, {}, :id => "search2", include_blank: true
+					%br
+					%br
 					= f.text_area :body, :placeholder => "Make a note about this application"
 					= f.text_field :title, placeholder: "I know this because ..."
-					= f.collection_select :category_id, Category.order(:name).where("category = ?", "Review"), :id, :name, {}, :id => "search2", include_blank: true
 					= f.hidden_field :commentable_type, value: "Company"
 					%br
-					%br
-					= f.submit "Help Others", :class => "btn btn-success"
+					= f.submit "Give Advice", :class => "btn btn-success"
 
 
 
