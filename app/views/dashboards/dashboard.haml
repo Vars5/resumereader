@@ -40,7 +40,7 @@
 							There's a brilliant team at UNSW Careers & Employment waiting to improve your resume and apps. Get in before its busy
 		
 		.item		
-			- if comment.subject == "Interview Review"
+			- if comment.category_id == 11 #11 is the cagetory id for the "Application process"
 				.info-box-light-teal
 					.center-alignment
 						= link_to image_tag(comment_company.logo.url), comment_company
@@ -48,7 +48,7 @@
 					%br
 					= comment_company.name
 					\- 
-					= comment.subject
+					= Category.find(comment.category_id).name
 					.row-fluid
 						.span12
 							%h5= link_to truncate((sanitize(comment.body)), length: 320), comment_company
@@ -61,7 +61,7 @@
 								=thanks
 							have given thanks
 
-			- elsif comment.subject == "Salary Review"
+			- elsif comment.category_id == 12 #12 refers to Salary & Perks
 				.info-box-light-orange
 					.center-alignment
 						= link_to image_tag(comment_company.logo.url), comment_company
@@ -69,7 +69,7 @@
 					%br
 					= comment_company.name
 					\-
-					=comment.subject
+					= Category.find(comment.category_id).name
 					.row-fluid
 						.span12
 							%h5= link_to truncate((sanitize(comment.body)), length: 320), comment_company
@@ -83,7 +83,7 @@
 							have given thanks
 
 
-			-elsif comment.subject == "Company Review"
+			-elsif comment.category_id == 10 #10 refers to Company & Culture
 				.info-box-yellow
 					.center-alignment
 						= link_to image_tag(comment_company.logo.url), comment_company
@@ -91,10 +91,11 @@
 					%br
 					= comment_company.name
 					\-
-					=comment.subject
+					= Category.find(comment.category_id).name
 					.row-fluid
 						.span12
 							%h5= link_to truncate((sanitize(comment.body)), length: 320), comment_company
+			
 					%br
 					=link_to raw("Thank Author &nbsp <i class=\"icon-thumbs-up\"></i> "), {:controller =>"comments", :action => "upvote", :id => comment.id}, method: :put, :class => "btn btn-small", :remote => true
 					.pull-right
@@ -105,5 +106,37 @@
 							have given thanks
 					%br 
 					-# Mark as inaccurate
+
+			-elsif comment.category_id == 13 # refers to Day in the Life
+				.info-box-yellow
+					.center-alignment
+						= link_to image_tag(comment_company.logo.url), comment_company
+					%br
+					%br
+					= comment_company.name
+					\-
+					= Category.find(comment.category_id).name
+					.row-fluid
+						.span12
+							%h5= link_to truncate((sanitize(comment.body)), length: 320), comment_company
+
+					%br
+					=link_to raw("Thank Author &nbsp <i class=\"icon-thumbs-up\"></i> "), {:controller =>"comments", :action => "upvote", :id => comment.id}, method: :put, :class => "btn btn-small"
+					.pull-right
+						- thanks = comment.upvotes.size 
+						- unless thanks == 0 
+							%span[comment]
+								=thanks
+							have given thanks
+					%br 
+					-# Mark as inaccurate
+
+
+
+
+
+
+
+
 		-counter += 1
 	

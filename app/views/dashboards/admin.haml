@@ -28,3 +28,19 @@
 							%td= user.created_at.strftime("%e%b%y" )
 							%td= user.votes.count
 							%td= Comment.where('user_id = ?', user.id).count
+
+			%ul 
+				%table{:border => "2"}
+					%tr
+						%th Comment Id
+						%th UpVotes
+						%th Name
+						%th Email
+						
+					- @comment.each do |comment|
+						%tr
+							%td= comment.id
+							%td= comment.upvotes.size
+							%td= User.find(comment.user_id).first_name
+							%td= User.find(comment.user_id).email
+				
