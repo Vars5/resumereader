@@ -50,9 +50,9 @@
 					\- 
 					= comment.subject
 					.row-fluid
-						.span10
+						.span12
 							%h5= link_to truncate((sanitize(comment.body)), length: 320), comment_company
-						.offset1.span1.vote
+					%br
 					=link_to raw("Thank Author &nbsp <i class=\"icon-thumbs-up\"></i> "), {:controller =>"comments", :action => "upvote", :id => comment.id}, method: :put, :class => "btn btn-small", :remote => true
 					.pull-right
 						- thanks = comment.upvotes.size 
