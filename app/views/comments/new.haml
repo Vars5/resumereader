@@ -2,21 +2,32 @@
 /%script
 /	$(document).ready(function() { $("#comment_commentable_id").select2(); });
 
+
+%script
+	$(document).ready(function() { $("#search").select2({  width: 'resolve', placeholder: "Sort by industry" });});
+	$(document).ready(function() { $("#search2").select2({  width: 'resolve', placeholder: "Sort by industry" });});
+	
 .dashboard
 
-%h3
-	Add a comment
+.row-fluid
+	.span8
+		%h3
+			Add a comment
 
-.pad-top
-	.comment-form
-		=form_for @new_comment do |f|
-			%h5 Company:
-			= f.collection_select :commentable_id, Company.order(:name), :id, :name, include_blank: true
-			= f.text_area :body, :placeholder => "Make a note about this application"
-			= f.text_field :title, placeholder: "I know this because ..."
-			= f.collection_select :category_id, Category.order(:name).where("category = ?", "Review"), :id, :name, include_blank: true
-			= f.hidden_field :commentable_type, value: "Company"
-			= f.submit
+		.pad-top
+			.comment-form
+				=form_for @new_comment do |f|
+					%h5 Company:
+					= f.collection_select :commentable_id, Company.order(:name), :id, :name,{}, :id => "search", include_blank: true
+					%br
+					%br
+					= f.text_area :body, :placeholder => "Make a note about this application"
+					= f.text_field :title, placeholder: "I know this because ..."
+					= f.collection_select :category_id, Category.order(:name).where("category = ?", "Review"), :id, :name, {}, :id => "search2", include_blank: true
+					= f.hidden_field :commentable_type, value: "Company"
+					%br
+					%br
+					= f.submit "Help Others", :class => "btn btn-success"
 
 
 

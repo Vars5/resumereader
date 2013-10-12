@@ -24,7 +24,9 @@
 			<%= render 'layouts/uservoice' %>	
 			<%= render 'layouts/footer'%>
 		<% else %>
-			<%= yield %>	
+			<div class= "signed-out">
+				<%= yield %>	
+			</div>
 		<% end %>
 
 	</body>
