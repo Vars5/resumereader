@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => :show
   before_filter :load_commentable, :only => [:upvote, :downvote]
   before_filter :find_comment, :only => [:upvote, :downvote]
   
@@ -87,6 +87,10 @@ class CommentsController < ApplicationController
   def index
       authorize! :manage, :all
       @comment = Comment.all
+  end
+  
+  def show
+    @comment = Comment.find(params[:id])
   end
   
   private

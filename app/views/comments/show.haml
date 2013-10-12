@@ -1,0 +1,20 @@
+Probably place the comment in a box or something in the centre of the page
+%p
+Also the non-signed-in page has no styling a the moment. 
+%p
+
+%b Company:
+=@comment.get_company_for_comment.name
+%p
+PLUS LOGO
+
+%p	
+- if signed_in?
+	=@comment.body
+-else
+	=truncate((sanitize(@comment.body)), length: 144)
+
+%p
+- if signed_in?
+-else
+	=link_to "Signup Now", new_user_registration_path
