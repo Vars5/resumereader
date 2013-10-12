@@ -1,22 +1,24 @@
 #container
+	= form_tag companies_path, :method => 'get' do
+		= select_tag :industry_id, options_from_collection_for_select(Industry.all, "id", "industry"), include_blank: true, :onchange => "this.form.submit()"
+		- @company.each do |company|
+			.item
+				.info-box-light-orange
+					.pad-top-tiny
+					.center-alignment
+						- if !company.logo.url.blank?
+							= image_tag(company.logo.url)
+							%h5= link_to company.name, company
+					=company.industry
+					%br
+					-#company.info
+					%br
+					=link_to url_with_protocol(company.website) do
+						.icon-fix
+							%i(class="icon-briefcase")
+						Go to company website
+					%br				
 
-	- @company.each do |company|
-		.item
-			.info-box-light-orange
-				.pad-top-tiny
-				.center-alignment
-					- if !company.logo.url.blank?
-						= image_tag(company.logo.url)
-						%h5= link_to company.name, company
-				=company.industry
-				%br
-				-#company.info
-				%br
-				=link_to url_with_protocol(company.website) do
-					.icon-fix
-						%i(class="icon-briefcase")
-					Go to company website
-				%br				
+					=image_tag('whirlpool-logo.png', size: "15x15") 
+					Go to Whirlpool Forum
 
-				=image_tag('whirlpool-logo.png', size: "15x15") 
-				Go to Whirlpool Forum

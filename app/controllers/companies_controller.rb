@@ -26,7 +26,12 @@ class CompaniesController < ApplicationController
   end
   
   def index
-    @company = Company.order("name")
+    if params[:industry_id]
+      industry = Industry.find(params[:industry_id])
+      @company = Company.where("industry_id = ?", industry).paginate(page: params[:page],:per_page => 10)
+    else
+      @company = Company.order("name")
+    end  
   end
   
   def edit
