@@ -13,13 +13,15 @@
 	%br
 	%br
 	
-.container
+.container.about
 	.row-fluid
 		.span6
 			
 			%h3 About Us
 
 	.row-fluid
+
+			
 		.span8
 			.about-area
 				.about-text
@@ -31,7 +33,31 @@
 					%p Our guiding principle with DemPoints is to give every student the opportunities we had when we applied for our internship & grad jobs.
 					%br
 				
+		.span4
+			.info-box-yellow
+				Number of Students
+				%br
+				%br
+				%h5 100+
+				%br
+
+			.info-box-light-teal
+				Companies with reputable graduate and internship jobs listed
+				%br
+				%br
+				%h5= Company.count
+				%br
+			.info-box-light-orange
+				Number of industries
+				%br
+				%br
+				%h5= Category.count
+				%br
+
+
+
 					
-		.span3
 			-#about-area
+- if !signed_in?
+	.about-bottom
 	
