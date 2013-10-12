@@ -71,4 +71,5 @@ gem 'acts_as_commentable_with_threading'
 
 gem 'acts_as_votable', '~> 0.7.1'
 
+gem "select2-rails"
 
