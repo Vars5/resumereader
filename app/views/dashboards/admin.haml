@@ -11,23 +11,23 @@
 					%tr
 						%th First Name
 						%th Email
-						%th Phone Number
 						%th User Id
 						%th Sign in Count
 						%th Signup Date
 						%th Votes
 						%th Comments
+						%th Invited_by
 					
 					- @list.each do |user|
 						%tr
 							%td= user.first_name
 							%td= user.email
-							%td= user.mobile_number
 							%td= user.id
 							%td= user.sign_in_count
 							%td= user.created_at.strftime("%e%b%y" )
 							%td= user.votes.count
 							%td= Comment.where('user_id = ?', user.id).count
+							%td= user.invited_by_id
 
 			%ul 
 				%table{:border => "2"}
