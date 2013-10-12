@@ -1,3 +1,5 @@
+- provide(:title, "#{@comment.get_company_for_comment.name} - #{Category.find(@comment.category_id).name}")
+
 Probably place the comment in a box or something in the centre of the page
 %p
 Also the non-signed-in page has no styling a the moment. 
