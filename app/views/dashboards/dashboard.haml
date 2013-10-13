@@ -98,6 +98,8 @@
 			
 					%br
 					=link_to raw("Thank author &nbsp <i class=\"icon-thumbs-up\"></i> "), {:controller =>"comments", :action => "upvote", :id => comment.id}, method: :put, :class => "btn btn-small", :remote => true
+				
+					
 					.pull-right
 						- thanks = comment.upvotes.size 
 						- unless thanks == 0 
