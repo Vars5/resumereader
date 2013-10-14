@@ -1,8 +1,9 @@
 /_form.html.haml
-.pad-top
+.dashboard
+	%h3 Your advice will really help other students! Thanks for sharing!
 	.comment-form
 		= simple_form_for comment do |f|
-			= f.input :body, input_html: {rows: '2'}, label: false, :placeholder => "Make a note about this company"
+			= f.input :body, input_html: {rows: '2'}, label: false, :placeholder => "By anonymously sharing your advice, you're helping someone make better career decisions - getting them closer to their dreams. Thank you!"
 			= f.input :title, label: false, placeholder: "I know this because ..."
 			= f.input :commentable_id, as: :hidden, value: comment.commentable_id
 			= f.input :commentable_type, as: :hidden, value: comment.commentable_type

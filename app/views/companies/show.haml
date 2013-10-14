@@ -7,7 +7,7 @@
 			%h3= @company.name
 			= Industry.find(@company.industry_id).industry
 			%br
-			= link_to "Link to Company Website", url_with_protocol(@company.website)
+			= link_to "Go to Company Website", url_with_protocol(@company.website)
 
 #container
 	- @company_comments.each do |comment|
