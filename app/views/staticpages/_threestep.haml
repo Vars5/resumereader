@@ -1,0 +1,61 @@
+
+.tiny-orange
+.home-page
+	.dashboard
+		.container
+			.row-fluid
+				.offset3.span6
+					.center-alignment.home-logo
+						=link_to image_tag('white-logo.png'), root_path 
+
+					.center-alignment
+						%h3
+							Last week 140 students signed up to DemPoints and took a step closer to their dream job 
+							%br
+							Today it's your turn.
+
+			.row-fluid
+				.small-top-padding
+				.offset1.span10
+					#container
+						.item
+							.info-box-light-teal
+								.center-alignment.big5
+									%h5 Discover Advice
+									%br
+									%br
+									Advice by students about Australia's leading graduate employers
+						.item
+							.info-box-light-orange
+								.center-alignment.big5
+									%h5 Apply
+									%br
+									%br
+									With most companies listed, go straight to the application 
+						.item
+							.info-box-yellow
+								.center-alignment.big5
+									%h5 Give Back
+									%br
+									%br
+									Write a review and contribute back to the community
+		.dashboard
+		.container
+			.row-fluid
+				.offset3.span6
+
+					.dashboard
+						.center-alignment
+							=link_to "Sign Up", new_user_registration_path, :class => "signup-button"
+							%br
+							%br
+							Already have an account? 
+							&nbsp
+							=link_to "Log in now", new_user_session_path
+
+.about-bottom
+x
+
+
+=link_to "About Us", about_path, :class => "about-button"
+
