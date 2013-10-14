@@ -21,13 +21,13 @@
 			<div class="container">
 				<%= yield %>
 			</div>
-	
+			<%= render 'layouts/uservoice' %>
 			<%= render 'layouts/footer'%>
 		<% else %>
 			<div class= "signed-out">
 				<%= yield %>	
 			</div>
 		<% end %>
-		<%= render 'layouts/uservoice' %>
+
 	</body>
 </html>
