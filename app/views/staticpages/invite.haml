@@ -6,7 +6,7 @@
 		.center-alignment
 			%h3 Invite a friend
 			%br
-		=form_for :invite, as: :staticpages, url: :invitation do |f|
+		=form_for :invite, :url => {:controller => 'staticpages', :action => 'invitable'} do |f|
 			=f.email_field :email, placeholder: "Email"
 			=f.submit "Invite Person", :class => "sign-up-button"
 	

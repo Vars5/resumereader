@@ -14,7 +14,9 @@ Resumereader::Application.routes.draw do
   match'/internships', to: 'staticpages#internships'
   match'/graduate_jobs', to: 'staticpages#graduate_jobs'
   match'/invite', to: 'staticpages#invite'
-  match'/invitation', to: 'staticpages#invitation'
+  
+  match '/invitable', to: 'staticpages#invitable'
+
 
   #match '/create_comment', to: 'comments#create_comment'
   

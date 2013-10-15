@@ -25,9 +25,9 @@ class StaticpagesController < ApplicationController
   end
   
   def invite
-    end
+  end
   
-  def invitation
+  def invitable
     @invite_hash = params[:invite]
     @user = User.find_by_email(@invite_hash[:email])
     if @user.blank?
