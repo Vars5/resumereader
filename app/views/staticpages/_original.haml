@@ -19,6 +19,10 @@
 							Already have an account? 
 							&nbsp
 							=link_to "Log in now", new_user_session_path 
+							%br
+							%br
+							=render 'layouts/facebook_like_large'
+							
 
 			.row-fluid
 				.dashboard
@@ -58,15 +62,3 @@
 										\-
 										=comment.subject
 										%h5= truncate((sanitize(comment.body)), length: 240)
-						=link_to new_user_registration_path do
-							.item
-								.info-box-full-yellow
-									.center-alignment
-										%h5 Sign up to see more advice
-										%br
-										%br
-										= render 'layouts/facebook_like_large'
-				
-								
-
-=link_to "About Us", about_path, :class => "about-button"
