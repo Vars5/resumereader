@@ -2,8 +2,7 @@
 	.container
 		.row-fluid
 			.span3
-				= link_to image_tag('menulogo.png'), root_path, :class => "menulogo"
-			
+				= link_to image_tag('menulogo.png'), root_path, :class => "menulogo"		
 			.span6
 				=link_to companies_path do
 					.my-jobs-button
@@ -15,16 +14,8 @@
 				=link_to new_comment_path do
 					.my-jobs-button
 						Add advice
-				
 			.span3
 				.pull-right
-					=link_to invite_path do 
-						.account-button
-							&nbsp
-							&nbsp 								
-							Invite a friend					
-							&nbsp
-							&nbsp 		
 					= link_to edit_user_registration_path do
 						.account-button				
 							= current_user.first_name
@@ -32,4 +23,6 @@
 						.account-button
 							Log Out
 .second-header
-	=render 'layouts/like_button'		
+	%b Did you find DemPoints useful? Share it with a friend: 
+	&nbsp
+	=render 'layouts/send_button'		

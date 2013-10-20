@@ -1,0 +1,17 @@
+%script
+	$(document).ready(function() { $("#search").select2({  width: 'resolve', placeholder: "Sort by industry" });});
+	$(document).ready(function() { $("#search2").select2({  width: 'resolve', placeholder: "Sort by industry" });});
+
+
+= form_for @question do |f|
+	= f.text_field :question_content
+	= f.collection_select :company_id, Company.order(:name), :id, :name, {}, :id => "search" 
+	%br
+	%br
+	= f.collection_select :category_id, Category.order(:name).where("category = ?", "Review"), :id, :name, {}, :id => "search2"
+	%br
+	%br
+	
+	= f.hidden_field :user_id, :value => current_user.id
+	
+	= f.submit
