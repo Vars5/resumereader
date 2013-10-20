@@ -18,13 +18,6 @@
 				
 			.span3
 				.pull-right
-					=link_to invite_path do 
-						.account-button
-							&nbsp
-							&nbsp 								
-							Invite a friend					
-							&nbsp
-							&nbsp 		
 					= link_to edit_user_registration_path do
 						.account-button				
 							= current_user.first_name
@@ -32,4 +25,6 @@
 						.account-button
 							Log Out
 .second-header
-	=render 'layouts/like_button'		
+	%b Did you find DemPoints useful?: 
+	&nbsp
+	=render 'layouts/send_button'		
