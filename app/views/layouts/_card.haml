@@ -1,0 +1,12 @@
+.item		
+	- if comment.category_id == 11 #11 is the cagetory id for the "Application process"
+		.info-box-light-teal
+			=render partial: 'layouts/card_items', locals: { comment: comment}
+	- elsif comment.category_id == 12
+		.info-box-light-orange
+			=render partial: 'layouts/card_items', locals: { comment: comment}
+	- elsif comment.category_id == 10
+		.info-box-yellow
+			=render partial: 'layouts/card_items', locals: { comment: comment}
+	
+			

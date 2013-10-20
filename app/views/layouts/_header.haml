@@ -14,7 +14,7 @@
 						
 				=link_to new_comment_path do
 					.my-jobs-button
-						Add 	advice
+						Add advice
 				
 			.span3
 				.pull-right
@@ -32,7 +32,4 @@
 						.account-button
 							Log Out
 .second-header
-	%b 
-		Do you think DemPoints is helpful? &nbsp - &nbsp 
-		= link_to "Share it with a friend", invite_path
-		-# & like our facebook page
+	=render 'layouts/like_button'		
