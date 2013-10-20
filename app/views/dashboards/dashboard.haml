@@ -1,16 +1,13 @@
 #container
-	.row-fluid.hidden
-		.span12
-			.item
-				.content-box
-					%h3 I am a UNSW student studying commerce & want a job in marketing. I need to intern this year. mpppp	
-
 	.item
 		.info-box-light-orange
 			.center-alignment
 				%h5 Welcome to DemPoints!
 				%br You can post interesting and useful points about companies & their intern/grad jobs here
-				-finished("signup_title")
+				
+				- # 'finished' code is from finishing the A/B test
+				-finished("signup_title") 
+				
 	- @comments.each do |comment|
 		=render partial: 'layouts/card', locals: { comment: comment }
 	

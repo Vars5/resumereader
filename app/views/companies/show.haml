@@ -12,6 +12,5 @@
 #container
 	- @company_comments.each do |comment|
 		=render partial: 'layouts/card', locals: { comment: comment }					
-					
-					
+
 = render partial: 'comments/form', locals: { comment: @new_comment }
