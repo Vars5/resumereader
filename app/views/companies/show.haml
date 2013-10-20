@@ -1,6 +1,6 @@
 .dashboard
-
 - provide(:title, "#{@company.name}")
+
 .row-fluid
 	.span7
 		.pad-bottom
@@ -11,17 +11,7 @@
 
 #container
 	- @company_comments.each do |comment|
-		.item
-			.info-box-light-orange
-				.center-alignment
-					= image_tag(@company.logo.url)
-				%br
-				%br
-				= @company.name
-				\-
-				=comment.subject
-				%h5
-					"
-					= simple_format(comment.body)
-					"
+		=render partial: 'layouts/card', locals: { comment: comment }					
+					
+					
 = render partial: 'comments/form', locals: { comment: @new_comment }
