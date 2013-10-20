@@ -22,9 +22,7 @@
 							.info-box-light-teal
 								.center-alignment.big5
 									%h5 Discover Advice
-									%br
-									%br
-									Learn
+
 						.item
 							.info-box-light-orange
 								.center-alignment.big5
@@ -46,9 +44,13 @@
 							Already have an account? 
 							&nbsp
 							=link_to "Log in now", new_user_session_path
+							%br
+							%br
+							=render 'layouts/facebook_like_large'
+
 
 .about-bottom
-x
+
 
 
 =link_to "About Us", about_path, :class => "about-button"
