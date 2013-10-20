@@ -1104,7 +1104,7 @@ h3 {
 
 .about-button{
      position: fixed;
-     bottom: 5%;
+     bottom: 88%;
      right: 2%;
 	 font-size:11px;
 	 font-weight:700;
@@ -1114,7 +1114,24 @@ h3 {
 	border-radius:4px;
 }
 
-.about-button:hover{
+
+
+.signinbox-button{
+     position: fixed;
+     bottom: 92%;
+     right: 2%;
+	 font-size:11px;
+	 font-weight:700;
+	color:white !important;
+	background-color:#BABABA;
+	padding:2px 9px;
+	border-radius:4px;
+	width:44px;
+	text-align:center;;
+}
+
+
+.about-button:hover, .signinbox-button:hover{
 	background-color:$dark-grey;
 	a {
 		color:white !important;
