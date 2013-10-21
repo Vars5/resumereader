@@ -21,7 +21,4 @@ class QuestionsController < ApplicationController
     @answer = @question.answers.build
   end
   
-  def edit
-  end
-  
 end
