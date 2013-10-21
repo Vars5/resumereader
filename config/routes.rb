@@ -58,6 +58,7 @@ Resumereader::Application.routes.draw do
   resources :categories
   resources :roles
   resources :industries
+  resources :answers
   
   resources :follows, only: [:create, :destroy]
   
