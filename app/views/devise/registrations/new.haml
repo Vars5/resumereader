@@ -8,8 +8,8 @@
 				.center-alignment
 					- # 'finished' code is from finishing the A/B test
 					-finished("landingpage")
-					=  image_tag('rocket.png')
-					%h3 Sign Up and keep track of jobs
+					=  image_tag('https://s3-ap-southeast-2.amazonaws.com/static-images-resquery/rocket.png')
+					%h3 Sign Up to DemPoints
 				
 					= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
 						= f.text_field :first_name, :placeholder => " First Name", :class => "focus_"
