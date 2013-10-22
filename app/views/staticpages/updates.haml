@@ -1,0 +1,37 @@
+- if !signed_in?
+	.tiny-orange
+
+.dashboard
+	
+- if !signed_in?	
+	.container
+		.row-fluid
+			.span12
+				.home-logo
+					= link_to image_tag('white-logo.png'), root_path	
+	%br
+	%br
+	%br
+	
+.container.about
+	.row-fluid
+		.span8
+			
+			%h1 DemPoints just keeps getting better.
+			%br
+			%span(class="large-text") Here are the very latest features and updates
+			%br
+			%br
+
+	.row-fluid
+
+			
+		.span8
+			.info-box-updates
+				%h4(class="orange-text")
+					%p Career Q&A the right way
+					%br
+				%p Point on: questions from informal network, value-add, multiple sources
+				
+- if !signed_in?
+	.about-bottom

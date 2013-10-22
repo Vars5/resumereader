@@ -20,7 +20,7 @@
 		= f.text_field :title, placeholder: "I know this because ..."
 		= f.hidden_field :commentable_id, value: @question.id
 		= f.hidden_field :commentable_type, value: @new_comment.commentable_type
-		= f.hidden_field :category_id, value: @question.category_id
+		= f.hidden_field :category_id, value: @question.category_id	
 		= f.submit
 		
 		

@@ -470,6 +470,12 @@ h3 {
 	a{
 		color:white;
 	}
+	
+	.btn{
+		margin:15px 0px 0px 10px;
+		font-size:10px;
+	}
+	
 }
 
 
@@ -1074,7 +1080,6 @@ h3 {
 }
 
 .second-header{
-	text-align:center;
 	font-size:12px;
 	color:$orange;
 	padding:8px;
@@ -1150,4 +1155,38 @@ h3 {
 
 .small-top-padding{
 	padding-top:15px;
+}
+
+.header-alert{
+	color:$dark-red;
+}
+
+.large-text{
+	font-size:20px;
+	color:$light-text-grey;
+}
+
+.info-box-updates{
+	box-shadow: 2px 2px 1px #E8E8E8;
+	background-color:white;
+	border:1px solid $light-grey;
+	border-top: 10px solid $light-teal;
+//	border:0px !important;
+	border-radius: 4px;
+	//background-color:$light-teal;
+	padding:10px;
+	margin-top:15px;
+	color:$text-grey;
+	line-height:16px;
+	font-size:12px;
+	h5{
+		color:$aqua;
+	}
+	
+	a{
+		color:$aqua;
+	}
+	img {
+		max-width:100px;
+	}
 }
