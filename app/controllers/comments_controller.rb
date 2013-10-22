@@ -24,12 +24,14 @@ class CommentsController < ApplicationController
 
   def create
     @comment_hash = params[:comment]
-#    @obj = @comment_hash[:commentable_type].constantize.find(@comment_hash[:commentable_id])
-    @company = Company.find(@comment_hash[:commentable_id])
-    # Not implemented: check to see whether the user has permission to create a comment on this object
-    @comment = Comment.build_from(@company, current_user.id, @comment_hash[:body], @comment_hash[:title], @comment_hash[:category_id])
+    @obj = @comment_hash[:commentable_type].constantize.find(@comment_hash[:commentable_id])
+#    @company = Company.find(@comment_hash[:commentable_id])
+
+    @comment = Comment.build_from(@obj, current_user.id, @comment_hash[:body], @comment_hash[:title], @comment_hash[:category_id])
+    @comment.questioncomment.build(:user_id => current_user.id, :question_id => @obj.id) 
+    
     if @comment.save
-      redirect_to @company
+      redirect_to @obj
       #render partial: 'comments/comment', locals: {comment: @comment}, layout: false, status: :created
       # Send email to all users in Groupmember
     else

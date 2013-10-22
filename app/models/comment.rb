@@ -1,8 +1,14 @@
 class Comment < ActiveRecord::Base
   
-  attr_accessible :commentable, :body, :user_id, :title, :subject, :category_id, :commentable_id, :commentable_type
+  attr_accessible :commentable, :body, :user_id, :title, :subject, :category_id, :commentable_id, :commentable_type, :questioncomment_attributes 
   
   belongs_to :category
+
+  has_many :questioncomment
+  has_many :questions, through: :questioncomment
+
+ accepts_nested_attributes_for :questioncomment
+  
   
   #Voteable
   acts_as_votable
@@ -56,7 +62,11 @@ class Comment < ActiveRecord::Base
   end
   
   def get_company_for_comment
+    if self.commentable_type == "Company"
       Company.find(self.commentable_id)
+    else
+      Company.find(Question.find(self.commentable_id).company_id)  
+    end   
   end
   
 end

@@ -6,7 +6,7 @@ class DashboardsController < ApplicationController
     @appListCount = current_user.app_list_count
     @appList = current_user.app_lists.find(:all, :joins => :job, :order => "due_date DESC")    
     @category = Category.order("discipline")
-    @comments = Comment.order("created_at DESC")
+    @comments = Comment.where('commentable_type = ?', "Company").order("created_at DESC")
   end
   
   

@@ -18,7 +18,8 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
-    @answer = @question.answers.build
+    @new_comment = Comment.build_from(@question, current_user, "", "", "")
+    @answers = @question.comments.all
   end
   
 end
