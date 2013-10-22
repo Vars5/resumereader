@@ -1,8 +1,8 @@
 .header
 	.container
 		.row-fluid
-			.span3
-				= link_to image_tag('menulogo.png'), root_path, :class => "menulogo"		
+			.span2
+				= link_to image_tag('https://s3-ap-southeast-2.amazonaws.com/static-images-resquery/menulogo.png'), root_path, :class => "menulogo"		
 			.span6
 				=link_to companies_path do
 					.my-jobs-button
@@ -14,7 +14,7 @@
 				=link_to new_comment_path do
 					.my-jobs-button
 						Add advice
-			.span3
+			.span4
 				.pull-right
 					= link_to edit_user_registration_path do
 						.account-button				
