@@ -1,0 +1,14 @@
+.dashboard
+.row-fluid
+	.offset2.span8
+		- @question.each do |question|
+			.row-fluid
+				.span2
+					= link_to image_tag(question.load_company.logo.url), question.load_company		
+				.span10
+					Question added about
+					= question.company_name
+					%br
+					%b= link_to question.question_content, question
+					%br
+			%hr 

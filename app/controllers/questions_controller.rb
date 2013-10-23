@@ -21,5 +21,9 @@ class QuestionsController < ApplicationController
     @new_comment = Comment.build_from(@question, current_user, "", "", "")
     @answers = @question.comments.all
   end
+
+  def index
+    @question = Question.all
+  end
   
 end

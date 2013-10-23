@@ -3,4 +3,19 @@ class Question < ActiveRecord::Base
   
   has_many :questioncomment
   has_many :comments, through: :questioncomment
+
+
+  def load_company
+    Company.find(self.company_id)
+  end
+  
+  def company_name
+    self.load_company.name
+  end
+
+  def company_logo
+    
+  end
+
 end
+
