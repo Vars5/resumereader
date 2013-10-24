@@ -1,32 +1,44 @@
 -unless signed_in?
 	=render 'layouts/signed_out_header'
 
-%b Company Id:
-=@question.company_id
-%p
 
-%b Question:
-=@question.question_content
-%p
+.container
 
-%b Answers:
 
-- if signed_in?
-	- @answers.each do |comment|
-		=render partial: 'layouts/card', locals: { comment: comment }
--else
-	"Please signin or signup to see answers?"
+	
+	.dashboard
+		= image_tag(@question.load_company.logo.url)
+		%h3= @question.question_content
+	%p
 
-- if signed_in?
-	%h3 Your answers will really help other students! Thanks for sharing!
-	.comment-form
-		=form_for @new_comment, :url => {:controller => 'comments', :action => 'create'} do |f|
-			= f.text_area :body, :placeholder => "By anonymously sharing your advice, you're helping someone make better career decisions - getting them closer to their dreams. Thank you!"
-			= f.text_field :title, placeholder: "I know this because ..."
-			= f.hidden_field :commentable_id, value: @question.id
-			= f.hidden_field :commentable_type, value: @new_comment.commentable_type
-			= f.hidden_field :category_id, value: @question.category_id	
-			= f.submit
+	- if signed_in?
+		%b Answers:
+		- @answers.each do |comment|
+			=render partial: 'layouts/card', locals: { comment: comment }
+	-else
 		
+		- if @answers.count > 0
+			There are
+			=@answers.count 
+			answers for this question
+		- else
+			Be the first to answer
+			
+			
+		Please signin or signup to see answers
 		
+
+	- if signed_in?
+		%h3 Your answers will really help other students! Thanks for sharing!
+		.comment-form
+			=form_for @new_comment, :url => {:controller => 'comments', :action => 'create'} do |f|
+				= f.text_area :body, :placeholder => "By anonymously sharing your advice, you're helping someone make better career decisions - getting them closer to their dreams. Thank you!"
+				= f.text_field :title, placeholder: "I know this because ..."
+				= f.hidden_field :commentable_id, value: @question.id
+				= f.hidden_field :commentable_type, value: @new_comment.commentable_type
+				= f.hidden_field :category_id, value: @question.category_id	
+				= f.submit
+		
+-unless signed_in?
+	.about-bottom
 		
