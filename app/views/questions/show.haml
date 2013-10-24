@@ -12,7 +12,10 @@
 	%p
 
 	- if signed_in?
-		%b Answers:
+		- if @answers.count > 0
+			%b Answers:
+		-else
+			Be the first to answer
 		- @answers.each do |comment|
 			=render partial: 'layouts/card', locals: { comment: comment }
 	-else
@@ -23,11 +26,16 @@
 			answers for this question
 		- else
 			Be the first to answer
-			
-			
-		Please signin or signup to see answers
+			%p 
+			Please 
+			=link_to "sign in", new_user_session_path
+			or 
+			=link_to "signup", new_user_registration_path
+			to see the answers
 		
-
+	%br
+	%br
+	%br
 	- if signed_in?
 		%h3 Your answers will really help other students! Thanks for sharing!
 		.comment-form
