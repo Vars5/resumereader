@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
 
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index]
   authorize_resource :except => [:index, :show]
   
   def new

@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   #authorize_resource :except => [:index, :show]
   #check if this is nested? im not sure how polymorphic works with cancan
   
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:index, :show]
   
   def new
     @question = Question.new

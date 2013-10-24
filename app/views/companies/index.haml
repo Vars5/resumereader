@@ -1,26 +1,31 @@
-%script
-	$(document).ready(function() { $("#search").select2({  width: 'resolve', placeholder: "Sort by industry" });});
+-unless signed_in?
+	=render 'layouts/signed_out_header'
 
-.dashboard
-.row-fluid
-	.span6
-		= form_tag companies_path, :method => 'get' do
-			= select_tag :industry_id, options_from_collection_for_select(Industry.all, "id", "industry"), include_blank: true, :onchange => "this.form.submit()", :id => "search"
+.container
 
-#container
-	- @company.each do |company|
-		.item
-			.info-box-light-orange
-				.pad-top-tiny
-				.center-alignment
-					- if !company.logo.url.blank?
-						= image_tag(company.logo.url)
-						%h5= link_to company.name, company
-				=company.industry
-				%br
-				-#company.info
-				%br
-				=link_to url_with_protocol(company.website) do
-					.icon-fix
-						%i(class="icon-briefcase")
-					Go to company website
+	%script
+		$(document).ready(function() { $("#search").select2({  width: 'resolve', placeholder: "Sort by industry" });});
+
+	.dashboard
+	.row-fluid
+		.span6
+			= form_tag companies_path, :method => 'get' do
+				= select_tag :industry_id, options_from_collection_for_select(Industry.all, "id", "industry"), include_blank: true, :onchange => "this.form.submit()", :id => "search"
+
+	#container
+		- @company.each do |company|
+			.item
+				.info-box-light-orange
+					.pad-top-tiny
+					.center-alignment
+						- if !company.logo.url.blank?
+							= image_tag(company.logo.url)
+							%h5= link_to company.name, company
+					=company.industry
+					%br
+					-#company.info
+					%br
+					=link_to url_with_protocol(company.website) do
+						.icon-fix
+							%i(class="icon-briefcase")
+						Go to company website
