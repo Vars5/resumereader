@@ -8,9 +8,13 @@
 	%p
 
 	- if signed_in?
-		%b Answers:
-		- @answers.each do |comment|
-			=render partial: 'layouts/card', locals: { comment: comment }
+		#container
+			- if @answers.count > 0
+				%b Answers:
+			-else
+				Be the first to answer
+			- @answers.each do |comment|
+				=render partial: 'layouts/card', locals: { comment: comment }
 	-else
 		
 		- if @answers.count > 0
@@ -19,10 +23,14 @@
 			answers for this question
 		- else
 			Be the first to answer
-			
-			
-		Please signin or signup to see answers
+			%p 
+			Please 
+			=link_to "sign in", new_user_session_path
+			or 
+			=link_to "signup", new_user_registration_path
+			to see the answers
 		
+
 		
 	.row-fluid
 		.span7
@@ -39,7 +47,7 @@
 						= f.hidden_field :commentable_type, value: @new_comment.commentable_type
 						= f.hidden_field :category_id, value: @question.category_id	
 						= f.submit
-		
+
 -unless signed_in?
 	.about-bottom
 		
