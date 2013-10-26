@@ -87,7 +87,7 @@ body {
 	font-family: 'Oxygen', sans-serif !important;
 	font-size:13px;
 	height:100%;
-	background-color:#F0F0F0;
+
 	a{
 		color:$dark-grey;
 	}
@@ -714,7 +714,7 @@ h3 {
 		max-width:100px;
 	}
 	a{
-		color:$orange;
+
 	}
 }
 
@@ -1226,4 +1226,11 @@ h3 {
 	padding:15px 0px;
 	margin:15px 0px;
 	
+}
+
+.dashboard-box{
+	
+	width:250px;	
+	padding:10px;
+
 }

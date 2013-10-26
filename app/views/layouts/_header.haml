@@ -26,13 +26,18 @@
 				
 			.span4
 				.pull-right
+					=link_to updates_path do 
+						.account-button
+							New Stuff !
+				
 					= link_to edit_user_registration_path do
 						.account-button				
 							= current_user.first_name
 					=link_to destroy_user_session_path, :method =>"DELETE" do
 						.account-button
 							Log Out
-.second-header
+-# currently hidden because redesigning site to something simpler
+.second-header.hidden
 	.container
 		= link_to updates_path do 
 			%b(class="header-alert")
