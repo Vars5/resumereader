@@ -62,7 +62,6 @@
 												- if false
 													= f.password_field :password_confirmation, :placeholder => "Password Confirmation"
 												%div= f.submit "Join", :class => "sign-up-button"
-										- if false
-											= render "devise/shared/links"
+											=link_to "Already have an account? Sign in", new_user_session_path
 										.errors
 											= devise_error_messages!

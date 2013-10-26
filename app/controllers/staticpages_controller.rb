@@ -4,6 +4,7 @@ class StaticpagesController < ApplicationController
   
   def home
     @comments = Comment.order("RANDOM()").take(6)
+    @companies = Company.all
   end
 
   def about

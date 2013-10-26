@@ -3,18 +3,36 @@
 	.dashboard
 	.center-alignment.home-logo
 		=link_to image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/white-logo.png'), root_path 			
-		
-.item-images
-	.container
-		.row-fluid
-			.offset2.span4
-				.dashboard
-				%h4 Student Career Advice Libary
-				%br
-				%span(class="grey-area")
-					DemPoints is the f
-		
-		
+		%br
+		%span(class="orange-text") 
+			DemPoints makes it easy to find and share career advice in one place
+
+=link_to new_user_registration_path do
+	.item-images
+		.container
+			.row-fluid
+				-if false
+					.offset2.span4
+						.dashboard.center-alignment
+							%h2 "It's a treasure trove of career advice inside!"
+							%span(class="grey-area") - 4th Year Commerce/Law UNSW Student
+						%br
+						%br
+						Share, discover, 
+						%br
+				.span12
+					.dashboard
+					%br
+						- @companies.each do |company|
+							= image_tag(company.logo.url)
+					.dashboard
+			.row-fluid
+				.center-alignment
+					=link_to about_path do
+						.signup-button
+							Can you help others out? &nbsp Want to explain how things actually work?
+							%br Share some advice
+					.dashboard		
 .container
 	.row-fluid
 		.offset3.span6
