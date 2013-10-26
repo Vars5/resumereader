@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 .tiny-orange
 	.dashboard
 		.dashbo   
@@ -16,7 +9,7 @@
 								
 								.row-fluid
 									.span12
-										%h3 Create a DemPoints account
+										%h3 Welcome Back to DemPoints!
 										%hr
 										%br
 								.row-fluid
@@ -50,19 +43,15 @@
 										
 									.span6
 										.sign-in-area
-
-
-											%h4 Create an account
-											%br
-											= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-												= f.text_field :first_name, :placeholder => " First Name", :class => "focus_"
-												= f.email_field :email, :placeholder => " Email"
-												= f.password_field :password, :placeholder => " Password"
-												= f.hidden_field :role, :value => "student"
-												- if false
-													= f.password_field :password_confirmation, :placeholder => "Password Confirmation"
-												%div= f.submit "Join", :class => "sign-up-button"
-										- if false
+											%h4 Sign in 
+											%br/
+											= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+												.errors
+													= devise_error_messages!
+												%div
+												= f.email_field :email, :autofocus => true, :placeholder => "Email Address", :class => "focus_"
+												= f.password_field :password, :placeholder => "Password"
+												%div= f.submit "Sign in", :class => "sign-up-button"
+											%br	
 											= render "devise/shared/links"
-										.errors
-											= devise_error_messages!
+											%br

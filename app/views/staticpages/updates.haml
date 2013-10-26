@@ -1,14 +1,15 @@
-- if !signed_in?
+- unless signed_in?
 	.tiny-orange
 
 .dashboard
 	
-- if !signed_in?	
+- unless signed_in?	
 	.container
 		.row-fluid
 			.span12
 				.home-logo
-					= link_to image_tag('white-logo.png'), root_path	
+					.center-alignment
+						= link_to image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/white-logo.png'), root_path	
 	%br
 	%br
 	%br
@@ -18,7 +19,7 @@
 		.offset2.span8
 			
 			.center-alignment
-				%h1 DemPoints just keeps getting better.
+				%h2 DemPoints just keeps getting better.
 				%br
 				%span(class="large-text") Here are the very latest features and updates
 				%br
@@ -28,6 +29,7 @@
 				%h4(class="orange-text")
 					%p Career Q&A the right way
 					%br
+				%p
 				%p Point on: questions from informal network, value-add, multiple sources
 				
 - if !signed_in?

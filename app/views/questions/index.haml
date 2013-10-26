@@ -3,15 +3,26 @@
 
 .dashboard
 .row-fluid
-	.offset2.span8
+	.span2
+		%b Open Questions
+		%br 
+		Here you can ask questions about the companies you want to know about anonymously
+	
+	.span8
 		- @question.each do |question|
 			.row-fluid
 				.span2
 					= link_to image_tag(question.load_company.logo.url), question.load_company		
 				.span10
-					Question added about
+					.small-text Question added about
 					= question.company_name
 					%br
 					%b= link_to question.question_content, question
 					%br
+					.small-text Follow Question
+					-# if no_answers then write
+					Four people are waiting for an answer
+					%br
+					%br
+					%b Four Answers have been given
 			%hr 

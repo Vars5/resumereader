@@ -1,55 +1,23 @@
 .tiny-orange
 .home-page
 	.dashboard
-		.container
-			.row-fluid
-				.offset3.span6
-					.center-alignment.home-logo
-						=link_to image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/white-logo.png'), root_path 
-
-					.center-alignment
-						%h3
-							Last week 205 students signed up to DemPoints to be better informed about their careers.
-							%br
-							Today it's your turn.
-
-			.row-fluid
-				.small-top-padding
-				.offset1.span10
-					#container
-						.item
-							.info-box-light-teal
-								.center-alignment.big5
-									%h5 Discover Advice
-									%br
-									%br
-									Advice by students about Australia's leading graduate employers
-						.item
-							.info-box-light-orange
-								.center-alignment.big5
-									%h5 Apply
-									%br
-									%br
-									With most companies listed, go straight to the application
-						.item
-							.info-box-yellow
-								.center-alignment.big5
-									%h5 Give Back
-									%br
-									%br
-									Write a review or answer a question and give back to the community
-	.dashboard
-		.container
-			.row-fluid
-				.offset3.span6
-					.dashboard
-						.center-alignment
-							=link_to "Sign Up", new_user_registration_path, :class => "signup-button"
-							%br
-							%br
-							Already have an account? 
-							&nbsp
-							=link_to "Log in now", new_user_session_path
-							%br
-							%br
-							=render 'layouts/facebook_like_large'
+	.center-alignment.home-logo
+		=link_to image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/white-logo.png'), root_path 			
+		
+.item-images
+	.container
+		.row-fluid
+			.offset2.span4
+				.dashboard
+				%h4 Student Career Advice Libary
+				%br
+				%span(class="grey-area")
+					DemPoints is the f
+		
+		
+.container
+	.row-fluid
+		.offset3.span6
+			.dashboard
+				.center-alignment
+					=render 'layouts/facebook_like_large'

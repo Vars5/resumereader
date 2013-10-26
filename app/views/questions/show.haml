@@ -1,10 +1,6 @@
 -unless signed_in?
 	=render 'layouts/signed_out_header'
-
-
 .container
-
-
 	
 	.dashboard
 		= image_tag(@question.load_company.logo.url)
@@ -27,17 +23,22 @@
 			
 		Please signin or signup to see answers
 		
-
-	- if signed_in?
-		%h3 Your answers will really help other students! Thanks for sharing!
-		.comment-form
-			=form_for @new_comment, :url => {:controller => 'comments', :action => 'create'} do |f|
-				= f.text_area :body, :placeholder => "By anonymously sharing your advice, you're helping someone make better career decisions - getting them closer to their dreams. Thank you!"
-				= f.text_field :title, placeholder: "I know this because ..."
-				= f.hidden_field :commentable_id, value: @question.id
-				= f.hidden_field :commentable_type, value: @new_comment.commentable_type
-				= f.hidden_field :category_id, value: @question.category_id	
-				= f.submit
+		
+	.row-fluid
+		.span7
+			- if signed_in?
+				%h3
+					Your answers will really help other students!
+					%br
+					Thanks for sharing!
+				.comment-form
+					=form_for @new_comment, :url => {:controller => 'comments', :action => 'create'} do |f|
+						= f.text_area :body, :placeholder => "By anonymously sharing your advice, you're helping someone make better career decisions - getting them closer to their dreams. Thank you!"
+						= f.text_field :title, placeholder: "I know this because ..."
+						= f.hidden_field :commentable_id, value: @question.id
+						= f.hidden_field :commentable_type, value: @new_comment.commentable_type
+						= f.hidden_field :category_id, value: @question.category_id	
+						= f.submit
 		
 -unless signed_in?
 	.about-bottom
