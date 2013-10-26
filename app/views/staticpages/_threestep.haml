@@ -21,10 +21,10 @@
 						Share, discover, 
 						%br
 				.span12
-					.dashboard
+					.dashboard#container
 					%br
 						- @companies.each do |company|
-							= image_tag(company.logo.url)
+							= image_tag(company.logo.url, :class=>"item", style: "height:60px")
 					.dashboard
 			.row-fluid
 				.center-alignment
