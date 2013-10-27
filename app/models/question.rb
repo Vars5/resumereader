@@ -4,6 +4,7 @@ class Question < ActiveRecord::Base
   has_many :questioncomment
   has_many :comments, through: :questioncomment
 
+  validates :question_content, :presence => true
 
   def load_company
     Company.find(self.company_id)

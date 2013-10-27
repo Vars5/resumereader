@@ -2,9 +2,7 @@ $(document).ready(function(){
 	
 	$("#st-search-input").focus();
 	$(".focus_").focus();
-	//$('#item-69').hover(function(){
-	//	$(this).slideUp(200);
-	//})
+
 	var $container = $('#container');
 	// initialize
 	$container.imagesLoaded( function() {
@@ -14,6 +12,8 @@ $(document).ready(function(){
 		  isFitWidth: true
 		});
 	});
+
+//sign in on new comments page jscript
 	
 	$(function() {
     $( "#dialog" ).dialog({
@@ -28,18 +28,9 @@ $(document).ready(function(){
 	});
   });
 
-
-
-
- $( "#share-advice" ).button().click(function() {
- 	$( "#dialog" ).dialog( "open" );
-	//$('body').addClass("overlay");
-	
-  });
-
-//$("#join-button").button().click(function(){
-//	$("dialog").disalog("close");
-//});
+ 	$( "#share-advice" ).button().click(function() {
+ 		$( "#dialog" ).dialog( "open" );
+  	});
 
 $("form#sign_up_user").bind("ajax:success", function(e, data, status, xhr) {
   if (data.success) {
@@ -51,6 +42,27 @@ $("form#sign_up_user").bind("ajax:success", function(e, data, status, xhr) {
   }
 });
 
+//questions dialog
+
+$( "#question-button" ).button().click(function() {
+	$( "#question" ).dialog( "open" );
+});
+
+$(function() {
+$( "#question" ).dialog({
+	autoOpen: false,
+	modal: true,
+	open: function() {
+		jQuery('.ui-widget-overlay').bind('click', function() {
+			jQuery('#question').dialog('close');
+		})
+	}
+	
+});
+});
+
+$("#searchq").select2({   placeholder: "Sort by industry" });
+$("#searchq2").select2({ placeholder: "Sort by industry" });
 
 
 })

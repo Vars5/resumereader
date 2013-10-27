@@ -17,11 +17,12 @@
 					= question.company_name
 					%br
 					%b= link_to question.question_content, question
-					%br
-					.small-text Follow Question
-					-# if no_answers then write
-					Four people are waiting for an answer
-					%br
-					%br
-					%b Four Answers have been given
+					-if false
+						%br
+						.small-text Follow Question
+						-# if no_answers then write
+						Four people are waiting for an answer
+						%br
+						%br
+						%b Four Answers have been given
 			%hr 

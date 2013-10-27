@@ -47,7 +47,7 @@ Resumereader::Application.routes.draw do
   #Resources
   #resources :schools, except: [:show] 
   resources :settings, except: [:index, :new, :edit]
-  resources :questions
+  resources :questions, except: [:new]
   resources :companies
   resources :jobs, except: [:new]
   resources :boards, except: [:new]
