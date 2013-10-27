@@ -97,7 +97,7 @@ Resumereader::Application.routes.draw do
   #end
   
   #Devise gem for users and their accounts
-  devise_for :users
+  devise_for :users, :controllers => {registrations: 'registrations'}
 
   #error pages
   match '(errors)/:status', to: 'errors#show', constraints: {status: /\d{3}/} # via: :all

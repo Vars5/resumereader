@@ -14,4 +14,15 @@ $(document).ready(function(){
 		  isFitWidth: true
 		});
 	});
+	
+	$(function() {
+    $( "#dialog" ).dialog({autoOpen: false});
+  });
+
+ $( "#share-advice" )
+      .button()
+      .click(function() {
+        $( "#dialog" ).dialog( "open" );
+      });
+
 })
