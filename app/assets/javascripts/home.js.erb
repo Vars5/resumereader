@@ -16,13 +16,41 @@ $(document).ready(function(){
 	});
 	
 	$(function() {
-    $( "#dialog" ).dialog({autoOpen: false});
+    $( "#dialog" ).dialog({
+		autoOpen: false,
+		modal: true,
+		open: function() {
+			jQuery('.ui-widget-overlay').bind('click', function() {
+				jQuery('#dialog').dialog('close');
+			})
+		}
+		
+	});
   });
 
- $( "#share-advice" )
-      .button()
-      .click(function() {
-        $( "#dialog" ).dialog( "open" );
-      });
+
+
+
+ $( "#share-advice" ).button().click(function() {
+ 	$( "#dialog" ).dialog( "open" );
+	//$('body').addClass("overlay");
+	
+  });
+
+//$("#join-button").button().click(function(){
+//	$("dialog").disalog("close");
+//});
+
+$("form#sign_up_user").bind("ajax:success", function(e, data, status, xhr) {
+  if (data.success) {
+	$("#dialog").dialog("close");
+	$("#save-share").click();
+    return $('#submit_comment').slideToggle(1000, "easeOutBack");
+  } else {
+    return alert('Failure to create user!');
+  }
+});
+
+
 
 })
