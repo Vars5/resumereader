@@ -2,19 +2,18 @@
 	$(document).ready(function() { $("#search").select2({  width: 'resolve', placeholder: "Sort by industry" });});
 	$(document).ready(function() { $("#search2").select2({  width: 'resolve', placeholder: "Sort by industry" });});
 
-.dashboard
-	%h3 Add a question about a company
-	.row-fluid
-		.span7
-			= form_for @question do |f|
 
-				= f.collection_select :company_id, Company.order(:name), :id, :name, {}, :id => "search" 
-				%br
-				%br
-				= f.collection_select :category_id, Category.order(:name).where("category = ?", "Review"), :id, :name, {}, :id => "search2"
-				%br
-				%br
-				= f.text_area :question_content, :placeholder => "What is your question?"
-				= f.hidden_field :user_id, :value => current_user.id
-				= f.submit
+%h3 Add a question about a company
+.row-fluid
+	.span7
+		= form_for @question do |f|
+			= f.collection_select :company_id, Company.order(:name), :id, :name, {}, :id => "search" 
+			%br
+			%br
+			= f.collection_select :category_id, Category.order(:name).where("category = ?", "Review"), :id, :name, {}, :id => "search2"
+			%br
+			%br
+			= f.text_area :question_content, :placeholder => "What is your question?"
+			= f.hidden_field :user_id, :value => current_user.id
+			= f.submit
 	

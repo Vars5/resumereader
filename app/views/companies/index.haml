@@ -2,11 +2,9 @@
 	=render 'layouts/signed_out_header'
 
 .container
-
 	%script
 		$(document).ready(function() { $("#search").select2({  width: 'resolve', placeholder: "Sort by industry" });});
 
-	.dashboard
 	.row-fluid
 		.span6
 			= form_tag companies_path, :method => 'get' do

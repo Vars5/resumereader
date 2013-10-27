@@ -1,44 +1,10 @@
-.header
-	.container
-		.row-fluid
-			.span2
-				= link_to image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/menulogo.png'), root_path, :class => "menulogo"		
-			.span6
-				=link_to companies_path do
-					.my-jobs-button
-						Companies
-				- if false
-					=link_to upvoted_comments_path do
-						.my-jobs-button
-							My Upvoted Posts
-
-				=link_to questions_path do
-					.my-jobs-button
-						Questions & Answers
-						
-				=link_to new_comment_path do
-					.my-jobs-button
-						Add Advice
-				=link_to new_question_path do
-					.btn
-						Add Question
-				
-				
-			.span4
-				.pull-right
-					= link_to new_user_registration_path do
-						.account-button				
-							Sign Up Now	
-
-.second-header
-	.container
-		= link_to updates_path do 
-			%b(class="header-alert")
-				New Stuff!
-				Now you can now add a question and seek advice !
-	
-		.pull-right
-			Did you find DemPoints useful? Share it with a friend: 
-			&nbsp
-			=render 'layouts/send_button'		
-			&nbsp &nbsp
+.tiny-orange
+.home-bar-area
+	=link_to "About DemPoints", about_path
+	&nbsp
+	=link_to "Share Advice", new_comment_path
+	&nbsp
+	| &nbsp
+	=link_to "Sign In", new_user_session_path
+	&nbsp
+	=link_to "Sign Up", new_user_registration_path, :class => "signinbox-button"

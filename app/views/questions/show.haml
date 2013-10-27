@@ -2,9 +2,9 @@
 	=render 'layouts/signed_out_header'
 .container
 	
-	.dashboard
-		= image_tag(@question.load_company.logo.url)
-		%h3= @question.question_content
+
+	= image_tag(@question.load_company.logo.url)
+	%h3= @question.question_content
 	%p
 
 	- if signed_in?
@@ -12,7 +12,7 @@
 			- if @answers.count > 0
 				%b Answers:
 			-else
-				Be the first to answer
+				Be the first to answer	
 			- @answers.each do |comment|
 				=render partial: 'layouts/card', locals: { comment: comment }
 	-else

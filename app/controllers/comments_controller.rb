@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
 
-  before_filter :authenticate_user!, :except => :show
+  before_filter :authenticate_user!, :except => :show, :except => :new
   before_filter :load_commentable, :only => [:upvote, :downvote]
   before_filter :find_comment, :only => [:upvote, :downvote]
   

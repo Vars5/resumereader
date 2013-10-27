@@ -1,15 +1,2 @@
-
 = render partial: ab_test("landingpage", "threestep", "original") 
-
 .about-bottom
-
-
-.home-bar-area
-	=link_to "About", about_path
-	&nbsp
-	=link_to "Share Advice", root_path
-	&nbsp
-	| &nbsp
-	=link_to "Sign In", new_user_session_path
-	&nbsp
-	=link_to "Sign Up", new_user_registration_path, :class => "signinbox-button"

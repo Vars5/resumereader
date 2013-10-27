@@ -6,28 +6,35 @@
 %script
 	$(document).ready(function() { $("#search").select2({  width: 'resolve', placeholder: "Sort by industry" });});
 	$(document).ready(function() { $("#search2").select2({  width: 'resolve', placeholder: "Sort by industry" });});
-	
-.dashboard
-.row-fluid
-	.span8
-		%h3
-			Your advice will really help other students! Thanks for sharing!
 
-		.pad-top
-			.comment-form
-				=form_for @new_comment do |f|
-					%h5 Company:
-					= f.collection_select :commentable_id, Company.order(:name), :id, :name,{}, :id => "search", include_blank: true
-					%br
-					%br
-					= f.collection_select :category_id, Category.order(:name).where("category = ?", "Review"), :id, :name, {}, :id => "search2", include_blank: true
-					%br
-					%br
-					= f.text_area :body, :placeholder => "By anonymously sharing your advice, you're helping someone make better career decisions - getting them closer to their dreams. Thank you!"
-					= f.text_field :title, placeholder: "I know this because ..."
-					= f.hidden_field :commentable_type, value: "Company"
-					%br
-					= f.submit "Give Advice", :class => "btn btn-success"
+- unless signed_in?	
+	.dashboard
+
+.row-fluid
+	%h2.center-alignment Share Advice
+	.center-alignment(class="large-text")
+		Your advice will really help other students! Thanks for sharing!
+	.offset2.span8
+		.info-box-updates
+			.pad-top
+				.comment-form
+					=form_for @new_comment do |f|
+						%h5 Company:
+						= f.collection_select :commentable_id, Company.order(:name), :id, :name,{}, :id => "search", include_blank: true
+						%br
+						%br
+						%h5 Type of Advice:
+						= f.collection_select :category_id, Category.order(:name).where("category = ?", "Review"), :id, :name, {}, :id => "search2", include_blank: true
+						%br
+						%br
+						%h5 Your Advice:
+						= f.text_area :body, :placeholder => "By anonymously sharing your advice, you're helping someone make better career decisions - getting them closer to their dreams. Thank you!"
+						= f.text_field :title, placeholder: "I know this because ..."
+						= f.hidden_field :commentable_type, value: "Company"
+						%br
+						.row-fluid
+							.span4
+								= f.submit "Share Advice", :class => "sign-up-button"
 
 
 

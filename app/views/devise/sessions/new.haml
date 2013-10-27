@@ -1,57 +1,56 @@
-.tiny-orange
-	.dashboard
-		.dashbo   
-			.container
-				.row-fluid
-					.span12
-						.row-fluid
-							.offset2.span8.white-background-signin
-								
-								.row-fluid
-									.span12
-										%h3 Welcome Back to DemPoints!
-										%hr
-										%br
-								.row-fluid
-									.span6.hidden-phone
-										.important-text
-											DemPoints is where you find, sort and use the best informal career advice given by students
-										.row-fluid
-											.span3
-												=image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/rocket_2.jpg', height: '60px', width: '60px')	
-											.span8
-												%b Get ahead faster
-												%br
-												Use knowledge from those who have made it 
-										
-										
-										.row-fluid.item-border
-											.span3
-												=image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/brain.jpg', height: '60px', width: '60px')
-											.span8
-												%b Apply for jobs smarter
-												%br
-												Access information that can help your applications and interviews
-										
-										.row-fluid
-											.span3
-												=image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/briefcase.jpg', height: '60px', width: '60px')
-											.span8
-												%b Know whats actually happening
-												%br
-												Judge companies on their own merits with first-hand information 
-										
-									.span6
-										.sign-in-area
-											%h4 Sign in 
-											%br/
-											= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-												.errors
-													= devise_error_messages!
-												%div
-												= f.email_field :email, :autofocus => true, :placeholder => "Email Address", :class => "focus_"
-												= f.password_field :password, :placeholder => "Password"
-												%div= f.submit "Sign in", :class => "sign-up-button"
-											%br	
-											= render "devise/shared/links"
+.dashboard
+	.dashbo   
+		.container
+			.row-fluid
+				.span12
+					.row-fluid
+						.offset2.span8.white-background-signin
+							
+							.row-fluid
+								.span12
+									%h3 Welcome Back to DemPoints!
+									%hr
+									%br
+							.row-fluid
+								.span6.hidden-phone
+									.important-text
+										DemPoints is where you find, sort and use the best informal career advice given by students
+									.row-fluid
+										.span3
+											=image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/rocket_2.jpg', height: '60px', width: '60px')	
+										.span8
+											%b Get ahead faster
 											%br
+											Use knowledge from those who have made it 
+										
+										
+									.row-fluid.item-border
+										.span3
+											=image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/brain.jpg', height: '60px', width: '60px')
+										.span8
+											%b Apply for jobs smarter
+											%br
+											Access information that can help your applications and interviews
+										
+									.row-fluid
+										.span3
+											=image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/briefcase.jpg', height: '60px', width: '60px')
+										.span8
+											%b Know whats actually happening
+											%br
+											Judge companies on their own merits with first-hand information 
+									
+								.span6
+									.sign-in-area
+										%h4 Sign in 
+										%br/
+										= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+											.errors
+												= devise_error_messages!
+											%div
+											= f.email_field :email, :autofocus => true, :placeholder => "Email Address", :class => "focus_"
+											= f.password_field :password, :placeholder => "Password"
+											%div= f.submit "Sign in", :class => "sign-up-button"
+										%br	
+										= render "devise/shared/links"
+										%br

@@ -1,8 +1,4 @@
-- unless signed_in?
-	.tiny-orange
-
-.dashboard
-	
+.dashboard	
 - unless signed_in?	
 	.container
 		.row-fluid
@@ -12,19 +8,14 @@
 						= link_to image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/white-logo.png'), root_path	
 	%br
 	%br
-	%br
 	
 .container.about
 	.row-fluid
 		.offset2.span8
-			
 			.center-alignment
 				%h2 DemPoints just keeps getting better.
-				%br
 				%span(class="large-text") Here are the very latest features and updates
-				%br
-				%br
-
+				
 			.info-box-updates
 				%h4(class="orange-text")
 					%p Career Q&A the right way
