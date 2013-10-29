@@ -1280,3 +1280,18 @@ h3 {
 	border:4px solid $dark-grey;
 	border-radius:5px;
 }
+
+.signed-out-header{
+	padding-top:15px;
+	img{
+		height:35px;
+	}
+	.pull-right{
+		padding-top:10px;
+	}
+}
+
+.large-orange-text{
+	font-size:30px;
+	color:$orange;
+}

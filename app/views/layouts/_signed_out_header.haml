@@ -1,18 +1,24 @@
 .tiny-orange
-.home-bar-area
-	=link_to "DemPoints", root_path
-	&nbsp
-	&nbsp
-	=link_to "New Stuff!", updates_path
-	&nbsp
-	&nbsp
-	=link_to "About", about_path
-	&nbsp
-	&nbsp
-	=link_to "Share Advice", new_comment_path
-	&nbsp
-	&nbsp
-	| &nbsp
-	=link_to "Sign In", new_user_session_path
-	&nbsp
-	=link_to "Sign Up", new_user_registration_path, :class => "signinbox-button"
+.container
+	.row-fluid
+		.span12
+			.signed-out-header
+				=link_to image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/white-logo.png'), root_path, :class => 'logo' 			
+				-# http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/white-logo.png
+				.pull-right
+
+					&nbsp
+					&nbsp
+					=link_to "New Stuff!", updates_path
+					&nbsp
+					&nbsp
+					=link_to "About", about_path
+					&nbsp
+					&nbsp
+					=link_to "Share Advice", new_comment_path
+					&nbsp
+					&nbsp
+					| &nbsp
+					=link_to "Sign In", new_user_session_path
+					&nbsp
+					=link_to "Sign Up", new_user_registration_path, :class => "signinbox-button"

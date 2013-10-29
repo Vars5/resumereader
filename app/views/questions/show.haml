@@ -1,20 +1,18 @@
 -unless signed_in?
 	=render 'layouts/signed_out_header'
 .container
-	
-
 	= image_tag(@question.load_company.logo.url)
 	%h3= @question.question_content
 	%p
 
 	- if signed_in?
-		#container
-			- if @answers.count > 0
-				%b Answers:
-			-else
-				Be the first to answer	
-			- @answers.each do |comment|
-				=render partial: 'layouts/card', locals: { comment: comment }
+		- if @answers.count > 0
+			%b Answers:
+		-else
+			Be the first to answer	
+		- @answers.each do |comment|
+			#container
+			=render partial: 'layouts/card', locals: { comment: comment }
 	-else
 		
 		- if @answers.count > 0
@@ -29,8 +27,6 @@
 			or 
 			=link_to "signup", new_user_registration_path
 			to see the answers
-		
-
 		
 	.row-fluid
 		.span7
@@ -50,4 +46,3 @@
 
 -unless signed_in?
 	.about-bottom
-		
