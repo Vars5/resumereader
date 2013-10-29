@@ -4,7 +4,7 @@ $(document).ready(function(){
 	$(".focus_").focus();
 
 	var $container = $('#container');
-	// initialize
+	// initialize, also have images loaded
 	$container.imagesLoaded( function() {
 		$container.masonry({
 		  columnWidth: 58,
@@ -52,6 +52,7 @@ $(function() {
 $( "#question" ).dialog({
 	autoOpen: false,
 	modal: true,
+	width:600,
 	open: function() {
 		jQuery('.ui-widget-overlay').bind('click', function() {
 			jQuery('#question').dialog('close');
