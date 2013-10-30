@@ -15,7 +15,7 @@
 			.item
 				.info-box-light-orange
 					.pad-top-tiny
-					.center-alignment
+					.center-alignment.card-image
 						- if !company.logo.url.blank?
 							= image_tag(company.logo.url)
 							%h5= link_to company.name, company
