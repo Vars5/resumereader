@@ -10,9 +10,11 @@
 			%b Answers:
 		-else
 			Be the first to answer	
-		- @answers.each do |comment|
-			#container
-			=render partial: 'layouts/card', locals: { comment: comment }
+		#container
+			- @answers.each do |comment|
+				=render partial: 'layouts/card', locals: { comment: comment }
+				
+				
 	-else
 		
 		- if @answers.count > 0
