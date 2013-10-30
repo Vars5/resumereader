@@ -53,14 +53,19 @@
 .hidden
 	#question
 		.question-area
-			%b Add Question
+			%b Add a Question anonymously
+			%br
+			%br
 			=form_for @ask_question do |f|
+				= f.label :company, "Company"
 				= f.collection_select :company_id, Company.order(:name), :id, :name, {}, :id => "searchq" 
 				%br
 				%br
+				= f.label :category, "Topic"
 				= f.collection_select :category_id, Category.order(:name).where("category = ?", "Review"), :id, :name, {}, :id => "searchq2"
 				%br
 				%br
+				= f.label :question, "Question"
 				= f.text_area :question_content, :placeholder => "What is your question?"
 				= f.hidden_field :user_id, :value => current_user.id
-				= f.submit
+				= f.submit :class => "sign-up-button"
