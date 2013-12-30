@@ -1,24 +1,37 @@
-.tiny-orange
-.container
-	.row-fluid
-		.span12
-			.signed-out-header
-				=link_to image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/white-logo.png'), root_path, :class => 'logo' 			
-				-# http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/white-logo.png
-				.pull-right
+.header
+	.container
+		.row-fluid
+			.span2
+				= link_to image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/menulogo.png'), root_path, :class => "menulogo"		
+			.span10
+				=link_to companies_path do
+					.my-jobs-button
+						Companies
+				- if false
+					=link_to upvoted_comments_path do
+						.my-jobs-button
+							My Upvoted Posts
 
-					&nbsp
-					&nbsp
-					=link_to "New Stuff!", updates_path
-					&nbsp
-					&nbsp
-					=link_to "About", about_path
-					&nbsp
-					&nbsp
-					=link_to "Share Advice", new_comment_path
-					&nbsp
-					&nbsp
-					| &nbsp
-					=link_to "Sign In", new_user_session_path
-					&nbsp
-					=link_to "Sign Up", new_user_registration_path, :class => "signinbox-button"
+				=link_to questions_path do
+					.my-jobs-button
+						Questions & Answers
+						
+				=link_to new_comment_path do
+					.my-jobs-button
+						Add Advice
+				
+				.pull-right
+					
+					=link_to about_path do 
+						.my-jobs-button
+							About
+					=link_to updates_path do
+						.my-jobs-button
+							New Stuff
+					=link_to new_user_session_path do 		
+						.my-jobs-button
+							Sign In
+
+					.my-jobs-button
+						=link_to "Sign Up", new_user_registration_path, :class => "signinbox-button"
+						

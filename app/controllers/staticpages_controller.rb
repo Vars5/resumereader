@@ -3,7 +3,7 @@ class StaticpagesController < ApplicationController
   caches_page :about
   
   def home
-    @comments = Comment.order("RANDOM()").take(6)
+    @comments = Comment.find(:all, :order => "id desc", :limit => 15);
   end
 
   def about

@@ -1,2 +1,8 @@
-= render partial: ab_test("landingpage", "threestep", "original") 
-.about-bottom
+#container
+	- @comments[0..4].each do |comment|
+		=render partial: 'layouts/card', locals: { comment: comment }
+
+	- @comments[5..14].each do |comment|
+		-comment.body = "Sign In to see more.."
+		=render partial: 'layouts/card', locals: { comment: comment }
+
