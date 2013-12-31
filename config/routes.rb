@@ -19,7 +19,8 @@ Resumereader::Application.routes.draw do
 
   match '/updates', to: 'staticpages#updates'
   #api (test)
-  match '/api', to: 'staticpages#api'
+  #match '/api', to: 'staticpages#api'
+  resources :api
 
   #match '/create_comment', to: 'comments#create_comment'
   
