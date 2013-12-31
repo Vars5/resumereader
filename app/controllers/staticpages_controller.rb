@@ -38,6 +38,9 @@ class StaticpagesController < ApplicationController
       #display message 
     end
   end
+  
+  def api
+  end
     
   
 end

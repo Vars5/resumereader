@@ -18,6 +18,8 @@ Resumereader::Application.routes.draw do
   match '/invitable', to: 'staticpages#invitable'
 
   match '/updates', to: 'staticpages#updates'
+  #api (test)
+  match '/api', to: 'staticpages#api'
 
   #match '/create_comment', to: 'comments#create_comment'
   
