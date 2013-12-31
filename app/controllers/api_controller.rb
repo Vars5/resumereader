@@ -4,10 +4,10 @@ class ApiController < RocketPants::Base
     
     allComments = Comment.last(6).reverse
 
-    allComments.each do |commentitem|
+    allComments.each do |comment|
       #note, for api, we currently use 'subject' to load the company's name
       #set it so we can show the companies name on the phone
-      commentitem.title = commentitem.get_company_for_comment.name
+      comment.title = "#{comment.get_company_for_comment.name} - #{comment.subject}"
     end
     expose allComments
   end
