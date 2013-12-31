@@ -2,7 +2,7 @@ class ApiController < RocketPants::Base
 
   def index
     
-    allComments = Comment.last(6).reverse
+    allComments = Comment.last(14).reverse
 
     allComments.each do |comment|
       #note, for api, we currently use 'subject' to load the company's name
