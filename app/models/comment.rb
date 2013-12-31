@@ -1,7 +1,9 @@
 class Comment < ActiveRecord::Base
   
+  #note commentable id is the company_id that the comment belongs to
+  #also next time, prioritise readabiltiy of code
   attr_accessible :commentable, :body, :user_id, :title, :subject, :category_id, :commentable_id, :commentable_type, :questioncomment_attributes 
-  
+  attr_accessor :company_name  
   belongs_to :category
 
   has_many :questioncomment
@@ -67,6 +69,10 @@ class Comment < ActiveRecord::Base
     else
       Company.find(Question.find(self.commentable_id).company_id)  
     end   
+  end
+  
+  def set_company_name
+    self.company_name = "testing to be asa"
   end
   
 end
