@@ -8,7 +8,7 @@ class ApiController < RocketPants::Base
       #note, for api, we currently use 'subject' to load the company's name
       #set it so we can show the companies name on the phone
       comment.title = "#{comment.get_company_for_comment.name} - #{Category.find(comment.category_id).name}"
-      comment.commentable_type = comment.get_company_for_comment.logo_file_name
+      comment.commentable_type = comment.get_company_for_comment.logo.url
     end
     expose allComments
   end
