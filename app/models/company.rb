@@ -13,13 +13,11 @@ class Company < ActiveRecord::Base
 #  validates :website,  presence: :true
 #  validates :info,     presence: :true
 
-  has_attached_file :logo
-=begin
-:styles => {  
-    :thumb => [">75x"],
-    :medium => [">600x"]
-    }
-=end  
+  has_attached_file :logo,    
+    :styles => {  
+        :thumb => ["70x70>"],
+        :medium => ["300x300>"]
+        }  
   
   #methods
   
