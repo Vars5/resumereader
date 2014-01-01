@@ -3,7 +3,7 @@ class UserMailer < ActionMailer::Base
 
   def signup_confirmation(user)
     @user = user
-    
+    attachments.inline['DemPointsLogo.png'] = File.read(Rails.root.join('app/assets/images/DemPointsLogo.png'))
     mail to: user.email, subject: "Signup Confirmation - DemPoints", from: 'team@dempoints.com'
   end
 
@@ -19,6 +19,20 @@ class UserMailer < ActionMailer::Base
   def new_comment(users)
   
   end
+  
+  #Note this is incomplete, only use as a guide when we rewrite this for production
+  def weekly_digest(user)
+    
+    attachments.inline['whitelogo.png'] = File.read(Rails.root.join('app/assets/images/whitelogo.png'))
+    
+    @user = user
+    @introduction = "Type an introduction here somehow"
+    @first_item = "Comment.find(target.comment)"
+    @second_item = "Comment.find(target.comment)"
+    @third_item = "Comment.find(target.comment)"
+    
+  end
+  
 
 end
 

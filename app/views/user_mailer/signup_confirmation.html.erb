@@ -16,7 +16,6 @@ body{	font-family: 'Noto Sans', sans-serif;}
 .footerText{font-size:10px;color:#960;line-height:100%;font-family:verdana}
 a{color:#1c51a8}
 h1{font-size:16pt;line-height:100%}
-h2{color:#fff;background:#0090ca;font-size:12pt;line-height:100%;margin:0 0 .5em;padding:.5em}
 </STYLE>
 
 
@@ -30,13 +29,12 @@ h2{color:#fff;background:#0090ca;font-size:12pt;line-height:100%;margin:0 0 .5em
 
 <table width="550" cellpadding="20" cellspacing="0" bgcolor="#FFFFFF">
 <tr>
-<td bgcolor="#FFFFFF" valign="top" style="font-size:10pt;color:#000000;font-family:trebuchet ms; text-align:left;" align="left">
+<td bgcolor="#FFFFFF" valign="top" style="font-size:10pt;color:#000000; text-align:left;" align="left">
 
 <p style="text-align:justify">
-
-	<h1> Welcome to DemPoints </h1>
-
-	<h3>Hi <%= @user.first_name %>,</h3>
+	<%= image_tag attachments['DemPointsLogo.png'].url%>
+	</br></br>
+	<h2>Hi <%= @user.first_name %>,</h2>
 </p>
 
 <p style="text-align:justify">
@@ -44,7 +42,7 @@ h2{color:#fff;background:#0090ca;font-size:12pt;line-height:100%;margin:0 0 .5em
 Welcome to DemPoints and thanks for signing up. You have joined hundreds of other students who are sharing career knowledge online to get ahead. 
 </p>
 
-<p> Sign into your account now <a href = "http://www.dempoints.com/users/sign_in"> click here</a><p>
+<p><a href = "http://www.dempoints.com/users/sign_in"> Sign into your account now here</a><p>
 
 </br>
 Wishing you the best of success,
