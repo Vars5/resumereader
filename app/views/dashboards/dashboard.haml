@@ -1,15 +1,20 @@
 .row-fluid
 	.span12
-		#container		
-			- @comments.each do |comment|
-				=render partial: 'layouts/card', locals: { comment: comment }
-
-			.item.hidden
-				.dashboard-box
+		#container
+			.item
+				.home-box
 					.center-alignment
 						%h5 Welcome to DemPoints!
 						%br You can post interesting and useful points about companies & their intern/grad jobs here
 						%br 
 						=render 'layouts/like_button'		
 						%br
-						%br
+						%br		
+			- @comments.each do |comment|
+				=render partial: 'layouts/card', locals: { comment: comment }
+
+
+		.load-more
+			-# link_to 'Load More Posts', comments_path(:page => @comments.next_page), :class => 'load-more-posts', :remote => true if @comments	.next_page
+				
+			= will_paginate @comments,:class => 'load-more-posts', :remote => true if @comments.next_page

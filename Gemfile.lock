@@ -48,8 +48,6 @@ GEM
     bcrypt-ruby (3.0.1)
     bootstrap-sass (2.3.2.1)
       sass (~> 3.2)
-    bootstrap-will_paginate (0.0.9)
-      will_paginate
     builder (3.0.4)
     cancan (1.6.9)
     capybara (1.1.2)
@@ -272,7 +270,6 @@ DEPENDENCIES
   acts_as_votable (~> 0.7.1)
   aws-sdk
   bootstrap-sass (~> 2.3.2.0)
-  bootstrap-will_paginate
   cancan
   capybara (= 1.1.2)
   coffee-rails
@@ -303,3 +300,4 @@ DEPENDENCIES
   split
   sqlite3
   uglifier
+  will_paginate (~> 3.0)

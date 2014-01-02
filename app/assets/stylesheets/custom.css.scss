@@ -1237,12 +1237,6 @@ h3 {
 	
 }
 
-.dashboard-box{
-	
-	width:250px;	
-	padding:10px;
-
-}
 
 #container{
 	margin: 0 auto;
@@ -1300,5 +1294,30 @@ h3 {
 	height:70px;
 	img{
 		max-height:70px;
+	}
+}
+
+.home-box{
+	height:200px;
+	box-shadow: 2px 2px 1px #E8E8E8;
+	background-color:white;
+	border:1px solid $light-grey;
+	border-top: 10px solid $orange;
+	width:250px;
+	padding:10px;
+	border-radius: 4px;
+	color:$text-grey;
+	line-height:16px;
+	font-size:13px;
+	margin-top:15px;
+	overflow:hidden;
+	h5{
+		color:$orange;
+	}
+	img {
+		max-width:100px;
+	}
+	a{
+
 	}
 }

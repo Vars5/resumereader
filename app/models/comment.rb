@@ -28,6 +28,9 @@ class Comment < ActiveRecord::Base
   # NOTE: Comments belong to a user
   belongs_to :user
 
+  #For Infinite Scroll as per http://christianvarga.com/2013/02/simple-infinite-scroll-with-rails-and-jquery/
+  self.per_page = 15    
+
   # Helper class method that allows you to build a comment
   # by passing a commentable object, a user_id, and comment text
   # example in readme

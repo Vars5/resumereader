@@ -4,9 +4,9 @@ class DashboardsController < ApplicationController
   
   def dashboard
     @appListCount = current_user.app_list_count
-    @appList      = current_user.app_lists.find(:all, :joins => :job, :order => "due_date DESC")    
+    @appList      = current_user.app_lists.find(:all, :joins => :job, :order => "due_date DESC")
     @category     = Category.order("discipline")
-    @comments     = Comment.order("created_at DESC")
+    @comments     = Comment.order("created_at DESC").paginate(:page => params[:page])
     @question     = Question.new
   end
   
