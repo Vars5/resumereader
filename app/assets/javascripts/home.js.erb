@@ -4,66 +4,75 @@ $(document).ready(function(){
 	$(".focus_").focus();
 
 	var $container = $('#container');
+	var msnry = new Masonry( container );
 	// initialize, also have images loaded
 
+	$container.masonry({
+	  columnWidth: 58,
+	  itemSelector: '.item',
+	  isFitWidth: true
+	});
+	
+	$('.next_page').on('inview', function(e, visible) {
+		$container.masonry('destroy');
 		$container.masonry({
 		  columnWidth: 58,
 		  itemSelector: '.item',
 		  isFitWidth: true
 		});
+	});
 
-
-//sign in on new comments page jscript
+	//sign in on new comments page jscript
 	
+		$(function() {
+	    $( "#dialog" ).dialog({
+			autoOpen: false,
+			modal: true,
+			open: function() {
+				jQuery('.ui-widget-overlay').bind('click', function() {
+					jQuery('#dialog').dialog('close');
+				})
+			}
+		
+		});
+	  });
+
+	 	$( "#share-advice" ).button().click(function() {
+	 		$( "#dialog" ).dialog( "open" );
+	  	});
+
+	$("form#sign_up_user").bind("ajax:success", function(e, data, status, xhr) {
+	  if (data.success) {
+		$("#dialog").dialog("close");
+		$("#save-share").click();
+	    return $('#submit_comment').slideToggle(1000, "easeOutBack");
+	  } else {
+	    return alert('Failure to create user!');
+	  }
+	});
+
+	//questions dialog
+
+	$( "#question-button" ).button().click(function() {
+		$( "#question" ).dialog( "open" );
+	});
+
 	$(function() {
-    $( "#dialog" ).dialog({
+	$( "#question" ).dialog({
 		autoOpen: false,
 		modal: true,
+		width:600,
 		open: function() {
 			jQuery('.ui-widget-overlay').bind('click', function() {
-				jQuery('#dialog').dialog('close');
+				jQuery('#question').dialog('close');
 			})
 		}
-		
-	});
-  });
-
- 	$( "#share-advice" ).button().click(function() {
- 		$( "#dialog" ).dialog( "open" );
-  	});
-
-$("form#sign_up_user").bind("ajax:success", function(e, data, status, xhr) {
-  if (data.success) {
-	$("#dialog").dialog("close");
-	$("#save-share").click();
-    return $('#submit_comment').slideToggle(1000, "easeOutBack");
-  } else {
-    return alert('Failure to create user!');
-  }
-});
-
-//questions dialog
-
-$( "#question-button" ).button().click(function() {
-	$( "#question" ).dialog( "open" );
-});
-
-$(function() {
-$( "#question" ).dialog({
-	autoOpen: false,
-	modal: true,
-	width:600,
-	open: function() {
-		jQuery('.ui-widget-overlay').bind('click', function() {
-			jQuery('#question').dialog('close');
-		})
-	}
 	
-});
-});
+	});
+	});
 
-$("#searchq").select2({   placeholder: "Sort by industry" });
-$("#searchq2").select2({ placeholder: "Sort by industry" });
+	$("#searchq").select2({   placeholder: "Sort by industry" });
+	$("#searchq2").select2({ placeholder: "Sort by industry" });
 
 
 })
