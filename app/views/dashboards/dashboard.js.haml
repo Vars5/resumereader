@@ -1,13 +1,5 @@
 $('.box-group').append('#{escape_javascript(render partial: "layouts/more_comments", :locals => { :posts => @comments })}');
 
-
-
-//$('#container').masonry('addItems');
-$('.next_page').attr('href', '#{comments_path page: @comments.next_page}'); 
-
-var container = document.querySelector('#container');
-$container.masonry('destroy');
-
-
+$('.next_page').attr('href', '?page=#{@comments.next_page}'); 
 - unless @comments.next_page
   $('.next_page').remove();	
