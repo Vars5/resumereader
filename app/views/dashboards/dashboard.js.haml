@@ -2,4 +2,4 @@ $('.box-group').append('#{escape_javascript(render partial: "layouts/more_commen
 
 $('.next_page').attr('href', '?page=#{@comments.next_page}'); 
 - unless @comments.next_page
-  $('.next_page').remove();	
+  $('.next_page').toggleClass('.end_load');	

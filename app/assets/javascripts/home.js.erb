@@ -21,6 +21,15 @@ $(document).ready(function(){
 		  isFitWidth: true
 		});
 	});
+	
+	$('.end_load').on('inview', function(e, visible) {
+		$container.masonry('destroy');
+		$container.masonry({
+		  columnWidth: 58,
+		  itemSelector: '.item',
+		  isFitWidth: true
+		});
+	});	
 
 	//sign in on new comments page jscript
 	
