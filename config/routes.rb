@@ -13,30 +13,21 @@ Resumereader::Application.routes.draw do
   #api (test)
   resources :api
 
-  #match '/create_comment', to: 'comments#create_comment'
-  #User's Signed In Pages
-  match '/changeSettings', :to => 'dashboards#changeSettings'
-  match '/quicklist', :to => 'dashboards#add_quick_follow_list', via: [:post]
   match '/upvoted_comments', :to => 'dashboards#upvoted_comments'
   
   #admin pages
-  match '/admin', to: 'dashboards#admin'
-  
+  match '/admin', to: 'dashboards#admin'  
   
   #suggestions & bugs
   match '/suggestions', to: 'problems#new'
-  match '/invite', to: 'groups#invite'
-  
   
   #Resources
   #resources :schools, except: [:show] 
   resources :settings, except: [:index, :new, :edit]
   resources :questions, except: [:new]
   resources :companies
-  resources :jobs, except: [:new]
   resources :posts, except: [:new]
   resources :notes, only: [:create, :update, :destroy]
-
   resources :searches  
   resources :categories
   resources :roles
@@ -45,7 +36,6 @@ Resumereader::Application.routes.draw do
   
   resources :follows, only: [:create, :destroy]
   
-  resources :groupmembers, only: [:create, :destroy]
   resources :comments, :only => [:create, :destroy, :index, :new]
   
   mount Split::Dashboard, at: 'split'
@@ -62,7 +52,6 @@ Resumereader::Application.routes.draw do
   end
 =end  
   
-
   #Devise gem for users and their accounts
   devise_for :users, :controllers => {registrations: 'registrations'}
 

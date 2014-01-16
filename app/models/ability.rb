@@ -5,8 +5,6 @@ class Ability
     if current_user.role == "admin"
       can :manage, :all
     else 
-      can :manage, AppList, :user_id => current_user.id
-      can :manage, Job
       can :manage, Company
       #can :create, School
       #cannot :index, Problem
