@@ -38,7 +38,6 @@ gem "cancan"
 
 #styling
 gem 'bootstrap-sass', '~> 2.3.2.0'
-#gem "bootstrap-will_paginate"
 gem 'will_paginate', '~> 3.0'
 gem 'simple_form'
 
@@ -47,7 +46,6 @@ gem 'aws-sdk'
 gem 'paperclip'
 gem 'paperclip-aws'
 
-gem 'obscenity'
 
 gem 'devise-async'
 gem "haml"
@@ -55,10 +53,6 @@ gem "haml"
 gem 'figaro'
 gem 'newrelic_rpm'
 
-#search engine
-#gem 'swiftype'
-#gem 'delayed_job_active_record'
-#gem 'foreman'
 
 #intercom.io
 gem 'intercom-rails', '~> 0.2.21'
@@ -70,8 +64,6 @@ gem 'split', require: 'split/dashboard'
 gem 'acts_as_commentable_with_threading'
 
 gem 'acts_as_votable', '~> 0.7.1'
-
-gem "select2-rails"
 
 #For API
 gem 'rocket_pants', '~> 1.0'

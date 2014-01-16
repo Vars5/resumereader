@@ -10,7 +10,6 @@ class ApplicationController < ActionController::Base
   end 
 
 
-
   def new_question
       @ask_question = Question.new
   end

@@ -25,8 +25,6 @@ class ResponsesController < ApplicationController
     @response = Response.find(params[:id])
   end
   
-
-  
   private
   
     def load_responseable
