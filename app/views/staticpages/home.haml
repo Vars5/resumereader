@@ -1,4 +1,14 @@
 #container
+	.item
+		.home-box
+			.center-alignment
+				%h5 Welcome to DemPoints!
+				%br You can post interesting and useful points about companies & their intern/grad jobs here
+				%br 
+				=render 'layouts/like_button'		
+				%br
+				%br
+
 	- @comments[0..4].each do |comment|
 		=render partial: 'layouts/card', locals: { comment: comment }
 
