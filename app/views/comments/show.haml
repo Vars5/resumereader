@@ -17,6 +17,21 @@ PLUS LOGO
 	=truncate((sanitize(@comment.body)), length: 144)
 
 %p
+
+
+%p
 - if signed_in?
 -else
 	=link_to "Signup Now", new_user_registration_path
+
+
+%b Discussions: Post Below
+
+- @discussions.each do |f|
+	%br= f.content
+	 
+
+= form_for @discussion do |f|
+	=f.text_field :content
+	=f.hidden_field :comment_id, value: params[:id]
+	=f.submit
