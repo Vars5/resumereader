@@ -58,7 +58,7 @@ Resumereader::Application.routes.draw do
   devise_for :users, :controllers => {registrations: 'registrations'}
 
   #error pages
-  match '(errors)/:status', to: 'errors#show', constraints: {status: /\d{3}/} # via: :all
+  #match '(errors)/:status', to: 'errors#show', constraints: {status: /\d{3}/} # via: :all
 
   resources :comments do
     get :autocomplete_company_name, :on => :collection
