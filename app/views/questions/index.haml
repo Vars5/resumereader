@@ -1,25 +1,26 @@
-%h2.bold Open Questions
-%br
-%h5 Here you can ask questions about the companies you want to know about anonymously
-%br
-%br
+.large-8.columns
+	%h2.bold Open Questions
+	%br
+	%h5 Here you can ask questions about the companies you want to know about anonymously
+	%br
+	%br
 	
 
-- @question.each do |question|
-	.row
-		.small-2.columns
-			= link_to image_tag(question.load_company.logo.url), question.load_company		
-		.small-10.columns
-			.small-text Question added about
-			= question.company_name
-			%br
-			%b= link_to question.question_content, question
-			-if false
+	- @question.each do |question|
+		.row
+			.small-2.columns
+				= link_to image_tag(question.load_company.logo.url), question.load_company		
+			.small-10.columns
+				.small-text Question added about
+				= question.company_name
 				%br
-				.small-text Follow Question
-				-# if no_answers then write
-				Four people are waiting for an answer
-				%br
-				%br
-				%b Four Answers have been given
-	%hr 
+				%b= link_to question.question_content, question
+				-if false
+					%br
+					.small-text Follow Question
+					-# if no_answers then write
+					Four people are waiting for an answer
+					%br
+					%br
+					%b Four Answers have been given
+		%hr 

@@ -28,23 +28,15 @@
 			</header>
 			<article id="contentWrapper"> 
 					<section id="content"> 
-						<div class="row">
-							<div class="large-8 columns pad-top">
-								<%= yield %>
-							</div>
+						<div class="row pad-top">
+							<%= yield %>
 						</div>
 					</section> 
 				</article>
 
-
-
-
 		<% else %>
-			<div class= "signed-out">
-				<%= render 'layouts/signed_out_header'%>
-				<div class="container">
-					<%= yield %>	
-				</div>
+			<div class="row">
+				<%= yield %>	
 			</div>
 		<% end %>
   

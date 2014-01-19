@@ -1,37 +1,13 @@
-.header
-	.container
-		.row-fluid
-			.span2
-				= link_to image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/menulogo.png'), root_path, :class => "menulogo"		
-			.span10
-				=link_to companies_path do
-					.my-jobs-button
-						Companies
-				- if false
-					=link_to upvoted_comments_path do
-						.my-jobs-button
-							My Upvoted Posts
+=link_to about_path do 
+	.my-jobs-button
+		About
+=link_to updates_path do
+	.my-jobs-button
+		New Stuff
+=link_to new_user_session_path do 		
+	.my-jobs-button
+		Sign In
 
-				=link_to questions_path do
-					.my-jobs-button
-						Questions & Answers
-						
-				=link_to new_comment_path do
-					.my-jobs-button
-						Add Advice
-				
-				.pull-right
-					
-					=link_to about_path do 
-						.my-jobs-button
-							About
-					=link_to updates_path do
-						.my-jobs-button
-							New Stuff
-					=link_to new_user_session_path do 		
-						.my-jobs-button
-							Sign In
-
-					.my-jobs-button
-						=link_to "Sign Up", new_user_registration_path, :class => "signinbox-button"
-						
+.my-jobs-button
+	=link_to "Sign Up", new_user_registration_path, :class => "signinbox-button"
+	

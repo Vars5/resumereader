@@ -3,7 +3,7 @@
 	$(document).ready(function() { $("#search2").select2({  width: 'resolve', placeholder: "Sort by industry" });});
 
 
-.row-fluid
+.large-8.columns
 	%h3.bold Share Advice
 	.large-text	Your advice will really help other students! Thanks for sharing!
 
@@ -43,5 +43,3 @@
 						= f.password_field :password_confirmation, :placeholder => "Password Confirmation"
 					%div= f.submit "Join", :class => "sign-up-button", :id => "join-button"
 				=link_to "Already have an account? Sign in", new_user_session_path
-
-		
