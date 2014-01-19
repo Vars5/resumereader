@@ -38,6 +38,8 @@ Resumereader::Application.routes.draw do
   
   resources :comments, :only => [:create, :destroy, :index, :new]
   
+  resources :discussions
+  
   mount Split::Dashboard, at: 'split'
 
   put '/comments/:id/:action' => 'comments#upvote'

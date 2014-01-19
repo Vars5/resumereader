@@ -16,6 +16,7 @@ class Company < ActiveRecord::Base
   has_attached_file :logo,    
     :styles => {  
         :thumb => ["70x70>"],
+        :small => ["140x70>"],
         :medium => ["300x300>"]
         }  
   

@@ -57,7 +57,13 @@ h2{
 	text-align:center;
 }
 
+.feed-text{
+	line-height:25px;
+}
 
+.feed-subtext{
+	font-size:10px;
+}
 
 /* ========= END SECTION: UNIVERSALS =========*/
 
@@ -107,7 +113,7 @@ html {
 
 
 .logo{
-	padding:60px;
+	padding:40px 60px 15px 30px;
 	background-color:$dempoints-blue;
 	img{
 		width:97px;

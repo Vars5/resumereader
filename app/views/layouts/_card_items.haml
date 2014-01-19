@@ -1,7 +1,7 @@
 - comment_company = comment.get_company_for_comment
 
 .center-alignment.card-image
-	= link_to image_tag(comment_company.logo.url(:thumb)), comment_company
+	= link_to image_tag(comment_company.logo.url(:small)), comment_company
 %br
 %br
 = comment_company.name
