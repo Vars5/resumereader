@@ -1,5 +1,0 @@
-$('.box-group').append('#{escape_javascript(render partial: "layouts/more_comments", :locals => { :posts => @comments })}');
-$('.next_page').attr('href', '?page=#{@comments.next_page}'); 
--#$('.next_page').animate({bottom: '-=120'}, 1000);
-- unless @comments.next_page  
-	$('.next_page').toggleClass('.end_load');
