@@ -4,7 +4,10 @@
 		.small-2.columns
 			= link_to image_tag(comment_company.logo.url(:thumb)), comment_company			
 		.small-10.columns.feed-text
-			%b= comment_company.name
+			%b= comment.title
+			\-
+			=comment_company.name
+				
 			%br
 			= link_to comment.body, comment_company
 			.feed-subtext
