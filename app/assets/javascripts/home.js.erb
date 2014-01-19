@@ -1,87 +1,18 @@
-$(document).ready(function(){
-	
-	$("#st-search-input").focus();
-	$(".focus_").focus();
+$(document).ready(function() {
 
-	var $container = $('#container');
-	var msnry = new Masonry( container );
-	// initialize, also have images loaded
+	//GET BROWSER WINDOW HEIGHT
+	var currHeight = $(window).height();
+	//SET HEIGHT OF SIDEBAR AND CONTENT ELEMENTS
+	$('#sidebar, #content').css('height', currHeight);
 
-	$container.masonry({
-	  columnWidth: 58,
-	  itemSelector: '.item',
-	  isFitWidth: true
-	});
-	
-	$('.next_page').on('inview', function(e, visible) {
-		$container.masonry('destroy');
-		$container.masonry({
-		  columnWidth: 58,
-		  itemSelector: '.item',
-		  isFitWidth: true
-		});
-	});
-	
-	$('.end_load').on('inview', function(e, visible) {
-		$container.masonry('destroy');
-		$container.masonry({
-		  columnWidth: 58,
-		  itemSelector: '.item',
-		  isFitWidth: true
-		});
-	});	
+	//ON RESIZE OF WINDOW
+	$(window).resize(function() {
 
-	//sign in on new comments page jscript
-	
-		$(function() {
-	    $( "#dialog" ).dialog({
-			autoOpen: false,
-			modal: true,
-			open: function() {
-				jQuery('.ui-widget-overlay').bind('click', function() {
-					jQuery('#dialog').dialog('close');
-				})
-			}
-		
-		});
-	  });
+		//GET NEW HEIGHT
+		var currHeight = $(window).height();	
+		//RESIZE BOTH ELEMENTS TO NEW HEIGHT
+		$('#sidebar, #content').css('height', currHeight);
 
-	 	$( "#share-advice" ).button().click(function() {
-	 		$( "#dialog" ).dialog( "open" );
-	  	});
-
-	$("form#sign_up_user").bind("ajax:success", function(e, data, status, xhr) {
-	  if (data.success) {
-		$("#dialog").dialog("close");
-		$("#save-share").click();
-	    return $('#submit_comment').slideToggle(1000, "easeOutBack");
-	  } else {
-	    return alert('Failure to create user!');
-	  }
 	});
 
-	//questions dialog
-
-	$( "#question-button" ).button().click(function() {
-		$( "#question" ).dialog( "open" );
-	});
-
-	$(function() {
-	$( "#question" ).dialog({
-		autoOpen: false,
-		modal: true,
-		width:600,
-		open: function() {
-			jQuery('.ui-widget-overlay').bind('click', function() {
-				jQuery('#question').dialog('close');
-			})
-		}
-	
-	});
-	});
-
-	$("#searchq").select2({   placeholder: "Sort by industry" });
-	$("#searchq2").select2({ placeholder: "Sort by industry" });
-
-
-})
+});

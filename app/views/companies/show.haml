@@ -8,8 +8,3 @@
 			%br
 			= link_to "Go to Company Website", url_with_protocol(@company.website)
 
-#container
-	- @company_comments.each do |comment|
-		=render partial: 'layouts/card', locals: { comment: comment }					
-		
-= render partial: 'comments/form', locals: { comment: @new_comment }

@@ -4,7 +4,7 @@ class DashboardsController < ApplicationController
   
   def dashboard
     @category   = Category.order("discipline")
-    @comments   = Comment.order("created_at DESC").paginate(:page => params[:page])
+    @comments   = Comment.order("created_at DESC")
     @question   = Question.new
   end
   
@@ -13,7 +13,7 @@ class DashboardsController < ApplicationController
     redirect_to root_path
   end
   
-  def follow
+  def follow    
     @feed = current_user.companies.all
   end
   

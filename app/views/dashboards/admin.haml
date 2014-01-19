@@ -9,7 +9,7 @@
 			%ul
 				%table{:border => "2"}
 					%tr
-						%th First Name
+						%th Username
 						%th Email
 						%th User Id
 						%th Sign in Count
@@ -20,7 +20,7 @@
 					
 					- @list.each do |user|
 						%tr
-							%td= user.first_name
+							%td= user.username
 							%td= user.email
 							%td= user.id
 							%td= user.sign_in_count

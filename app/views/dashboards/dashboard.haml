@@ -1,22 +1,5 @@
-.row-fluid
-	.span12
-		#container
-			.box-group
-				.item
-					.home-box
-						.center-alignment
-							%h5 Welcome to DemPoints!
-							%br You can post interesting and useful points about companies & their intern/grad jobs here
-							%br 
-							=render 'layouts/like_button'		
-							%br
-							%br		
-
-				- @comments.each do |comment|
-					=render partial: 'layouts/card', locals: { comment: comment }
-
-
-		.load-more
-			-# link_to 'Load More Posts', comments_path(:page => @comments.next_page), :class => 'next_page', :remote => true if @comments	.next_page
-			=link_to 'Load More',"?page=#{@comments.current_page+1}",:class => 'next_page', :remote =>true
-			-# will_paginate @comments,:class => 'load-more-posts', :remote => true if @comments.next_page
+%h2.bold Dashboard
+%br
+%br
+%h6 Latest bits of advice
+=render 'layouts/feed_item'

@@ -37,7 +37,7 @@ gem "devise_invitable"
 gem "cancan"
 
 #styling
-gem 'bootstrap-sass', '~> 2.3.2.0'
+gem 'foundation-rails'
 gem 'will_paginate', '~> 3.0'
 gem 'simple_form'
 
