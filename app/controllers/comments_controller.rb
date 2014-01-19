@@ -93,8 +93,6 @@ class CommentsController < ApplicationController
   
   def show
     @comment = Comment.find(params[:id])
-    @discussion = Discussion.new
-    @discussions = Discussion.where("comment_id = ?", params[:id])
   end
   
   private

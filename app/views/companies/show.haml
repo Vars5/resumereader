@@ -1,10 +1,6 @@
 - provide(:title, "#{@company.name}")
-
-.row-fluid
-	.span7
-		.pad-bottom
-			%h3= @company.name
-			= Industry.find(@company.industry_id).industry
-			%br
-			= link_to "Go to Company Website", url_with_protocol(@company.website)
+%h3.bold= @company.name
+= Industry.find(@company.industry_id).industry 
+\ - 
+= link_to "Go to Company Website", url_with_protocol(@company.website)
 

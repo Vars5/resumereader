@@ -6,29 +6,27 @@
 .row-fluid
 	%h3.bold Share Advice
 	.large-text	Your advice will really help other students! Thanks for sharing!
+
 	%br
+	.comment-form
+		=form_for @new_comment do |f|
+			%h5 Company:
+			= f.collection_select :commentable_id, Company.order(:name), :id, :name,{}, :id => "search", include_blank: true
+			%h5 Type of Advice:
+			= f.collection_select :category_id, Category.order(:name).where("category = ?", "Review"), :id, :name, {}, :id => "search2", include_blank: true
 
-	.info-box-updates
-		.pad-top
-			.comment-form
-				=form_for @new_comment do |f|
-					%h5 Company:
-					= f.collection_select :commentable_id, Company.order(:name), :id, :name,{}, :id => "search", include_blank: true
-					%h5 Type of Advice:
-					= f.collection_select :category_id, Category.order(:name).where("category = ?", "Review"), :id, :name, {}, :id => "search2", include_blank: true
-
-					%h5 Your Advice:
-					= f.text_area :body, :placeholder => "By anonymously sharing your advice, you're helping someone make better career decisions - getting them closer to their dreams. Thank you!"
-					= f.text_field :title, placeholder: "I know this because ..."
-					= f.hidden_field :commentable_type, value: "Company"
-					.row-fluid
-						.span4
-							- if signed_in?
-								= f.submit "Share Advice", :class => "sign-up-button", :id => "save-share"
-							- else 
-								%br
-								= link_to "Share Advice", '#', :class => "sign-up-button", :id => "share-advice", :remote => true
-								= f.submit "Share Advice", :class => "sign-up-button hidden", :id => "save-share"
+			%h5 Your Advice:
+			= f.text_area :body, :placeholder => "By anonymously sharing your advice, you're helping someone make better career decisions - getting them closer to their dreams. Thank you!"
+			= f.text_field :title, placeholder: "I know this because ..."
+			= f.hidden_field :commentable_type, value: "Company"
+			.row-fluid
+				.span4
+					- if signed_in?
+						= f.submit "Share Advice", :class => "sign-up-button", :id => "save-share"
+					- else 
+						%br
+						= link_to "Share Advice", '#', :class => "sign-up-button", :id => "share-advice", :remote => true
+						= f.submit "Share Advice", :class => "sign-up-button hidden", :id => "save-share"
 
 -unless signed_in?
 	.sign-item

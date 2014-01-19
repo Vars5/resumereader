@@ -1,7 +1,6 @@
 .logo
 	= link_to image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/menulogo.png'), root_path, :class => "menulogo"		
 
-
 .header
 	= link_to "Companies", companies_path
 	%br
@@ -11,8 +10,8 @@
 	.hidden
 		%li=link_to "Add Question", "#", :class => "btn btn-info", :id => "question-button", :remote => true
 	%br
-	= link_to "New Stuff!", updates_path
-	%br
+	-# link_to "New Stuff!", updates_path
+	-#%br
 	= link_to current_user.username, edit_user_registration_path
 	%br
 	= link_to "Log Out", destroy_user_session_path,:method =>"DELETE"

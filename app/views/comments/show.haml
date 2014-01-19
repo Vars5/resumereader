@@ -1,10 +1,3 @@
-- provide(:title, "#{@comment.get_company_for_comment.name} - #{Category.find(@comment.category_id).name}")
-
-Probably place the comment in a box or something in the centre of the page
-%p
-Also the non-signed-in page has no styling a the moment. 
-%p
-
 %b Company:
 =@comment.get_company_for_comment.name
 %p
@@ -15,23 +8,3 @@ PLUS LOGO
 	=@comment.body
 -else
 	=truncate((sanitize(@comment.body)), length: 144)
-
-%p
-
-
-%p
-- if signed_in?
--else
-	=link_to "Signup Now", new_user_registration_path
-
-
-%b Discussions: Post Below
-
-- @discussions.each do |f|
-	%br= f.content
-	 
-
-= form_for @discussion do |f|
-	=f.text_field :content
-	=f.hidden_field :comment_id, value: params[:id]
-	=f.submit
