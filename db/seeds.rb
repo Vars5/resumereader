@@ -8,8 +8,8 @@
 
 
 
-User.create(email: "team@resumequery.com", :password => 'antifragile2', :password_confirmation => 'antifragile2', :first_name =>
-              'Team', :last_name => 'ResumeQuery', :role => 'admin')
+#User.create(email: "team@resumequery.com", :password => 'antifragile2', :password_confirmation => 'antifragile2', :first_name =>
+#              'Team', :last_name => 'ResumeQuery', :role => 'admin')
    
               
 User.all.each do |user|
