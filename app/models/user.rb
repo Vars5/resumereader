@@ -4,20 +4,19 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :first_name, :last_name, :mobile_number, :role, :access
+                  :first_name, :last_name, :mobile_number, :role, :access, :username
 
   
   #has_many :reviews, dependent: :destroy
-  
   #user follows company
   has_many :follows
   has_many :companies, through: :follows
   
   
   #validations
-  validates :first_name, :presence => true
-  validates :first_name, length: { maximum: 30 }
-  validates :last_name, length: { maximum: 30 }
+  #VALID_USERNAME_REGEX = /^[\w-]+$/
+  validates :username, :presence => true, length: { maximum: 30 }, :uniqueness => true
+
 
   acts_as_voter
   

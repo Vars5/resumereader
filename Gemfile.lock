@@ -46,8 +46,6 @@ GEM
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt-ruby (3.0.1)
-    bootstrap-sass (2.3.2.1)
-      sass (~> 3.2)
     builder (3.0.4)
     cancan (1.6.9)
     capybara (1.1.2)
@@ -89,6 +87,9 @@ GEM
       bundler (~> 1.0)
       rails (>= 3, < 5)
     formatador (0.2.4)
+    foundation-rails (5.0.3.1)
+      railties (>= 3.1.0)
+      sass (>= 3.2.0)
     growl (1.0.3)
     guard (1.7.0)
       formatador (>= 0.2.4)
@@ -266,7 +267,6 @@ DEPENDENCIES
   acts_as_commentable_with_threading
   acts_as_votable (~> 0.7.1)
   aws-sdk
-  bootstrap-sass (~> 2.3.2.0)
   cancan
   capybara (= 1.1.2)
   coffee-rails
@@ -274,6 +274,7 @@ DEPENDENCIES
   devise-async
   devise_invitable
   figaro
+  foundation-rails
   growl (= 1.0.3)
   guard-rspec
   haml

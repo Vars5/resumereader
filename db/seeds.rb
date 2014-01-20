@@ -8,5 +8,13 @@
 
 
 
-User.create(email: "team@resumequery.com", :password => 'antifragile2', :password_confirmation => 'antifragile2', :first_name =>
-              'Team', :last_name => 'ResumeQuery', :role => 'admin')
+#User.create(email: "team@resumequery.com", :password => 'antifragile2', :password_confirmation => 'antifragile2', :first_name =>
+#              'Team', :last_name => 'ResumeQuery', :role => 'admin')
+   
+              
+User.all.each do |user|
+  if user.username == blank?
+    user.username = user.first_name
+    user.save
+  end
+end

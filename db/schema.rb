@@ -11,6 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(:version => 20140118034010) do
+=======
 ActiveRecord::Schema.define(:version => 20140117051146) do
 
   create_table "answers", :force => true do |t|
@@ -20,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20140117051146) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
+>>>>>>> 59d36fb47ee936ce221af9fa25fbf1c5945dfa63
 
   create_table "app_lists", :force => true do |t|
     t.integer  "job_id"
@@ -386,6 +390,7 @@ ActiveRecord::Schema.define(:version => 20140117051146) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.boolean  "access"
+    t.string   "username"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

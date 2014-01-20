@@ -1,15 +1,6 @@
 - provide(:title, "#{@company.name}")
+%h3.bold= @company.name
+= Industry.find(@company.industry_id).industry 
+\ - 
+= link_to "Go to Company Website", url_with_protocol(@company.website)
 
-.row-fluid
-	.span7
-		.pad-bottom
-			%h3= @company.name
-			= Industry.find(@company.industry_id).industry
-			%br
-			= link_to "Go to Company Website", url_with_protocol(@company.website)
-
-#container
-	- @company_comments.each do |comment|
-		=render partial: 'layouts/card', locals: { comment: comment }					
-		
-= render partial: 'comments/form', locals: { comment: @new_comment }

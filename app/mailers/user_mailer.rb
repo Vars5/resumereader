@@ -12,7 +12,7 @@ class UserMailer < ActionMailer::Base
     @current_user = current_user
     
     mail to: user.email, 
-    subject:"#{current_user.first_name} invited you to #{group.name}  - DemPoints",
+    subject:"#{current_user.username} invited you to #{group.name}  - DemPoints",
     from: current_user.email
   end
 

@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	  <title><%= full_title(yield(:title)) %></title>  
-	  <%= stylesheet_link_tag    "application", :media => "all" %>
-	  <%= javascript_include_tag "application" %>
-	  <%= csrf_meta_tags %>
-	  <%= favicon_link_tag 'favicon.ico' %>
-	  <link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
- 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <%= render 'shared/google_analytics' if Rails.env.production? %>
-	</head>
-	
-	<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title><%= full_title(yield(:title)) %></title>  
+  	<%= stylesheet_link_tag    "application" %>
+	<%= javascript_include_tag "modernizr" %>
+    <%= csrf_meta_tags %>
+	<%= favicon_link_tag 'favicon.ico' %>
+	<link href='http://fonts.googleapis.com/css?family=Oxygen:400,700' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<%= render 'shared/google_analytics' if Rails.env.production? %>
+	<script src="/js/foundation/foundation.min.js></script>
+	<script src="/js/foundation/foundation.offcanvas.js></script>
+  </head>
+
+  <body>
 		<!-- Hi! Hope you enjoy looking under the hood! -->
 		<!-- Our goal with DemPoints is to help give students the opportunities that me (Pasha) and Varun had when we applied for jobs -->
 		<!-- We'd love your help and suggestions! Email us at team@resquery.com  -->	
-		<%= render 'layouts/like_sdk'%>	
 		<% if signed_in? %>
-			<%= render 'layouts/header'%>
-			<div class="container">
-				<%= yield %>
-			</div>
+		
+		
+		<header id="sidebar"> 
+<%= render 'layouts/header'%>
+			</header>
+			<article id="contentWrapper"> 
+					<section id="content"> 
+						<div class="row pad-top">
+							<%= yield %>
+						</div>
+					</section> 
+				</article>
+
 		<% else %>
-			<div class= "signed-out">
-				<%= render 'layouts/signed_out_header'%>
-				<div class="container">
-					<%= yield %>	
-				</div>
+			<div class="row">
+				<%= yield %>	
 			</div>
 		<% end %>
-	</body>
+  
+  <%= javascript_include_tag "application" %>
+  </body>
 </html>

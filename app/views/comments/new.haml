@@ -1,43 +1,32 @@
-/_form.html.haml
-/%script
-/	$(document).ready(function() { $("#comment_commentable_id").select2(); });
-
-
 %script
 	$(document).ready(function() { $("#search").select2({  width: 'resolve', placeholder: "Sort by industry" });});
 	$(document).ready(function() { $("#search2").select2({  width: 'resolve', placeholder: "Sort by industry" });});
 
 
-.row-fluid
-	%h2.center-alignment Share Advice
-	.center-alignment(class="large-text")
-		Your advice will really help other students! Thanks for sharing!
-	.offset2.span8
-		.info-box-updates
-			.pad-top
-				.comment-form
-					=form_for @new_comment do |f|
-						%h5 Company:
-						= f.collection_select :commentable_id, Company.order(:name), :id, :name,{}, :id => "search", include_blank: true
+.large-8.columns
+	%h3.bold Share Advice
+	.large-text	Your advice will really help other students! Thanks for sharing!
+
+	%br
+	.comment-form
+		=form_for @new_comment do |f|
+			%h5 Company:
+			= f.collection_select :commentable_id, Company.order(:name), :id, :name,{}, :id => "search", include_blank: true
+			%h5 Type of Advice:
+			= f.collection_select :category_id, Category.order(:name).where("category = ?", "Review"), :id, :name, {}, :id => "search2", include_blank: true
+
+			%h5 Your Advice:
+			= f.text_area :body, :placeholder => "By anonymously sharing your advice, you're helping someone make better career decisions - getting them closer to their dreams. Thank you!"
+			= f.text_field :title, placeholder: "I know this because ..."
+			= f.hidden_field :commentable_type, value: "Company"
+			.row-fluid
+				.span4
+					- if signed_in?
+						= f.submit "Share Advice", :class => "sign-up-button", :id => "save-share"
+					- else 
 						%br
-						%br
-						%h5 Type of Advice:
-						= f.collection_select :category_id, Category.order(:name).where("category = ?", "Review"), :id, :name, {}, :id => "search2", include_blank: true
-						%br
-						%br
-						%h5 Your Advice:
-						= f.text_area :body, :placeholder => "By anonymously sharing your advice, you're helping someone make better career decisions - getting them closer to their dreams. Thank you!"
-						= f.text_field :title, placeholder: "I know this because ..."
-						= f.hidden_field :commentable_type, value: "Company"
-						%br
-						.row-fluid
-							.span4
-								- if signed_in?
-									= f.submit "Share Advice", :class => "sign-up-button", :id => "save-share"
-								- else 
-									%br
-									= link_to "Share Advice", '#', :class => "sign-up-button", :id => "share-advice", :remote => true
-									= f.submit "Share Advice", :class => "sign-up-button hidden", :id => "save-share"
+						= link_to "Share Advice", '#', :class => "sign-up-button", :id => "share-advice", :remote => true
+						= f.submit "Share Advice", :class => "sign-up-button hidden", :id => "save-share"
 
 -unless signed_in?
 	.sign-item
@@ -54,21 +43,3 @@
 						= f.password_field :password_confirmation, :placeholder => "Password Confirmation"
 					%div= f.submit "Join", :class => "sign-up-button", :id => "join-button"
 				=link_to "Already have an account? Sign in", new_user_session_path
-
-			
-
-/	
-/	
-/	= f.input :commentable_id, as: :hidden, value: 
-/	f.autocomplete :commentable_id
-/	= simple_form_for @new_comment do |f|
-/	
-/	= f.input :body, input_html: {rows: '2'}, label: false, :placeholder => "Make a note about this application"
-/	= f.input :title, label: false, placeholder: "I know this because ..."
-/	= f.input :commentable_type, as: :hidden, value: "Company"
-/	= f.input :subject, collection: ["Interview Review", "Salary Review", "Company Review"]
-
-/	= f.button :submit, "Add Comment", class: 'btn btn-primary'
-/			= f.input :commentable_id, url: autocomplete_company_name_comments_path, as: :autocomplete, label: false, placeholder: "Type name of Company", 
-			
-/			= f.autocomplete_field :commentable_id, autocomplete_company_name_comments_path, :element_id => "#id", :value => "#id"
