@@ -1,10 +1,5 @@
-.pad-top
-.container.footing
-	.row-fluid
-		.span12
-			%ul(class="inline")
-				%li= link_to 'About Us', about_path 
-				%li(class="pull-right")
-					Best of luck this
-					= Time.now.localtime.strftime("%A")
-					!
+.footer
+	%ul.inline-list
+		%li=link_to 'About', about_path
+		%li=link_to 'New Stuff', updates_path 
+		%li=link_to 'Sign In', new_user_session_path

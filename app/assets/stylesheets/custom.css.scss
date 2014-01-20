@@ -42,6 +42,7 @@ body {
 	font-family: 'Oxygen', sans-serif !important;
 	font-size:15px;
 	height:100%;
+
 }
 
 h2{
@@ -96,7 +97,7 @@ html {
 	font-weight:700;
 }
 
-.header{
+.navbar{
 //	background-color:$dempoints-blue;
 	padding:15px 0px 0px 30px;
 	font-size:18px !important;
@@ -150,10 +151,19 @@ textarea {
 	padding-top:90px;
 }
 .sign-in-area{
-	text-align:center;
-	padding:20px;
+	color:$dark-grey;
+	border-radius:4px;
+	text-align:left;
+	padding:30px 20px;
 	background-color:$background-grey;
 	border:1px solid $background-grey;
+	h5{
+		color:#3a3a3a;
+	}
+	h6{
+		font-size:13px;
+		color:$dark-grey;
+	}
 }
 
 
@@ -168,4 +178,13 @@ textarea {
 
 .button{
 	margin-bottom:-40px;
+}
+
+.footer{
+	padding-top:80px;
+}
+
+.copywrite{
+	line-height:30px;
+	color:$dark-grey;
 }
