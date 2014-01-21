@@ -36,7 +36,12 @@
 
 		<% else %>
 			<div class="row">
-				<%= yield %>	
+				<%= yield %>
+				<div class="row">
+					<div class="large-11 large-offset-1 columns">
+						<%= render 'layouts/footer'	%>
+					</div>
+				</div>
 			</div>
 		<% end %>
   
