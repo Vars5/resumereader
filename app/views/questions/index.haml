@@ -1,6 +1,5 @@
 .large-8.columns
-	%h2.bold Open Questions
-	%br
+	%h4.bold Open Questions
 	%h5 Here you can ask questions about the companies you want to know about anonymously
 	%br
 	%br
@@ -11,8 +10,9 @@
 			.small-2.columns
 				= link_to image_tag(question.load_company.logo.url), question.load_company		
 			.small-10.columns
-				.small-text Question added about
-				= question.company_name
+				.small-text
+					Question added about
+					= question.company_name
 				%br
 				%b= link_to question.question_content, question
 				-if false

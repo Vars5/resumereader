@@ -1,6 +1,6 @@
 = image_tag(@question.load_company.logo.url)
-%h3= @question.question_content
-%p
+%br
+%h4.bold= @question.question_content
 
 - if signed_in?
 
@@ -20,18 +20,18 @@
 		=link_to "signup", new_user_registration_path
 		to see the answers
 	
-.row-fluid
-	.span7
-		- if signed_in?
-			%h3
-				Your answers will really help other students!
-				%br
-				Thanks for sharing!
-			.comment-form
-				=form_for @new_comment, :url => {:controller => 'comments', :action => 'create'} do |f|
-					= f.text_area :body, :placeholder => "By anonymously sharing your advice, you're helping someone make better career decisions - getting them closer to their dreams. Thank you!"
-					= f.text_field :title, placeholder: "I know this because ..."
-					= f.hidden_field :commentable_id, value: @question.id
-					= f.hidden_field :commentable_type, value: @new_comment.commentable_type
-					= f.hidden_field :category_id, value: @question.category_id	
-					= f.submit
+
+- if signed_in?
+	%h6
+		Your answers will really help other students!
+		%br
+		Thanks for sharing!
+	%br
+	.comment-form
+		=form_for @new_comment, :url => {:controller => 'comments', :action => 'create'} do |f|
+			= f.text_area :body, :placeholder => "By anonymously sharing your advice, you're helping someone make better career decisions - getting them closer to their dreams. Thank you!"
+			= f.text_field :title, placeholder: "I know this because ..."
+			= f.hidden_field :commentable_id, value: @question.id
+			= f.hidden_field :commentable_type, value: @new_comment.commentable_type
+			= f.hidden_field :category_id, value: @question.category_id	
+			= f.submit "Add Question", :class => "button success radius small"
