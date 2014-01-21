@@ -8,7 +8,7 @@ Resumereader::Application.routes.draw do
   match '/about', :to => 'staticpages#about'
   match'/invite', to: 'staticpages#invite'
   match '/invitable', to: 'staticpages#invitable'
-  match '/updates', to: 'staticpages#updates'
+  #match '/updates', to: 'staticpages#updates'
   
   #api (test)
   resources :api
