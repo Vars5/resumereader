@@ -1,6 +1,0 @@
-if ( "<%=@note.kind%>" == "comment") {
-	$('#comment-area').append("<%= j render ('notes/comment')%>");
-} 
-else if ("<%=@note.kind%>"=="hr") {
-	$('#hr-area-<%=@note.app_list_id%>').append("<%= @note.info %><br />");
-}
