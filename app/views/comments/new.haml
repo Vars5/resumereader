@@ -22,11 +22,11 @@
 			.row-fluid
 				.span4
 					- if signed_in?
-						= f.submit "Share Advice", :class => "sign-up-button", :id => "save-share"
+						= f.submit "Share Advice", :class => "button success radius small", :id => "save-share"
 					- else 
 						%br
-						= link_to "Share Advice", '#', :class => "sign-up-button", :id => "share-advice", :remote => true
-						= f.submit "Share Advice", :class => "sign-up-button hidden", :id => "save-share"
+						= link_to "Share Advice", '#', :class => "button success radius small", :id => "share-advice", :remote => true
+						= f.submit "Share Advice", :class => "button success radius small", :id => "save-share"
 
 -unless signed_in?
 	.sign-item
