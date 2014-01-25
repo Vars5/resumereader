@@ -11,7 +11,5 @@ application.js: application-77343f4062e9ac43d534a11d3c3057f0.js
 application/index.js: application-77343f4062e9ac43d534a11d3c3057f0.js
 application.css: application-506bd2741a961cfce5b0e4e253edf246.css
 application/index.css: application-506bd2741a961cfce5b0e4e253edf246.css
-modernizr.js: modernizr-234c39bea049c6ea8a74d1a7c933822a.js
-modernizr/index.js: modernizr-234c39bea049c6ea8a74d1a7c933822a.js
 jquery.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
 jquery/index.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
