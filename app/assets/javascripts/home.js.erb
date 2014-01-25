@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	//GET BROWSER WINDOW HEIGHT
 	var currHeight = $(window).height();
-	var currWidth = $('#content').width;
+	//var currWidth = $('#content').width;
 	//SET HEIGHT OF SIDEBAR AND CONTENT ELEMENTS
 	$('#sidebar, #content').css('height', currHeight);
 
@@ -20,17 +20,11 @@ $(document).ready(function() {
 		$('#sidebar').animate({
 			width:80
 		})
-		$('#content').animate({
-			marginLeft:80
-		})
 	});
 	
 	$('#navbar-collapsed').click(function(){
 		$('#sidebar').animate({
 			width:220
-		})
-		$('#content').animate({
-			marginLeft:240
 		})
 	})
 
