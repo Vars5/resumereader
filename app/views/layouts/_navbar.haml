@@ -1,10 +1,24 @@
-.logo
-	= link_to image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/menulogo.png'), root_path, :class => "menulogo"		
+-#.logo
+	-# link_to image_tag('http://s3-ap-southeast-2.amazonaws.com/static-images-resquery/menulogo.png'), root_path, :class => "menulogo"		
 
 .navbar
-	= link_to "Companies", companies_path
-	%br
-	= link_to "Q&A", questions_path
+	
+	.nav-item
+		= link_to companies_path do
+			=image_tag('star.png', height: '30', width: '30')
+			&nbsp
+			%span(class="navbar-text")Home
+	
+	.nav-item
+		= link_to companies_path do
+			=image_tag('companies.png', height: '30', width: '30')
+			&nbsp
+			%span(class="navbar-text")Companies
+	
+	.nav-item
+		=image_tag('qa.png', height: '30', width: '30')
+		&nbsp
+		= link_to "Q&A", questions_path, :class => 'navbar-text'
 
 	.hidden
 		%li=link_to "Add Question", "#", :class => "btn btn-info", :id => "question-button", :remote => true

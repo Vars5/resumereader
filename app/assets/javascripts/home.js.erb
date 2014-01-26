@@ -18,11 +18,12 @@ $(document).ready(function() {
 
 	$('#navbar-control').click(function(){
 		$('#sidebar').animate({
-			width:80
+			width:90
 		})
 		$('#content').animate({
-			marginLeft:80
+			marginLeft:90
 		})
+		$('.navbar-text').hide()
 	});
 	
 	$('#navbar-collapsed').click(function(){
@@ -32,6 +33,7 @@ $(document).ready(function() {
 		$('#content').animate({
 			marginLeft:220
 		})
+		$('.navbar-text').delay(250).show(150)
 	})
 
 

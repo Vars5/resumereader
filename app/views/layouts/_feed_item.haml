@@ -1,5 +1,18 @@
 -@comments.each do |comment|
 	- comment_company = comment.get_company_for_comment
+	
+	-if comment.id == 40
+		.row 
+			.large-12.columns
+				.center-alignment
+					%br
+					%br
+					%h3.bold How a Colombian internet address became the online home for startups
+					%br
+					%p In less than four years, more than 1.6 million individuals and businesses, mostly start-ups, have created a website with an address ending with .co. That is a staggering number for a new top-level domain (the last bit of a web address). Contrast that with .biz, which was introduced in 2000 and by April last year had chalked up just 2.4 million registrations.
+				=image_tag('https://a1.muscache.com/locations/uploads/city/hero/31/0_5250_174_2904_hero__DSC0819.jpg')
+		%hr
+	
 	.row
 		.small-2.columns
 			= link_to image_tag(comment_company.logo.url(:thumb)), comment_company			
