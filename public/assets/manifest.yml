@@ -13,11 +13,13 @@ qa.png: qa-f238400d81272575beba62713c0ca4b4.png
 qa/index.png: qa-f238400d81272575beba62713c0ca4b4.png
 star.png: star-2c803980b27a296e1f547443b1107a60.png
 star/index.png: star-2c803980b27a296e1f547443b1107a60.png
+user.png: user-a0f9f6723f0e4d3763dec8eafe98562a.png
+user/index.png: user-a0f9f6723f0e4d3763dec8eafe98562a.png
 whitelogo.png: whitelogo-bcebb729bc912ce31ff24307a05938fe.png
 whitelogo/index.png: whitelogo-bcebb729bc912ce31ff24307a05938fe.png
-application.js: application-f73f2a5330ddffc599679a01736fbe90.js
-application/index.js: application-f73f2a5330ddffc599679a01736fbe90.js
-application.css: application-1fefd3e0d1c6887c2ea391fe3a510d7d.css
-application/index.css: application-1fefd3e0d1c6887c2ea391fe3a510d7d.css
+application.js: application-4fbb15f1c5a97ae61e163f91ca3d25a6.js
+application/index.js: application-4fbb15f1c5a97ae61e163f91ca3d25a6.js
+application.css: application-6549448d7981a2b95e38f8e660c92664.css
+application/index.css: application-6549448d7981a2b95e38f8e660c92664.css
 jquery.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
 jquery/index.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map

@@ -4,7 +4,7 @@ $(document).ready(function() {
 	var currHeight = $(window).height();
 	//var currWidth = $('#content').width;
 	//SET HEIGHT OF SIDEBAR AND CONTENT ELEMENTS
-	$('#sidebar, #content').css('height', currHeight);
+	$('#sidebar, #content, #insidebar').css('height', currHeight);
 
 	//ON RESIZE OF WINDOW
 	$(window).resize(function() {
@@ -12,7 +12,7 @@ $(document).ready(function() {
 		//GET NEW HEIGHT
 		var currHeight = $(window).height();	
 		//RESIZE BOTH ELEMENTS TO NEW HEIGHT
-		$('#sidebar, #content').css('height', currHeight);
+		$('#sidebar, #content, #insidebar').css('height', currHeight);
 
 	});
 
@@ -34,6 +34,15 @@ $(document).ready(function() {
 			marginLeft:220
 		})
 		$('.navbar-text').delay(250).show(150)
+	})
+	
+	$('#user-control').click(function(){
+		 $('#insidebar').animate({
+			width:0
+		})
+		$('#content').animate({
+			marginLeft:parseInt($('#content').css('marginLeft'))-220
+		})
 	})
 
 

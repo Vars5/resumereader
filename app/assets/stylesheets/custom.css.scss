@@ -83,13 +83,23 @@ html {
 	overflow-y: auto;
 }
 
+#insidebar{
+	background-color:$light-grey;
+	float: left;
+	left: 220*2px;
+	margin-left: -220px;
+	position: relative;
+	width: 220px;
+	overflow-y: auto;
+}
+
 #contentWrapper { 
 	float: left;
 	width: 100%;
 }
 
 #content {
-	margin-left:220px;
+	margin-left:220*2px;
 	padding-left:20px;
 	overflow-y: auto;
 }
@@ -187,3 +197,18 @@ textarea {
 	}
 }
 
+.discussion-area{
+	border:1px solid $light-grey;
+	padding:15px;
+	line-height:20px;
+	font-size:13px !important;
+}
+
+.original{
+
+}
+
+.discussion-subarea{
+	border-right:2px solid red;
+	height:100%;
+}

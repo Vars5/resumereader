@@ -23,15 +23,20 @@
 		
 		
 		<header id="sidebar"> 
-<%= render 'layouts/navbar'%>
-			</header>
-			<article id="contentWrapper"> 
-					<section id="content"> 
-						<div class="row pad-top">
-							<%= yield %>
-						</div>
-					</section> 
-				</article>
+			<%= render 'layouts/navbar'%>
+		</header>
+		
+		<section id="insidebar">
+			hello world
+		</section>
+		
+		<article id="contentWrapper"> 
+			<section id="content"> 
+				<div class="row pad-top">
+					<%= yield %>
+				</div>
+			</section> 
+		</article>
 
 		<% else %>
 			<div class="row">
