@@ -8,8 +8,7 @@ class DiscussionsController < ApplicationController
     @discussion = Discussion.new(params[:discussion])
     @discussion.user_id = current_user.id
     if @discussion.save
-      @comment = Comment.where("id = ?", @discussion.comment_id)
-      redirect_to root_path #change to @comment Fix
+      redirect_to comment_path(@discussion.comment_id)
     else
       #error
     end

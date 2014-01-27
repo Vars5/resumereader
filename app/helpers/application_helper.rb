@@ -34,6 +34,10 @@ module ApplicationHelper
     @devise_mapping ||= Devise.mappings[:user]
   end
 
+  def username(user_id)
+    User.find(user_id).username
+  end
+
 
 
 end

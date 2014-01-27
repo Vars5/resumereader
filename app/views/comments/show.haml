@@ -1,10 +1,27 @@
 %b Company:
 =@comment.get_company_for_comment.name
 %p
-PLUS LOGO
+- @company = Company.find(@comment.commentable_id)
+
+= link_to image_tag(@company.logo.url(:thumb)), @company
 
 %p	
 - if signed_in?
 	=@comment.body
+	
+	%br
+	%br
+	%b Discussions: Post Below
+	- @discussions.each do |f|
+		%br
+		= username(f.user_id)  #Note helper for username
+		= f.content
+
+	%br
+	= form_for @discussion do |f|
+		=f.text_field :content
+		=f.hidden_field :comment_id, value: params[:id]
+		=f.submit
+
 -else
 	=truncate((sanitize(@comment.body)), length: 144)

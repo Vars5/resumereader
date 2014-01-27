@@ -36,7 +36,7 @@ Resumereader::Application.routes.draw do
   
   resources :follows, only: [:create, :destroy]
   
-  resources :comments, :only => [:create, :destroy, :index, :new]
+  resources :comments
   
   resources :discussions
   
