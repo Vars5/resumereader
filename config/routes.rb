@@ -36,7 +36,7 @@ Resumereader::Application.routes.draw do
   
   resources :follows, only: [:create, :destroy]
   
-  resources :comments
+  resources :comments 
   
   resources :discussions
   
@@ -44,6 +44,8 @@ Resumereader::Application.routes.draw do
 
   put '/comments/:id/:action' => 'comments#upvote'
   put '/comments/:id/:action' => 'comments#downvote'  
+
+  
 
 =begin  
   resources :comments do 
@@ -56,6 +58,8 @@ Resumereader::Application.routes.draw do
   
   #Devise gem for users and their accounts
   devise_for :users, :controllers => {registrations: 'registrations'}
+  resources :users, only: [:show]
+
 
   #error pages
   #match '(errors)/:status', to: 'errors#show', constraints: {status: /\d{3}/} # via: :all

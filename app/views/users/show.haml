@@ -1,0 +1,32 @@
+-if signed_in?
+	= @user.username
+
+	%br
+	%br
+	%br
+	
+	=@user.username
+	has given 
+	=Comment.where("user_id =?", @user.id).count #I'll try and fix this code - I realise db calls are terrible
+	pieces of advice!
+	
+	%br
+	%br
+	=@user.username
+	has been thanked  
+	=@user.votes.up.count
+	times
+	
+	%br
+	%br
+	%br
+	
+	%b"Advice given"
+	- @comments.each do |f|
+		%li=link_to f.title, f
+	
+	%br	
+	%br
+	%b "Discussions"
+	- @discussions.each do |f|
+		%li=f.content

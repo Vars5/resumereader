@@ -154,10 +154,10 @@ Devise.setup do |config|
   # to give user feedback and not to assert the e-mail validity.
   # config.email_regexp = /\A[^@]+@[^@]+\z/
   
-  config.email_regexp = /^([\w\.%\+\-]+)@unsw.edu.au$/i
-  config.email_regexp = /^([\w\.%\+\-]+)@zmail.unsw.edu.au$/i
-  config.email_regexp = /^([\w\.%\+\-]+)@student.unsw.edu.au$/i
-  config.email_regexp = /^([\w\.%\+\-]+)@unswalumni.com$/i
+  config.email_regexp = /^([z]\d{7})@zmail.unsw.edu.au$/i
+  #config.email_regexp = /^([\w\.%\+\-]+)@unsw.edu.au$/i
+  #config.email_regexp = /^([\w\.%\+\-]+)@student.unsw.edu.au$/i
+  #config.email_regexp = /^([\w\.%\+\-]+)@unswalumni.com$/i
 
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this

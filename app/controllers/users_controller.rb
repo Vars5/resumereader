@@ -1,18 +1,11 @@
 class UsersController < ApplicationController
 
+#before_filter :authenticate_user!
 
-=begin
-  def create
-    @user = User.new(params[:user])
-    if @user.save
-      UserMailer.signup_confirmation(@user).deliver
-      redirect_to root_path
-    else
-      render 'new'
-    end
+  def show
+    @user = User.find(params[:id])
+    @comments = Comment.where("user_id = ? ", params[:id])
+    @discussions = Discussion.where("user_id = ? ", params[:id])
   end
-=end
-  
-  
-  
+    
 end

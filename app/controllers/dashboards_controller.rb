@@ -26,5 +26,9 @@ class DashboardsController < ApplicationController
 
   def upvoted_comments    
   end
+  
+  def users
+    @users = User.find(params[:id])
+  end
 
 end
