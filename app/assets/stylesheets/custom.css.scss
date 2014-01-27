@@ -89,7 +89,7 @@ html {
 	left: 220*2px;
 	margin-left: -220px;
 	position: relative;
-	width: 220px;
+	width: 0px;
 	overflow-y: auto;
 }
 
@@ -99,7 +99,7 @@ html {
 }
 
 #content {
-	margin-left:220*2px;
+	margin-left:220px;
 	padding-left:20px;
 	overflow-y: auto;
 }
@@ -135,7 +135,7 @@ html {
 
 
 textarea {
-    height: 300px;
+    height: 150px;
 }
 
 
@@ -211,4 +211,11 @@ textarea {
 .discussion-subarea{
 	border-right:2px solid red;
 	height:100%;
+}
+.post-call{
+	padding:20px 0px 5px;
+}
+
+.discussions{
+	padding-bottom:40px;
 }

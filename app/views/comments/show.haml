@@ -12,20 +12,19 @@
 		%br
 		=simple_format(@comment.body)
 
-
-	- @discussions.each do |discussion|
-		.discussion-area
-			.feed-subtext
-				%b= username(discussion.user_id)  #Note helper for username
-				\ - posted
-				=discussion.created_at.strftime('%Y-%b-%d,  %R')
-			%br
-			= simple_format(discussion.content)
-
-	%br
-	%b Discussions: Post Below
-	%br
+	.post-call		
+		%b Post a reply
 	= form_for @discussion do |f|
-		=f.text_field :content
+		=f.text_area :content
 		=f.hidden_field :comment_id, value: params[:id]
 		=f.submit
+
+	.discussions	
+		- @discussions.each do |discussion|
+			.discussion-area
+				.feed-subtext
+					%b= username(discussion.user_id)  #Note helper for username
+					\ - posted
+					=discussion.created_at.strftime('%Y-%b-%d,  %R')
+				%br
+				= simple_format(discussion.content)
