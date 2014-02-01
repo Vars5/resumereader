@@ -1,4 +1,4 @@
-.container
+.large-9.large-offset-1.columns
 	%script
 		$(document).ready(function() { $("#search").select2({  width: 'resolve', placeholder: "Sort by industry" });});
 
@@ -7,16 +7,16 @@
 			= form_tag companies_path, :method => 'get' do
 				= select_tag :industry_id, options_from_collection_for_select(Industry.all, "id", "industry"), include_blank: true, :onchange => "this.form.submit()", :id => "search"
 
-- @company.each do |company|
-	.item
-		.info-box-light-orange
-			.pad-top-tiny
-			- if !company.logo.url.blank?
-				= image_tag(company.logo.url(:thumb))
-				%h5= link_to company.name, company
-			=company.industry
-			%br
-			=link_to url_with_protocol(company.website) do
-				.icon-fix
-					%i(class="icon-briefcase")
-				Go to company website
+	- @company.each do |company|
+		.item
+			.info-box-light-orange
+				.pad-top-tiny
+				- if !company.logo.url.blank?
+					= image_tag(company.logo.url(:thumb))
+					%h5= link_to company.name, company
+				=company.industry
+				%br
+				=link_to url_with_protocol(company.website) do
+					.icon-fix
+						%i(class="icon-briefcase")
+					Go to company website
