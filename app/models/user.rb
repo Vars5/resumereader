@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
   end
 
   def displayname
-    if self.username == blank?
+    if self.username == ""
       "Me"
     else
       self.username
