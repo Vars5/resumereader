@@ -48,7 +48,7 @@ class User < ActiveRecord::Base
   end
 
   def displayname
-    if self.username == ""
+    if self.username == nil
       "Me"
     else
       self.username
