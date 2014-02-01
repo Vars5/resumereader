@@ -2,6 +2,7 @@ $(document).ready(function() {
 
 	//GET BROWSER WINDOW HEIGHT
 	var currHeight = $(window).height();
+	var clickedUser = false;
 	//var currWidth = $('#content').width;
 	//SET HEIGHT OF SIDEBAR AND CONTENT ELEMENTS
 	$('#sidebar, #content, #insidebar').css('height', currHeight);
@@ -25,7 +26,7 @@ $(document).ready(function() {
 		})
 		$('.navbar-text').hide()
 	});
-	
+
 	$('#navbar-collapsed').click(function(){
 		$('#sidebar').animate({
 			width:220
@@ -35,14 +36,25 @@ $(document).ready(function() {
 		})
 		$('.navbar-text').delay(250).show(150)
 	})
-	
+
 	$('#user-control').click(function(){
-		 $('#insidebar').animate({
-			width:220
-		})
-		$('#content').animate({
-			marginLeft:parseInt($('#content').css('marginLeft'))+220
-		})
+		if(clickedUser==false){ 
+			$('#insidebar').animate({
+				width:220
+			})
+			$('#content').animate({
+				marginLeft:parseInt($('#content').css('marginLeft'))+220
+			})
+			clickedUser=true;
+		}else{
+			$('#insidebar').animate({
+				width:0
+			})
+			$('#content').animate({
+				marginLeft:parseInt($('#content').css('marginLeft'))-220
+			})
+			clickedUser=false;
+		}
 	})
 
 
