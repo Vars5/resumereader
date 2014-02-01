@@ -1,6 +1,6 @@
 -@comments.each do |comment|
 	- comment_company = comment.get_company_for_comment
-	
+	- discussion_number = comment.discussions.count
 	.row
 		.small-2.columns
 			= link_to image_tag(comment_company.logo.url(:thumb)), comment_company			
@@ -10,7 +10,7 @@
 			=link_to comment_company.name, companies_path(comment_company)
 				
 			%br
-			= link_to comment.body, comment
+			= comment.body
 			.feed-subtext
 				= link_to raw("Thank author &nbsp <i class=\"icon-thumbs-up\"></i> "), {:controller =>"comments", :action => "upvote", :id => comment.id}, method: :put, :class => "btn btn-small", :remote => true
 				- thanks = comment.upvotes.size 
@@ -20,6 +20,12 @@
 					have given thanks
 				
 				%br	
-				(There are 5 comments)
+				-if discussion_number == 0
+					%b=link_to "Comment", comment
+				-elsif discussion_number == 1
+					%b=link_to "#{comment.discussions.count} comment", comment
+				-else 	
+					%b=link_to "#{comment.discussions.count} comments", comment
 	%hr
 
+ 

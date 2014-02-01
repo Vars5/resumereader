@@ -6,6 +6,7 @@ $orange: #F18419;
 $dark-orange:#DB7817;
 
 $dempoints-blue:#215B7F;
+$light-blue:#6799B2;
 
 /* greys */
 $light-grey: #F2F2F2;
@@ -218,4 +219,38 @@ textarea {
 
 .discussions{
 	padding-bottom:40px;
+}
+
+.insidebar{
+	padding:20px 0px 0px 20px;
+}
+
+.inside-text{
+	padding:5px 0px 5px 20px;
+	font-size:11px;
+	font-weight:700;
+	background-color:$dark-grey;
+	color:white;
+}
+
+.insidebar-item{
+	
+	font-size:18px;
+	padding:13px 0px;
+}
+
+.nav-collapse{
+	position:fixed;
+	bottom:0px;
+	width:220px;
+	height:60px;
+	padding:15px 15px 50px 30px;
+}
+
+.nav-collapse:hover{
+	background-color:$light-blue;
+}
+
+#navbar-collapsed{
+	display:none;
 }

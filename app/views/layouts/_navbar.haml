@@ -16,9 +16,10 @@
 			%span(class="navbar-text")Companies
 	
 	.nav-item
-		=image_tag('qa.png', height: '30', width: '30')
-		&nbsp
-		= link_to "Q&A", questions_path, :class => 'navbar-text'
+		= link_to questions_path do
+			=image_tag('qa.png', height: '30', width: '30')
+			&nbsp
+			%span(class="navbar-text")Questions	
 
 	.nav-item#user-control
 		=link_to('#', :remote => true)  do 
@@ -27,9 +28,9 @@
 			%span(class="navbar-text")= current_user.username
 			-# link_to current_user.username, edit_user_registration_path, :class => 'navbar-text'
 			-# link_to current_user.username, '#', :class => 'navbar-text user-closed', :remote => true, :id => "user-control"
+
+.nav-collapse.text-right
+	= link_to image_tag('arrow-left.png', height: '30', width: '30'), '#', :id => "navbar-expand", :remote => true
 	%br
-	= link_to "Log Out", destroy_user_session_path,:method =>"DELETE"
-	%br
-	= link_to "Collapse", '#', :id => "navbar-control", :remote => true
-	%br
-	= link_to "Expand", '#', :id => "navbar-collapsed", :remote => true
+	= link_to image_tag('arrow-right.png', height: '30', width: '30'), '#', :id => "navbar-collapsed", :remote => true
+
