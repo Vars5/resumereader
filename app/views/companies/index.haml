@@ -6,17 +6,11 @@
 		.span6
 			= form_tag companies_path, :method => 'get' do
 				= select_tag :industry_id, options_from_collection_for_select(Industry.all, "id", "industry"), include_blank: true, :onchange => "this.form.submit()", :id => "search"
-
+	
 	- @company.each do |company|
 		.company-box
-			.info-box-light-orange
-				.pad-top-tiny
-				- if !company.logo.url.blank?
-					= image_tag(company.logo.url(:thumb))
-					%h5= link_to company.name, company
-				=company.industry
-				%br
-				=link_to url_with_protocol(company.website) do
-					.icon-fix
-						%i(class="icon-briefcase")
-					Go to company website
+			=link_to (company) do
+				= image_tag(company.logo.url(:thumb))
+				= company.name
+				= company.industry
+			%hr
