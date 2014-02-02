@@ -18,6 +18,17 @@ $(document).ready(function() {
 
 	});
 
+	if ( $(window).width() < 641) {     
+		$('#sidebar').animate({
+			width:0
+		})
+		$('#content').animate({
+			marginLeft:parseInt($('#content').css('marginLeft'))-220
+		})
+	}
+
+
+
 	$('#navbar-expand').click(function(){
 		$('#sidebar').animate({
 			width:90
