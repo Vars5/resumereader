@@ -14,11 +14,13 @@
 
 	.post-call		
 		%b Post a reply
-	= form_for @discussion do |f|
-		=f.text_area :content
-		=f.hidden_field :comment_id, value: params[:id]
-		=f.submit
-
+	.discussion-form
+		= form_for @discussion do |f|
+			=f.text_area :content
+			=f.hidden_field :comment_id, value: params[:id]
+			=f.submit "Save", :class => "button tiny success radius"
+	%br
+	%br
 	.discussions	
 		- @discussions.each do |discussion|
 			.discussion-area

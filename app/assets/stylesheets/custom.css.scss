@@ -202,11 +202,19 @@ textarea {
 	border:1px solid $light-grey;
 	padding:15px;
 	line-height:20px;
-	font-size:13px !important;
+	p{font-size:13px !important;}
+
+
+}
+
+.discussion-form{
+	textarea{
+		height:100px !important;
+	}
 }
 
 .original{
-
+	background-color:$light-grey
 }
 
 .discussion-subarea{

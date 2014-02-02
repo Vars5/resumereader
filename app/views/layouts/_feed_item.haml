@@ -12,14 +12,13 @@
 			%br
 			= comment.body
 			.feed-subtext
-				= link_to raw("Thank author &nbsp <i class=\"icon-thumbs-up\"></i> "), {:controller =>"comments", :action => "upvote", :id => comment.id}, method: :put, :class => "btn btn-small", :remote => true
-				- thanks = comment.upvotes.size 
-				- unless thanks == 0 
-					%span[comment]
-						=thanks
-					have given thanks
+				-#	= link_to raw("Thank author &nbsp <i class=\"icon-thumbs-up\"></i> "), {:controller =>"comments", :action => "upvote", :id => comment.id}, method: :put, :class => "btn btn-small", :remote => true
+				-# thanks = comment.upvotes.size 
+				-# unless thanks == 0 
+				-#	%span[comment]
+				-#		=thanks
+				-# => 	have given thanks
 				
-				%br	
 				-if discussion_number == 0
 					%b=link_to "Comment", comment
 				-elsif discussion_number == 1
