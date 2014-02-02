@@ -8,7 +8,7 @@
 				= select_tag :industry_id, options_from_collection_for_select(Industry.all, "id", "industry"), include_blank: true, :onchange => "this.form.submit()", :id => "search"
 
 	- @company.each do |company|
-		.item
+		.company-box
 			.info-box-light-orange
 				.pad-top-tiny
 				- if !company.logo.url.blank?

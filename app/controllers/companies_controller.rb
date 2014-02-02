@@ -21,7 +21,7 @@ class CompaniesController < ApplicationController
   
   def show
     @company = Company.find_by_id(params[:id])
-    @company_comments = Comment.where("commentable_type = ? AND commentable_id = ?", "Company", @company.id)
+    @comments = Comment.where("commentable_type = ? AND commentable_id = ?", "Company", @company.id)
     @new_comment = Comment.build_from(@company, current_user, "", "", "")
   end
   

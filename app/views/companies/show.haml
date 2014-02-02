@@ -5,3 +5,16 @@
 	\ - 
 	= link_to "Go to Company Website", url_with_protocol(@company.website)
 
+	%hr
+	.row.negative-padding
+		.small-4.columns
+			%h6
+				Advice for 
+				= @company.name
+		.small-8.columns
+			.text-right
+				= link_to "Ask Question", '#', :class =>"button radius tiny alert"
+				= link_to "Add Advice", new_comment_path, :class => "button radius tiny"
+	%hr	
+	=render 'layouts/feed_item'
+
