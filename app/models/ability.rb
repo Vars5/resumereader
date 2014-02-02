@@ -5,7 +5,7 @@ class Ability
     if current_user.role == "admin"
       can :manage, :all
     else 
-      can :manage, Company
+      #can :manage, Company
       #can :create, School
       #cannot :index, Problem
       
