@@ -3,7 +3,7 @@
 	$(document).ready(function() { $("#search2").select2({  width: 'resolve', placeholder: "Sort by industry" });});
 
 
-.large-8.columns
+.large-9.large-offset-1.columns
 	%h3.bold Share Advice
 	.large-text	Your advice will really help other students! Thanks for sharing!
 
@@ -16,8 +16,9 @@
 			= f.collection_select :category_id, Category.order(:name).where("category = ?", "Review"), :id, :name, {}, :id => "search2", include_blank: true
 
 			%h5 Your Advice:
+			= f.text_field :title, placeholder: "Advice headline"
 			= f.text_area :body, :placeholder => "By anonymously sharing your advice, you're helping someone make better career decisions - getting them closer to their dreams. Thank you!"
-			= f.text_field :title, placeholder: "I know this because ..."
+
 			= f.hidden_field :commentable_type, value: "Company"
 			.row-fluid
 				.span4
@@ -27,19 +28,3 @@
 						%br
 						= link_to "Share Advice", '#', :class => "button success radius small", :id => "share-advice", :remote => true
 						= f.submit "Share Advice", :class => "button success radius small", :id => "save-share"
-
--unless signed_in?
-	.sign-item
-		#dialog
-			.sign-in-area
-				%h4 Create an account
-				%br
-				= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:id => "sign_up_user"},:format => :html, :remote => true) do |f|
-					= f.text_field :first_name, :placeholder => " First Name", :class => "focus_"
-					= f.email_field :email, :placeholder => " Email"
-					= f.password_field :password, :placeholder => " Password" 	
-					= f.hidden_field :role, :value => "student"
-					- if false
-						= f.password_field :password_confirmation, :placeholder => "Password Confirmation"
-					%div= f.submit "Join", :class => "sign-up-button", :id => "join-button"
-				=link_to "Already have an account? Sign in", new_user_session_path

@@ -31,8 +31,8 @@
 		%br
 		.comment-form
 			=form_for @new_comment, :url => {:controller => 'comments', :action => 'create'} do |f|
+				= f.text_field :title, placeholder: "Advice headline"
 				= f.text_area :body, :placeholder => "By anonymously sharing your advice, you're helping someone make better career decisions - getting them closer to their dreams. Thank you!"
-				= f.text_field :title, placeholder: "I know this because ..."
 				= f.hidden_field :commentable_id, value: @question.id
 				= f.hidden_field :commentable_type, value: @new_comment.commentable_type
 				= f.hidden_field :category_id, value: @question.category_id	
