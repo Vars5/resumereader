@@ -88,7 +88,7 @@ class CommentsController < ApplicationController
   
   def index
       authorize! :manage, :all
-      @comment = Comment.all
+      @comment = Comment.order("created_at DESC")
   end
   
   def show
