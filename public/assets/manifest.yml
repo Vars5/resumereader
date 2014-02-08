@@ -7,6 +7,8 @@ arrow-left.png: arrow-left-5d3f12ddc33a0cee9c07e6ea08b1dfcb.png
 arrow-left/index.png: arrow-left-5d3f12ddc33a0cee9c07e6ea08b1dfcb.png
 arrow-right.png: arrow-right-ce0c5753290483a11691ee5c1a05409e.png
 arrow-right/index.png: arrow-right-ce0c5753290483a11691ee5c1a05409e.png
+bg1.jpg: bg1-922e3c8e61f582824414379147d4981f.jpg
+bg1/index.jpg: bg1-922e3c8e61f582824414379147d4981f.jpg
 companies.png: companies-a2272639a70f429584c80c49bf1fd0dd.png
 companies/index.png: companies-a2272639a70f429584c80c49bf1fd0dd.png
 error.png: error-e00fd89bb84dfd4fa676037ba10a6164.png
@@ -29,7 +31,7 @@ whitelogo.png: whitelogo-bcebb729bc912ce31ff24307a05938fe.png
 whitelogo/index.png: whitelogo-bcebb729bc912ce31ff24307a05938fe.png
 application.js: application-39a061144a0cf5ac72b7b64d473285f9.js
 application/index.js: application-39a061144a0cf5ac72b7b64d473285f9.js
-application.css: application-bbe35a3b10fa364e44631340e8e599a7.css
-application/index.css: application-bbe35a3b10fa364e44631340e8e599a7.css
+application.css: application-abe2a21cff1b50bb6c1e3995eda886d7.css
+application/index.css: application-abe2a21cff1b50bb6c1e3995eda886d7.css
 jquery.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
 jquery/index.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map

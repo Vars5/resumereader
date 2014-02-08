@@ -268,9 +268,19 @@ textarea {
 }
 
 .test2{
-	background-color:red;
+	padding-top:60px;	
+	background:url('/assets/bg1.jpg');
+	background-repeat: no-repeat;
+	background-size:cover;
+	height:700px;
+	background-position: 50% 80%;
 }
 
 .test-tag{
 	padding:20px 0px 0px 0px;
+}
+
+.test2signup{
+	color:white !important;
+	text-align:center;	
 }
