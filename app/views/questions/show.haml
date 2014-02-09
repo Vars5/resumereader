@@ -1,38 +1,39 @@
-= image_tag(@question.load_company.logo.url)
-%br
-%br
-%h4.bold= @question.question_content
+.large-9.large-offset-1.columns
+	= image_tag(@question.load_company.logo.url)
+	%br
+	%br
+	%h4.bold= @question.question_content
 
-- if signed_in?
+	- if signed_in?
 
 			
--else
+	-else
 	
-	- if @answers.count > 0
-		There are
-		=@answers.count 
-		answers for this question
-	- else
-		Be the first to answer
-		%p 
-		Please 
-		=link_to "sign in", new_user_session_path
-		or 
-		=link_to "signup", new_user_registration_path
-		to see the answers
+		- if @answers.count > 0
+			There are
+			=@answers.count 
+			answers for this question
+		- else
+			Be the first to answer
+			%p 
+			Please 
+			=link_to "sign in", new_user_session_path
+			or 
+			=link_to "signup", new_user_registration_path
+			to see the answers
 	
 
-- if signed_in?
-	%h6
-		Your answers will really help other students!
+	- if signed_in?
+		%h6
+			Your answers will really help other students!
+			%br
+			Thanks for sharing!
 		%br
-		Thanks for sharing!
-	%br
-	.comment-form
-		=form_for @new_comment, :url => {:controller => 'comments', :action => 'create'} do |f|
-			= f.text_area :body, :placeholder => "By anonymously sharing your advice, you're helping someone make better career decisions - getting them closer to their dreams. Thank you!"
-			= f.text_field :title, placeholder: "I know this because ..."
-			= f.hidden_field :commentable_id, value: @question.id
-			= f.hidden_field :commentable_type, value: @new_comment.commentable_type
-			= f.hidden_field :category_id, value: @question.category_id	
-			= f.submit "Add Question", :class => "button success radius small"
+		.comment-form
+			=form_for @new_comment, :url => {:controller => 'comments', :action => 'create'} do |f|
+				= f.text_field :title, placeholder: "Advice headline"
+				= f.text_area :body, :placeholder => "By anonymously sharing your advice, you're helping someone make better career decisions - getting them closer to their dreams. Thank you!"
+				= f.hidden_field :commentable_id, value: @question.id
+				= f.hidden_field :commentable_type, value: @new_comment.commentable_type
+				= f.hidden_field :category_id, value: @question.category_id	
+				= f.submit "Add Question", :class => "button success radius small"

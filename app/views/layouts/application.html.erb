@@ -21,17 +21,46 @@
 		<!-- We'd love your help and suggestions! Email us at team@resquery.com  -->	
 		<% if signed_in? %>
 		
-		
-		<header id="sidebar"> 
-<%= render 'layouts/navbar'%>
+		<div class ="show-for-medium-up">
+			<header id="sidebar"> 
+				<%= render 'layouts/navbar'%>
 			</header>
-			<article id="contentWrapper"> 
-					<section id="content"> 
-						<div class="row pad-top">
-							<%= yield %>
-						</div>
-					</section> 
-				</article>
+		
+			<section id="insidebar">
+				<%= render 'layouts/insidebar'%>
+			</section>
+		</div>
+		
+		<div class ="show-for-small-only">
+			<nav class="top-bar" data-topbar>
+				<ul class="title-area"> 
+					<li class="name"> <h1><%= link_to "DemPoints", root_path%></h1> </li>
+					<li class="toggle-topbar menu-icon"><a href="#"></a></li>
+				</ul> 
+				<section class="top-bar-section">
+				 	<!-- Right Nav Section --> 
+					<ul class="right">
+						 <li><%= link_to "Home", root_path%></li>
+						 <li><%= link_to "Companies", companies_path%></li>
+						 <li><%= link_to "Questions", questions_path%></li>
+						 <li class="has-dropdown"> 
+							<a href="#"><%= current_user.displayname %></a> 
+							<ul class="dropdown">
+								 <li><%= link_to "Account Settings", edit_user_registration_path%></li> 
+								 <li><%= link_to "Log Out", destroy_user_session_path, :method =>"DELETE"%></li> 
+							</ul>
+						</li>
+					</ul>
+				 </section> 
+			</nav>
+		</div>
+		<article id="contentWrapper"> 
+			<section id="content"> 
+				<div class="row pad-top">
+					<%= yield %>
+				</div>
+			</section> 
+		</article>
 
 		<% else %>
 			<div class="row">

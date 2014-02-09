@@ -1,10 +1,10 @@
 .large-9.large-offset-1.columns
 	.row.negative-padding
-		.small-4.columns
-			%h6 Latest bits of advice
 		.small-8.columns
-			.text-right
-				= link_to "Ask Question", '#', :class =>"button radius tiny alert"
+			%h6 Latest bits of advice
+		.small-4.columns
+			.text-right.show-for-medium-up
+				-# link_to "Ask Question", '#', :class =>"button radius tiny alert"
 				= link_to "Add Advice", new_comment_path, :class => "button radius tiny"
 	%hr
 	=render 'layouts/feed_item'

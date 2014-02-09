@@ -47,6 +47,12 @@ class User < ActiveRecord::Base
     Groupmember.where("user_id = ?", self.id)
   end
 
-  
+  def displayname
+    if self.username == nil
+      "Me"
+    else
+      self.username
+    end
+  end
   
 end

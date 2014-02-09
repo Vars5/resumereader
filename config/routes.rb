@@ -4,6 +4,11 @@ Resumereader::Application.routes.draw do
   root :to => 'dashboards#dashboard', :constraints => lambda {|r| r.env["warden"].authenticate? }
   root :to => 'staticpages#home'
   
+  
+  #test homepages - temporary
+  match '/test1', :to => 'staticpages#test1'
+  match '/test2', :to => 'staticpages#test2'
+  
   #Public Pages
   match '/about', :to => 'staticpages#about'
   match'/invite', to: 'staticpages#invite'
@@ -61,5 +66,6 @@ Resumereader::Application.routes.draw do
 
 
 end
+
 
 

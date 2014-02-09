@@ -2,9 +2,11 @@ $(document).ready(function() {
 
 	//GET BROWSER WINDOW HEIGHT
 	var currHeight = $(window).height();
+	var clickedUser = false;
+	var collapsedNav = false;
 	//var currWidth = $('#content').width;
 	//SET HEIGHT OF SIDEBAR AND CONTENT ELEMENTS
-	$('#sidebar, #content').css('height', currHeight);
+	$('#sidebar, #content, #insidebar').css('height', currHeight);
 
 	//ON RESIZE OF WINDOW
 	$(window).resize(function() {
@@ -12,28 +14,85 @@ $(document).ready(function() {
 		//GET NEW HEIGHT
 		var currHeight = $(window).height();	
 		//RESIZE BOTH ELEMENTS TO NEW HEIGHT
-		$('#sidebar, #content').css('height', currHeight);
+		$('#sidebar, #content, #insidebar').css('height', currHeight);
 
 	});
 
-	$('#navbar-control').click(function(){
+	if ( $(window).width() < 641) {     
+		$('#sidebar').animate({
+			width:0
+		})
+		$('#content').animate({
+			marginLeft:parseInt($('#content').css('marginLeft'))-220,
+			paddingLeft:0
+		})
+	}
+
+
+
+	$('#navbar-expand').click(function(){
 		$('#sidebar').animate({
 			width:90
 		})
 		$('#content').animate({
-			marginLeft:90
+			marginLeft:parseInt($('#content').css('marginLeft'))-130
+		})
+		$('#insidebar').animate({
+			marginLeft:parseInt($('#insidebar').css('marginLeft'))-130
 		})
 		$('.navbar-text').hide()
+		$(this).hide()
+		$('#navbar-collapsed').show()
+		$('.nav-collapse').animate({
+			width:parseInt($('.nav-collapse').css('width'))-130
+		})
+		collapsedNav = true;
+		$(this).hide
 	});
-	
+
 	$('#navbar-collapsed').click(function(){
 		$('#sidebar').animate({
 			width:220
 		})
-		$('#content').animate({
-			marginLeft:220
+		if(clickedUser==false){
+			$('#content').animate({	
+				marginLeft:220
+			})
+		} else {
+			$('#content').animate({
+				marginLeft:parseInt($('#content').css('marginLeft'))+130
+			})
+		}
+		$('#insidebar').animate({
+			marginLeft:parseInt($('#insidebar').css('marginLeft'))+130
 		})
 		$('.navbar-text').delay(250).show(150)
+		$(this).hide()
+		$('#navbar-expand').show()
+		$('.nav-collapse').animate({
+			width:parseInt($('.nav-collapse').css('width'))+130
+		})
+	})
+
+	$('#user-control').click(function(){
+		if(clickedUser==false){ 
+			$('#insidebar').animate({
+				width:220
+			})
+			$('#content').animate({
+				marginLeft:parseInt($('#content').css('marginLeft'))+220
+			})
+			clickedUser=true;
+		}else{
+			$('#insidebar').animate({
+				width:0
+			})
+			$('#content').animate({
+				marginLeft:parseInt($('#content').css('marginLeft'))-220
+			})
+			clickedUser=false;
+		}
+
 	})
 
 

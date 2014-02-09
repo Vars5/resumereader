@@ -2,6 +2,13 @@ class StaticpagesController < ApplicationController
   
   caches_page :about
   
+  def test1
+  end
+  
+  def test2
+  end
+  
+  
   def home
     @comments = Comment.find(:all, :order => "id desc", :limit => 15);
   end

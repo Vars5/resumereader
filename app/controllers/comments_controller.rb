@@ -88,13 +88,15 @@ class CommentsController < ApplicationController
   
   def index
       authorize! :manage, :all
-      @comment = Comment.all
+      @comment = Comment.order("created_at DESC")
   end
   
   def show
+
     @comment = Comment.find(params[:id])
+    @company = Company.find(@comment.commentable_id)
     @discussion = Discussion.new
-    @discussions = Discussion.where("comment_id = ?", params[:id])
+    @discussions = Discussion.where("comment_id = ?", params[:id]).order("created_at DESC")
   end
   
   private

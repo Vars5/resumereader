@@ -8,7 +8,8 @@ class Comment < ActiveRecord::Base
 
   has_many :questioncomment
   has_many :questions, through: :questioncomment
-
+  has_many :discussions
+  
   accepts_nested_attributes_for :questioncomment
   
   #Voteable

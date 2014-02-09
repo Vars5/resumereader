@@ -6,6 +6,7 @@ $orange: #F18419;
 $dark-orange:#DB7817;
 
 $dempoints-blue:#215B7F;
+$light-blue:#6799B2;
 
 /* greys */
 $light-grey: #F2F2F2;
@@ -83,6 +84,16 @@ html {
 	overflow-y: auto;
 }
 
+#insidebar{
+	background-color:$light-grey;
+	float: left;
+	left: 220*2px;
+	margin-left: -220px;
+	position: relative;
+	width: 0px;
+	overflow-y: auto;
+}
+
 #contentWrapper { 
 	float: left;
 	width: 100%;
@@ -125,7 +136,7 @@ html {
 
 
 textarea {
-    height: 300px;
+    height: 150px;
 }
 
 
@@ -187,3 +198,79 @@ textarea {
 	}
 }
 
+.discussion-area{
+	border:1px solid $light-grey;
+	padding:15px;
+	line-height:20px;
+	p{font-size:13px !important;}
+
+
+}
+
+.discussion-form{
+	textarea{
+		height:100px !important;
+	}
+}
+
+.original{
+	background-color:$light-grey
+}
+
+.discussion-subarea{
+	border-right:2px solid red;
+	height:100%;
+}
+.post-call{
+	padding:20px 0px 5px;
+}
+
+.discussions{
+	padding-bottom:40px;
+}
+
+.insidebar{
+	padding:20px 0px 0px 20px;
+}
+
+.inside-text{
+	padding:5px 0px 5px 20px;
+	font-size:11px;
+	font-weight:700;
+	background-color:$dark-grey;
+	color:white;
+}
+
+.insidebar-item{
+	
+	font-size:18px;
+	padding:13px 0px;
+}
+
+.nav-collapse{
+	position:fixed;
+	bottom:0px;
+	width:220px;
+	height:60px;
+	padding:15px 15px 50px 30px;
+}
+
+.nav-collapse:hover{
+	background-color:$light-blue;
+}
+
+#navbar-collapsed{
+	display:none;
+}
+
+.company-box{
+	height:100px;
+}
+
+.test2{
+	background-color:red;
+}
+
+.test-tag{
+	padding:20px 0px 0px 0px;
+}
