@@ -18,6 +18,10 @@ class IndustriesController < ApplicationController
     @industry = Industry.find(params[:id])
   end
   
+  def show
+    @industry = Industry.find(params[:id])
+  end
+  
   def update
     @industry = Industry.find(params[:id])
     if @industry.update_attributes(params[:industry])
@@ -27,6 +31,10 @@ class IndustriesController < ApplicationController
     
   def index
     @industries = Industry.all
+  end
+  
+  def industry_advice
+    @industry_all = Industry.all
   end
   
 end

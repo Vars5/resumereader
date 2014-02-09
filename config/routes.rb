@@ -9,6 +9,8 @@ Resumereader::Application.routes.draw do
   match'/invite', to: 'staticpages#invite'
   match '/invitable', to: 'staticpages#invitable'
   #match '/updates', to: 'staticpages#updates'
+  match '/industry_advice', to: 'industries#industry_advice'
+  
   
   #api (test)
   resources :api
@@ -46,27 +48,17 @@ Resumereader::Application.routes.draw do
   put '/comments/:id/:action' => 'comments#downvote'  
 
   
-
-=begin  
-  resources :comments do 
-    member do 
-      put 'like', to: "comments#upvote"
-      put 'dislike', to: 'comments#downvote'
-    end
-  end
-=end  
-  
   #Devise gem for users and their accounts
   devise_for :users, :controllers => {registrations: 'registrations'}
-  resources :users, only: [:show]
-
-
-  #error pages
-  #match '(errors)/:status', to: 'errors#show', constraints: {status: /\d{3}/} # via: :all
+  resources :users, only: [:show] #This line needs to be below devise_for :users 
 
   resources :comments do
     get :autocomplete_company_name, :on => :collection
   end
+
+  #error pages
+  #match '(errors)/:status', to: 'errors#show', constraints: {status: /\d{3}/} # via: :all
+
 
 end
 
