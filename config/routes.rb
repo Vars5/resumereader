@@ -16,6 +16,7 @@ Resumereader::Application.routes.draw do
   #match '/updates', to: 'staticpages#updates'
   match '/industry_advice', to: 'industries#industry_advice'
   
+  match '/end_onboarding', to: 'dashboards#end_onboarding'
   
   #api (test)
   resources :api

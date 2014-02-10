@@ -6,3 +6,39 @@
 			!
 		%h6.grey-area
 			Lets get you started with a quick tour
+		%hr
+	#slide-area
+		#box1.box
+			%h5.bold 		
+				Now let's get started!
+				%br
+				%br
+				%br								
+				=link_to "Im good to go!", end_onboarding_path, :class => "button success radius"
+		#box2.box 
+			%h5.bold 
+				Dempoints has career advice from other students.
+				.onboarding-comment
+					.row
+						.small-2.columns
+							= link_to image_tag(@last_comment_company.logo.url(:thumb)), @last_comment_company
+						.small-10.columns.feed-text
+							%b= @last_comment.title
+							\-
+							=link_to @last_comment_company.name, @last_comment_company
+
+							%br
+							= link_to @last_comment.body, @last_comment
+
+			.bottom-message
+				Click to continue
+		#box3.box 
+			%h5.bold 
+				You can find out about companies from a range of professions, like management consulting, investment banking and engineering.
+			.bottom-message
+				Click to continue
+		#box4.box
+			%h5.bold 
+				You can also ask questions and comment on the advice given to clarify how you can achieve your current career goal.
+			.bottom-message
+				Click to continue
