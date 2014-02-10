@@ -2,36 +2,35 @@
 	.row.pad-top
 		.large-5.large-offset-1.columns.copywrite
 			%h2.bold DemPoints
-			%h3 Share advice, build careers & be in the know
-			&nbsp
+			%h3 Share knowledge, give advice & build your career
 			.row.test-tag
 				.small-2.columns
 					=image_tag('secrets.png', height:60, width: 60)
 				.small-10.columns
-					%b Find out the practical way
-					&nbsp to enter the career you deserve
+					%b Enter the career you deserve
+					&nbsp by learning from others' experiences
 			.row.test-tag
 				.small-2.columns
 					=image_tag('pins.png', height:60, width: 60)
 				.small-10.columns
-					%b Learn about the best companies
-					&nbsp with our comprehensive database 
+					%b Learn what to expect in any workplace
+					&nbsp with our comprehensive company list
 			.row.test-tag
 				.small-2.columns
 					=image_tag('teepee.png', height:60, width: 60)
 				.small-10.columns
-					%b Be part of a student-first community
-					&nbsp and find out whats best for you
+					%b Find out what's best for you
+					&nbsp by being part of a student-first community
 		.large-offset-1.large-4.columns.sign-in-area
 			%br
 			%br
-			%h3.bold Sign Up
+			%h3.bold Join a community
 			%h6 Use your zmail to sign up in less than 30 seconds.
 			%br
 			%br
 			= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:id => "sign_up_user"}) do |f|
 				= f.text_field :username, :placeholder => "Username", :class => "focus_"
-				= f.email_field :email, :placeholder => " Email"
+				= f.email_field :email, :placeholder => "  Sign up with your unsw zmail"
 				= f.password_field :password, :placeholder => " Password  (6 or more characters)"
 				= f.hidden_field :role, :value => "student"
 				- if false
@@ -39,7 +38,7 @@
 				%div= f.submit "Join Dempoints", :class => "button success radius small"
 				%br
 				%br
-			=link_to "Already have an account? Sign in", new_user_session_path, :class => "feed-subtext"
+			=link_to "Already have an account? Sign in", new_user_session_path, :class => "sign-in-notice"
 			.errors
 			= devise_error_messages!
 		.large-1.columns

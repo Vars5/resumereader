@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me,
-                  :first_name, :last_name, :mobile_number, :role, :access, :username
+                  :first_name, :last_name, :mobile_number, :role, :access, :username, :onboarding_stage
 
   
   #has_many :reviews, dependent: :destroy

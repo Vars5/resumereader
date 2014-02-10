@@ -19,49 +19,28 @@
 		<!-- Hi! Hope you enjoy looking under the hood! -->
 		<!-- Our goal with DemPoints is to help give students the opportunities that me (Pasha) and Varun had when we applied for jobs -->
 		<!-- We'd love your help and suggestions! Email us at team@resquery.com  -->	
-		<% if signed_in? %>
+		<% if(signed_in? and current_user.onboarding_stage != 5) %>
+			
+			<div class ="show-for-medium-up">
+				<header id="sidebar"> 
+					<div class="nav-collapse text-right">
+					  <%= image_tag('arrow-left.png', height: '30', width: '30', :id => "navbar-expand", :remote => true) %>
+					  <br/>
+					  <%= image_tag('arrow-right.png', height: '30', width: '30', :id => "navbar-collapsed", :remote => true) %>
+					</div>
+					
+				</header>
+			</div>
+			<article id="contentWrapper"> 
+				<section id="content"> 
+					<div class="row pad-top">
+						<%= render 'dashboards/onboarding' %>
+					</div>
+				</section> 
+			</article>	
 		
-		<div class ="show-for-medium-up">
-			<header id="sidebar"> 
-				<%= render 'layouts/navbar'%>
-			</header>
-		
-			<section id="insidebar">
-				<%= render 'layouts/insidebar'%>
-			</section>
-		</div>
-		
-		<div class ="show-for-small-only">
-			<nav class="top-bar" data-topbar>
-				<ul class="title-area"> 
-					<li class="name"> <h1><%= link_to "DemPoints", root_path%></h1> </li>
-					<li class="toggle-topbar menu-icon"><a href="#"></a></li>
-				</ul> 
-				<section class="top-bar-section">
-				 	<!-- Right Nav Section --> 
-					<ul class="right">
-						 <li><%= link_to "Home", root_path%></li>
-						 <li><%= link_to "Companies", companies_path%></li>
-						 <li><%= link_to "Questions", questions_path%></li>
-						 <li class="has-dropdown"> 
-							<a href="#"><%= current_user.displayname %></a> 
-							<ul class="dropdown">
-								 <li><%= link_to "Account Settings", edit_user_registration_path%></li> 
-								 <li><%= link_to "Log Out", destroy_user_session_path, :method =>"DELETE"%></li> 
-							</ul>
-						</li>
-					</ul>
-				 </section> 
-			</nav>
-		</div>
-		<article id="contentWrapper"> 
-			<section id="content"> 
-				<div class="row pad-top">
-					<%= yield %>
-				</div>
-			</section> 
-		</article>
-
+		<% elsif signed_in?%>	
+			<%= render 'layouts/signed_in_page'%>	
 		<% else %>
 			<div class="row">
 				<%= yield %>

@@ -13,8 +13,8 @@ companies.png: companies-a2272639a70f429584c80c49bf1fd0dd.png
 companies/index.png: companies-a2272639a70f429584c80c49bf1fd0dd.png
 error.png: error-e00fd89bb84dfd4fa676037ba10a6164.png
 error/index.png: error-e00fd89bb84dfd4fa676037ba10a6164.png
-favicon.ico: favicon-2a2fc26af16fa2bc458815833b88bd61.ico
-favicon/index.ico: favicon-2a2fc26af16fa2bc458815833b88bd61.ico
+favicon.ico: favicon-e173f271b18a4309452c5bf98069e223.ico
+favicon/index.ico: favicon-e173f271b18a4309452c5bf98069e223.ico
 pins.png: pins-e3e51ed6700ef16d4baaef19defcaecd.png
 pins/index.png: pins-e3e51ed6700ef16d4baaef19defcaecd.png
 qa.png: qa-f238400d81272575beba62713c0ca4b4.png
@@ -31,7 +31,7 @@ whitelogo.png: whitelogo-bcebb729bc912ce31ff24307a05938fe.png
 whitelogo/index.png: whitelogo-bcebb729bc912ce31ff24307a05938fe.png
 application.js: application-39a061144a0cf5ac72b7b64d473285f9.js
 application/index.js: application-39a061144a0cf5ac72b7b64d473285f9.js
-application.css: application-abe2a21cff1b50bb6c1e3995eda886d7.css
-application/index.css: application-abe2a21cff1b50bb6c1e3995eda886d7.css
+application.css: application-c2c7d851423892e5fdda8a03a0f6b2de.css
+application/index.css: application-c2c7d851423892e5fdda8a03a0f6b2de.css
 jquery.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map
 jquery/index.min.map: jquery.min-6c267bfd2b3f36e6edccb2e584934c1c.map

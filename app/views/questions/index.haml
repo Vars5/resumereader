@@ -6,7 +6,7 @@
 		.large-3.columns.text-right		
 			%br
 			%br			
-			= link_to "Ask Question", "#", :class =>"button radius tiny alert"
+			= link_to "Ask Question", new_question_path, :class =>"button radius tiny alert"
 
 	%br
 	%br
@@ -18,7 +18,6 @@
 				= link_to image_tag(question.load_company.logo.url), question.load_company		
 			.small-10.columns
 				.small-text
-					Question added about
 					= question.company_name
 				%br
 				%b= link_to question.question_content, question

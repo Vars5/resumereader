@@ -6,6 +6,10 @@ class QuestionsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
   
 
+  def new
+    @question = Question.new
+  end
+
   def create
     @question = Question.new(params[:question])
     if @question.save

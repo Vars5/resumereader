@@ -2,9 +2,15 @@
 	.row.negative-padding
 		.small-8.columns
 			%h6 Latest bits of advice
+			%h6
+				-#link_to("Unlink your facebook account", user_path(current_user, :onboarding_stage => nil), :method => :put, :confirm => "Are you sure?") 
+				-# need to link to custom action?
+			
 		.small-4.columns
 			.text-right.show-for-medium-up
 				-# link_to "Ask Question", '#', :class =>"button radius tiny alert"
+				= link_to "Ask Question", new_question_path, :class =>"button radius tiny alert"
 				= link_to "Add Advice", new_comment_path, :class => "button radius tiny"
+				
 	%hr
 	=render 'layouts/feed_item'
