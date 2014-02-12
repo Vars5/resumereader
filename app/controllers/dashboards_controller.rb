@@ -7,13 +7,15 @@ class DashboardsController < ApplicationController
     @comments   = Comment.order("created_at DESC")
     @question   = Question.new
     
-    if current_user.onboarding_stage != 5
-      @last_comment = @comments.last
-      @last_comment_company = @last_comment.get_company_for_comment
-    end
     #Testing to see if i can update a users attributes in another page other than the user edit page
     #current_user.update_attributes(:onboarding_stage => "2")
     
+  end
+  
+  def onboarding
+    @comments   = Comment.order("created_at DESC")
+    @last_comment = @comments.last
+    @last_comment_company = @last_comment.get_company_for_comment
   end
   
   def end_onboarding

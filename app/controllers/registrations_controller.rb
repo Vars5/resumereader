@@ -10,7 +10,7 @@ class RegistrationsController < Devise::RegistrationsController
         #return render :json => {:success => true}
         respond_to do |format|
           format.json {render :json => {:success => true}}
-          format.html {redirect_to root_path}
+          format.html {redirect_to onboarding_path}
         end
         
       else
@@ -27,10 +27,13 @@ class RegistrationsController < Devise::RegistrationsController
     end
   end
  
+ 
+ 
   # Signs in a user on sign up. You can overwrite this method in your own
   # RegistrationsController.
   def sign_up(resource_name, resource)
     sign_in(resource_name, resource)
   end
  
+
 end

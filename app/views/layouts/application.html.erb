@@ -19,25 +19,9 @@
 		<!-- Hi! Hope you enjoy looking under the hood! -->
 		<!-- Our goal with DemPoints is to help give students the opportunities that me (Pasha) and Varun had when we applied for jobs -->
 		<!-- We'd love your help and suggestions! Email us at team@resquery.com  -->	
-		<%-# if(signed_in? and current_user.onboarding_stage == 5) %>
+
 			
-		<!--	<div class ="show-for-medium-up">
-				<header id="sidebar"> 
-					<div class="nav-collapse text-right">
-					  <%= image_tag('arrow-left.png', height: '30', width: '30', :id => "navbar-expand", :remote => true) %>
-					  <br/>
-					  <%= image_tag('arrow-right.png', height: '30', width: '30', :id => "navbar-collapsed", :remote => true) %>
-					</div>
-					
-				</header>
-			</div>
-			<article id="contentWrapper"> 
-				<section id="content"> 
-					<div class="row pad-top">
-						<%-# render 'dashboards/onboarding' %>
-					</div>
-				</section> 
-			</article>	-->
+
 		
 		<% if signed_in?%>	
 			<%= render 'layouts/signed_in_page'%>	
