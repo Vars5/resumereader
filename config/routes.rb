@@ -60,8 +60,6 @@ Resumereader::Application.routes.draw do
     get :autocomplete_company_name, :on => :collection
   end
 
-
-
   match'/onboarding', to: 'dashboards#onboarding'
 end
 
