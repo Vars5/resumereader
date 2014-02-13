@@ -16,8 +16,6 @@ Resumereader::Application.routes.draw do
   #match '/updates', to: 'staticpages#updates'
   match '/industry_advice', to: 'industries#industry_advice'
   
-
-  
   #api (test)
   resources :api
 
@@ -62,8 +60,7 @@ Resumereader::Application.routes.draw do
     get :autocomplete_company_name, :on => :collection
   end
 
-  #error pages
-  #match '(errors)/:status', to: 'errors#show', constraints: {status: /\d{3}/} # via: :all
+
 
   match'/onboarding', to: 'dashboards#onboarding'
 end
