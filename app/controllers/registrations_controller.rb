@@ -8,6 +8,7 @@ class RegistrationsController < Devise::RegistrationsController
         set_flash_message :notice, :signed_up if is_navigational_format?
         sign_up(resource_name, resource)
         #return render :json => {:success => true}
+        finished("SignUp")
         respond_to do |format|
           format.json {render :json => {:success => true}}
           format.html {redirect_to onboarding_path}
