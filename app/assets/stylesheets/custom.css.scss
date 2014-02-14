@@ -279,6 +279,9 @@ textarea {
 	height:700px;
 	background-position: 50% 80%;
 	background-color: rgba(31, 91, 127, 0.9);
+	.row{
+		background-color: rgba(31, 91, 127, 0.9);
+	}
 }
 
 .test-tag{
@@ -289,7 +292,7 @@ textarea {
 	color:white !important;
 	text-align:center;	
 	padding:40px;
-	background-color: rgba(31, 91, 127, 0.9);
+//	background-color: rgba(31, 91, 127, 0.9);
 	h2{color:white;}
 	h5{color:#addbdb}
 //	 opacity:0.6;	
