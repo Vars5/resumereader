@@ -18,14 +18,15 @@ $(document).ready(function() {
 
 	});
 
+	//resize page if mobile
 	if ( $(window).width() < 641) {     
 		$('#sidebar').animate({
 			width:0
-		})
+		},0)
 		$('#content').animate({
-			marginLeft:parseInt($('#content').css('marginLeft'))-220,
+			marginLeft:0,
 			paddingLeft:0
-		})
+		},0)
 	}
 
 
