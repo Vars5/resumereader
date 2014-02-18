@@ -10,7 +10,7 @@ class StaticpagesController < ApplicationController
   
   
   def home
-    @comments = Comment.find(:all, :order => "id desc", :limit => 15);
+    
   end
 
   def about

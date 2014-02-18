@@ -6,6 +6,11 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me,
                   :first_name, :last_name, :mobile_number, :role, :access, :username, :onboarding_stage
 
+  VALID_ALUMNI_REGEX = /^([\w\.%\+\-]+)@unswalumni.com$/i
+  VALID_STUDENT_REGEX = /^([\w\.%\+\-]+)@student.unsw.edu.au$/i
+  VALID_UNSW_REGEX = /^([\w\.%\+\-]+)@unsw.edu.au$/i
+  VALID_ZMAIL_REGEX = /^([\w\.%\+\-]+)@zmail.unsw.edu.au$/i
+
   
   #has_many :reviews, dependent: :destroy
   #user follows company
@@ -16,9 +21,16 @@ class User < ActiveRecord::Base
   #validations
   #VALID_USERNAME_REGEX = /^[\w-]+$/
   validates :username, :presence => true, length: { maximum: 30 }, :uniqueness => true
-
+  validate :email_is_valid_email_at_unsw
 
   acts_as_voter
+  
+  
+  def email_is_valid_email_at_unsw
+     unless(((self.email =~ VALID_ALUMNI_REGEX ) or (self.email =~ VALID_STUDENT_REGEX)) or ((self.email =~ VALID_UNSW_REGEX ) or (self.email =~ VALID_ZMAIL_REGEX )))
+       errors.add(:email, "is not valid unsw email")
+     end
+  end
   
   def follow!(company)
     self.follows.create!(company_id: company.id)
