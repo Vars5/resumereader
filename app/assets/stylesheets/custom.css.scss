@@ -193,11 +193,17 @@ textarea {
 
 .nav-item{
 	padding:10px 0px;
+	color:$light-blue-2;
 	a{color:$light-blue-2;}
 	img{
 		
 	}
 }
+
+.nav-item:hover{
+	cursor: pointer; cursor: hand;
+	color:white;
+};
 
 .discussion-area{
 	border:1px solid $light-grey;
