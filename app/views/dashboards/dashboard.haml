@@ -1,6 +1,22 @@
 .large-9.large-offset-1.columns
 	.row.negative-padding
+		.small-12.columns
+			.index-area
+				%b Industries
+				%br
+				-@industries.each do |industry|
+					=link_to industry.industry, industry
+				
+				%br
+				%br
+				%b Majors
+
+	.row.negative-padding
 		.small-4.columns
+
+				
+		
+		
 			%h6 Latest bits of advice
 			%h6
 				-#link_to("Unlink your facebook account", user_path(current_user, :onboarding_stage => nil), :method => :put, :confirm => "Are you sure?") 
