@@ -5,7 +5,7 @@ class DashboardsController < ApplicationController
   def dashboard
     @category   = Category.order("discipline")
     @comments   = Comment.order("created_at DESC")
-    @industries = Industry.all
+    @industries = Industry.order("industry ASC")
     #@categories = Category.where("category = ?", " ")
     
     
