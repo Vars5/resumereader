@@ -20,6 +20,7 @@ class IndustriesController < ApplicationController
   
   def show
     @industry = Industry.find(params[:id])
+    @industry_companies = Company.where(industry_id: params[:id])
   end
   
   def update

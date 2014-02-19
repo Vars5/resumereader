@@ -1,0 +1,8 @@
+%h1 Industries#index
+= link_to "New Industry", industries_path
+%br/
+- @industries.each do |f|
+  = link_to f do
+    %li
+      = f.industry
+      = f.id

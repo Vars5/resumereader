@@ -1,1 +1,12 @@
-%b=@industry.industry
+.large-9.large-offset-1.columns
+	%h3.bold= @industry.industry
+	.large-text	Key players in this industry that hire graduates include:
+	%br
+	%br
+	-@industry_companies.each do |company|
+		.company-box
+			=link_to (company) do
+				= image_tag(company.logo.url(:thumb))
+				&nbsp &nbsp 
+				= company.name
+			%hr
