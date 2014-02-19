@@ -16,7 +16,10 @@
 	- @company.each do |company|
 		.company-box
 			=link_to (company) do
-				= image_tag(company.logo.url(:thumb))
-				&nbsp &nbsp 
-				= company.name
+				.row
+					.small-2.columns
+						= image_tag(company.logo.url(:thumb))
+					.small-10.columns
+						&nbsp &nbsp 
+						= company.name
 			%hr
