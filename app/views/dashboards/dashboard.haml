@@ -10,6 +10,10 @@
 				%br
 				%br
 				%b Majors
+				%br				
+				-@categories.each do |category|
+					=link_to category.discipline, category
+					&nbsp &nbsp -
 
 	.row.negative-padding
 		.small-4.columns
