@@ -1,7 +1,7 @@
 class IndustriesController < ApplicationController
 
   before_filter :authenticate_user!
-  authorize_resource 
+
   
   def new
     @industry = Industry.new
