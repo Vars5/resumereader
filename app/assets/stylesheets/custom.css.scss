@@ -381,15 +381,24 @@ body {
 	margin-bottom:40px;
 	line-height:24px;
 }
+
 label {
-  display: inline-block; width: 5em;
-}
-fieldset div {
-  margin-bottom: 2em;
-}
-fieldset .help {
-  display: inline-block;
-}
-.ui-tooltip {
-  width: 310px;
+   display: inline-block; width: 5em;
+ }
+ fieldset div {
+   margin-bottom: 2em;
+ }
+ fieldset .help {
+   display: inline-block;
+ }
+ .ui-tooltip {
+	border-radius:4px;
+	padding: 10px 15px;
+   width: 250px;
+  background: #DB8121;
+  color: white;
+ }
+
+.sign-in-notice{
+	a{color:white;}
 }

@@ -131,13 +131,14 @@ $(document).ready(function() {
 
 	//Focus on the key box per page
 	$("#focus").focus();
-	var tooltips = $( "[title]" ).tooltip();
-    $( "<button>" )
-      .text( "Show help" )
-      .button()
-      .click(function() {
-        tooltips.tooltip( "open" );
-      })
-      .insertAfter( "form" );
-  });
+	
+		$( "[title]" ).tooltip({
+	    position: {
+	      my: 'left center',
+	      at: 'left-260 center'
+	    }
+	  });
+	
+
+
 });
