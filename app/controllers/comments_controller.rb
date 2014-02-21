@@ -92,11 +92,10 @@ class CommentsController < ApplicationController
   end
   
   def show
-
     @comment = Comment.find(params[:id])
     @company = Company.find(@comment.commentable_id)
     @discussion = Discussion.new
-    @discussions = Discussion.where("comment_id = ?", params[:id]).order("created_at DESC")
+    @discussions = Discussion.where("comment_id = ?", params[:id]).order("created_at ASC")
   end
   
   private
