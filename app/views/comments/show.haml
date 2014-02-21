@@ -26,7 +26,9 @@
 			.discussion-area
 				.feed-subtext
 					%b= username(discussion.user_id)  #Note helper for username
-					\ - posted
-					=discussion.created_at.strftime('%Y-%b-%d,  %R')
+					%span(class="time-subtext")
+						\ - posted
+						=time_ago_in_words(discussion.created_at) 
+						ago
 				%br
 				= simple_format(discussion.content)
