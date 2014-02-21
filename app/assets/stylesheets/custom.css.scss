@@ -60,6 +60,13 @@ h2{
 
 .feed-text{
 	line-height:25px;
+	a{
+		color:#333;
+	}
+	
+	.feed-subtext a{
+		color:$dempoints-blue;
+	}
 }
 
 .feed-subtext{
@@ -406,3 +413,4 @@ label {
 .sign-in-notice{
 	a{color:white;}
 }
+
