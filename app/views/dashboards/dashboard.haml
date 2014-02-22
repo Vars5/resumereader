@@ -27,4 +27,5 @@
 				
 	%hr
 	=render 'layouts/feed_item'
-	= will_paginate @comments
+	.paginate
+		= will_paginate @comments
