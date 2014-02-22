@@ -52,7 +52,7 @@ class CommentsController < ApplicationController
     if((current_user.voted_as_when_voted_for(@comment) == false) || (current_user.voted_as_when_voted_for(@comment) == nil))
       @comment.liked_by current_user
       respond_to do |format|
-        format.js
+        #format.js
         format.html {redirect_to root_path}
       end
     else

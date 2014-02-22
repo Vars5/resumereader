@@ -434,3 +434,22 @@ label {
 	padding-top:30px;
 	margin-bottom:80px;
 }
+
+.thank-area{
+	font-size:10px;
+	a{
+		color:white !important;
+	}
+
+}
+
+.thank-button{
+	width:70px;
+	padding:2px 5px;
+	background-color:#43AC6A;
+	border-radius:4px;
+}
+
+.thank-button:hover {
+	background-color:$dark-green;
+}
