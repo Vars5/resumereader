@@ -4,7 +4,7 @@ class DashboardsController < ApplicationController
   
   def dashboard
     @category   = Category.order("discipline")
-    @comments   = Comment.order("created_at DESC").paginate(:page => params[:page], :per_page => 18)
+    @comments   = Comment.order("created_at DESC").paginate(:page => params[:page], :per_page => 12)
     @industries = Industry.order("industry ASC")
     #@categories = Category.where("category = ?", " ")
     
