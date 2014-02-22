@@ -25,7 +25,8 @@ class RegistrationsController < Devise::RegistrationsController
     else
       clean_up_passwords resource
       #return render :json => {:success => false}
-      redirect_to root_path
+      #render   root_path
+       respond_with resource
     end
   end
  

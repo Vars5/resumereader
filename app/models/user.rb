@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   
   def email_is_valid_email_at_unsw
      unless(((self.email =~ VALID_ALUMNI_REGEX ) or (self.email =~ VALID_STUDENT_REGEX)) or ((self.email =~ VALID_UNSW_REGEX ) or (self.email =~ VALID_ZMAIL_REGEX )))
-       errors.add(:email, "is not valid unsw email")
+       errors.add(:email, "is not a valid UNSW student email")
      end
   end
   
