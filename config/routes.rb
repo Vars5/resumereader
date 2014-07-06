@@ -1,5 +1,9 @@
 Resumereader::Application.routes.draw do
 
+  get "articles/index"
+
+  get "articles/show"
+
   #Root to public home page unless signed in
   root :to => 'dashboards#dashboard', :constraints => lambda {|r| r.env["warden"].authenticate? }
   root :to => 'staticpages#home'
@@ -43,6 +47,7 @@ Resumereader::Application.routes.draw do
   resources :follows, only: [:create, :destroy]
   
   resources :comments 
+  resources :articles
   
   resources :discussions
   
